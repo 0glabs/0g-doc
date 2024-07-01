@@ -13,9 +13,16 @@ This document outlines the steps to deploy your own validator node.
 
 ### Server Timezone Configuration
 
-Make sure your server timezone configuration is UTC. Check your current timezone by running `timedatectl`
+Make sure your server timezone configuration is UTC. Check your current timezone by running `timedatectl`. The `Time zone` field is `Etc/UTC (UTC, +0000)`.
 
 > Note: Having a different timezone configuration may cause a `LastResultHash` mismatch error and take down your node!
+
+### Software Requirement
+
+```bash
+sudo apt update && apt upgrade -y
+sudo apt install golang-go jq unzip wget git -y
+```
 
 ### Install 0gchaind via CLI
 
@@ -96,6 +103,39 @@ Start the node and sync up to the latest block height. Note that the first time 
 
 ```bash
 0gchaind start
+```
+#### Start the node in the background
+
+To start the node as a service. Perform the following steps.
+
+```bash
+sudo tee /etc/systemd/system/0gchaind.service > /dev/null <<EOF
+[Unit]
+Description=0G Node
+After=network.target
+[Service]
+User=$USER
+Type=simple
+ExecStart=$(which 0gchaind) start
+Restart=on-failure
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+Then you can start the node by the following command.
+
+```bash
+sudo systemctl daemon-reload && \
+sudo systemctl enable 0gchaind && \
+sudo systemctl restart 0gchaind
+```
+
+You can review the log by the following command.
+
+```bash
+sudo journalctl -u 0gchaind -f -o cat
 ```
 
 #### Garbage Collection Optimization
