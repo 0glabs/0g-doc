@@ -15,6 +15,11 @@ This document outlines the steps to deploy your own validator node.
 
 Make sure your server timezone configuration is UTC. Check your current timezone by running `timedatectl`
 
+```bash
+timedatectl | grep "Time zone"
+                Time zone: Etc/UTC (UTC, +0000)
+```
+
 > Note: Having a different timezone configuration may cause a `LastResultHash` mismatch error and take down your node!
 
 ### Install 0gchaind via CLI
