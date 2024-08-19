@@ -125,11 +125,14 @@ The following hardware specifications are recommended for running a DA client:
         --batcher.signing-interval 3s \
         --batcher.signed-pull-interval 20s \
         --encoder-socket DA_ENCODER_SERVER \
-        --encoding-timeout 600s \
-        --signing-timeout 600s \
+        --encoding-timeout 300s \
+        --signing-timeout 60s \
         --chain-read-timeout 12s \
         --chain-write-timeout 13s \
         --combined-server.log.level-file trace \
         --combined-server.log.level-std trace \
         --combined-server.log.path ./../run/run.log
     ```
+    
+### (Optional) Setup DA Retriever
+If you want to use the retrieval feature of the DA client, you also need to set up the DA Retriever. Please refer to this [document](https://github.com/0glabs/0g-da-retriever) for more details.
