@@ -25,7 +25,7 @@ The `key` is your account's private key.
 **Example:**
 
 ```bash
-> 0g-storage-client upload --url https://rpc-testnet.0g.ai --contract 0x8873cc79c5b3b5666535C825205C9a128B1D75F1 --node 	
+> 0g-storage-client upload --url https://rpc-testnet.0g.ai --contract 0x8873cc79c5b3b5666535C825205C9a128B1D75F1 --indexer
 https://rpc-storage-testnet.0g.ai --file tmpFile --key abc...
 
 INFO[2024-07-15T16:34:36+08:00] Data prepared to upload                       chunks=2 segments=1 size=316
