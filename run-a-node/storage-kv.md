@@ -18,10 +18,9 @@ For official deployed contract addresses, visit [this page](../docs/contract-add
 #### Hardware Requirement
 
 ```
-- Memory: 16 GB RAM
-- CPU: 4 cores
-- Disk: 500GB / 1T NVME SSD
-- Bandwidth: 500 MBps for Download / Upload
+- Memory: 4 GB RAM
+- CPU: 2 cores
+- Disk: Matches the size of kv streams it maintains
 ```
 
 ### Storage KV
