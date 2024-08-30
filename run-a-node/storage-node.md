@@ -89,7 +89,7 @@ cargo build --release
 # enr address, must fill your instance's public ip to support peer discovery
 network_enr_address
 
-# peer nodes, we provided 3 nodes with last one being HK region, you can also modify to your own ips
+# peer nodes, check the 0g-storage/run/config-tfor the official configurations
 network_boot_nodes = []
 
 # flow contract address
