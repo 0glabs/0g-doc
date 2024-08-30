@@ -17,7 +17,7 @@ Flags:
 
 ```bash
 > 0g-storage-client kv-read \
-    --node http:// \
+    --node <kv_node_url> \
     --stream-id 0x000000000000000000000000000000000000000000000000000000000000f2bd \
     --stream-keys TestKey0,TestKey1
 
