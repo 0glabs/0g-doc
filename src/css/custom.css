@@ -27,3 +27,65 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+/* Global font settings */
+:root {
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+}
+
+/* Adjust heading sizes */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+/* Styling for tabs */
+
+
+.tabs__item:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.tabs__item--active {
+  color: var(--ifm-color-black);
+  border-color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Improve readability of main content */
+.markdown {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.markdown p {
+  margin-bottom: 1.5rem;
+}
+
+/* Improve code block readability */
+pre[class*="language-"] {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Improve inline code readability */
+code {
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  background-color: var(--ifm-code-background);
+}
