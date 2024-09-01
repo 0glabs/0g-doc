@@ -89,3 +89,43 @@ code {
   border-radius: 3px;
   background-color: var(--ifm-code-background);
 }
+.menu__list-item--collapsed .menu__link--sublist:after,
+.menu__list-item--active .menu__link--sublist:after {
+  content: '▼';
+  font-size: 0.7em;
+  margin-left: 0.5em;
+}
+
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotate(-90deg);
+}
+
+.nodeLinksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.nodeLink {
+  flex: 1 1 200px;
+  max-width: 250px;
+  text-decoration: none;
+}
+
+.nodeLinkInner {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.nodeLinkInner:hover {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

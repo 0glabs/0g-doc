@@ -10,6 +10,10 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Run a Node',
+      link: {
+        type: 'doc',
+        id: 'run-a-node/index',
+      },
       items: ['run-a-node/testnet-information', 'run-a-node/storage', 'run-a-node/da', 'run-a-node/validator'],
     },
     {
