@@ -129,3 +129,6 @@ code {
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.theme-code-block {
+  background-color: #f0f8ff; /* Light blue background */
+}

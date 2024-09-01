@@ -4,26 +4,20 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Run a Validator Node 
+# Validator Node 
 
-**Install 0gchaind**
+### How to Run 0G Validator node?
 
 Begin by installing the 0gchaind software using the following commands in your terminal:
 
 <Tabs>
   <TabItem value="binary" label="Run a pre built binary" default>
 
-# Validator Node
-
-This page provides comprehensive information about running a Validator Node on the 0g testnet.
-
-## Run a Validator Node on the Testnet
-
 Follow these steps to set up and run your validator node on the 0g testnet.
 
 ### Install 0gchaind
 
-Begin by installing the 0gchaind software. Run the following commands in your terminal:
+Begin by installing the 0g chaind software. Run the following commands in your terminal:
 
 ```bash
 git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
@@ -39,7 +33,7 @@ Configure the chain ID for the testnet:
 0gchaind config chain-id zgtendermint_16600-2
 ```
 
-### Initialize Your Node
+### Initialise Your Node
 
 Initialize your node to generate the necessary validator and node configuration files:
 
