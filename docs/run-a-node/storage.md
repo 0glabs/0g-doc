@@ -8,17 +8,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="binary" label="Run a pre-built binary" default>
+  <TabItem value="binary" label="Run Storage Node" default>
 
   Instructions for running a pre-built binary go here...
 
   </TabItem>
-  <TabItem value="source" label="Build from source">
+  <TabItem value="source" label="Storage Node CLI">
 
   Instructions for building from source go here...
 
   </TabItem>
-  <TabItem value="docker" label="Using Docker">
+  <TabItem value="docker" label="Storage KV">
 
   Instructions for using Docker go here...
 
