@@ -100,6 +100,4 @@ cd run
 ../target/release/zgs_kv --config config.toml
 ```
 
-Note: The recommended system configuration is the same as the storage node.
-
 ### You are all set !
