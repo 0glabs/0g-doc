@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="binary" label="Run Storage Node" default>
+
 ## 1. Install dependencies
 
 ### For Linux
@@ -117,7 +118,7 @@ cd run
 
   </TabItem>
   <TabItem value="source" label="Storage Node CLI">
-  
+
 ## Download the Source Code
 
 ```bash
@@ -175,7 +176,84 @@ Try to set a higher gas limit with `--gas-limit`. For the reason why you need to
   </TabItem>
   <TabItem value="docker" label="Storage KV">
 
-  Instructions for using Docker go here...
+## 1. Download the Source Code
 
+```bash
+git clone -b v1.2.1 https://github.com/0glabs/0g-storage-kv.git
+```
+
+## 2. Build the Source Code
+
+```bash
+cd 0g-storage-kv
+git submodule update --init --recursive
+
+# Build in release mode
+cargo build --release
+```
+
+## 3. Configure the Service
+
+Copy the `config_example.toml` to `config.toml` and update the parameters:
+
+```toml
+#######################################################################
+###                   Key-Value Stream Options                      ###
+#######################################################################
+
+# In KV Scenario, each independent KV database abstraction has a unique stream id.
+
+# Streams to monitor.
+stream_ids = ["000000000000000000000000000000000000000000000000000000000000f2bd", "000000000000000000000000000000000000000000000000000000000000f009", "0000000000000000000000000000000000000000000000000000000000016879", "0000000000000000000000000000000000000000000000000000000000002e3d"]
+
+#######################################################################
+###                     DB Config Options                           ###
+#######################################################################
+
+# Directory to store data.
+db_dir = "db"
+# Directory to store KV Metadata.
+kv_db_dir = "kv.DB"
+
+#######################################################################
+###                     Log Sync Config Options                     ###
+#######################################################################
+
+blockchain_rpc_endpoint = ""
+log_contract_address = ""
+# log_sync_start_block_number should be earlier than the block number of the first transaction that writes to the stream being monitored.
+log_sync_start_block_number = 0
+
+#######################################################################
+###                     RPC Config Options                          ###
+#######################################################################
+
+# Whether to provide RPC service.
+rpc_enabled = true
+
+# HTTP server address to bind for public RPC.
+rpc_listen_address = "0.0.0.0:6789"
+
+# Zerog storage nodes to download data from.
+zgs_node_urls = "http://127.0.0.1:5678,http://127.0.0.1:5679"
+
+#######################################################################
+###                     Misc Config Options                         ###
+#######################################################################
+
+log_config_file = "log_config"
+```
+
+## 4. Run the KV Service
+
+```bash
+cd run
+
+# consider using tmux in order to run in background
+../target/release/zgs_kv --config config.toml
+```
+:::note
+The recommended system configuration is the same as the storage node.
+:::
   </TabItem>
 </Tabs>
