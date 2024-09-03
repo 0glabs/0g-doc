@@ -14,7 +14,7 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'run-a-node/index',
       },
-      items: ['run-a-node/testnet-information', 'run-a-node/storage', 'run-a-node/da', 'run-a-node/validator'],
+      items: ['run-a-node/node-overview','run-a-node/testnet-information', 'run-a-node/storage', 'run-a-node/da', 'run-a-node/validator'],
     },
     {
       type: 'category',

@@ -5,8 +5,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Data Availability(DA)
+## Overview
 
+While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. It's important to note that your DA signer needs to operate a DA node to verify encoded blob data, sign it, and store it for future farming and rewards.
 
+## Hardware Requirements
+
+The following table outlines the hardware requirements for different types of DA nodes:
+
+| Node Type | Memory | CPU | Disk | Bandwidth | Additional Notes |
+|-----------|--------|-----|------|-----------|------------------|
+| DA Node | 16 GB | 8 cores | 1 TB NVME SSD | 100 MBps | For Download / Upload |
+| DA Retriever | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
+| DA Client | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
+| DA Encoder | - | - | - | - | NVIDIA Drivers: 12.04 on the RTX 4090* |
+
+:::Note 
+Other NVIDIA GPUs might require parameter adjustments and haven't been optimized yet.
+:::
+
+## Additional Information
+Each type of DA node plays a crucial role in the Data Availability system:
+- **DA Node**: Performs the core functions of verifying, signing, and storing encoded blob data.
+- **DA Retriever**: Responsible for retrieving data from the network.
+- **DA Client**: Interacts with the DA layer, facilitating data operations.
+- **DA Encoder**: Handles the encoding of data, utilizing GPU acceleration where available.
+
+For detailed setup instructions and best practices for each node type, please refer to our comprehensive documentation.
 <Tabs>
 <TabItem value="Da-node" label="DA Node" default>
 

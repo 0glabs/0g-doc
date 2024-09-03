@@ -1,25 +1,43 @@
-# Storage Node Overview
-
-## Installation Options
-
-Choose your preferred method to set up a storage node:
+# Storage Node
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+### Overview
+
+This guide details the process of running a storage node, including hardware specifications and interaction with on-chain contracts.
+
+Your 0G Storage interacts with on-chain contracts for blob root confirmation and PoRA mining. We provide a client tool (Storage Node CLI) for direct interaction with the storage node.
+Storage KV interacts with both on-chain contracts and storage nodes to simulate KV data streams. A guideline for deploying the Storage KV Client, a KV runtime built on top of the log layer, is available below.
+### Hardware Requirements
+
+| Component | Storage Node | Storage KV |
+|-----------|--------------|------------|
+| Memory    | 16 GB RAM    | 4 GB RAM   |
+| CPU       | 4 cores      | 2 cores    |
+| Disk      | 500GB / 1TB NVMe SSD | Size matches the KV streams it maintains |
+| Bandwidth | 500 Mbps (Download / Upload) | - |
+
+:::note
+- For Storage Node: The NVMe SSD ensures fast read/write operations, critical for efficient blob storage and retrieval.
+- For Storage KV: The disk size requirement is flexible and should be adjusted based on the volume of KV streams you intend to maintain.
+:::
+### Next Steps
+For detailed instructions on setting up and operating your Storage Node or Storage KV, please refer to our comprehensive setup guides below:
+
 <Tabs>
-  <TabItem value="binary" label="Run Storage Node" default>
+  <TabItem value="binary" label="Storage Node" default>
 
 ## 1. Install dependencies
 
-### For Linux
+#### For Linux
 
 ```bash
 sudo apt-get update
 sudo apt-get install clang cmake build-essential pkg-config libssl-dev
 ```
 
-### For Mac
+#### For Mac
 
 ```bash
 brew install llvm cmake
