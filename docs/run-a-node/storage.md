@@ -28,7 +28,7 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 <Tabs>
   <TabItem value="binary" label="Storage Node" default>
 
-## 1. Install dependencies
+#### 1. Install The required dependencies
 
 #### For Linux
 
@@ -36,22 +36,22 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 sudo apt-get update
 sudo apt-get install clang cmake build-essential pkg-config libssl-dev
 ```
-
 #### For Mac
 
 ```bash
 brew install llvm cmake
 ```
 
-## 2. Install rustup
+#### 2. Install rustup 
+*Note: Rust is the programming language used for the 0G storage node. Install Rustup, the Rust toolchain manager.*
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-## 3. Install Go
+#### 3. Install Go
 
-### For Linux
+#### For Linux
 
 ```bash
 # Download the Go installer
@@ -64,21 +64,21 @@ sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.ta
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-### For Mac
+#### For Mac
 
 ```bash
 brew install go
 ```
 
-Or download the Go installer from https://go.dev/dl/. Open the package file you downloaded and follow the prompts to install Go.
+*Note: Alternatively, download the Go installer from https://go.dev/dl/. Open the package file you downloaded and follow the prompts to install Go.*
 
-## 4. Download the source code
+#### 4. Download the source code
 
 ```bash
 git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
 ```
 
-## 5. Build the source code
+#### 5. Build the source code
 
 ```bash
 cd 0g-storage-node
@@ -87,7 +87,7 @@ cd 0g-storage-node
 cargo build --release
 ```
 
-## 6. Check and update the `run/config.toml` if necessary
+#### 6. Check and update the `run/config.toml` if necessary
 
 ```toml
 # enr address, must fill your instance's public ip to support peer discovery
@@ -122,7 +122,7 @@ miner_key
 db_max_num_chunks
 ```
 
-## 7. Run the storage service
+#### 7. Run the storage service
 
 Check the command line configuration with `zgs_node -h`
 We provide a `run/config-testnet.toml` for testnet usage.
@@ -137,34 +137,34 @@ cd run
   </TabItem>
   <TabItem value="source" label="Storage Node CLI">
 
-## Download the Source Code
+#### Download the Source Code
 
 ```bash
 git clone https://github.com/0glabs/0g-storage-client.git
 ```
 
-## Build the Source Code
+#### Build the Source Code
 
 ```bash
 cd 0g-storage-client
 go build
 ```
 
-## Run the File Upload/Download Commands
+#### Run the File Upload/Download Commands
 
-### File Upload
+#### File Upload
 
 ```bash
 ./0g-storage-client upload --url <blockchain_rpc_endpoint> --contract <log_contract_address> --key <private_key> --node <storage_node_rpc_endpoint> --file <file_path>
 ```
 
-### File Download
+#### File Download
 
 ```bash
 ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path>
 ```
 
-### File Download with Verification
+#### File Download with Verification
 
 ```bash
 ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path> --proof
@@ -178,29 +178,29 @@ You need to have the file root in order to download the file.
 
 For the storage node rpc endpoint, you could use the team deployed `https://rpc-storage-testnet.0g.ai` or you could deploy yourself by following the above instructions.
 
-## Retrieving File Root Hash
+#### Retrieving File Root Hash
 
 During download, the `file_root_hash` can be retrieved from these places:
 
 1. When you upload the file, the log will give you information about the file root. Look for `Data merkle root calculated root=`.
 2. Locate your transaction with the transaction hash in the [0g Storage Scanner](https://storagescan-newton.0g.ai/). Check the Overview -> File Hash in the tx detail page.
 
-## Q&A
+#### Q&A
 
-### My command fails to execute with error "Transaction execution failed"
+#### My command fails to execute with error "Transaction execution failed"
 
 Try to set a higher gas limit with `--gas-limit`. For the reason why you need to set a customized gas limit, check the [Ethereum EIP-150](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md).
 
   </TabItem>
   <TabItem value="docker" label="Storage KV">
 
-## 1. Download the Source Code
+#### 1. Download the Source Code
 
 ```bash
 git clone -b v1.2.1 https://github.com/0glabs/0g-storage-kv.git
 ```
 
-## 2. Build the Source Code
+#### 2. Build the Source Code
 
 ```bash
 cd 0g-storage-kv
@@ -210,7 +210,7 @@ git submodule update --init --recursive
 cargo build --release
 ```
 
-## 3. Configure the Service
+#### 3. Configure the Service
 
 Copy the `config_example.toml` to `config.toml` and update the parameters:
 
