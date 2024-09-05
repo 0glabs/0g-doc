@@ -25,7 +25,7 @@ Each DA signer need to operate a DA node to perform encoded blob data verificati
 
 ```
 git clone https://github.com/0glabs/0g-da-node.git
-git checkout tags/v1.0.1 -b v1.0.1
+git checkout tags/v1.1.2 -b v1.1.2
 cargo build --release
 ./dev_support/download_params.sh
 ```
@@ -52,17 +52,19 @@ eth_rpc_endpoint = "https://rpc-testnet.0g.ai"
 socket_address = "<public_ip/dns>:34000"
 
 # data availability contract to interact with
-da_entrance_address = ""
+da_entrance_address = "0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9" # testnet config
 # deployed block number of da entrance contract
-start_block_number = 0
+start_block_number = 940000 # testnet config
 
 # signer BLS private key
 signer_bls_private_key = ""
 # signer eth account private key
 signer_eth_private_key = ""
+# miner eth account private key, (could be the same as `signer_eth_private_key`, but not recommended)
+miner_eth_private_key = ""
 
 # whether to enable data availability sampling
-enable_das = "false"
+enable_das = "true"
 ```
 
 On the first run of DA node, it will register the signer information in DA contract. To generate a BLS private key if don't have:
