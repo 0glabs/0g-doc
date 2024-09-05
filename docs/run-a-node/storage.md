@@ -5,10 +5,9 @@ import TabItem from '@theme/TabItem';
 
 ### Overview
 
+In the 0G network, storage nodes play a vital role in maintaining the system's decentralised storage layer. They are responsible for storing and serving data, ensuring data availability and reliability across the network. By running a storage node, you actively contribute to the network and earn rewards for your participation.
 This guide details the process of running a storage node, including hardware specifications and interaction with on-chain contracts.
 
-Your 0G Storage interacts with on-chain contracts for blob root confirmation and PoRA mining. We provide a client tool (Storage Node CLI) for direct interaction with the storage node.
-Storage KV interacts with both on-chain contracts and storage nodes to simulate KV data streams. A guideline for deploying the Storage KV Client, a KV runtime built on top of the log layer, is available below.
 ### Hardware Requirements
 
 | Component | Storage Node | Storage KV |
@@ -28,168 +27,111 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 <Tabs>
   <TabItem value="binary" label="Storage Node" default>
 
-#### 1. Install The required dependencies
+**Deployment Steps**
 
-#### For Linux
+1.  **Install Dependencies**
 
-```bash
-sudo apt-get update
-sudo apt-get install clang cmake build-essential pkg-config libssl-dev
-```
-#### For Mac
+    *   **Linux:**
+        ```bash
+        sudo apt-get update
+        sudo apt-get install clang cmake build-essential pkg-config libssl-dev
+        ```
 
-```bash
-brew install llvm cmake
-```
+    *   **Mac:**
+        ```bash
+        brew install llvm cmake
+        ```
 
-#### 2. Install rustup 
-*Note: Rust is the programming language used for the 0G storage node. Install Rustup, the Rust toolchain manager.*
+        *   These commands install essential tools and libraries required to build the 0G storage node software.
 
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+2.  **Install `rustup`**
 
-#### 3. Install Go
+    ```bash
+    curl --proto '=https' --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs) | sh
+    ```
 
-#### For Linux
+    *   `rustup` is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
 
-```bash
-# Download the Go installer
-wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+3.  **Install Go**
 
-# Extract the archive
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+    *   **Linux:**
+        ```bash
+        # Download the Go installer
+        wget [https://go.dev/dl/go1.23.0.linux-amd64.tar.gz](https://go.dev/dl/go1.23.0.linux-amd64.tar.gz)
 
-# Add /usr/local/go/bin to the PATH environment variable by adding the following line to your ~/.profile.
-export PATH=$PATH:/usr/local/go/bin
-```
+        # Extract the archive
+        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
 
-#### For Mac
+        # Add /usr/local/go/bin to the PATH environment variable
+        export PATH=$PATH:/usr/local/go/bin
+        ```
 
-```bash
-brew install go
-```
+    *   **Mac:**
+        ```bash
+        brew install go
+        ```
 
-*Note: Alternatively, download the Go installer from https://go.dev/dl/. Open the package file you downloaded and follow the prompts to install Go.*
+        *   Or download the Go installer from [https://go.dev/dl/](https://go.dev/dl/).
 
-#### 4. Download the source code
+        *   Go is a programming language used for certain components of the 0G node.
 
-```bash
-git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
-```
+4.  **Download the Source Code**
 
-#### 5. Build the source code
+    ```bash
+    git clone -b v0.4.6 [https://github.com/0glabs/0g-storage-node.git](https://github.com/0glabs/0g-storage-node.git)
+    ```
 
-```bash
-cd 0g-storage-node
+    *   This command clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
 
-# Build in release mode
-cargo build --release
-```
+5.  **Build the Source Code**
 
-#### 6. Check and update the `run/config.toml` if necessary
+    ```bash
+    cd 0g-storage-node
 
-```toml
-# enr address, must fill your instance's public ip to support peer discovery
-network_enr_address
+    # Build in release mode
+    cargo build --release
+    ```
 
-# peer nodes, check the 0g-storage/run/config-tfor the official configurations
-network_boot_nodes = []
+    *   This compiles the Rust code into an executable binary. The `--release` flag optimizes the build for performance.
 
-# flow contract address
-log_contract_address
+6.  **Configure the Node**
 
-# mine contract address
-mine_contract_address
+    *   Open the `run/config.toml` file and update the following settings:
 
-# layer one blockchain rpc endpoint
-blockchain_rpc_endpoint
+        *   `network_enr_address`: Your node's public IP address, essential for other nodes to discover and connect to you.
+        *   `network_boot_nodes`: A list of peer nodes to help your node join the network. You can find official configurations in the `0g-storage/run/config-t` file.
+        *   `log_contract_address`, `mine_contract_address`: The addresses of the smart contracts on the host blockchain that manage the log and mining processes, respectively.
+        *   `blockchain_rpc_endpoint`: The URL of an RPC endpoint to interact with the host blockchain.
+        *   `log_sync_start_block_number`: The block number from which your node should start synchronizing the log data.
+        *   `miner_key`: Your private key (without the `0x` prefix) if you want to participate in PoRA mining and earn rewards.
+        *   `db_max_num_chunks`: The maximum number of chunk entries (each 256 bytes) to store in the database. This effectively limits the database size.
 
-# block number to start the sync
-log_sync_start_block_number
+7.  **Run the Storage Service**
 
-# your private key with 64 length
-# do not include leading 0x
-# do not omit leading 0
-# must fill if you want to participate in the pora and get mining reward
-miner_key
+    *   Check the available command-line options with:
+        ```bash
+        cd run
+        ../target/release/zgs_node -h
+        ```
 
-# The max number of chunk entries to store in db.
-# Each entry is 256B, so the db size is roughly limited to
-# `256 * db_max_num_chunks` Bytes.
-# If this limit is reached, the node will update its `shard_position`
-# and store only half data.
-db_max_num_chunks
-```
+    *   Run the node using the testnet configuration and your private key:
+        ```bash
+        ../target/release/zgs_node --config config-testnet.toml --miner-key <your_private_key>
+        ```
 
-#### 7. Run the storage service
+        *   Consider using `tmux` to run the node in the background so it continues running even if you close your terminal session.
 
-Check the command line configuration with `zgs_node -h`
-We provide a `run/config-testnet.toml` for testnet usage.
+**Additional Notes**
 
-```bash
-cd run
+*   **Security:** Keep your private key (`miner_key`) safe and secure. Anyone with access to it can control your node and potentially claim your mining rewards.
 
-# consider using tmux in order to run in background
-../target/release/zgs_node --config config-testnet.toml --miner-key <your_private_key> --blockchain-rpc-endpoint <blockchain_rpc> --db-max-num-chunks <max_chunk_num>
-```
+*   **Network Connectivity:** Ensure your node has a stable internet connection and that the necessary ports are open for communication with other nodes.
 
-  </TabItem>
-  <TabItem value="source" label="Storage Node CLI">
+*   **Monitoring:** Monitor your node's logs and resource usage to ensure it's running smoothly.
 
-#### Download the Source Code
+*   **Updates:** Stay informed about updates to the 0G storage node software and follow the project's documentation for any changes in the setup process.
 
-```bash
-git clone https://github.com/0glabs/0g-storage-client.git
-```
-
-#### Build the Source Code
-
-```bash
-cd 0g-storage-client
-go build
-```
-
-#### Run the File Upload/Download Commands
-
-#### File Upload
-
-```bash
-./0g-storage-client upload --url <blockchain_rpc_endpoint> --contract <log_contract_address> --key <private_key> --node <storage_node_rpc_endpoint> --file <file_path>
-```
-
-#### File Download
-
-```bash
-./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path>
-```
-
-#### File Download with Verification
-
-```bash
-./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path> --proof
-```
-
-Check Contract Addresses for log contract address.
-
-:::note
-You need to have the file root in order to download the file.
-:::
-
-For the storage node rpc endpoint, you could use the team deployed `https://rpc-storage-testnet.0g.ai` or you could deploy yourself by following the above instructions.
-
-#### Retrieving File Root Hash
-
-During download, the `file_root_hash` can be retrieved from these places:
-
-1. When you upload the file, the log will give you information about the file root. Look for `Data merkle root calculated root=`.
-2. Locate your transaction with the transaction hash in the [0g Storage Scanner](https://storagescan-newton.0g.ai/). Check the Overview -> File Hash in the tx detail page.
-
-#### Q&A
-
-#### My command fails to execute with error "Transaction execution failed"
-
-Try to set a higher gas limit with `--gas-limit`. For the reason why you need to set a customized gas limit, check the [Ethereum EIP-150](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md).
+**Remember:** Running a storage node is a valuable contribution to the 0G network. You'll be helping to maintain its decentralization and robustness while earning rewards for your efforts.
 
   </TabItem>
   <TabItem value="docker" label="Storage KV">
@@ -273,5 +215,83 @@ cd run
 :::note
 The recommended system configuration is the same as the storage node.
 :::
-  </TabItem>
+</TabItem>
+  <TabItem value="source" label="Storage Node CLI">
+
+## **0G Storage (CLI) Overview**
+
+The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storage network. It simplifies the process of uploading and downloading files, as well as managing other aspects of your decentralised storage experience. The CLI translates your commands into actions that the network can interpret and execute, making it easier to control your data without needing in-depth knowledge of the underlying blockchain technology.
+
+**Getting Started**
+
+1.  **Download the Source Code**
+
+    Downloads the source code for the 0G Storage CLI from the GitHub repository onto your local machine.
+
+    ```bash
+    git clone [https://github.com/0glabs/0g-storage-client.git](https://github.com/0glabs/0g-storage-client.git)
+    ```
+2.  **Build the Source Code**
+    
+    Command to compiles the Go code into an executable binary called `0g-storage-client`, which you will use to run the CLI commands.
+
+    ```bash
+    cd 0g-storage-client
+    go build
+    ```
+**Key Commands**
+
+*   **File Upload**
+
+    uploads a file to the 0G Storage network.
+    ```bash
+    ./0g-storage-client upload --url <blockchain_rpc_endpoint> --contract <log_contract_address> --key <private_key> --node <storage_node_rpc_endpoint> --file <file_path>
+    ```
+    *   **Options:**
+        *   `--url`: The URL of an RPC endpoint to interact with the blockchain where the 0G smart contracts reside.
+        *   `--contract`: The address of the 0G log contract on the blockchain.
+        *   `--key`: Your private key, which is necessary to sign the transaction that initiates the file upload.
+        *   `--node`: The RPC endpoint of a 0G storage node to handle the actual file storage. You can use the team-deployed node at `https://rpc-storage-testnet.0g.ai` or run your own node.
+        *   `--file`: The path to the file you want to upload.
+
+*   **File Download**
+    
+    To download a file from the 0G Storage network.
+
+    ```bash
+    ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path>
+    ```
+    *   **Options:**
+        *   `--node`: The RPC endpoint of a 0G storage node where the file you want to download is stored.
+        *   `--root`: The root hash of the file, a unique identifier used to locate the file on the network.
+        *   `--file`: The path where you want to save the downloaded file.
+
+*   **File Download with Verification**
+
+   Similar to the basic download command, but it additionally requests a proof of data integrity from the storage node, ensuring the downloaded file hasn't been tampered with.
+
+    ```bash
+    ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path> --proof
+    ```
+
+**Important Considerations**
+
+*   **Contract Addresses:** You need the accurate contract addresses for the 0G log contract on the specific blockchain you are using. You can find these on the 0G Storage explorer or in the official documentation.
+*   **File Root Hash:** To download a file, you must have its root hash. This is provided when you upload a file or can be found by looking up your transaction on the 0G Storage explorer ([https://storagescan-newton.0g.ai/](https://storagescan-newton.0g.ai/)).
+*   **Storage Node RPC Endpoint:** You can use the team-deployed storage node or run your own node for more control and the potential to earn rewards.
+
+**Example Usage**
+
+```bash
+# Upload a file named "my_document.txt"
+./0g-storage-client upload --url [https://rpc-testnet.0g.ai](https://rpc-testnet.0g.ai) --contract 0x123...abc --key 0x456...def --node [https://rpc-storage-testnet.0g.ai](https://rpc-storage-testnet.0g.ai) --file my_document.txt
+
+# Download a file with root hash "0x789...ghi" and save it as "downloaded_file.txt"
+./0g-storage-client download --node [https://rpc-storage-testnet.0g.ai](https://rpc-storage-testnet.0g.ai) --root 0x789...ghi --file downloaded_file.txt
+```
+
+**Remember:** The 0G Storage CLI is a tool for interacting with the 0G network. By understanding its commands and options, you can efficiently manage your data stored on this decentralised platform.
+
+
+</TabItem>
 </Tabs>

@@ -1,6 +1,12 @@
+---
+slug: /
+sidebar_position: 1
+---
+
 # Introduction to 0G
 
 ## 0G: Democratized AI Operating System
+
 0G is the blockchain designed specifically for AI with an infinitely scalable data availability (DA) layer, modular storage system, and a flexible serving framework. As the only chain capable of managing vast data volumes, 0G bridges the gap between Web2 and Web3, turning the once-impossible use cases into reality.
 
 **The Challenge Today**: Web3 lacks the infrastructure needed to support data-intensive applications like AI, high-frequency trading, and fully on-chain gaming. These applications, along with countless others, represent a multi-trillion dollar opportunity that current data availability layers (DALs) can't fully support. 
@@ -12,7 +18,7 @@ DALs provide an efficient yet secure manner to publish data and to keep it avail
 
 On Newton Testnet, we’ve demonstrated that each node can achieve 10mbps. With 5,000 nodes, that’s 50,000mbps or 50gbps per consensus layer, meaning the bottleneck then becomes the consensus layer. Our future plans include implementing our own custom consensus layer, akin to adding more AWS servers in a Web2 context, to enable infinite throughput with an arbitrary number of consensus layers. 
 
-<insert cool graphic here to emphasize the infinite scalability>
+###### insert cool graphic here to emphasize the infinite scalability
 
 ## 0G Ecosystem: Powering the Decentralized AGI Future
 0G is more than just a blockchain—it's a democratized AI operating system composed of four core components: 
@@ -40,7 +46,7 @@ This “Intro to 0G” serves as your gateway into the 0G ecosystem. For deeper 
 And much more.
 
 ## Getting Started
-To dive into running a node, check out our guide <here>.
+To dive into running a node, check out our guide  **link to run a node* .
 
 - [Run a Node](/run-a-node/testnet-information)
 - [Developer Tooling](/developer-tooling/faucet)

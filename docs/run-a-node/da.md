@@ -20,9 +20,8 @@ The following table outlines the hardware requirements for different types of DA
 | DA Client | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
 | DA Encoder | - | - | - | - | NVIDIA Drivers: 12.04 on the RTX 4090* |
 
-:::Note 
-Other NVIDIA GPUs might require parameter adjustments and haven't been optimized yet.
-:::
+
+*Note Other NVIDIA GPUs might require parameter adjustments and haven't been optimized yet.* 
 
 ## Additional Information
 Each type of DA node plays a crucial role in the Data Availability system:
