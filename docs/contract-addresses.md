@@ -27,4 +27,4 @@ Deployed Block Number: `595059`
 
 ### 0G DA
 
-* DAEntrance Contract: `0xDFC8B84e3C98e8b550c7FEF00BCB2d8742d80a69`
+* DAEntrance Contract: `0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9`
