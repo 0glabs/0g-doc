@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 # Testnet Information
 
 In Testnet-V2, you have the opportunity to operate various node types, including Validator, Storage, and DA (Data Availability) nodes. Detailed guides on how to run each of these node types are provided below.
