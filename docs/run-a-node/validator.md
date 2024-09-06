@@ -4,102 +4,74 @@ sidebar_position: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Validator Node 
+# Validator Node
 
-### How to Run 0G Validator node?
-
-Begin by installing the 0gchaind software using the following commands in your terminal:
+Running a validator node in the 0G ecosystem means actively participating in the network's security and consensus through the Proof-of-Stake (PoS) mechanism. As a validator, you'll validate transactions, propose new blocks, and earn rewards for your contribution to the network's integrity and decentralisation.
 
 <Tabs>
   <TabItem value="binary" label="Run a pre built binary" default>
+## Installation
 
-Follow these steps to set up and run your validator node on the 0g testnet.
+**Install 0gchaind:**
 
-### Install 0gchaind
+Downloads and install `0gchaind` software, enabling your computer to function as a node in the 0G network.
 
-Begin by installing the 0g chaind software. Run the following commands in your terminal:
+   ```bash
+   git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
+   ./0g-chain/networks/testnet/install.sh
+   source ~/.profile
+   ```
 
-```bash
-git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
-./0g-chain/networks/testnet/install.sh
-source ~/.profile
-```
+**2. Set the Chain ID:**
 
-### Set the Chain ID
+Configures your node to connect to the specific 0G testnet, ensuring you're on the correct network.
+   ```bash
+   0gchaind config chain-id zgtendermint_16600-2
+   ```
+**3. Initialise Your Node:**
 
-Configure the chain ID for the testnet:
+Initialise your node by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
 
-```bash
-0gchaind config chain-id zgtendermint_16600-2
-```
+   ```bash
+   0gchaind init <your_validator_name> --chain-id zgtendermint_16600-2
+   ```
+**4. Set Up Genesis & Seeds:**
 
-### Initialise Your Node
+    Download and verify the correct genesis file, ensuring your node starts with the same initial state as the rest of the network.
 
-Initialize your node to generate the necessary validator and node configuration files:
+   ***a. Copy the Genesis File:***
 
-```bash
-0gchaind init <your_validator_name> --chain-id zgtendermint_16600-2
-```
+   ```bash
+   sudo apt install -y unzip wget
+   rm ~/.0gchain/config/genesis.json
+   wget -P ~/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json
+   0gchaind validate-genesis
+   ```
+   ***b. Add Seed Nodes:***
 
-:::important
-- Your validator name must only contain ASCII characters.
-- By default, configuration and data folders are created in `~/.0gchain`. The key configuration files are `app.toml` and `config.toml`.
-- You can use the `-home` flag to specify a different working directory if needed.
-:::
+   Edit `~/.0gchain/config/config.toml` and update the `seeds` line with the provided seed node addresses. This helps your node discover and connect to other peers in the network.
 
-### Genesis & Seeds
+   ***c. (Optional) Add Persistent Peers:***
+   If desired, add specific node addresses to the `persistent_peers` line in the same file for reliable connectivity to those nodes.
 
-#### 1. Copy the Genesis File
+## Starting Your Node
 
-Install necessary tools:
+**5. Start the Testnet Node:**
 
-```bash
-sudo apt install -y unzip wget
-```
+ Start your node and it should begin the synchronisation process with the 0G testnet, downloading and verifying the blockchain's history.
 
-Download and replace the genesis file:
+   ```bash
+   0gchaind start
+   ```
+**6. Optimize Garbage Collection (For Pruning Nodes):**
 
-```bash
-rm ~/.0gchain/config/genesis.json
-wget -P ~/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json
-```
+If running a pruning node, set these environment variables before starting your node:
+You can adjust the Go garbage collector and limit memory usage, potentially improving synchronization speed and overall performance.
 
-Verify the genesis file:
-
-```bash
-0gchaind validate-genesis
-```
-
-#### 2. Add Seed Nodes
-
-In `~/.0gchain/config/config.toml`, locate the `[p2p]` section and add the following seed nodes to the `seeds` field:
-
-```toml
-seeds = "81987895a11f6689ada254c6b57932ab7ed909b6@54.241.167.190:26656,010fb4de28667725a4fef26cdc7f9452cc34b16d@54.176.175.48:26656,e9b4bc203197b62cc7e6a80a64742e752f4210d5@54.193.250.204:26656,68b9145889e7576b652ca68d985826abd46ad660@18.166.164.232:26656"
-```
-
-#### 3. (Optional) Add Persistent Peers
-
-If desired, you can add persistent peers to the `persistent_peers` field in the same `config.toml` file.
-
-### Start the Testnet Node
-
-Start your node and let it synchronize with the network:
-
-```bash
-0gchaind start
-```
-
-:::note
-The initial sync may take some time.
-:::
-
-#### Optimize Garbage Collection (For Pruning Nodes)
-
-For improved sync speed on pruning nodes:
-- Start `0gchaind` with the environment variable `GOGC=900`.
-- Set `GOMEMLIMIT` to 66% of the total memory available to the `0gchaind` process.
-
+   ```bash
+   export GOGC=900
+   export GOMEMLIMIT=24000MiB
+   ```
 ### Create Your Validator
 
 #### 1. Create or Import an Account
@@ -122,42 +94,54 @@ Import this private key into a wallet (e.g., MetaMask) to see the public address
 
 Obtain testnet tokens via wallet transfer or the faucet. You can use our faucet at https://faucet.0g.ai/ or request tokens from our Discord.
 
-#### 3. Create the Validator
+## Creating Your Validator
 
-```bash
-0gchaind tx staking create-validator \
---amount=<staking_amount>ua0gi \
---pubkey=$(0gchaind tendermint show-validator) \
---moniker="<your_validator_name>" \
---chain-id=zgtendermint_16600-2 \
---commission-rate="0.10" \
---commission-max-rate="0.20" \
---commission-max-change-rate="0.01" \
---min-self-delegation="1" \
---from=<key_name> \
---gas=auto \
---gas-adjustment=1.4
-```
+**7. Create or Import an Account:**
 
-#### 4. Check Validator Status
+  create a digital wallet within your node to hold your tokens and display the associated private key for importing into wallets like MetaMask.
 
-Ensure your validator is in the active set:
+   ```bash
+   0gchaind keys add <key_name> --eth
+   0gchaind keys unsafe-export-eth-key <key_name>
+   ```
+**8. Acquire Testnet Tokens:**
 
-```bash
-0gchaind q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
-```
+   Obtain testnet tokens from the 0G faucet from our website or by requesting them on their Discord. These tokens are necessary for staking and becoming a validator.
 
-:::note
-Only the top 125 staked validators will be active.
-:::
+**9. Become a Validator:**
 
-#### 5. Unjail Your Validator (If Needed)
+register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
-If your validator is jailed, unjail it with:
+   ```bash
+   0gchaind tx staking create-validator \
+   --amount=<staking_amount>ua0gi \
+   --pubkey=$(0gchaind tendermint show-validator) \
+   --moniker="<your_validator_name>" \
+   --chain-id=zgtendermint_16600-2 \
+   --commission-rate="0.10" \
+   --commission-max-rate="0.20" \
+   --commission-max-change-rate="0.01" \
+   --min-self-delegation="1" \
+   --from=<key_name> \
+   --gas=auto \
+   --gas-adjustment=1.4
+   ```
+**10. Check Validator Status:**
 
-```bash
-0gchaind tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999neuron -y
-```
+Displays the status of your validator, helping you confirm that your validator is active and participating in consensus.
+
+    ```bash
+    0gchaind q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
+    ```
+**11. Unjail Your Validator (If Needed):**
+
+If your validator gets "jailed" due to downtime or other issues, you can  unjail it and resume participation in the network.
+
+    ```bash
+    0gchaind tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999neuron -y
+    ```
+
+***Note: Only the top 125 staked validators will be active.***
 
 ## Remember
 
