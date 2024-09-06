@@ -35,7 +35,6 @@
   * [Validator Node](run-a-node/validator-node/README.md)
     * [Migrate to Cosmovisor for Running 0gchaind](run-a-node/validator-node/migrate-to-cosmovisor-for-running-0gchaind.md)
   * [Storage Node](run-a-node/storage-node.md)
-  * [Storage Node CLI](run-a-node/storage-node-cli.md)
   * [Storage KV](run-a-node/storage-kv.md)
   * [DA Client](run-a-node/da-client.md)
   * [DA Encoder](run-a-node/da-encoder.md)
