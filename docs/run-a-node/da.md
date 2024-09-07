@@ -354,28 +354,28 @@ Run the following script for complete testing:
   
 ## Installation
 
-### Install Dependencies
+1. Install Dependencies
 
-#### For Linux
+***For Linux***
 
 ```bash
 sudo apt-get update
 sudo apt-get install cmake build-essential protobuf-compiler
 ```
 
-#### For Mac
+***For Mac***
 
 ```bash
 brew install cmake
 ```
 
-### Install Rust
+2. Install Rust
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-### Download the Source Code
+3. Download the source code from our github.
 
 ```bash
 git clone https://github.com/0glabs/0g-da-retriever.git

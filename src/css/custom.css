@@ -32,7 +32,7 @@
 /* Global font settings */
 :root {
   --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --ifm-font-size-base: 16px;
+  --ifm-font-size-base: 14px;
   --ifm-line-height-base: 1.6;
 }
 
@@ -84,7 +84,7 @@ pre[class*="language-"] {
 
 /* Improve inline code readability */
 code {
-  font-size: 0.9em;
+  font-size: 14px;
   padding: 0.2em 0.4em;
   border-radius: 3px;
   background-color: var(--ifm-code-background);

@@ -9,12 +9,10 @@ import TabItem from '@theme/TabItem';
 Running a validator node in the 0G ecosystem means actively participating in the network's security and consensus through the Proof-of-Stake (PoS) mechanism. As a validator, you'll validate transactions, propose new blocks, and earn rewards for your contribution to the network's integrity and decentralisation.
 
 <Tabs>
-  <TabItem value="binary" label="Run a pre built binary" default>
+  <TabItem value="binary" label="Build from source" default>
 ## Installation
 
-**Install 0gchaind:**
-
-Downloads and install `0gchaind` software, enabling your computer to function as a node in the 0G network.
+**1. Install 0gchaind:** Clone and install `0gchaind`, by executing the following command.
 
    ```bash
    git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
@@ -22,22 +20,17 @@ Downloads and install `0gchaind` software, enabling your computer to function as
    source ~/.profile
    ```
 
-**2. Set the Chain ID:**
+**2. Set the Chain ID:** Configures your node to connect to the specific 0G testnet, ensuring you're on the correct network.
 
-Configures your node to connect to the specific 0G testnet, ensuring you're on the correct network.
    ```bash
    0gchaind config chain-id zgtendermint_16600-2
    ```
-**3. Initialise Your Node:**
-
-Initialise your node by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
+**3. Initialise Your Node:** by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
 
    ```bash
    0gchaind init <your_validator_name> --chain-id zgtendermint_16600-2
    ```
-**4. Set Up Genesis & Seeds:**
-
-    Download and verify the correct genesis file, ensuring your node starts with the same initial state as the rest of the network.
+**4. Set Up Genesis & Seeds:** Download and verify the correct genesis file, ensuring your node starts with the same initial state as the rest of the network.
 
    ***a. Copy the Genesis File:***
 
@@ -56,61 +49,28 @@ Initialise your node by creating necessary configuration files and a validator k
 
 ## Starting Your Node
 
-**5. Start the Testnet Node:**
-
- Start your node and it should begin the synchronisation process with the 0G testnet, downloading and verifying the blockchain's history.
+**5. Start the Testnet Node:** Start your node and it should begin the synchronisation process with the 0G testnet, downloading and verifying the blockchain's history.
 
    ```bash
    0gchaind start
    ```
-**6. Optimize Garbage Collection (For Pruning Nodes):**
-
-If running a pruning node, set these environment variables before starting your node:
-You can adjust the Go garbage collector and limit memory usage, potentially improving synchronization speed and overall performance.
+**6. Optimize Garbage Collection (For Pruning Nodes):** If running a pruning node, set these environment variables before starting your node: You can adjust the Go garbage collector and limit memory usage, potentially improving synchronization speed and overall performance.
 
    ```bash
    export GOGC=900
    export GOMEMLIMIT=24000MiB
    ```
-### Create Your Validator
-
-#### 1. Create or Import an Account
-
-To create a new account:
-
-```bash
-0gchaind keys add <key_name> --eth
-```
-
-To get the public address (starting with `0x`):
-
-```bash
-0gchaind keys unsafe-export-eth-key <key_name>
-```
-
-Import this private key into a wallet (e.g., MetaMask) to see the public address.
-
-#### 2. Acquire Testnet Tokens
-
-Obtain testnet tokens via wallet transfer or the faucet. You can use our faucet at https://faucet.0g.ai/ or request tokens from our Discord.
-
 ## Creating Your Validator
 
-**7. Create or Import an Account:**
-
-  create a digital wallet within your node to hold your tokens and display the associated private key for importing into wallets like MetaMask.
+**7. Create or Import an Account:** create a wallet within your node to hold your tokens and display the associated private key for importing into wallets like MetaMask.
 
    ```bash
    0gchaind keys add <key_name> --eth
    0gchaind keys unsafe-export-eth-key <key_name>
    ```
-**8. Acquire Testnet Tokens:**
+**8. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet from our [website](https://faucet.0g.ai) or by requesting them on their [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator.
 
-   Obtain testnet tokens from the 0G faucet from our website or by requesting them on their Discord. These tokens are necessary for staking and becoming a validator.
-
-**9. Become a Validator:**
-
-register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
+**9. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
    ```bash
    0gchaind tx staking create-validator \
@@ -126,16 +86,12 @@ register your node as a validator on the 0G network, specifying your stake amoun
    --gas=auto \
    --gas-adjustment=1.4
    ```
-**10. Check Validator Status:**
-
-Displays the status of your validator, helping you confirm that your validator is active and participating in consensus.
+**10. Check Validator Status:** You can check the status of your validator, by executing the command below and you can confirm if your validator is active and participating in consensus.
 
     ```bash
     0gchaind q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
     ```
-**11. Unjail Your Validator (If Needed):**
-
-If your validator gets "jailed" due to downtime or other issues, you can  unjail it and resume participation in the network.
+**11. Unjail Your Validator (If Needed):** If your validator gets "jailed" due to downtime or other issues, you can  unjail using the following command and resume participation in the network.
 
     ```bash
     0gchaind tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999neuron -y
@@ -163,9 +119,9 @@ After successfully setting up your validator node, consider exploring the follow
 Thank you for contributing to the security and decentralization of the 0g network!
 
 </TabItem>
-  <TabItem value="source" label="Build from source">
+  <TabItem value="source" label="Run a pre-build binary">
 
-  Instructions for building from source go here...
+  Instructions for building from source will be added
 
   </TabItem>
 </Tabs>

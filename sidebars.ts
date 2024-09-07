@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Developer Tooling',
-      items: ['developer-tooling/faucet', 'developer-tooling/explorer', 'developer-tooling/bridge'],
+      items: ['developer-tooling/faucet', 'developer-tooling/explorer','developer-tooling/storage-sdk','developer-tooling/bridge'],
     },
     {
       type: 'category',
