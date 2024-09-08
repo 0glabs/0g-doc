@@ -15,7 +15,8 @@ Both SDKs provide a streamlined interface to interact with the 0G Storage networ
 * **Manage Data:** List uploaded files, check their status, and control access permissions.
 * **Leverage Decentralisation:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
 <Tabs>
-  <TabItem value="binary" label="GO SDK Integration" default>
+<TabItem value="binary" label="GO SDK Integration" default>
+
 ## Getting Started with the Go SDK
 
 ### 1. Installation
@@ -81,59 +82,196 @@ if err != nil {
 fmt.Println("File downloaded successfully!")
 ```
 </TabItem>
-  <TabItem value="source" label="TypeScript SDK Integration">
+<TabItem value="tab2" label="TypeScript SDK Integration">
 
-## Getting Started with the TypeScript SDK
+## Overview
 
-### 1. Installation
+The 0g-ts-sdk is a JavaScript SDK for 0g-storage, a decentralized storage platform. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
 
-Install the 0G TypeScript SDK package from the npm registry, making it available for use in your TypeScript or JavaScript project.
+## Installation
+
+To install the 0g-ts-sdk and its peer dependency, use npm:
 
 ```bash
-npm install @0glabs/ts-sdk
+npm install @0glabs/0g-ts-sdk ethers
 ```
-### 2. Initialisation
 
-Import the `ZGStorageClient` class from the 0G TypeScript SDK. then creates a new instance of the `ZGStorageClient`, providing it with the necessary configuration parameters. The `await client.init()` call initialises the client, establishing the connection to the 0G network and preparing it for further interactions.
+Note: `ethers` is a peer dependency of this project.
 
-```typescript
-import { ZGStorageClient } from '@0glabs/ts-sdk';
+**First, import the necessary components from the SDK:**
 
-async function main() {
-    // ... (Obtain necessary configuration parameters)
+```javascript
+import { ZgFile, Indexer, getFlowContract } from '@0glabs/0g-ts-sdk';
+import { ethers } from 'ethers';
+```
 
-    const client = new ZGStorageClient(networkEndpoint, logContractAddress, privateKey);
-    await client.init();
+**Then, set up the necessary configurations:**
 
-    // ... (Use the client to interact with the 0G Storage network)
+```javascript
+const evmRpc = 'https://evmrpc-test-us.0g.ai';
+const privateKey = ''; // Add your private key with balance to pay for gas
+const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768";
+const indRpc = 'https://rpc-storage-testnet-turbo.0g.ai';
+
+const provider = new ethers.JsonRpcProvider(evmRpc);
+const signer = new ethers.Wallet(privateKey, provider);
+const flowContract = getFlowContract(flowAddr, signer);
+const indexer = new Indexer(indRpc);
+```
+
+**Replace `privateKey` with your specific configuration details.**
+
+## Key Functionalities
+
+### 1. Creating a File Object and Getting Merkle Tree
+
+To create a file object and get its Merkle tree:
+
+```javascript
+const file = await ZgFile.fromFilePath('<file_path>');
+const [tree, err] = await file.merkleTree();
+console.log("File Root Hash: ", tree.rootHash());
+await file.close();
+```
+
+### 2. Uploading Files
+
+**To upload a file to the 0G Storage network:**
+
+```javascript
+const [tx, err] = await indexer.upload(file, 0, evmRpc, flowContract);
+if (err === null) {
+  console.log("File uploaded successfully, tx: ", tx);
+} else {
+  console.log("Error uploading file: ", err);
+}
+```
+
+### 3. Downloading Files
+
+**To download a file from the 0G Storage network:**
+
+```javascript
+const err = await indexer.download('<root_hash>', '<output_file>', <with_proof>);
+if (err !== null) {
+  console.log("Error downloading file: ", err);
+} else {
+  console.log("File downloaded successfully");
+}
+```
+
+### 4. Uploading Data to 0g-kv
+
+**To upload data to 0g-kv:**
+
+```javascript
+const [nodes, err] = await indexer.selectNodes(1);
+if (err !== null) {
+    console.log("Error selecting nodes: ", err);
+    return;
 }
 
-main();
+const batcher = new Batcher(1, nodes, flowContract, evmRpc);
+
+const key1 = Uint8Array.from(Buffer.from("TESTKEY0", 'utf-8'));
+const val1 = Uint8Array.from(Buffer.from("TESTVALUE0", 'utf-8'));
+batcher.streamDataBuilder.set("0x...", key1, val1);
+
+const [tx, batchErr] = await batcher.exec();
+if (batchErr === null) {
+    console.log("Batcher executed successfully, tx: ", tx);
+} else {
+    console.log("Error executing batcher: ", batchErr);
+}
 ```
 
-### 3. Uploading a File
+### 5. Downloading Data from 0g-kv
 
-Use the `client.uploadFile` method to upload the file specified by `filePath`. The `await` keyword ensures that the upload operation completes before proceeding. The method returns a Promise that resolves to the `fileRoot` (the unique identifier of the uploaded file). The `fileRoot` is then logged to the console.
+**To download data from 0g-kv:**
+
+```javascript
+const KvClientAddr = "http://3.101.147.150:6789"
+const streamId = "0x..."
+const kvClient = new KvClient(KvClientAddr)
+
+let val = await kvClient.getValue(streamId, ethers.encodeBase64(key1));
+console.log(val)
+```
+
+### Working with Browser Environment
+
+**For browser environments, import the SDK in your HTML file:**
+
+```html
+<script type="module">
+  import { Blob, Indexer } from "./dist/zgstorage.esm.js";
+  // Your code here...
+</script>
+```
+
+**Create a file object from a blob:**
+
+```javascript
+const file = new Blob(blob);
+const [tree, err] = await file.merkleTree();
+if (err === null) {
+  console.log("File Root Hash: ", tree.rootHash());
+}
+```
+### Error Handling
+
+**Always implement proper error handling in your code:**
+
+```javascript
+try {
+    const [tx, err] = await indexer.upload(file, 0, evmRpc, flowContract);
+    if (err === null) {
+        console.log("File uploaded successfully, tx: ", tx);
+    } else {
+        throw err;
+    }
+} catch (error) {
+    console.error("Error uploading file: ", error);
+}
+```
+### Working with Streams
+
+**The SDK also supports working with streams for efficient data handling:**
 
 ```typescript
-const fileRoot = await client.uploadFile(filePath);
-console.log("File uploaded with root hash:", fileRoot);
+import { Readable } from 'stream';
+
+// Create a readable stream
+const readableStream = new Readable();
+readableStream.push('Hello, 0G Storage!');
+readableStream.push(null);
+
+// Upload using a stream
+const streamRoot = await client.uploadStream(readableStream, 'example.txt');
+console.log("Stream uploaded with root hash:", streamRoot);
+
+// Download as a stream
+const downloadStream = await client.downloadFileAsStream(streamRoot);
+downloadStream.pipe(process.stdout);
 ```
+## Best Practices
 
-### 4. Downloading a File
+1. **Initialize Once**: Create the indexer and flow contract once and reuse them for multiple operations.
+2. **Handle Errors**: Always implement proper error handling to manage network issues or other potential problems.
+3. **Use Appropriate Methods**: Use `ZgFile.fromFilePath` for Node.js environments and `Blob` for browser environments.
+4. **Secure Keys**: Never expose your private key in client-side code. Use secure methods to manage and store keys.
+5. **Close Files**: Remember to call `file.close()` after operations to free up resources.
 
-Download a file using the `client.downloadFile` method. You need to provide the `fileRoot` (obtained during upload) and the `outputFilePath` where you want to save the downloaded file. The `await` keyword ensures the download operation completes before proceeding. Upon successful download, a success message is logged to the console.
+## Conclusion
 
-```typescript
-await client.downloadFile(fileRoot, outputFilePath);
-console.log("File downloaded successfully!");
-```
-  </TabItem>
-</Tabs>
+The 0g-ts-sdk provides a powerful and flexible way to interact with the 0G Storage network. By following this guide, you should now be able to perform basic and advanced operations using the SDK. For more detailed information and updates, always refer to the [official GitHub repository](https://github.com/0glabs/0g-ts-sdk).
+
+</TabItem>
+<TabItem value="tab3" label="Access Storage through CLI">
 
 ## Access Storage through CLI
 
-There are two ways a user can access the 0G Storage System. The first simple and straightforward way is to use the web tool. If a user wants more control on the data location and versioning, he can use 0G Storage CLI to easily upload/download data to 0G Storage System. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. Users can develop their own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
+There are two ways to access the 0G Storage, The first simple and straightforward way is to use the [web tool](https://storagescan-newton.0g.ai/tool). If you want more control on the data location and versioning, you can use 0G Storage CLI to easily upload/download data to 0G Storage System. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. you can develop your own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
 
 ### Installation
 
@@ -199,3 +337,5 @@ Use "0g-storage-client [command] --help" for more information about a command
 Due to the sharding mechanism, when the entire network data volume increases, an upload or download request for a single file may need to transfer data between multiple different storage nodes, how to find suitable storage nodes may become a problem for ordinary users.
 
 Indexer is a service used to provide storage node queries, it is usually run by groups or individuals who maintain some stable storage nodes. It returns the trusted node list it maintains or the node list discovered through the p2p network to the user.
+</TabItem>
+</Tabs>
