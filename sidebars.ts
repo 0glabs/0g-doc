@@ -14,12 +14,22 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'run-a-node/index',
       },
-      items: ['run-a-node/node-overview','run-a-node/testnet-information','run-a-node/Automated-Updates','run-a-node/Testnet Chain Information', 'run-a-node/storage', 'run-a-node/da', 'run-a-node/validator'],
+      items: ['run-a-node/node-overview','run-a-node/testnet-information','run-a-node/Automated-Updates','run-a-node/Testnet Chain Information', 'run-a-node/storage', 'run-a-node/da','run-a-node/validator','run-a-node/Contract-Addresses'],
     },
     {
       type: 'category',
       label: 'Developer Tooling',
-      items: ['developer-tooling/faucet', 'developer-tooling/explorer','developer-tooling/storage-sdk','developer-tooling/bridge'],
+      items: [
+        'developer-tooling/faucet', 
+        'developer-tooling/explorer',
+        'developer-tooling/storage-sdk',
+        'developer-tooling/bridge',
+        {
+          type: 'link',
+          label: 'Storage Scanner',
+          href: 'https://storagescan-newton.0g.ai',
+        },
+      ],
     },
     {
       type: 'category',
