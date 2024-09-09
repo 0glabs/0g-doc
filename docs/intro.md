@@ -2,7 +2,6 @@
 slug: /
 sidebar_position: 1
 ---
-
 # Introduction to 0G
 
 ## 0G: Democratized AI Operating System

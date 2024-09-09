@@ -132,3 +132,156 @@ code {
 .theme-code-block {
   background-color: #f0f8ff; /* Light blue background */
 }
+
+/* Faucet Page Styles */
+.faucet-box {
+  background-color: #f0f8ff;
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.faucet-box:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.faucet-box.discord {
+  background-color: #f5efff;
+  border-color: #7289da;
+}
+
+.faucet-button {
+  display: inline-block;
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.faucet-button:hover {
+  background-color: #3a7bc8;
+}
+
+.faucet-button.discord {
+  background-color: #7289da;
+}
+
+.faucet-button.discord:hover {
+  background-color: #5b6eae;
+}
+
+/* Fancy Sidebar Styles */
+.sidebar-category > .menu__list-item-collapsible > .menu__link {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-category > .menu__list-item-collapsible > .menu__link::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.sidebar-category.intro > .menu__list-item-collapsible > .menu__link::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234a90e2" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-11h2v6h-2zm0-4h2v2h-2z"/></svg>');
+}
+
+.sidebar-category.run-node > .menu__list-item-collapsible > .menu__link::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%234caf50" d="M21 12l-4-4v3H3v2h14v3l4-4z"/></svg>');
+}
+
+.sidebar-category.dev-tools > .menu__list-item-collapsible > .menu__link::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff9800" d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>');
+}
+
+.sidebar-category.learn-more > .menu__list-item-collapsible > .menu__link::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%239c27b0" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>');
+}
+
+.external-link::after {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-menu-color-background-active);
+  color: var(--ifm-menu-color-active);
+}
+
+/* Whitepaper styles */
+.whitepaper-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--ifm-navbar-height));
+  background-color: #f5f5f5;
+}
+
+.whitepaper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.whitepaper-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.whitepaper-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.whitepaper-button:hover {
+  background-color: var(--ifm-color-primary-darker);
+  color: white;
+  text-decoration: none;
+}
+
+.whitepaper-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.whitepaper-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Adjust main content area to accommodate the whitepaper */
+.main-wrapper {
+  overflow-y: hidden;
+}
+
+[class^='docPage_'] {
+  overflow-y: hidden;
+}
+
+[class^='docMainContainer_'] {
+  overflow-y: hidden;
+}
