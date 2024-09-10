@@ -2,6 +2,7 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
+    'preface',
     {
       type: 'category',
       label: 'Introduction to 0G',

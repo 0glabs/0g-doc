@@ -91,7 +91,6 @@ code {
 }
 .menu__list-item--collapsed .menu__link--sublist:after,
 .menu__list-item--active .menu__link--sublist:after {
-  content: '▼';
   font-size: 0.7em;
   margin-left: 0.5em;
 }
@@ -240,7 +239,6 @@ code {
 }
 
 .whitepaper-header h1 {
-  margin: 0;
   font-size: 1.5rem;
   color: white;
 }
@@ -285,3 +283,14 @@ code {
 [class^='docMainContainer_'] {
   overflow-y: hidden;
 }
+
+/* Specific styling for the Preface item */
+.menu__list-item:first-child > .menu__link {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+
+}
+

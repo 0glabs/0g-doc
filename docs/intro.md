@@ -1,6 +1,7 @@
 ---
-slug: /
-sidebar_position: 1
+id: intro
+title: Introduction to 0G
+sidebar_position: 2
 ---
 # Introduction to 0G
 
