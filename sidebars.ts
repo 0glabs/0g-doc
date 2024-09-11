@@ -11,7 +11,7 @@ const sidebars: SidebarsConfig = {
         type: 'doc',
         id: 'intro',
       },
-    items: ['intro', 'og-chain', 'og-storage', 'og-da', 'og-serving'],
+    items: ['og-storage', 'og-da', 'og-serving','og-chain'],
     },
     {
       type: 'category',
@@ -30,6 +30,14 @@ const sidebars: SidebarsConfig = {
         'run-a-node/da',
         'run-a-node/validator',
         'run-a-node/Contract-Addresses',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Build with 0G',
+      className: 'sidebar-category build-with-0g',
+      items: [
+        'build-with-0g/sdk',
       ],
     },
     {
