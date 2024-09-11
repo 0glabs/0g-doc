@@ -28,7 +28,10 @@ But decentralizing AI is no small feat. AI workflows are inherently complex, inv
 
 Today's blockchain infrastructure falls short in meeting the needs of real-world AI applications due to limited throughput: Ethereum processes 10-20 TPS, Solana less than 4,000 TPS, and Layer 2s less than 400 TPS. This equates to data throughput of approximately 1.5 mbps on average, which is 33,333x lower than the 50 gbps that's needed to fuel AI applications. Large-scale models like Open AI's GPT-4 require even more throughput as they must handle massive amounts of data and interactions. 
 
-**Zero Gravity (0G)** is addressing these challenges by providing a decentralized AI operating system (dAIOS) with a modular and layered architecture design. 
+**Zero Gravity (0G)** is addressing these challenges by providing a decentralized AI operating system (dAIOS) with a modular and layered architecture design.
+<div style={{textAlign: 'center'}}>
+  <img src="/img/democratized-ai.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
+</div>
 
 ## Introducing 0G
 
