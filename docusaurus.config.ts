@@ -1,5 +1,8 @@
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from 'prism-react-renderer';
+
+
 
 const config: Config = {
   title: '0G Documentation',
@@ -33,7 +36,9 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+  ],
   themeConfig: {
     navbar: {
       title: 'Documentation',
@@ -48,6 +53,11 @@ const config: Config = {
           position: 'right',
         },
       ],
+    },
+    prism: {
+      theme: require('prism-react-renderer').themes.vsDark,
+      darkTheme: require('prism-react-renderer').themes.vsDark,
+      additionalLanguages: ['bash', 'json', 'yaml'],
     },
     footer: {
       style: 'dark',
@@ -74,8 +84,10 @@ const config: Config = {
             },
           ],
         },
+        
       ],
       copyright: `Copyright © ${new Date().getFullYear()} 0G Labs. Built with Docusaurus.`,
+      
     },
   } satisfies Preset.ThemeConfig,
 };

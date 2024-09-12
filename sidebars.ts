@@ -1,5 +1,6 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
+
 const sidebars: SidebarsConfig = {
   docs: [
     'preface',
@@ -24,7 +25,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'run-a-node/node-overview',
         'run-a-node/testnet-information',
-        'run-a-node/Automated-Updates',
         'run-a-node/Testnet Chain Information',
         'run-a-node/storage',
         'run-a-node/da',
@@ -47,8 +47,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'developer-tooling/faucet',
         'developer-tooling/explorer',
-        'developer-tooling/storage-sdk',
-        'developer-tooling/bridge',
         {
           type: 'link',
           label: 'Storage Scanner',
@@ -61,7 +59,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Learn More About 0G',
       className: 'sidebar-category learn-more',
-      items: ['learn-more/audits', 'learn-more/whitepaper', 'learn-more/how-to-contribute'],
+      items: ['learn-more/security', 'learn-more/whitepaper', 'learn-more/how-to-contribute'],
     },
   ],
 };

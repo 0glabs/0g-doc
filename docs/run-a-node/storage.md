@@ -29,32 +29,46 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 
 **Deployment Steps**
 
-1.  **Install Dependencies**
 
-    *   **Linux:**
+**Install Dependencies**
+start by installing all the essential tools and libraries required to build the 0G storage node software.
+
+<Tabs
+  defaultValue="linux"
+  values={[
+    {label: 'Linux', value: 'linux'},
+    {label: 'Mac', value: 'mac'},
+    ]}>
+  <TabItem value="linux">
+
         ```bash
         sudo apt-get update
         sudo apt-get install clang cmake build-essential pkg-config libssl-dev
         ```
-
-    *   **Mac:**
+</TabItem>
+  <TabItem value="mac">
         ```bash
         brew install llvm cmake
         ```
-
-        *   These commands install essential tools and libraries required to build the 0G storage node software.
-
-2.  **Install `rustup`**
+</TabItem>
+</Tabs>
+**Install `rustup`**: (`rustup`) is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
 
     ```bash
     curl --proto '=https' --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs) | sh
-    ```
+    ```   
 
-    *   `rustup` is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
+**Install Go**
 
-3.  **Install Go**
+<Tabs
+  defaultValue="linux"
+  values={[
+    {label: 'Linux', value: 'linux'},
+    {label: 'Mac', value: 'mac'},
+    ]}>
 
-    *   **Linux:**
+  <TabItem value="linux">
+
         ```bash
         # Download the Go installer
         wget [https://go.dev/dl/go1.23.0.linux-amd64.tar.gz](https://go.dev/dl/go1.23.0.linux-amd64.tar.gz)
@@ -65,23 +79,23 @@ For detailed instructions on setting up and operating your Storage Node or Stora
         # Add /usr/local/go/bin to the PATH environment variable
         export PATH=$PATH:/usr/local/go/bin
         ```
+</TabItem>
+  <TabItem value="mac">
 
-    *   **Mac:**
         ```bash
         brew install go
         ```
-
+</TabItem>
+</Tabs>
         *   Or download the Go installer from [https://go.dev/dl/](https://go.dev/dl/).
 
         *   Go is a programming language used for certain components of the 0G node.
 
-4.  **Download the Source Code**
+ **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
 
     ```bash
     git clone -b v0.4.6 [https://github.com/0glabs/0g-storage-node.git](https://github.com/0glabs/0g-storage-node.git)
     ```
-
-    *   This command clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
 
 5.  **Build the Source Code**
 

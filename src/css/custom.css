@@ -96,7 +96,7 @@ code {
 }
 
 .menu__list-item--collapsed .menu__link--sublist:after {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 .nodeLinksContainer {
@@ -175,7 +175,7 @@ code {
   background-color: #5b6eae;
 }
 
-/* Fancy Sidebar Styles */
+/* Sidebar Styles */
 .sidebar-category > .menu__list-item-collapsible > .menu__link {
   font-weight: bold;
   text-transform: uppercase;
@@ -193,6 +193,7 @@ code {
   background-size: contain;
   background-repeat: no-repeat;
   vertical-align: middle;
+  
 }
 
 .sidebar-category.intro > .menu__list-item-collapsible > .menu__link::before {
@@ -212,7 +213,7 @@ code {
 }
 
 .external-link::after {
-  display: inline-block;
+  display: inline-none;
   margin-left: 4px;
 }
 
@@ -250,7 +251,7 @@ code {
   color: var(--ifm-color-primary);
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
+  
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -286,7 +287,7 @@ code {
 
 /* Specific styling for the Preface item */
 .menu__list-item:first-child > .menu__link {
-  font-weight: bold;
+
   text-transform: uppercase;
   letter-spacing: 0.5px;
   display: flex;
@@ -297,7 +298,6 @@ code {
 /* Existing styles */
 
 .sidebar-category.build-with-0g > .menu__list-item-collapsible > .menu__link::before {
-  content: '';
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -306,4 +306,106 @@ code {
   background-repeat: no-repeat;
   vertical-align: middle;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff9800" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>');
+}
+
+/*code blocks */
+.theme-code-block {
+  background-color: #1e1e1e !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.theme-code-block pre {
+  background-color: transparent !important;
+}
+
+.theme-code-block code {
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Code block header */
+.theme-code-block-highlighted {
+  background-color: #2a2a2a !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Line numbers */
+.theme-code-block .line-numbers {
+  border-right: 1px solid #3a3a3a;
+  padding-right: 10px;
+}
+
+/* Syntax highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #608b4e;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #569cd6;
+}
+
+.token.boolean,
+.token.number {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c586c0;
+}
+
+.token.function {
+  color: #dcdcaa;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d16969;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
