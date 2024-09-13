@@ -27,7 +27,7 @@ In Testnet-V2, we've implemented a fair and transparent process for selecting va
 
 ### Application Process
 
-While we receive numerous validator applications, the limited slots mean not all applicants can be accommodated immediately. We appreciate your patience and continued interest in contributing to our network.
+While we receive numerous validator applications, the limited slots mean not all applicants can be accommodated due to the limitation of cosmos. We appreciate your patience and continued interest in contributing to our network.
 
 For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
 

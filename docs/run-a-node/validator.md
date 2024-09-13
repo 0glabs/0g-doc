@@ -121,60 +121,119 @@ Thank you for contributing to the security and decentralization of the 0g networ
 </TabItem>
   <TabItem value="source" label="Automated Updates with Cosmovisor ">
 
-## Overview
+## Introduction
 
-This guide outlines the steps to transition from using `0gchaind start [flags]` to leveraging Cosmovisor for managing your 0gchaind application. Cosmovisor offers the significant advantage of automating upgrades, eliminating the need for manual intervention.
+### What is Cosmovisor?
 
-## Migration Steps
+Cosmovisor is a process manager for Cosmos SDK application binaries that automates application binary switches during chain upgrades. It's a powerful tool from the Cosmos ecosystem designed to streamline the upgrade process for Cosmos SDK-based blockchain nodes.
+This automation significantly reduces the manual intervention required during network upgrades, ensuring a smoother and more consistent upgrade process across all nodes in the network.
 
-1. **Stop the Current 0gchaind Instance:** Ensure the currently running 0gchaind process is stopped before proceeding with the migration.
+### Cosmovisor in 0G
 
-2. **Download the Migration Script:** Obtain the migration script from the following URL:
-   https://raw.githubusercontent.com/0glabs/0g-chain/dev/networks/testnet/init-cosmovisor.sh
+In the context of 0G, Cosmovisor will be used to manage the 0gchaind application. When upgrades are proposed and approved on the 0G network, Cosmovisor will handle the entire upgrade process automatically, minimizing downtime and reducing the need for manual intervention by node operators.
+
+By using Cosmovisor, you can significantly streamline your node operations and ensure smoother upgrades for your 0gchaind application, contributing to the overall stability and efficiency of the 0G network.
+
+## Migration Guide
+
+This guide outlines the steps to transition from using `0gchaind start [flags]` to leveraging Cosmovisor for managing your 0gchaind application.
+
+### Prerequisites
+
+- Ensure you have `go` installed on your system.
+- You should have `0gchaind` already installed and running.
+
+### Migration Steps
+
+1. **Stop the Current 0gchaind Instance:** 
+   Ensure the currently running 0gchaind process is stopped before proceeding with the migration.
+
+2. **Install Cosmovisor:**
+   You have two options:
+
+   a. Download and use the migration script:
+   ```bash
+   wget https://raw.githubusercontent.com/0glabs/0g-chain/dev/networks/testnet/init-cosmovisor.sh
+   chmod +x init-cosmovisor.sh
+   ```
 
    OR
 
-   Install Cosmovisor:
+   b. Install Cosmovisor manually:
    ```bash
    go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
    ```
 
-   Set up Cosmovisor:
+3. **Set up Cosmovisor:**
+   If you chose option b in step 2, set up Cosmovisor with the following commands:
    ```bash
    export DAEMON_NAME=0gchaind
    echo "export DAEMON_NAME=0gchaind" >> ~/.profile
-   export DAEMON_HOME=$1
-   echo "export DAEMON_HOME=$1" >> ~/.profile
-   cosmovisor init $(whereis -b 0gchaind | awk '{print $2}')
+   export DAEMON_HOME=$HOME/.0g  # Adjust this path if your 0gchaind home directory is different
+   echo "export DAEMON_HOME=$DAEMON_HOME" >> ~/.profile
+   cosmovisor init $(which 0gchaind)
    mkdir $DAEMON_HOME/cosmovisor/backup
    echo "export DAEMON_DATA_BACKUP_DIR=$DAEMON_HOME/cosmovisor/backup" >> ~/.profile
    echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
    ```
 
-3. **Verify the 0gchaind Path:** Utilize the `whereis 0gchaind` command to confirm the path of your 0gchaind binary. If the path returned by `whereis 0gchaind` differs from the one currently used to run 0gchaind, modify the script accordingly. Open the script and replace the 0gchaind path with the correct one.
+4. **Verify the 0gchaind Path:** 
+   Use the `which 0gchaind` command to confirm the path of your 0gchaind binary. If the path differs from the one currently used to run 0gchaind, modify the script or commands accordingly.
 
-4. **Execute the Migration Script:**
-   * Make the script executable: `chmod +x init-cosmovisor.sh`
-   * Run the script: `./init-cosmovisor.sh (0G_HOME)`
+5. **Execute the Migration:**
+   If using the script:
+   ```bash
+   ./init-cosmovisor.sh $HOME/.0g  # Adjust the path if necessary
+   ```
+   
+   If you set up manually, ensure all the export commands from step 3 have been run.
 
-5. **Start 0gchaind with Cosmovisor:** Initiate 0gchaind using Cosmovisor: `cosmovisor run start [flags]`
+6. **Start 0gchaind with Cosmovisor:** 
+   Initiate 0gchaind using Cosmovisor:
+   ```bash
+   cosmovisor run start [flags]
+   ```
+   Replace `[flags]` with any additional flags you normally use when starting 0gchaind.
+
+### Verifying the Setup
+
+To ensure Cosmovisor is set up correctly:
+
+1. Check that Cosmovisor is running:
+   ```bash
+   ps aux | grep cosmovisor
+   ```
+
+2. Verify the Cosmovisor configuration:
+   ```bash
+   cosmovisor config
+   ```
+   This will display the current configuration settings.
 
 ## Troubleshooting
 
-Should you encounter any issues, execute the following command to examine the Cosmovisor configuration: `cosmovisor config`. This command will display the current configuration settings, aiding in identifying and resolving potential problems.
+If you encounter any issues during the migration or operation of Cosmovisor, consider the following:
 
-## Benefits of Migrating to Cosmovisor
+1. Check the Cosmovisor logs for any error messages:
+   ```bash
+   tail -f $DAEMON_HOME/cosmovisor/logs/cosmovisor.log
+   ```
 
-Cosmovisor streamlines the upgrade process for your blockchain application. Key advantages include:
+2. Ensure all environment variables are set correctly:
+   ```bash
+   echo $DAEMON_NAME
+   echo $DAEMON_HOME
+   echo $DAEMON_DATA_BACKUP_DIR
+   echo $DAEMON_ALLOW_DOWNLOAD_BINARIES
+   ```
 
-* **Automated Upgrades:** Eliminates the need for manual intervention during upgrades.
-* **Reduced Downtime:** Minimizes service interruptions during upgrade processes.
-* **Simplified Node Management:** Facilitates easier node management and maintenance tasks.
+3. Verify that the 0gchaind binary is in the correct location as expected by Cosmovisor.
 
-For more comprehensive information on Cosmovisor, please consult the official Cosmovisor documentation.
+If problems persist, consult the [official Cosmovisor documentation](https://docs.cosmos.network/main/tooling/cosmovisor) or seek help from the 0G community.
 
-By following these steps, you can ensure a smooth transition from `0gchaind start [flags]` to utilizing Cosmovisor. Should you require further assistance or encounter any challenges, refer to the Cosmovisor documentation or seek help from the community.
+## Conclusion
 
+By following this guide, you've successfully migrated from running 0gchaind directly to using Cosmovisor. This setup will automate future upgrades, reducing downtime and simplifying node management. Remember to keep your system updated and monitor for any announcements from the 0G team regarding future upgrades or changes to the network infrastructure.
   </TabItem>
 </Tabs>
 
