@@ -59,7 +59,15 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Learn More About 0G',
       className: 'sidebar-category learn-more',
-      items: ['learn-more/security', 'learn-more/whitepaper', 'learn-more/how-to-contribute'],
+      items: ['learn-more/security', 'learn-more/whitepaper', 'learn-more/how-to-contribute',
+        {
+          type: 'link',
+          label: 'Blog',
+          href: 'https://0g.ai/blog',
+          className: 'external-link',
+        },
+
+      ],
     },
   ],
 };

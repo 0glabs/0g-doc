@@ -2,15 +2,15 @@
 sidebar_position: 1
 ---
 
-# 🚰 0G Faucet
+# 0G Faucet
 
 Welcome to the 0G Faucet – your gateway to obtaining testnet tokens for the 0G network!
 
-## 🌊 What is the 0G Faucet?
+## What is the 0G Faucet?
 
 The 0G Faucet is a free service that allows developers and users to obtain testnet tokens. These tokens are essential for testing and interacting with the 0G network without using real cryptocurrency.
 
-## 🚀 How to Get Testnet Tokens
+## How to Get Testnet Tokens
 
 ### Option 1: Use the Faucet Website
 
