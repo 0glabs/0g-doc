@@ -121,8 +121,6 @@ Thank you for contributing to the security and decentralization of the 0g networ
 </TabItem>
   <TabItem value="source" label="Automated Updates with Cosmovisor ">
 
-  # Automated Updates with Cosmovisor 
-
 ## Overview
 
 This guide outlines the steps to transition from using `0gchaind start [flags]` to leveraging Cosmovisor for managing your 0gchaind application. Cosmovisor offers the significant advantage of automating upgrades, eliminating the need for manual intervention.

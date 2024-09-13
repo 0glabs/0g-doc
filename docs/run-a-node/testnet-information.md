@@ -25,3 +25,24 @@ In Testnet-V2, you have the opportunity to operate various node types, including
 While we receive numerous validator applications, the limited slots mean not all applicants can be accommodated immediately. We appreciate your patience and continued interest in contributing to our network.
 
 For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides.
+
+# 0G Testnet Configuration
+
+| Field | Value |
+|-------|-------|
+| Chain Name | 0G-Newton-Testnet |
+| Chain ID | 16600 (`zgtendermint_16600-2`) |
+| Token Symbol | A0GI |
+| Chain RPC | https://evmrpc-testnet.0g.ai |
+| Chain Websocket | https://cosmosrpc-testnet.0g.ai |
+| Storage RPC | https://rpc-storage-testnet.0g.ai |
+| Storage Turbo RPC | https://rpc-storage-testnet-turbo.0g.ai |
+| Chain Explorer | https://chainscan-newton.0g.ai/ |
+| Storage Explorer | https://storagescan-newton.0g.ai/ |
+
+**Thirdparty RPCs:**
+
+[thirdweb RPC](https://thirdweb.com/0g-newton-testnet)
+
+**Community RPCs:**
+

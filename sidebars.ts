@@ -25,7 +25,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'run-a-node/node-overview',
         'run-a-node/testnet-information',
-        'run-a-node/Testnet Chain Information',
         'run-a-node/storage',
         'run-a-node/da',
         'run-a-node/validator',
@@ -36,6 +35,10 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Build with 0G',
       className: 'sidebar-category build-with-0g',
+      link:{
+        type: 'doc',
+        id: 'build-with-0g/sdk',
+      },
       items: [
         'build-with-0g/sdk',
       ],
@@ -47,12 +50,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'developer-tooling/faucet',
         'developer-tooling/explorer',
-        {
-          type: 'link',
-          label: 'Storage Scanner',
-          href: 'https://storagescan-newton.0g.ai',
-          className: 'external-link',
-        },
+
       ],
     },
     {
