@@ -27,7 +27,7 @@ Data availability guarantees that data stored within the system is readily acces
 An AI serving framework is a system that facilitates the deployment and execution of AI models. 0G's decentralized serving network supports data retrieval, AI inference, and model training, ensuring efficient resource management for AI applications.
 
 > What is a modular blockchain?
-A modular blockchain is one where each layer or component is specialized for a particular function, improving scalability and flexibility. 0G Chain uses this architecture to optimize its components, allowing for independent optimization of consensus, execution, and chain storage. This modular architecture enables each component to be fine-tuned for its specific requirements, resulting in enhanced performance ,scalability, and flexibility for decentralized AI applications. 
+A modular blockchain is one where each layer or component is specialized for a particular function, improving scalability and flexibility. 0G Chain uses this architecture to optimize its components, allowing for independent optimization of consensus, execution, and chain storage. This modular architecture enables each component to be fine-tuned for its specific requirements, resulting in enhanced performance, scalability, and flexibility for decentralized AI applications. 
 
 All of these network components utilize carefully designed and innovative sharding mechanisms to achieve infinite horizontal scalability, thereby removing obstacles to the true democratization of AI. 
 
