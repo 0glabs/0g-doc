@@ -19,8 +19,18 @@ Make sure your server timezone configuration is UTC. Check your current timezone
 
 ### Install 0gchaind via CLI
 
+If you run your node from scratch without snapshot,
+
 ```bash
 git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
+./0g-chain/networks/testnet/install.sh
+source ~/.profile
+```
+
+If you start from the latest snapshot, you can use the latest binary
+
+```
+git clone -b v0.3.2 https://github.com/0glabs/0g-chain.git
 ./0g-chain/networks/testnet/install.sh
 source ~/.profile
 ```
