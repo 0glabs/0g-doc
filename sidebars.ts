@@ -28,6 +28,7 @@ const sidebars: SidebarsConfig = {
         'run-a-node/storage',
         'run-a-node/da',
         'run-a-node/validator',
+        'run-a-node/test',
       ],
     },
     {
@@ -49,7 +50,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'developer-tooling/faucet',
         'developer-tooling/explorer',
-
       ],
     },
     {

@@ -27,9 +27,18 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 <Tabs>
   <TabItem value="binary" label="Storage Node" default>
 
+## Introduction
+
+The 0G System comprises multiple components, each with specific functionalities. This guide provides detailed steps to deploy and run a storage node, a crucial part of the 0G network.
+
+## Prerequisites
+
+Before setting up your storage node:
+
+- Understand that 0G Storage interacts with on-chain contracts for blob root confirmation and PoRA mining.
+- Check [official 0G documentation] for deployed contract addresses.
+
 **Deployment Steps**
-
-
 **Install Dependencies**
 start by installing all the essential tools and libraries required to build the 0G storage node software.
 
@@ -110,30 +119,65 @@ start by installing all the essential tools and libraries required to build the 
 
 6.  **Configure the Node**
 
-    *   Open the `run/config.toml` file and update the following settings:
+ Navigate to the run directory and open config.toml for editing:
 
-        *   `network_enr_address`: Your node's public IP address, essential for other nodes to discover and connect to you.
+## Configuration
+
+1. Edit the configuration file:
+
+```bash
+cd run
+nano config.toml
+```
+
+2. Update `config.toml` with your settings:
+
+```toml
+# ENR address: Your instance's public IP
+network_enr_address = "YOUR_PUBLIC_IP"
+
+# Peer nodes: Check 0g-storage/run/config-testnet.toml for official configurations
+network_boot_nodes = []
+
+# Contract addresses
+log_contract_address = "CONTRACT_ADDRESS"
+mine_contract_address = "CONTRACT_ADDRESS"
+
+# Layer one blockchain RPC endpoint
+blockchain_rpc_endpoint = "RPC_ENDPOINT"
+
+# Start sync block number
+log_sync_start_block_number = BLOCK_NUMBER
+
+# Your private key (64 chars, no '0x' prefix, include leading zeros)
+miner_key = "YOUR_PRIVATE_KEY"
+
+# Max chunk entries in db (affects storage size)
+db_max_num_chunks = MAX_CHUNKS
+```
+:::note
+*   `network_enr_address`: Your node's public IP address, essential for other nodes to discover and connect to you.
         *   `network_boot_nodes`: A list of peer nodes to help your node join the network. You can find official configurations in the `0g-storage/run/config-t` file.
         *   `log_contract_address`, `mine_contract_address`: The addresses of the smart contracts on the host blockchain that manage the log and mining processes, respectively.
         *   `blockchain_rpc_endpoint`: The URL of an RPC endpoint to interact with the host blockchain.
         *   `log_sync_start_block_number`: The block number from which your node should start synchronizing the log data.
         *   `miner_key`: Your private key (without the `0x` prefix) if you want to participate in PoRA mining and earn rewards.
         *   `db_max_num_chunks`: The maximum number of chunk entries (each 256 bytes) to store in the database. This effectively limits the database size.
+        :::
+## Running the Storage Node
 
-7.  **Run the Storage Service**
+1. Check configuration options:
+```bash
+../target/release/zgs_node -h
+```
 
-    *   Check the available command-line options with:
-        ```bash
-        cd run
-        ../target/release/zgs_node -h
-        ```
+2. Run the storage service:
+```bash
+cd run
+../target/release/zgs_node --config config-testnet.toml --miner-key <your_private_key>
+```
 
-    *   Run the node using the testnet configuration and your private key:
-        ```bash
-        ../target/release/zgs_node --config config-testnet.toml --miner-key <your_private_key>
-        ```
-
-        *   Consider using `tmux` to run the node in the background so it continues running even if you close your terminal session.
+For long-running sessions, use `tmux` or `screen`.
 
 **Additional Notes**
 
