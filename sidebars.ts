@@ -28,7 +28,6 @@ const sidebars: SidebarsConfig = {
         'run-a-node/storage',
         'run-a-node/da',
         'run-a-node/validator',
-        'run-a-node/Contract-Addresses',
       ],
     },
     {

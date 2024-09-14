@@ -29,4 +29,4 @@ Click on each section below to learn more about its specific role, setup process
 
 By understanding and potentially operating these different node types, you'll gain valuable insights into our network's architecture and contribute to its robustness and efficiency. 
 
-If you are interested in using a node instead, dive into our SDK section <here.>
+If you are interested in using a node instead, dive into our SDK section [here.](docs/build-with-0g/sdk.md)

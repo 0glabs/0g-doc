@@ -1,5 +1,5 @@
 ---
-title: 0G serving
+title: 0G Serving
 sidebar_position: 5
 ---
 
