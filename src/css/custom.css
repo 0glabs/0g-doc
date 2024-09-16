@@ -438,3 +438,104 @@ code {
 .token.entity {
   cursor: help;
 }
+/* Footer Styles */
+.footer {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding: 3rem 0;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer__col {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.footer__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer__item {
+  margin-bottom: 0.5rem;
+}
+
+.footer__link-item {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__link-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer__logo {
+  max-width: 160px;
+  margin-bottom: 1rem;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+.footer__copyright {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+}
+
+/* Social Icons */
+.footer__link-item[href*="telegram.org"]::before,
+.footer__link-item[href*="discord.gg"]::before,
+.footer__link-item[href*="twitter.com"]::before,
+.footer__link-item[href*="github.com"]::before {
+  font-family: 'Font Awesome 5 Brands';
+  margin-right: 0.5rem;
+}
+
+.footer__link-item[href*="telegram.org"]::before {
+  content: "\f2c6";
+}
+
+.footer__link-item[href*="discord.gg"]::before {
+  content: "\f392";
+}
+
+.footer__link-item[href*="twitter.com"]::before {
+  content: "\f099";
+}
+
+.footer__link-item[href*="github.com"]::before {
+  content: "\f09b";
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .footer__links {
+    flex-direction: column;
+  }
+
+  .footer__col {
+    margin-bottom: 2rem;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__copyright {
+    margin-top: 1rem;
+  }
+}

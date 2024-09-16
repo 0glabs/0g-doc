@@ -38,6 +38,7 @@ const config: Config = {
   ],
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
   ],
   themeConfig: {
     navbar: {
@@ -63,33 +64,35 @@ const config: Config = {
       style: 'dark',
       links: [
         {
+          title: 'Docs',
+          items: [
+            { label: 'Introduction', to: 'docs/intro.md' },
+            { label: 'Run a Node', to: 'docs/run-a-node/node-overview.md' },
+          ],
+        },
+        {
           title: 'Community',
           items: [
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/0GLabs',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/0GLabs',
-            },
+            { label: 'Discord', href: 'https://discord.gg/0glabs'},
+            { label: 'Telegram', href: 'https://t.me/zgcommunity' },
+            { label: 'Twitter', href: 'https://twitter.com/0g_labs' },
           ],
         },
         {
           title: 'More',
           items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/0G-Labs/0g-docs',
-            },
+            { label: 'Blog', to: 'https://0g.ai/blog' },
+            { label: 'GitHub', href: 'https://github.com/0glabs' },
           ],
         },
-        
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 0G Labs. Built with Docusaurus.`,
-      
-    },
-  } satisfies Preset.ThemeConfig,
-};
-
+      logo: {
+        alt: '0G Labs Logo',
+        src: 'img/logo.svg',
+        href: 'https://0g.network',
+      },
+      copyright: `Copyright © ${new Date().getFullYear()} 0G Labs, Built with Docusaurus.`,
+    } as Preset.ThemeConfig['footer'],
+  } as Preset.ThemeConfig,
+}
 export default config;
