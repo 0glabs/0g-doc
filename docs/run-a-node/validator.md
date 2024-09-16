@@ -121,8 +121,6 @@ Thank you for contributing to the security and decentralization of the 0g networ
 </TabItem>
   <TabItem value="source" label="Automated Updates with Cosmovisor ">
 
-## Introduction
-
 ### What is Cosmovisor?
 
 Cosmovisor is a process manager for Cosmos SDK application binaries that automates application binary switches during chain upgrades. It's a powerful tool from the Cosmos ecosystem designed to streamline the upgrade process for Cosmos SDK-based blockchain nodes.
