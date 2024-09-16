@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 Both SDKs provide a streamlined interface to interact with the 0G Storage network, enabling you to:
 
-* **Upload and Download Files:** Securely store and retrieve data of various sizes and formats.
+* **Upload and Download Files:** Securely store and retrieve data of various sizes and formats. Note: you can also use the explorers to do so.
 * **Manage Data:** List uploaded files, check their status, and control access permissions.
 * **Leverage Decentralisation:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
 <Tabs>
