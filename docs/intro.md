@@ -3,10 +3,10 @@ id: intro
 title: Introduction to 0G
 sidebar_position: 2
 ---
-# 0G: The First Decentralized AI Operating System (dAIOS)
+# Introduction to 0G
 ---
 
-## What is Zero Gravity (0G)? 
+## The First Decentralized AI Operating System (dAIOS)
 
 Zero Gravity (0G) is a decentralized AI operating system that acts as the foundational layer for decentralized AI applications. It efficiently manages hardware resources such as storage and computation to handle the scale and complexity of AI workflows. 
 
