@@ -4,7 +4,8 @@ title: 0G DA
 sidebar_position: 4
 ---
 
-# Infinitely Scalable and Programmable DA
+# 0G DA: Infinitely Scalable and Programmable DA
+---
 
 0G DA is a groundbreaking Data Availability Layer that offers unparalleled throughput and scalability, making it uniquely suited for high-performance applications like on-chain AI and large-scale data processing.
 
