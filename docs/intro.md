@@ -4,6 +4,7 @@ title: Introduction to 0G
 sidebar_position: 2
 ---
 # 0G: The First Decentralized AI Operating System (dAIOS)
+---
 
 ## What is Zero Gravity (0G)? 
 
