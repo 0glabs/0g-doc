@@ -5,6 +5,7 @@ sidebar_position: 5
 ---
 
 # 0G Chain: The Fastest Modular AI Chain
+---
 
 The integrity of the 0G system is maintained by 0G's consensus network, which can support an arbitrary number of independent consensus networks. As network requirements increase, new consensus networks can be added to support horizontal scalability and increase the system's overall bandwidth and performance. By decoupling data publication from data storage, 0G optimizes both throughput and scalability, overcoming the limitations seen in existing DA solutions.
 
