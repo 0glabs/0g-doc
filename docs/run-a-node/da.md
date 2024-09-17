@@ -4,7 +4,8 @@ sidebar_position: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Data Availability(DA)
+# Data Availability (DA) Node
+---
 ## Overview
 
 While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. It's important to note that your DA signer needs to operate a DA node to verify encoded blob data, sign it, and store it for future farming and rewards.
