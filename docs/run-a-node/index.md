@@ -3,6 +3,7 @@ sidebar_position: 2
 ---
 
 # Run a Node
+---
 
 Zero Gravity (OG) is currently live on [Testnet-V2](docs/run-a-node/testnet-information), with Mainnet coming soon. The networks support various node types, each node playing a crucial role in maintaining and securing the network. 
 
