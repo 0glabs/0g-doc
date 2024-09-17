@@ -18,7 +18,7 @@ If you have any questions, reach out to us on [discord](https://discord.com/invi
 In Testnet-V2, we've implemented a fair and transparent process for selecting validators and managing various node types. Here's a summary of the key features:
 
 **How do I become a validator?**
-- You can apply to be a validator <here>. We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
+- You can apply to be a validator [Here](https://docs.google.com/forms/d/e/1FAIpQLScsa1lpn43F7XAydVlKK_ItLGOkuz2fBmQaZjecDn76kysQsw/viewform?ts=6617a343). We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
 
 **Why are there limited validator slots?** 
 - Since we are currently using Cosmos/Tendermint consensus and they are limited to ~125 validators, we can only select 125 validators at this time. However, we anticipate this number will increase in the future when we transition to our own custom consensus. 

@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 # Validator Node
 ---
 
-Running a validator node in the 0G ecosystem means actively participating in the network's security and consensus through the Proof-of-Stake (PoS) mechanism. As a validator, you'll validate transactions, propose new blocks, and earn rewards for your contribution to the network's integrity and decentralisation.
+Running a validator node in the 0G ecosystem means actively participating in the network's security and consensus through the Proof-of-Stake (PoS) mechanism. As a validator, you'll validate transactions, propose new blocks, and earn rewards for your contribution to the network's integrity and decentralization.
 
 <Tabs>
   <TabItem value="binary" label="Build from source" default>
@@ -26,7 +26,7 @@ Running a validator node in the 0G ecosystem means actively participating in the
    ```bash
    0gchaind config chain-id zgtendermint_16600-2
    ```
-**3. Initialise Your Node:** by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
+**3. Initialize Your Node:** by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
 
    ```bash
    0gchaind init <your_validator_name> --chain-id zgtendermint_16600-2

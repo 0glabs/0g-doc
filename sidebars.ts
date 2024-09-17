@@ -37,7 +37,7 @@ const sidebars: SidebarsConfig = {
       className: 'sidebar-category build-with-0g',
       link:{
         type: 'doc',
-        id: 'build-with-0g/sdk',
+        id: 'build-with-0g/build-with-0g',
       },
       items: [
         'build-with-0g/sdk',
