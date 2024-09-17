@@ -8,8 +8,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # 0G Storage SDKs
+---
 
-0G offers two Software (SDKs) to seamlessly integrate decentralised storage into your applications:
+0G offers two Software (SDKs) to seamlessly integrate decentralized storage into your applications:
 
 * **Go SDK:** Ideal for backend systems and applications built with the Go programming language.
 * **TypeScript SDK:** Perfect for frontend development and JavaScript-based projects.
@@ -18,7 +19,7 @@ Both SDKs provide a streamlined interface to interact with the 0G Storage networ
 
 * **Upload and Download Files:** Securely store and retrieve data of various sizes and formats. Note: you can also use the explorers to do so.
 * **Manage Data:** List uploaded files, check their status, and control access permissions.
-* **Leverage Decentralisation:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
+* **Leverage Decentralization:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
 <Tabs>
 <TabItem value="binary" label="GO SDK Integration" default>
 
@@ -32,9 +33,9 @@ Download and install 0G Storage Client library, which provides the Go SDK functi
 go get github.com/0glabs/0g-storage-client
 ```
 
-### 2. Initialisation
+### 2. Initialization
 
-imports the necessary packages, including the 0G Storage Client library and creates a new `storage.Client` instance, providing it with the required configuration parameters:
+Imports the necessary packages, including the 0G Storage Client library and creates a new `storage.Client` instance, providing it with the required configuration parameters:
 
 ```go
 import (
@@ -63,7 +64,7 @@ The `if err != nil` block handles any potential errors during client creation. O
 
 ### 3. Uploading a File
 
-utilise the `client.UploadFile` method to upload the file specified by `filePath` to the 0G network. The method returns the `fileRoot` (the unique identifier or hash of the uploaded file) and an error if any occurred during the upload process. The `if err != nil` block handles potential errors. If the upload is successful, the `fileRoot` is printed, which you'll need to retrieve the file later.
+Utilize the `client.UploadFile` method to upload the file specified by `filePath` to the 0G network. The method returns the `fileRoot` (the unique identifier or hash of the uploaded file) and an error if any occurred during the upload process. The `if err != nil` block handles potential errors. If the upload is successful, the `fileRoot` is printed, which you'll need to retrieve the file later.
 
 ```go
 fileRoot, err := client.UploadFile(filePath)
@@ -76,7 +77,7 @@ fmt.Println("File uploaded with root hash:", fileRoot)
 
 ### 4. Downloading a File
 
-uses the `client.DownloadFile` method to download a file from the 0G network. You need to provide the `fileRoot` (obtained during the upload) and the `outputFilePath` where you want to save the downloaded file. The method returns an error if any occurred during the download. The `if err != nil` block handles potential errors. If the download is successful, a success message is printed.
+Uses the `client.DownloadFile` method to download a file from the 0G network. You need to provide the `fileRoot` (obtained during the upload) and the `outputFilePath` where you want to save the downloaded file. The method returns an error if any occurred during the download. The `if err != nil` block handles potential errors. If the download is successful, a success message is printed.
 
 ```go
 err := client.DownloadFile(fileRoot, outputFilePath)
