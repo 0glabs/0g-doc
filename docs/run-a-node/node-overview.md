@@ -3,6 +3,7 @@ sidebar_position: 1
 ---
 
 # Overview
+---
 Want to become an active participant in the 0G network and earn rewards while you're at it? 👇
 
 Each node type plays a crucial role in maintaining the 0G network's functionality, from transaction validation and data storage to ensuring data availability and retrieval. Here, we'll introduce you to the various types of nodes you can run, each playing a crucial role in maintaining the network's health and security.
