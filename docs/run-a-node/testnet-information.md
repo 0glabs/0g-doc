@@ -6,11 +6,12 @@ sidebar_position: 3
 
 Welcome to Testnet-V2, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
 
-> **Important Notes**
-> - The validator selection process described here applies **only to the testnet**. Mainnet will have a different selection mechanism.
-> - While it's possible to run nodes (ex: DA node vs Validator Node) independently, your chances of being selected as a _validator_ increases if you run multiple node types. 
-> - If your validator is selected, it will manually be delegated by our team within a few days.
-> - If you have any questions, reach out to us on [discord](https://discord.com/invite/0glabs)
+:::Important Notes
+The validator selection process described here applies **only to the testnet**. Mainnet will have a different selection mechanism.
+While it's possible to run nodes (ex: DA node vs Validator Node) independently, your chances of being selected as a _validator_ increases if you run multiple node types. 
+If your validator is selected, it will manually be delegated by our team within a few days.
+If you have any questions, reach out to us on [discord](https://discord.com/invite/0glabs)
+:::
 
 ## Node FAQ (Frequently Asked Questions)
 
