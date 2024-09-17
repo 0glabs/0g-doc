@@ -89,7 +89,7 @@ const config: Config = {
       logo: {
         alt: '0G Labs Logo',
         src: 'img/logo.svg',
-        href: 'https://0g.network',
+        href: 'https://0g.ai',
       },
       copyright: `Copyright © ${new Date().getFullYear()} 0G Labs, Built with Docusaurus.`,
     } as Preset.ThemeConfig['footer'],
