@@ -13,14 +13,14 @@ Each node type plays a crucial role in maintaining the 0G network's functionalit
 The guardians of the network, validator nodes are responsible for verifying transactions, ensuring consensus, and maintaining the blockchain. They're essential for keeping the 0G blockchain secure and running smoothly.
 
 ##### **Storage Nodes**
-Unlike the Validator Nodes that focus on securing the blockchain itself, Storage Nodes focus on managing and serving data. They are the backbone of the network's data storage capabilities, ensuring persistence and long-term avaialbility for long-term data storage (e.g. training datasets, large AI models). By running a storage node, you'll be contributing to the decentralized storage of 0G data, making it accessible and resilient. 
+Unlike the Validator Nodes that focus on securing the blockchain itself, Storage Nodes focus on managing and serving data. They are the backbone of the network's data storage capabilities, ensuring persistence and long-term availability for long-term data storage (e.g. training datasets, large AI models). By running a storage node, you'll be contributing to the decentralized storage of 0G data, making it accessible and resilient. 
 
 ##### **Data Availability Services**
-DA Nodes are similar to Storage Nodes, but they are focused on immediacy and short-term accessibility to support real-time operations. This data is typically used by Layer 2 and rollup solutions for data availabilty and is not tpically stored long-term. Think of these nodes as the librarians of the network, ensuring that data stored on the network can be quickly retrieved whene needed. 
+DA Nodes are similar to Storage Nodes, but they are focused on immediacy and short-term accessibility to support real-time operations. This data is typically used by Layer 2 and rollup solutions for data availability and is not typically stored long-term. Think of these nodes as the librarians of the network, ensuring that data stored on the network can be quickly retrieved when needed. 
 
 ### Why Run a Node?
 
-Running a node isn't just about supporting the network; it's also a way to earn rewards for your contribution. By actively participating in the 0G ecosystem, you'll be eligible to receive rewards that incentivise your efforts.
+Running a node isn't just about supporting the network; it's also a way to earn rewards for your contribution. By actively participating in the 0G ecosystem, you'll be eligible to receive rewards that incentivize your efforts.
 
 #### Ready to Dive In?
 
