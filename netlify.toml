@@ -4,3 +4,8 @@
 
    [[plugins]]
      package = "netlify-plugin-password-protection"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline';"  
