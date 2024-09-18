@@ -5,8 +5,6 @@
   from = "/*"
   to = "/preface.md"
   status = 200
-[[plugins]]
-     package = "netlify-plugin-password-protection"
 
 [[headers]]
   for = "/*"
