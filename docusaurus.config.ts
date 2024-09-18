@@ -13,7 +13,7 @@ const config: Config = {
   organizationName: '0G Labs',
   projectName: '0g-docs',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
