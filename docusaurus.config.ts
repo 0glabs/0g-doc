@@ -8,7 +8,7 @@ const config: Config = {
   title: '0G Documentation',
   tagline: 'The Next Generation Web3 Infrastructure',
   favicon: 'img/favicon.ico',
-  url: 'https://docs.0g.ai',
+  url: 'https://shiny-starburst-7af89f.netlify.app',
   baseUrl: '/',
   organizationName: '0G Labs',
   projectName: '0g-docs',

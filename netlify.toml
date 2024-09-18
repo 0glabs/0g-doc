@@ -1,8 +1,11 @@
 [build]
      publish = "build"
      command = "npm run build"
-
-   [[plugins]]
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+[[plugins]]
      package = "netlify-plugin-password-protection"
 
 [[headers]]
