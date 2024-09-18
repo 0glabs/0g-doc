@@ -107,15 +107,13 @@ Running a validator node in the 0G ecosystem means actively participating in the
 
 ## Troubleshooting
 
-If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](/docs/faq) or reach out to our community support channels.
+If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](learn-more/how-to-contribute.md) or reach out to our community support channels.
 
 ## Next Steps
 
 After successfully setting up your validator node, consider exploring the following:
 
-- [Staking and Delegation](/docs/staking-delegation)
-- [Governance Participation](/docs/governance)
-- [Node Monitoring and Maintenance](/docs/node-maintenance)
+- [Node Monitoring and Maintenance](/docs/run-a-node/testnet-information)
 
 Thank you for contributing to the security and decentralization of the 0g network!
 
