@@ -60,8 +60,8 @@ This introduction serves as your gateway into the 0G ecosystem. For deeper insig
 
 ## Join the 0G Community
 
-- [Discord](https://discord.gg/0GLabs)
-- [Twitter](https://twitter.com/0GLabs)
+- [Discord](https://discord.gg/0gLabs)
+- [Twitter](https://twitter.com/0g_Labs)
 - [GitHub](https://github.com/0G-Labs/0g-docs)
 
 We're excited to have you on board as we build the future of Web3 infrastructure together!

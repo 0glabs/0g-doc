@@ -69,5 +69,5 @@ Deployed Block Number: `595059`
 
 ### Community RPCs
 
-[community RPCs will be listed here]
+**community RPCs will be listed here**
 
