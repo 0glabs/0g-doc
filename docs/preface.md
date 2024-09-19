@@ -40,7 +40,7 @@ Today's blockchain infrastructure falls short in meeting the needs of real-world
 
 This is possible by incorporating cutting-edge horizontal scaling and sharding mechanisms to achieve remarkable speed. By distributing AI workloads across a network of specialized nodes, 0G reduces latency and accelerates processing times, making it highly competitive with centralized Web2 AI systems. This efficiency is critical as AI applications scale and require increasingly powerful resources. You can read more about this in the following [section](/intro).
 
-### The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
+## The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
 0G is building the foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives. 
 
 In the following sections, we’ll dive deeper into how 0G enables this vision and what it means for the future of AI.
