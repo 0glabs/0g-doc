@@ -20,7 +20,7 @@ Today’s AI infrastructure is highly centralized, dominated by a few entities c
   
 - **Transparency & Accountability**: Centralized AI systems operate as black boxes, with opaque decision-making processes and no clear data provenance. Users who provide training data rarely receive adequate rewards for their contributions, and the system lacks transparency in how value is distributed. _Decentralized AI fosters transparency by providing open, auditable decision-making processes and verifiable data sources, ensuring accountability at every step._
 
-  0G’s modular architecture enables transparent data availability and verifiable AI models, making every decision and data source traceable.
+  **0G’s modular architecture enables transparent data availability and verifiable AI models, making every decision and data source traceable.**
   
 - **Monetization**: Centralized AI systems often monopolize profits and leave little incentive for individual contributors. _Blockchain enables the issuance of rewards to incentivize participation and subsequently distribute rewards in a fair and transparent manner._ 
  
