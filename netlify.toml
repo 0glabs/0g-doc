@@ -16,7 +16,6 @@ from = "/*"
   for = "/.netlify/identity/error"
 [headers.values]
     X-Frame-Options = "DENY"
-Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; frame-src 'self';"
 
 [context]
   # different settings for specific branches or deploys
