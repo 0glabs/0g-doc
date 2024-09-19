@@ -1,6 +1,4 @@
 ---
-id: da
-title: DA Node 
 sidebar_position: 4
 ---
 import Tabs from '@theme/Tabs';
