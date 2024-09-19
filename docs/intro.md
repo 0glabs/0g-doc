@@ -8,15 +8,17 @@ sidebar_position: 2
 
 ## The First Decentralized AI Operating System (dAIOS)
 
-Zero Gravity (0G) is a decentralized AI operating system that acts as the foundational layer for decentralized AI applications. It efficiently manages hardware resources such as storage and computation to handle the scale and complexity of AI workflows. 
+**Zero Gravity (0G)** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications. It efficiently orchestrates efficient utilization of hardware resources such as storage and computation to handle the scale and complexity of AI workflows. 
 
-As the blockchain explicitly designed for AI, 0G features an infinitely scalable data availability (DA) layer, modular storage system, and a flexible serving framework. As the only chain capable of managing vast volumes of data, 0G bridges the gap between Web2 and Web3, bringing previously impossible use cases to reality.
+Specifically designed for AI applications, 0G features the fastest, infinitely scalable data availability (DA) layer, cheapest decentralized storage system, and a novel flexible serving framework for inferences. Prior to 0G, resource intensive AI applications would only be feasible “off-chain” due to burdensome on-chain storage costs, low latency and throughput, and lack of builder friendly tooling. 
+
+For the first time ever, 0G bridges this cost and efficiency gap between Web2 and Web3, empowering builders to confidently deploy AI applications on-chain with _improved_ performance. 
 
 The 0G operating system has 4 key components: 
-- 0G Storage: A distributed storage network optimized for massive data loads.
-- 0G DA: An infinitely scalable and programmable data availability layer designed for end-users.
-- 0G Serving: A versatile framework for data retrieval, AI inference, and model training.
-- 0G Chain: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
+- **0G Storage**: A distributed storage network optimized for massive data loads.
+- **0G DA**: An infinitely scalable and programmable data availability layer designed for end-users.
+- **0G Serving**: A versatile framework for any serving needs, such as fast data retrieval, AI inference, and model training.
+- **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
 
 > What is decentralized storage?
 Decentralized storage distributes data across multiple network nodes rather than relying on a central server. This approach enhances data security, resilience, and accessibility by eliminating the single point of failure common in centralized systems.
@@ -34,27 +36,29 @@ All of these network components utilize carefully designed and innovative shardi
 
 0G’s novel approach to decoupling data availability from consensus allows independent scaling of storage and validation layers. This architecture not only addresses the scalability challenges faced by traditional blockchain systems, but also enhances data resilience and retrieval efficiency. 
 
-On Newton Testnet, each 0G node demonstrated 10mbps throughput. With 5,000 nodes, that’s 50,000mbps or 50gbps per consensus layer. As the consensus layer becomes the bottleneck, 0G plans to implement its own custom consensus (currently using Tendermint), akin to adding more AWS servers in a Web2 context, ultimately enabling infinite throughput.
+On [Testnet](/run-a-node/testnet-information), each 0G node demonstrated 10mbps throughput. With 5,000 nodes, that’s 50,000mbps or **50gbps** per consensus layer. As the consensus layer becomes the bottleneck, 0G plans to implement its own custom consensus (currently using Tendermint), akin to adding more AWS servers in a Web2 context, ultimately enabling infinite throughput.
 
 ## 0G’s Origin Story
 
 “0G” gets its name from “Zero Gravity,” personifying the ultimate goal of achieving a state of weightlessness where transactions and data exchanges can occur effortlessly. Infrastructure should be customizable for developers and invisible to the end-user. 
 
 With 0G’s technology, the possibilities are endless. Previously infeasible use cases are now within reach, including: 
-On-chain AI, including training large language models (LLMs)
-Storage of entire AI agent networks on-chain
-Storage of large datasets for data cleaning and labeling
+- On-chain AI, including training large language models (LLMs)
+- Storage of entire AI agent networks on-chain
+- Storage of large datasets for data cleaning and labeling
 
 And this is just the beginning.
 
 ## Our Mission: Make AI a Public Good
 
-At 0G, our mission is clear: To Make AI a Public Good. Every component of our ecosystem contributes toward this goal, and we invite you to join us in building the foundation for a decentralized AI future.
+At 0G, our mission is clear: To Make AI a Public Good.
+
+Every component of our ecosystem contributes toward this goal, and we invite you to join us in building the foundation for a decentralized AI future.
 
 This introduction serves as your gateway into the 0G ecosystem. For deeper insights on various products, explore the next section to learn about 0G DA. If you’re ready to dive in, check out our guides:
-- [Run a Node](/run-a-node/testnet-information)
-- [Developer Tooling](/developer-tooling/faucet)
-- [Learn More About 0G](/learn-more/whitepaper)
+- [Run a Node](/run-a-node/node-overview)
+- [Use our Storage Network](/build-with-0g/sdk)
+- [Learn more about 0G's Architecture](/learn-more/whitepaper)
 
 ###### insert graphic: The future of AI is on-chain, collaborative, here. 
 
