@@ -1,25 +1,9 @@
 [build]
-     publish = "build"
-     command = "npm run build"
+  publish = "build"  
+  command = "npm run build"  
 
-[[redirects]]     
-from = "/*"
-  to = "/.netlify/identity/login"
-  status = 302
-  force = true
-  conditions = {Role = ["*"]}
-  
 [[plugins]]
-     package = "netlify-plugin-password-protection"
-[[headers]]
-  # Optional: Set a custom error page for unauthorized access
-  for = "/.netlify/identity/error"
-[headers.values]
-    X-Frame-Options = "DENY"
-Content-Security-Policy = "script-src 'self' 'unsafe-eval';"
+  package = "netlify-plugin-password-protection"
 
-[context]
-  # different settings for specific branches or deploys
-  dev = {password = "0gdocs2024"}
-  # Add more contexts as needed
-   
+[context.production] 
+  password = env.PASSWORD
