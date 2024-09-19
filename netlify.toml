@@ -16,7 +16,7 @@ from = "/*"
   for = "/.netlify/identity/error"
 [headers.values]
     X-Frame-Options = "DENY"
-Content-Security-Policy: script-src 'self' 'unsafe-eval'; 
+Content-Security-Policy = "script-src 'self' 'unsafe-eval';"
 
 [context]
   # different settings for specific branches or deploys
