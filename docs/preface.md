@@ -36,11 +36,12 @@ Decentralizing AI is no small feat. AI workflows are inherently complex, involvi
 
 Today's blockchain infrastructure falls short in meeting the needs of real-world AI applications due to limited throughput: Ethereum processes 10-20 TPS, Solana [less than 4,000 TPS](https://explorer.solana.com/), and Layer 2s [less than 400 TPS](https://l2beat.com/scaling/activity). This equates to data throughput of ~1.5 mbps on average, which is 33,333x lower than the 50+ gbps that's needed to fuel AI applications. 
 
-## 0G has achieved 50 gbps DA throughput per consensus layer.
+### 0G has achieved 50 gbps DA throughput per consensus layer.
 
 This is possible by incorporating cutting-edge horizontal scaling and sharding mechanisms to achieve remarkable speed. By distributing AI workloads across a network of specialized nodes, 0G reduces latency and accelerates processing times, making it highly competitive with centralized Web2 AI systems. This efficiency is critical as AI applications scale and require increasingly powerful resources. You can read more about this in the following [section](/intro).
 
-**0G is the first Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS),** building the foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives. 
+### The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
+0G is building the foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives. 
 
 In the following sections, we’ll dive deeper into how 0G enables this vision and what it means for the future of AI.
 
