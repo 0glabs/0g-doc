@@ -20,6 +20,6 @@ Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'
 
 [context]
   # different settings for specific branches or deploys
-  dev = {password = "your_strong_password"}
+  dev = {password = 0gdocs2024}
   # Add more contexts as needed
    
