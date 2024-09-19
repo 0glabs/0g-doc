@@ -6,4 +6,4 @@
   package = "netlify-plugin-password-protection"
 
 [context.production] 
-  password = 0gdocs2024
+password = "0gdocs2024"
