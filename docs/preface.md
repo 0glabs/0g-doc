@@ -10,7 +10,29 @@ Advanced problem-solving and decision-making are now accessible at scale. There 
 
 The advent of [large language models (LLMs)](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) and parallel computing hardware (GPUs, TPUs, and NPUs) has significantly accelerated progress toward [artificial general intelligence (AGI)](https://www.techtarget.com/searchenterpriseai/definition/artificial-general-intelligence-AGI). AGI is poised to contribute [trillions](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier#key-insights) to the global economy annually and transform industries by driving the marginal cost of intelligence toward zero. 
 
-But there are consequences to the race to AGI. 
+But there are consequences to the race to AGI.
+<div style={{border: '1px solid #ccc', borderRadius: '15px', padding: '15px', maxWidth: '500px', fontFamily: 'Arial, sans-serif'}}>
+  <div style={{display: 'flex', alignItems: 'center', marginBottom: '10px'}}>
+    <img src="https://pbs.twimg.com/profile_images/1077523091700502528/2YCa_F4o_x96.jpg" alt="Jan Leike" style={{width: '48px', height: '48px', borderRadius: '50%', marginRight: '10px'}} />
+    <div>
+      <strong>Jan Leike</strong> ✔️<br />
+      <span style={{color: '#536471'}}>@janleike · Follow</span>
+    </div>
+  </div>
+  <div style={{color: '#536471', marginBottom: '10px'}}>Replying to @janleike</div>
+  <p style={{fontSize: '18px', margin: '0 0 10px 0'}}>Building smarter-than-human machines is an inherently dangerous endeavor.</p>
+  <p style={{fontSize: '18px', margin: '0 0 10px 0'}}>OpenAI is shouldering an enormous responsibility on behalf of all of humanity.</p>
+  <div style={{color: '#536471', marginBottom: '15px'}}>4:57 PM · May 17, 2024</div>
+  <hr style={{border: '1px solid #eee', margin: '10px 0'}} />
+  <div style={{display: 'flex', justifyContent: 'space-between', color: '#536471'}}>
+    <span>❤️ 3.9K</span>
+    <span>💬 Reply</span>
+    <span>🔗 Copy link</span>
+  </div>
+  <div style={{textAlign: 'center', marginTop: '10px'}}>
+    <a href="https://x.com/janleike/status/1791498183543251017" style={{color: '#1da1f2', textDecoration: 'none'}}>Read 92 replies</a>
+  </div>
+</div>
 
 Today’s AI infrastructure is highly centralized, dominated by a few entities controlling the data and algorithms, resulting in significant issues. These issues can be addressed by blockchains like Zero Gravity (0G) to create a more [decentralized AI](https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/10/consumers-are-voicing-concerns-about-ai): 
 
