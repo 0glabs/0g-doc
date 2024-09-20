@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 # Introduction to 0G
 ---
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 ## The First Decentralized AI Operating System (dAIOS)
 
 **Zero Gravity (0G)** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications. It efficiently orchestrates efficient utilization of hardware resources such as storage and computation to handle the scale and complexity of AI workflows. 
@@ -20,17 +20,20 @@ The 0G operating system has 4 key components:
 - **0G Serving**: A versatile framework for any serving needs, such as fast data retrieval, AI inference, and model training.
 - **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
 
-> What is decentralized storage?
+<details>
+<summary> **What is decentralized storage?** </summary>
+
 Decentralized storage distributes data across multiple network nodes rather than relying on a central server. This approach enhances data security, resilience, and accessibility by eliminating the single point of failure common in centralized systems.
 
-> What is data availability?
+**What is data availability?**
 Data availability guarantees that data stored within the system is readily accessible and retrievable whenever required. 0G's data availability network employs erasure coding and a quorum-based attestation system to ensure data remains available even in scenarios where some nodes might fail.
 
-> What is an AI serving framework?
+**What is an AI serving framework?**
 An AI serving framework is a system that facilitates the deployment and execution of AI models. 0G's decentralized serving network supports data retrieval, AI inference, and model training, ensuring efficient resource management for AI applications.
 
-> What is a modular blockchain?
-A modular blockchain is one where each layer or component is specialized for a particular function, improving scalability and flexibility. 0G Chain uses this architecture to optimize its components, allowing for independent optimization of consensus, execution, and chain storage. This modular architecture enables each component to be fine-tuned for its specific requirements, resulting in enhanced performance, scalability, and flexibility for decentralized AI applications. 
+**What is a modular blockchain?**
+A modular blockchain is one where each layer or component is specialized for a particular function, improving scalability and flexibility. 0G Chain uses this architecture to optimize its components, allowing for independent optimization of consensus, execution, and chain storage. This modular architecture enables each component to be fine-tuned for its specific requirements, resulting in enhanced performance, scalability, and flexibility for decentralized AI applications.
+ </details>
 
 All of these network components utilize carefully designed and innovative sharding mechanisms to achieve infinite horizontal scalability, thereby removing obstacles to the true democratization of AI. 
 
@@ -60,6 +63,7 @@ This introduction serves as your gateway into the 0G ecosystem. For deeper insig
 - [Use our Storage Network](/build-with-0g/sdk)
 - [Learn more about 0G's Architecture](/learn-more/whitepaper)
 
+
 ###### insert graphic: The future of AI is on-chain, collaborative, here. 
 
 ## Join the 0G Community
@@ -69,3 +73,4 @@ This introduction serves as your gateway into the 0G ecosystem. For deeper insig
 - [GitHub](https://github.com/0G-Labs/0g-docs)
 
 We're excited to have you on board as we build the future of Web3 infrastructure together!
+

@@ -66,8 +66,8 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Introduction', to: 'docs/intro.md' },
-            { label: 'Run a Node', to: 'docs/run-a-node/node-overview.md' },
+            { label: 'Introduction', to: 'docs/intro' },
+            { label: 'Run a Node', to: 'docs/run-a-node/node-overview' },
           ],
         },
         {
