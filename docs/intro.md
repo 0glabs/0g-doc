@@ -5,7 +5,9 @@ sidebar_position: 2
 ---
 # Introduction to 0G
 ---
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+import Lottie from '@lottielab/lottie-player/react';
+
 ## The First Decentralized AI Operating System (dAIOS)
 
 **Zero Gravity (0G)** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications. It efficiently orchestrates efficient utilization of hardware resources such as storage and computation to handle the scale and complexity of AI workflows. 
@@ -63,8 +65,8 @@ This introduction serves as your gateway into the 0G ecosystem. For deeper insig
 - [Use our Storage Network](/build-with-0g/sdk)
 - [Learn more about 0G's Architecture](/learn-more/whitepaper)
 
-
-###### insert graphic: The future of AI is on-chain, collaborative, here. 
+<Lottie src="https://cdn.lottielab.com/l/3cp3bJwTzHxWRS.json" autoplay />
+ 
 
 ## Join the 0G Community
 
