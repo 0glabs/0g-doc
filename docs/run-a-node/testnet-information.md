@@ -18,16 +18,16 @@ If you have any questions, reach out to us on [discord](https://discord.com/invi
 In Testnet-V2, we've implemented a fair and transparent process for selecting validators and managing various node types. Here's a summary of the key features:
 
 **How do I become a validator?**
-- You can apply to be a validator [Here.](https://shorturl.at/fgkoR). We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
+- You can apply to be a validator [here](https://shorturl.at/fgkoR). We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
 
 **Why are there limited validator slots?** 
 - Since we are currently using Cosmos/Tendermint consensus and they are limited to ~125 validators, we can only select 125 validators at this time. However, we anticipate this number will increase in the future when we transition to our own custom consensus. 
 
 **What happens if I'm not selected to be a validator?**
 - Validators are rotated every ~two weeks, so even if you're not selected for this round, you may be selected in the next rotation. Furthermore, validators are just one of the node types -- you can also run any of the other node types, like storage and DA. For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
-  - [How to Run a Storage Node](run-a-node/storage.md)
-  - [How to Run a DA Node](run-a-node/da.md)
-  - [How to Run a Validator Node](run-a-node/validator.md)
+  - [Run a Storage Node](run-a-node/storage.md)
+  - [Run a DA Node](run-a-node/da.md)
+  - [Run a Validator Node](run-a-node/validator.md)
 
 ## 0G Testnet Configuration
 
