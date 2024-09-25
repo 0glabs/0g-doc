@@ -29,17 +29,17 @@ For official deployed contract addresses, visit [this page](../docs/contract-add
 2. Download the source code
 
 ```bash
-git clone -b v1.2.1 https://github.com/0glabs/0g-storage-kv.git
+git clone -b v1.2.2 https://github.com/0glabs/0g-storage-kv.git
 ```
 
 3. Build the source code
 
-<pre class="language-bash"><code class="lang-bash">cd 0g-storage-kv
-<strong>git submodule update --init --recursive
-</strong>
+```bash
+cd 0g-storage-kv
+
 # Build in release mode
 cargo build --release
-</code></pre>
+```
 
 4. Copy the `config_example.toml` to `config.toml` and update the parameters
 
