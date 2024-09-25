@@ -36,7 +36,7 @@ The 0G System comprises multiple components, each with specific functionalities.
 Before setting up your storage node:
 
 - Understand that 0G Storage interacts with on-chain contracts for blob root confirmation and PoRA mining.
-- Check [official 0G documentation] for deployed contract addresses.
+- Check [here](run-a-node/testnet-information.md) for deployed contract addresses.
 
 **Deployment Steps**
 **Install Dependencies**
@@ -64,7 +64,7 @@ start by installing all the essential tools and libraries required to build the 
 **Install `rustup`**: (`rustup`) is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
 
     ```bash
-    curl --proto '=https' --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs) | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     ```   
 
 **Install Go**
@@ -80,7 +80,7 @@ start by installing all the essential tools and libraries required to build the 
 
         ```bash
         # Download the Go installer
-        wget [https://go.dev/dl/go1.23.0.linux-amd64.tar.gz](https://go.dev/dl/go1.23.0.linux-amd64.tar.gz)
+        wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
 
         # Extract the archive
         sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
@@ -96,14 +96,14 @@ start by installing all the essential tools and libraries required to build the 
         ```
 </TabItem>
 </Tabs>
-        *   Or download the Go installer from [https://go.dev/dl/](https://go.dev/dl/).
+        *   Or download the Go installer from https://go.dev/dl.
 
         *   Go is a programming language used for certain components of the 0G node.
 
  **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
 
     ```bash
-    git clone -b v0.4.6 [https://github.com/0glabs/0g-storage-node.git](https://github.com/0glabs/0g-storage-node.git)
+    git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
     ```
 
 5.  **Build the Source Code**
@@ -230,7 +230,7 @@ Follow the same steps to install dependencies and Rust as in the storage node se
 **Install `rustup`**: (`rustup`) is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
 
     ```bash
-    curl --proto '=https' --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs) | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     ```   
 
 **Install Go**
@@ -246,7 +246,7 @@ Follow the same steps to install dependencies and Rust as in the storage node se
 
         ```bash
         # Download the Go installer
-        wget [https://go.dev/dl/go1.23.0.linux-amd64.tar.gz](https://go.dev/dl/go1.23.0.linux-amd64.tar.gz)
+        wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
 
         # Extract the archive
         sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
@@ -398,7 +398,7 @@ The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storag
     Downloads the source code for the 0G Storage CLI from the GitHub repository onto your local machine.
 
     ```bash
-    git clone [https://github.com/0glabs/0g-storage-client.git](https://github.com/0glabs/0g-storage-client.git)
+    git clone https://github.com/0glabs/0g-storage-client.git
     ```
 2.  **Build the Source Code**
     
@@ -453,13 +453,13 @@ The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storag
 
 ```bash
 # Upload a file named "my_document.txt"
-./0g-storage-client upload --url [https://rpc-testnet.0g.ai](https://rpc-testnet.0g.ai) --contract 0x123...abc --key 0x456...def --node [https://rpc-storage-testnet.0g.ai](https://rpc-storage-testnet.0g.ai) --file my_document.txt
+./0g-storage-client upload --url https://rpc-testnet.0g.ai --contract 0x123...abc --key 0x456...def --node https://rpc-storage-testnet.0g.ai --file my_document.txt
 
 # Download a file with root hash "0x789...ghi" and save it as "downloaded_file.txt"
-./0g-storage-client download --node [https://rpc-storage-testnet.0g.ai](https://rpc-storage-testnet.0g.ai) --root 0x789...ghi --file downloaded_file.txt
+./0g-storage-client download --node https://rpc-storage-testnet.0g.ai --root 0x789...ghi --file downloaded_file.txt
 ```
 
-**Remember:** The 0G Storage CLI is a tool for interacting with the 0G network. By understanding its commands and options, you can efficiently manage your data stored on this decentralised platform.
+**Remember:** The 0G Storage CLI is a tool for interacting with the 0G network. By understanding its commands and options, you can efficiently manage your data stored on this decentralized platform.
 
 
 </TabItem>
