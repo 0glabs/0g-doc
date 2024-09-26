@@ -31,7 +31,7 @@ That being said, existing DALs are inadequate for supporting the exponentially i
 
 0G provides a 1,000x performance improvement over Ethereum’s danksharding and a 4x improvement over Solana’s Firedancer, providing the necessary infrastructure to scale Web3’s data needs on a massive scale.
 
-A major focus is AI, as 0G Storage can store vast datasets while using 0G DA to quickly AI models fully on-chain.
+A major focus is AI, as 0G Storage can store vast datasets while using 0G DA to quickly run AI models fully on-chain.
 
 Beyond this, other use cases include:
 
@@ -41,7 +41,7 @@ Beyond this, other use cases include:
 
 **c) Rollups-as-a-Service (RaaS)**: a DA option and data storage infrastructure for RaaS providers like Caldera and AltLayer.
 
-**d) DeFi**: 0G’s quick and scalable DA may support highly efficient DeFi on specific L2s & L3s due to fast settlement and storage, such as high-frequency trading.
+**d) DeFi**: 0G’s quick and scalable DA may support highly efficient DeFi on specific L2s and L3s due to fast settlement and storage, such as high-frequency trading.
 
 **e) On-chain Gaming**: Gaming requires vast amounts of cryptographic proof-related data that needs to be reliably stored, on top of all regular metadata such as a given player’s assets, points, actions, and more.
 
