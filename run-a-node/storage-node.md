@@ -71,7 +71,7 @@ Open the package file you downloaded and follow the prompts to install Go.
 4. Then download the source code
 
 ```bash
-git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
+git clone -b v0.5.3 https://github.com/0glabs/0g-storage-node.git
 ```
 
 5. Build the source code
