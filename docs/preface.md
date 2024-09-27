@@ -2,45 +2,66 @@
 id: preface
 title: Preface
 sidebar_position: 1
-slug: /
 ---
 # Preface
 
-## Why Decentralized AI?
+Artificial Intelligence (AI) is changing the course of human history. On the back of six decades of Moore's Law and three decades of the internet comprising all of human knowledge, [large language models (LLMs)](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) scale at an unprecedented rate towards AGI - 
+by some [accounts](https://situational-awareness.ai/from-gpt-4-to-agi/), arriving as soon as 2027. 
 
-AI is growing exponentially and is expected to become an [$826B](https://www.precedenceresearch.com/artificial-intelligence-market) industry by 2030. The advent of [large language models (LLMs)](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) and parallel computing hardware (GPUs, TPUs, and NPUs) has significantly accelerated the progress toward [artificial general intelligence (AGI)](https://www.techtarget.com/searchenterpriseai/definition/artificial-general-intelligence-AGI). This revolution is reshaping business models, automating processes, and transforming how we search for information. 
+Limitless, abundant productivity and creativity brought by AGI will free humanity to pursue our highest potential. AGI is poised to contribute [trillions](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier#key-insights) to the global economy annually, transform industries by driving the marginal cost of intelligence toward zero, and morph society by accompanying us as thought partner and companion. This global-scale change could uplift all of humanity. 
 
-However, today's AI infrastructure is highly centralized, dominated by a few entities controlling the data and algorithms, resulting in significant issues: 
+However, our curent computing infrastructure is [insufficient](https://www.goldmansachs.com/insights/articles/AI-poised-to-drive-160-increase-in-power-demand) to support the development of AGI, and even more alarming is that this immense power is concentrated in the [hands of a few](https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/10/consumers-are-voicing-concerns-about-ai). 
 
-* **Privacy Concerns**: Centralized platforms often misuse personal data, leading to data breaches and exploitation of personal information.
-* **Fairness & Accountability**: Opaque decision-making processes within centralized AI systems makes it challenging to ensure fairness and accountability.
-* **Alignment Challenges**: Ensuring that AI systems align with human values and intentions increases the risk of bias and misalignment with human values, as a few organizations may monopolize AI development.
+A global-scale technology revolution requires both a global-scale technological infrastructure and a global-scale alignment mechanism. A world AI infrastructure could frogleap the confines of data-centers and support exponential scaling towards AGI so that humanity could benefit from unlimited intelligence. A global scale coordination and alignment mechanism ensure that the benefits of AI can be widely, fairly, and safely distributed. 
 
-This has fueled [growing demands for transparency and decentralization in AI](https://www.google.com/url?q=https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/10/consumers-are-voicing-concerns-about-ai&sa=D&source=docs&ust=1726264181995790&usg=AOvVaw0CWWIuRPZD1Fe73rxKTlrv), which offers a fairer distribution of value and full transparency to an otherwise opaque industry: 
 
-* **Enhanced Privacy**: Users retain control over their data, deciding how and when it's used. 
-* **Fairness & Transparency**: Decentralization allows open scrutiny of AI algorithms, reducing bias and ensuring that every stage of AI development can be tracked and audited. 
-* **Democratization**: Decentralized platforms like 0G empower broader communities to contribute to AI development, fostering inclusivity and innovation.
-
-## Problems with Crypto x AI today
-
-But decentralizing AI is no small feat. AI workflows are inherently complex, involving enormous data processing and neural network computations, resulting in [massive increases in power consumption](https://www.google.com/url?q=https://www.forbes.com/sites/bethkindig/2024/06/20/ai-power-consumption-rapidly-becoming-mission-critical/&sa=D&source=docs&ust=1726264196273001&usg=AOvVaw3no0yz-PVLcxEjnq-479Zu). Replicating this workflow in a decentralized environment is non-trivial. It requires well-designed abstraction and incredibly scalable infrastructure that can handle the demands of AI workloads while maintaining the benefits of decentralization. 
-
-Today's blockchain infrastructure falls short in meeting the needs of real-world AI applications due to limited throughput: Ethereum processes 10-20 TPS, Solana [less than 4,000 TPS](https://explorer.solana.com/), and Layer 2s [less than 400 TPS](https://l2beat.com/scaling/activity). This equates to data throughput of approximately 1.5 mbps on average, which is 33,333x lower than the 50 gbps that's needed to fuel AI applications. Large-scale models like Open AI's GPT-4 require even more throughput as they must handle massive amounts of data and interactions. 
-
-**Zero Gravity (0G)** is addressing these challenges by providing a decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS) with a modular and layered architecture design.
-<div style={{textAlign: 'center'}}>
-  <img src="/img/democratized-ai.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
+<div style={{border: '1px solid #ccc', borderRadius: '15px', padding: '15px', maxWidth: '500px', fontFamily: 'Arial, sans-serif'}}>
+  <div style={{display: 'flex', alignItems: 'center', marginBottom: '10px'}}>
+    <img src="https://pbs.twimg.com/profile_images/1077523091700502528/2YCa_F4o_x96.jpg" alt="Jan Leike" style={{width: '48px', height: '48px', borderRadius: '50%', marginRight: '10px'}} />
+    <div>
+      <strong>Jan Leike</strong> ✔️<br />
+      <span style={{color: '#536471'}}>@janleike · Follow</span>
+    </div>
+  </div>
+  <div style={{color: '#536471', marginBottom: '10px'}}>Replying to @janleike</div>
+  <p style={{fontSize: '18px', margin: '0 0 10px 0'}}>Building smarter-than-human machines is an inherently dangerous endeavor.</p>
+  <p style={{fontSize: '18px', margin: '0 0 10px 0'}}>OpenAI is shouldering an enormous responsibility on behalf of all of humanity.</p>
+  <div style={{color: '#536471', marginBottom: '15px'}}>4:57 PM · May 17, 2024</div>
+  <hr style={{border: '1px solid #eee', margin: '10px 0'}} />
+  <div style={{display: 'flex', justifyContent: 'space-between', color: '#536471'}}>
+    <span>❤️ 3.9K</span>
+    <span>💬 Reply</span>
+    <span>🔗 Copy link</span>
+  </div>
+  <div style={{textAlign: 'center', marginTop: '10px'}}>
+    <a href="https://x.com/janleike/status/1791498183543251017" style={{color: '#1da1f2', textDecoration: 'none'}}>Read 92 replies</a>
+  </div>
 </div>
 
-## Introducing 0G
 
-A dAIOS like 0G is an operating system designed to manage decentralized hardware resources for AI applications, providing solutions to the key problems in centralized AI:
+## The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
+0G is building the global foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives. 
 
-* **Data Ownership & Control:** Users gain more control over their data, mitigating the risk of misuse or unauthorized access.
-* **Transparency & Auditability:** Every stage of the AI lifecycle is transparent, allowing for tracking, auditing, and verification.
-* **Fairness & Alignment:** Decentralization facilitates the alignment of AI systems with diverse values, minimizing bias or control by a single entity.
+With 0G dAIOS, the **TOMA** (transparent, owned, monetized, and aligned) future for AGI is near:
 
-Decentralization ensures transparency in data provenance (where the data comes from), model attribution (who owns or has contributed to the data and models), and alignment with human values (ensure that AI systems act in accordance with human values and intentions). 
+ **Transparency**: Centralized AI systems operate as black boxes, with opaque decision-making processes and no clear data provenance. Users who provide training data rarely receive adequate rewards for their contributions, and the system lacks transparency in how value is distributed. _Decentralized AI fosters transparency by providing open, auditable decision-making processes and verifiable data sources, ensuring accountability at every step._ **0G’s modular architecture enables transparent data traceability and verifiable AI models, making every decision and data source traceable.**
 
-0G's decentralized AI operating system (dAIOS) offers the foundation to build a fairer, more open AI ecosystem, where power is distributed and innovation thrives. In the following sections, we'll dive deeper into how 0G enables this vision and what it means for the future of AI.
+ **Ownership**: Centralized AI platforms often sell or misuse personal data, with users having little control or ownership over how their information is collected, stored, or used. _Blockchain technology empowers users to retain control over their data, deciding how and when it’s used._**With 0G, users can store and manage data on-chain through decentralized storage networks, retaining full ownership and control.**
+  
+ **Monetization**: Centralized AI systems often monopolize profits and leave little incentive for individual contributors. _Blockchain enables the issuance of rewards to incentivize participation and subsequently distribute rewards in a fair and transparent manner._ **Users of 0G’s storage, data availability, or serving platforms pay a small fee for these services, and these rewards are then distributed to the nodes.** 
+  
+ **Alignment**: Centralized AI systems lack oversight and governance processes. A select group may have the authority to censor or promote material, leading to misalignment with human values. _Decentralized AI platforms promote collective governance and oversight by increasing access to AI development, fostering inclusivity and innovation by a broader community rather than a single entity._ **0G provides access to lower-cost compute resources, lowering the high cost barrier to entry for inference, fine-tuning, and training.** 
+
+As the first dAIOS, 0G brings together models, compute and data on a single global platform, enabling developers to build AI applications that are more **PLG** (performant, limitless, and global) than ever before: 
+
+**Performant**: Currently, developers and researchers lack access to high-grade computing and storage resources, limiting their ability to advance at the cutting edge of AI development. _Decentralized GPU networks that run on blockchains provide high-performance compute resources pooled by the community and available to all._ **0G provides access to enterprise-grade compute resources, enabling developers to build AI applications that are more performant than ever before.** 
+
+**Limitless**: Currently, compute clusters and data sets are siloed and limited in scale. _Decentralized blockchain-based compute networks and data sources empower AI developers to scale their dapps beyond the confines of currently available compute and data._ **0G provides infinite scalability and access to compute resources and data from anywhere in the world.** 
+
+**Global**: Currently, only certain regions in the world provide the infrastructure needed to advance AI. _Decentralized AI platforms built on blockchain networks can democratize access to AI development._ **Users of 0G's global AI operating system can build AI applications that are accessible to everyone, everywhere.** 
+
+In the following sections, we’ll dive deeper into how 0G enables this vision and what it means for the future of AI.
+
+
+
+
