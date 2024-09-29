@@ -40,7 +40,9 @@ const sidebars: SidebarsConfig = {
         id: 'build-with-0g/build-with-0g',
       },
       items: [
-        'build-with-0g/sdk',
+        'build-with-0g/storage-sdk',
+        'build-with-0g/da-integration',
+        'build-with-0g/rollups',
       ],
     },
     {
