@@ -38,7 +38,7 @@ In Testnet-V2, we've implemented a fair and transparent process for selecting va
 | Token Symbol | A0GI |
 | Chain RPC | https://evmrpc-testnet.0g.ai |
 | Chain Websocket | https://cosmosrpc-testnet.0g.ai |
-| Storage RPC | https://rpc-storage-testnet.0g.ai |
+| Storage Standard RPC | https://rpc-storage-testnet.0g.ai |
 | Storage Turbo RPC | https://rpc-storage-testnet-turbo.0g.ai |
 | Chain Explorer | https://chainscan-newton.0g.ai/ |
 | Storage Explorer | https://storagescan-newton.0g.ai/ |
