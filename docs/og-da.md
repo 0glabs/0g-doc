@@ -30,6 +30,7 @@ While existing DA solutions like Celestia and Avail have been instrumental for L
 
 This is for several reasons:
 - DALs tend to require that data be simultaneously sent to all of their network nodes, preventing horizontal scalability and limiting network speed to its slowest node.
+- Today's blockchain infrastructure falls short in meeting the needs of real-world AI applications due to limited throughput: Ethereum processes 10-20 TPS, Solana [less than 4,000 TPS](https://explorer.solana.com/), and Layer 2s [less than 400 TPS](https://l2beat.com/scaling/activity). This equates to data throughput of ~1.5 mbps on average, which is 33,333x lower than the 50+ gbps that's needed to fuel AI applications. 
 - They also do not have built-in storage systems, requiring connectivity to external systems that impact throughput, latency, and cost.
 - 0G inherits Ethereum's security, while other systems rely upon their own security mechanisms that fall short.
 - Even more issues exist, including EigenDA's lack of randomization over its data committees.
@@ -38,7 +39,8 @@ This is for several reasons:
 
 The result is that 0G serves as the foundational layer for decentralized AI applications, bringing on-chain AI and more to life.
 
-## Why 0G Is The Superior DA Solution
+
+## Why 0G Is The Superior DA Solution?
 
 There are 4 key differentiators of 0G:
 
@@ -52,13 +54,14 @@ There are 4 key differentiators of 0G:
 
 These differentiators make 0G uniquely positioned to tackle the challenges of scaling AI on a decentralized platform, which is critical for the future of Web3 and decentralized intelligence.
 
-## How Does This Work?
+### 0G has achieved 50 gbps DA throughput per consensus layer.
 
-As covered in [0G Storage](./og-storage.md), data within the 0G ecosystem is first erasure-coded and split into "data chunks," which are then distributed across various Storage Nodes in the 0G Storage network. 
+On [Testnet](/run-a-node/testnet-information), each 0G node demonstrated 10mbps throughput. With 5,000 nodes, that’s 50,000mbps or **50gbps** per consensus layer. As the consensus layer becomes the bottleneck, 0G plans to implement its own custom consensus (currently using Tendermint), akin to adding more AWS servers in a Web2 context, ultimately enabling infinite throughput.
 
-To ensure data availability, 0G utilizes DA nodes that are randomly selected through a Verifiable Random Function (VRF). These DA nodes form quorums to query and verify the stored data, operating under an "honest majority" assumption. Once consensus is reached on the availability of the data, the availability proofs are submitted to the 0G Consensus network.
+This is possible by incorporating cutting-edge horizontal scaling and sharding mechanisms to achieve remarkable speed. By distributing AI workloads across a network of specialized nodes, 0G reduces latency and accelerates processing times, making it highly competitive with centralized Web2 AI systems. This efficiency is critical as AI applications scale and require increasingly powerful resources. You can read more about this in the following [section](/intro).
 
-[... previous content ...]
+0G’s novel approach to decoupling data availability from consensus allows independent scaling of storage and validation layers. This architecture not only addresses the scalability challenges faced by traditional blockchain systems, but also enhances data resilience and retrieval efficiency. 
+
 
 ## How Does This Work?
 

@@ -10,6 +10,54 @@ import TabItem from '@theme/TabItem';
 Running a validator node in the 0G ecosystem means actively participating in the network's security and consensus through the Proof-of-Stake (PoS) mechanism. As a validator, you'll validate transactions, propose new blocks, and earn rewards for your contribution to the network's integrity and decentralization.
 
 <Tabs>
+   <TabItem value="docker" label="Run with Docker" default>
+
+## Starting Your Node
+**1. Clone the Validator Node Repo:** 
+   ```bash
+   git clone https://github.com/0glabs/0g-chain.git
+   ```
+
+**2. Build and Start the Docker Node:** 
+
+   ```bash
+   docker build -f ./0g-chain/Dockerfile-node -t 0g-chain-validator .
+   docker run -d --name 0g-chain-validator -p 26656:26656 -p 26657:26657 0g-chain-validator
+   ```
+
+## Registering Your Validator
+
+**3. Acquite Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your Node Operator ECDSA public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. 
+
+Note: Make sure you have the private key to your ECDSA key pair to import into the validator node.
+
+**4. Registering Node Operator Account:**
+Once you have the tokens, register your node operator account by putting in your ECDSA private key.
+
+   ```bash
+   # Import an existing key
+   docker exec it 0g-chain-validator 0gchaind keys unsafe-import-eth-key <key_name> <private_key>
+   ```
+
+**5. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
+
+   ```bash
+   docker exec -it 0g-chain-validator 0gchaind tx staking create-validator \
+   --amount=<staking_amount>ua0gi \ 
+   --pubkey=$(0gchaind tendermint show-validator) \
+   --moniker="<your_validator_name>" \ 
+   --chain-id=zgtendermint_16600-2 \
+   --commission-rate="0.10" \
+   --commission-max-rate="0.20" \
+   --commission-max-change-rate="0.01" \
+   --min-self-delegation="1" \
+   --from=<key_name> \ 
+   --gas=auto \
+   --gas-adjustment=1.4
+   ```
+   
+ </TabItem>
+
   <TabItem value="binary" label="Build from source" default>
 ## Installation
 
