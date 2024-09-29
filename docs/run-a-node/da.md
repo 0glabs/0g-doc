@@ -365,38 +365,77 @@ Run the following script for complete testing:
 ./dev_support/test.sh
 ```
 </TabItem>
-<TabItem value="docker" label="DA retriever">
+<TabItem value="docker" label="DA Retriever">
   
-## Installation
+## DA Retriever Node Installation
 
-1. Install Dependencies
-
-***For Linux***
-
-```bash
-sudo apt-get update
-sudo apt-get install cmake build-essential protobuf-compiler
-```
-
-***For Mac***
-
-```bash
-brew install cmake
-```
-
-2. Install Rust
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-3. Download the source code from our github.
+**1. Clone the DA Retriver Node Repo:** 
 
 ```bash
 git clone https://github.com/0glabs/0g-da-retriever.git
+cd 0g-da-retriever
 ```
 
-## Configuration
+**2. Edit Files:**
+
+Add the following line to Dockerfile.dockerignore file.
+```bash
+!/run/config.toml
+```
+
+Replace Dockerfile with the following:
+
+```bash
+# Dockerfile
+FROM rust:alpine3.20 as builder
+
+WORKDIR /0g-da-retriever
+COPY . .
+
+RUN apk update && apk add --no-cache make protobuf-dev musl-dev
+RUN cargo build --release
+
+FROM alpine:3.20
+
+WORKDIR /0g-da-retriever
+
+COPY --from=builder /0g-da-retriever/target/release/retriever /usr/local/bin/retriever
+# Copy the config file into the container
+COPY --from=builder /0g-da-retriever/run/config.toml ./run/config.toml
+
+# Set the entrypoint to run the retriever binary
+CMD ["/usr/local/bin/retriever"]
+```
+
+Replace the Config impl in /retriver/src/config.rs with the following:
+```bash
+impl Config {
+    pub fn from_cli_file() -> Result<Self> {
+        let matches = cli::cli_app().get_matches();
+        let config_file = matches
+            .get_one::<String>("config")
+            .map(|s| s.as_str())
+            .unwrap_or("/0g-da-retriever/run/config.toml");
+
+        let c = RawConfig(
+            config::Config::builder()
+                .add_source(config::File::with_name(config_file))
+                .build()?,
+        );
+
+        Ok(Self {
+            log_level: c.get_string("log_level")?,
+            eth_rpc_url: c.get_string("eth_rpc_endpoint")?,
+            grpc_listen_address: c.get_string("grpc_listen_address")?,
+            max_ongoing_retrieve_request: c.get_u64_opt("max_ongoing_retrieve_request")?,
+        })
+    }
+}
+```
+
+**3. Update Configuration:**
+
+Update configuration file `run/config.toml` as needed with context below.
 
 | Field | Description |
 |-------|-------------|
@@ -404,21 +443,14 @@ git clone https://github.com/0glabs/0g-da-retriever.git
 | grpc_listen_address | Server listening address. |
 | eth_rpc_endpoint | JSON RPC node endpoint for the blockchain network. |
 
-## Run
 
-### Build in Release Mode
-
-```bash
-cargo build --release
-```
-
-### Run Retriever
-
-Update configuration file `run/config.toml` as required by referencing the Configuration. Run:
+**4. Build and Run the Docker Node:**
 
 ```bash
-./target/release/retriever --config ./run/config.toml
+docker build -t 0g-da-retriever . 
+docker run -d --name 0g-da-retriever -p 34005:34005 0g-da-retriever
 ```
+
 </TabItem>
 <TabItem value="signer" label="DA Signers">
 
