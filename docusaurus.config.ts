@@ -42,7 +42,7 @@ const config: Config = {
   ],
   themeConfig: {
     navbar: {
-      title: 'Documentation',
+      title: '0G Documentation',
       logo: {
         alt: '0G Logo',
         src: 'img/logo.svg',
