@@ -24,4 +24,4 @@ The 0G Faucet provides free testnet tokens, essential for interacting with the 0
 
 ## 🎓 Learn More
 
-Curious about how to use your testnet tokens? Check out our [Developer Documentation](/docs/developer-guide) for tutorials and examples!
+Curious about how to use your testnet tokens? Check out our [Developer Documentation](../run-a-node) for tutorials and examples!
