@@ -21,22 +21,23 @@ Running a validator node in the 0G ecosystem means actively participating in the
 **2. Build and Start the Docker Node:** 
 
    ```bash
-   docker build -f ./0g-chain/Dockerfile-node -t 0g-chain-validator .
-   docker run -d --name 0g-chain-validator -p 26656:26656 -p 26657:26657 0g-chain-validator
+   cd 0g-chain
+   docker build -f Dockerfile-node -t 0g-chain-validator .
+   docker run -d --name 0g-chain-validator -p 26656:26656 -p 26657:26657 -e GOGC=900 -e GOMEMLIMIT=40GiB 0g-chain-validator
    ```
+
+   Recommended on Garbage Collection for Pruning Nodes: To maximize sync speed for validators and other network providers that are running pruning nodes, the above settings are recommended. GOGC=900 instructs golang to start garbage collection when heap has grown to 9x, and GOMELIMIT=40GB ensures garbage collection runs whenever memory usage reaches 40GB.
 
 ## Registering Your Validator
 
-**3. Acquite Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your Node Operator ECDSA public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. 
-
-Note: Make sure you have the private key to your ECDSA key pair to import into the validator node.
+**3. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your Node Operator ECDSA public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. Make sure you have the corresponding ECDSA private key for importing into the validator node.
 
 **4. Registering Node Operator Account:**
-Once you have the tokens, register your node operator account by putting in your ECDSA private key.
+Once you have the tokens, register your node operator account by putting in your ECDSA private key. This step would prompt you to choose and enter a passphrase. 
 
    ```bash
    # Import an existing key
-   docker exec it 0g-chain-validator 0gchaind keys unsafe-import-eth-key <key_name> <private_key>
+   docker exec -it 0g-chain-validator 0gchaind keys unsafe-import-eth-key <key_name> <private_key>
    ```
 
 **5. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
@@ -44,7 +45,7 @@ Once you have the tokens, register your node operator account by putting in your
    ```bash
    docker exec -it 0g-chain-validator 0gchaind tx staking create-validator \
    --amount=<staking_amount>ua0gi \ 
-   --pubkey=$(0gchaind tendermint show-validator) \
+   --pubkey=$(docker exec -it 0g-chain-validator 0gchaind tendermint show-validator) \
    --moniker="<your_validator_name>" \ 
    --chain-id=zgtendermint_16600-2 \
    --commission-rate="0.10" \
@@ -55,7 +56,26 @@ Once you have the tokens, register your node operator account by putting in your
    --gas=auto \
    --gas-adjustment=1.4
    ```
-   
+***Note: Only the top 125 staked validators will be active.***
+
+### Remember
+
+- Stay updated with the latest testnet information and announcements on our socials and blog posts.
+- Reach out to us on Discord or to the community for support if you encounter any issues.
+
+### Troubleshooting
+
+If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](learn-more/how-to-contribute.md) or reach out to our community support channels.
+
+### Next Steps
+
+After successfully setting up your validator node, consider exploring the following:
+
+- [Node Monitoring and Maintenance](/docs/run-a-node/testnet-information)
+
+Thank you for contributing to the security and decentralization of the 0g network!
+
+
  </TabItem>
 
   <TabItem value="binary" label="Build from source" default>
