@@ -1,6 +1,6 @@
 ---
 id: da-integration
-title: DA Integration
+title: Posting Data to 0G DA
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';

@@ -38,9 +38,31 @@ const sidebars: SidebarsConfig = {
         id: 'build-with-0g/build-with-0g',
       },
       items: [
-        'build-with-0g/storage-sdk',
         'build-with-0g/da-integration',
-        'build-with-0g/rollups',
+        'build-with-0g/storage-sdk',
+        {
+          type: 'category',
+          label: 'Rollups and Appchains',
+          items: [
+            'build-with-0g/rollups-and-appchains/op-stack-on-0g-da',
+            'build-with-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Rollup as a Service',
+          items: [
+            'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'AVSs',
+          items: [
+            'build-with-0g/avss/eigenlayer-avs-on-0g-da',
+            'build-with-0g/avss/babylon-avs-on-0g-da',
+          ],
+        },
         'build-with-0g/faucet',
         'build-with-0g/explorer',
       ],
