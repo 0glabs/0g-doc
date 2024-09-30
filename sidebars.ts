@@ -41,15 +41,8 @@ const sidebars: SidebarsConfig = {
         'build-with-0g/storage-sdk',
         'build-with-0g/da-integration',
         'build-with-0g/rollups',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Developer Tooling',
-      className: 'sidebar-category dev-tools',
-      items: [
-        'developer-tooling/faucet',
-        'developer-tooling/explorer',
+        'build-with-0g/faucet',
+        'build-with-0g/explorer',
       ],
     },
     {
