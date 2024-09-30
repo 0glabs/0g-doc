@@ -1,6 +1,6 @@
 ---
-id: DA-tooling
-title: DA Tooling
+id: da-integration
+title: DA Integration
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
@@ -9,62 +9,80 @@ import TabItem from '@theme/TabItem';
 # 0G Data Availability (DA): Integration
 ----
 
-The 0G Data Availability (DA) system is an open, decentralized platform for submitting and retrieving data. Users can submit data blobs up to 32,505,852 bytes in length, which are then processed, encoded, and distributed across a network of DA nodes. The system employs a sophisticated data processing flow that includes padding, matrix formation, redundant encoding, and signature aggregation. To use the 0G DA, you need to run a DA client, which interfaces with the encoder for data submission and the retriever for data access.
+To submit data to the 0G DA, you need to run a DA client, which interfaces with the Encoder for data encoding and the Retriever for data access.
 
-DA nodes play a crucial role in the system by verifying and signing data slices. These nodes gain eligibility through staking and are organized into quorums during each DA epoch (approximately 8 hours). The system incentivizes long-term data storage through a process called DA Sampling, where nodes can earn rewards by proving they've retained specific data slices. This process involves periodic sampling tasks and a difficulty adjustment mechanism to maintain network balance.
+### Maximum blob size
 
-The economic model of the 0G DA system is designed to sustain network operations and incentivize participation. you pay a fee which is the (BLOB_PRICE) when submitting DA blob metadata, which contributes to a reward pool. Rewards are distributed to DA nodes for their services, with additional system rewards potentially available in the early stages of the ecosystem. The system also incorporates service fees and employs a dynamic difficulty adjustment for reward distribution. While there are no strict hardware requirements for running the DA encoder, higher specifications are beneficial due to the resource intensive nature of the operations, with GPU acceleration available for improved performance.
+Users can submit data blobs up to 32,505,852 bytes in length, which are then processed, encoded, and distributed across a network of DA nodes. The system employs a sophisticated data processing flow that includes padding, matrix formation, redundant encoding, and signature aggregation.
 
-Here is a guide on how to run the DA Client, Encoder, Retriever:
+### Fee Market
+
+As the DA user, you pay a fee which is the (BLOB_PRICE) when submitting DA blob data.
+
+### Submitting Data
+
+See example here https://github.com/0glabs/0g-da-example-rust/blob/main/src/disperser.proto
+
+### Standing up DA Client, Encoder, Retriever
+
 <Tabs>
-<TabItem value="binary" label="DA client Node" default>
+<TabItem value="binary" label="DA Client" default>
 
-### Install dependencies
+## DA Client Node Installation
 
-#### For Linux
+**1. Clone the DA Client Node Repo:** 
 
 ```bash
-sudo apt-get update
-sudo apt-get install cmake 
+git clone https://github.com/0glabs/0g-da-client.git
+```
+**2. Build the Docker Image:** 
+
+```bash
+cd 0g-da-client
+docker build -t 0g-da-client -f combined.Dockerfile .
 ```
 
-#### For Mac
+**3. Set Environment Variables:**
+
+Create a file named `envfile.env` with the following content. Be sure you paste in your private key.
+```bash
+# envfile.env
+COMBINED_SERVER_CHAIN_RPC=https://evmrpc-testnet.0g.ai
+COMBINED_SERVER_PRIVATE_KEY=YOUR_PRIVATE_KEY
+ENTRANCE_CONTRACT_ADDR=0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9
+
+COMBINED_SERVER_RECEIPT_POLLING_ROUNDS=180
+COMBINED_SERVER_RECEIPT_POLLING_INTERVAL=1s
+COMBINED_SERVER_TX_GAS_LIMIT=2000000
+COMBINED_SERVER_USE_MEMORY_DB=true
+COMBINED_SERVER_KV_DB_PATH=/runtime/
+COMBINED_SERVER_TimeToExpire=2592000
+DISPERSER_SERVER_GRPC_PORT=51001
+BATCHER_DASIGNERS_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001000
+BATCHER_FINALIZER_INTERVAL=20s
+BATCHER_CONFIRMER_NUM=3
+BATCHER_MAX_NUM_RETRIES_PER_BLOB=3
+BATCHER_FINALIZED_BLOCK_COUNT=50
+BATCHER_BATCH_SIZE_LIMIT=500
+BATCHER_ENCODING_INTERVAL=3s
+BATCHER_ENCODING_REQUEST_QUEUE_SIZE=1
+BATCHER_PULL_INTERVAL=10s
+BATCHER_SIGNING_INTERVAL=3s
+BATCHER_SIGNED_PULL_INTERVAL=20s
+BATCHER_EXPIRATION_POLL_INTERVAL=3600
+BATCHER_ENCODER_ADDRESS=DA_ENCODER_SERVER
+BATCHER_ENCODING_TIMEOUT=300s
+BATCHER_SIGNING_TIMEOUT=60s
+BATCHER_CHAIN_READ_TIMEOUT=12s
+BATCHER_CHAIN_WRITE_TIMEOUT=13s
+```   
+
+
+
+**4. Run the Docker Node:**
 
 ```bash
-brew install cmake
-```
-
-### Install Go
-
-#### For Linux
-
-Download the Go installer:
-
-```bash
-wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
-```
-
-Extract the archive:
-
-```bash
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
-```
-
-Add `/usr/local/go/bin` to the PATH environment variable by adding the following line to your `~/.profile`:
-
-```bash
-export PATH=$PATH:/usr/local/go/bin
-```
-
-#### For Mac
-
-1. Download the Go installer from [https://go.dev/dl/go1.22.0.darwin-amd64.pkg](https://go.dev/dl/go1.19.3.darwin-amd64.pkg).
-2. Open the package file you downloaded and follow the prompts to install Go.
-
-### Download the source code
-
-```bash
-git clone -b v1.0.0-testnet https://github.com/0glabs/0g-da-client.git
+docker run -d --env-file envfile.env --name 0g-da-client -v ./run:/runtime -p 51001:51001 0g-da-client combined 
 ```
 
 ## Configuration
@@ -100,50 +118,6 @@ git clone -b v1.0.0-testnet https://github.com/0glabs/0g-da-client.git
 | `--encoding-timeout` | Total time to wait for a response from encoder. |
 | `--signing-timeout` | Total time to wait for a response from signer. |
 
-## Run
-
-### Build combined server
-
-```bash
-make build
-```
-
-### Run combined server
-
-Update the following command by referencing the Configuration:
-
-```bash
-./bin/combined \
-    --chain.rpc L1_RPC_ENDPOINT \
-    --chain.private-key YOUR_PRIVATE_KEY \
-    --chain.receipt-wait-rounds 180 \
-    --chain.receipt-wait-interval 1s \
-    --chain.gas-limit 2000000 \
-    --combined-server.use-memory-db \
-    --combined-server.storage.kv-db-path ./../run/ \
-    --combined-server.storage.time-to-expire 2592000 \
-    --disperser-server.grpc-port 51001 \
-    --batcher.da-entrance-contract ENTRANCE_CONTRACT_ADDR \
-    --batcher.da-signers-contract 0x0000000000000000000000000000000000001000 \
-    --batcher.finalizer-interval 20s \
-    --batcher.confirmer-num 3 \
-    --batcher.max-num-retries-for-sign 3 \
-    --batcher.finalized-block-count 50 \
-    --batcher.batch-size-limit 500 \
-    --batcher.encoding-interval 3s \
-    --batcher.encoding-request-queue-size 1 \
-    --batcher.pull-interval 10s \
-    --batcher.signing-interval 3s \
-    --batcher.signed-pull-interval 20s \
-    --encoder-socket DA_ENCODER_SERVER \
-    --encoding-timeout 300s \
-    --signing-timeout 60s \
-    --chain-read-timeout 12s \
-    --chain-write-timeout 13s \
-    --combined-server.log.level-file trace \
-    --combined-server.log.level-std trace \
-    --combined-server.log.path ./../run/run.log
-```
   </TabItem>
   <TabItem value="source" label="DA Encoder">
 
@@ -273,38 +247,77 @@ Run the following script for complete testing:
 ./dev_support/test.sh
 ```
 </TabItem>
-<TabItem value="docker" label="DA retriever">
+<TabItem value="docker" label="DA Retriever">
   
-## Installation
+## DA Retriever Node Installation
 
-1. Install Dependencies
-
-***For Linux***
-
-```bash
-sudo apt-get update
-sudo apt-get install cmake build-essential protobuf-compiler
-```
-
-***For Mac***
-
-```bash
-brew install cmake
-```
-
-2. Install Rust
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-3. Download the source code from our github.
+**1. Clone the DA Retriver Node Repo:** 
 
 ```bash
 git clone https://github.com/0glabs/0g-da-retriever.git
+cd 0g-da-retriever
 ```
 
-## Configuration
+**2. Edit Files:**
+
+Add the following line to Dockerfile.dockerignore file.
+```bash
+!/run/config.toml
+```
+
+Replace Dockerfile with the following:
+
+```bash
+# Dockerfile
+FROM rust:alpine3.20 as builder
+
+WORKDIR /0g-da-retriever
+COPY . .
+
+RUN apk update && apk add --no-cache make protobuf-dev musl-dev
+RUN cargo build --release
+
+FROM alpine:3.20
+
+WORKDIR /0g-da-retriever
+
+COPY --from=builder /0g-da-retriever/target/release/retriever /usr/local/bin/retriever
+# Copy the config file into the container
+COPY --from=builder /0g-da-retriever/run/config.toml ./run/config.toml
+
+# Set the entrypoint to run the retriever binary
+CMD ["/usr/local/bin/retriever"]
+```
+
+Replace the Config impl in /retriver/src/config.rs with the following:
+```bash
+impl Config {
+    pub fn from_cli_file() -> Result<Self> {
+        let matches = cli::cli_app().get_matches();
+        let config_file = matches
+            .get_one::<String>("config")
+            .map(|s| s.as_str())
+            .unwrap_or("/0g-da-retriever/run/config.toml");
+
+        let c = RawConfig(
+            config::Config::builder()
+                .add_source(config::File::with_name(config_file))
+                .build()?,
+        );
+
+        Ok(Self {
+            log_level: c.get_string("log_level")?,
+            eth_rpc_url: c.get_string("eth_rpc_endpoint")?,
+            grpc_listen_address: c.get_string("grpc_listen_address")?,
+            max_ongoing_retrieve_request: c.get_u64_opt("max_ongoing_retrieve_request")?,
+        })
+    }
+}
+```
+
+**3. Update Configuration:**
+
+Update configuration file `run/config.toml` as needed with context below.
 
 | Field | Description |
 |-------|-------------|
@@ -312,20 +325,13 @@ git clone https://github.com/0glabs/0g-da-retriever.git
 | grpc_listen_address | Server listening address. |
 | eth_rpc_endpoint | JSON RPC node endpoint for the blockchain network. |
 
-## Run
 
-### Build in Release Mode
-
-```bash
-cargo build --release
-```
-
-### Run Retriever
-
-Update configuration file `run/config.toml` as required by referencing the Configuration. Run:
+**4. Build and Run the Docker Node:**
 
 ```bash
-./target/release/retriever --config ./run/config.toml
+docker build -t 0g-da-retriever . 
+docker run -d --name 0g-da-retriever -p 34005:34005 0g-da-retriever
 ```
+
 </TabItem>
 </Tabs>

@@ -1,5 +1,5 @@
 ---
-id: sdk
+id: storage-sdk
 title: Storage SDK
 sidebar_position: 1
 ---
