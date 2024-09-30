@@ -1,6 +1,5 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
-
 const sidebars: SidebarsConfig = {
   docs: [
     'preface',
@@ -28,7 +27,6 @@ const sidebars: SidebarsConfig = {
         'run-a-node/storage',
         'run-a-node/da',
         'run-a-node/validator',
-        'run-a-node/test',
       ],
     },
     {
@@ -40,16 +38,8 @@ const sidebars: SidebarsConfig = {
         id: 'build-with-0g/build-with-0g',
       },
       items: [
-        'build-with-0g/sdk','build-with-0g/DA-tooling',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Developer Tooling',
-      className: 'sidebar-category dev-tools',
-      items: [
-        'developer-tooling/faucet',
-        'developer-tooling/explorer',
+        'build-with-0g/sdk','build-with-0g/DA-tooling','build-with-0g/faucet',
+        'build-with-0g/explorer',,
       ],
     },
     {

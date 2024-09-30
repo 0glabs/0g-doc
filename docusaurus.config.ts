@@ -7,7 +7,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config: Config = {
   title: '0G Documentation',
   tagline: 'The Next Generation Web3 Infrastructure',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   url: 'https://shiny-starburst-7af89f.netlify.app',
   baseUrl: '/',
   organizationName: '0G Labs',

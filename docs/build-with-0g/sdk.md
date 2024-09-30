@@ -1,6 +1,6 @@
 ---
 id: sdk
-title: 0G SDK
+title: Storage SDK
 sidebar_position: 1
 ---
 

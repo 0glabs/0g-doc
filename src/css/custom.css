@@ -328,7 +328,28 @@ pre[class*="language-"] {
   }
 }
 
-/* Dark mode adjustments */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-button-color: #ffffff;
+}
+
+[data-theme='dark'] .button {
+  color: var(--ifm-button-color);
+}
+
+[data-theme='dark'] .button:hover,
+[data-theme='dark'] .button:active,
+[data-theme='dark'] .button:focus {
+  color: var(--ifm-button-color);
+}
+
+[data-theme='dark'] .button--active {
+  color: var(--ifm-button-color);
+}
+
+[data-theme='dark'] .tabs__item {
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .tabs__item--active {
+  color: var(--ifm-tabs-color-active);
 }

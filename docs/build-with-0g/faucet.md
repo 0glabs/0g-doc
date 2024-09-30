@@ -1,5 +1,7 @@
 ---
-sidebar_position: 1
+id: faucet
+title: Faucet
+sidebar_position: 6
 ---
 
 # 0G Faucet
