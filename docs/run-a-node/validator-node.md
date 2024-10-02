@@ -37,15 +37,16 @@ Once you have the tokens, register your node operator account by putting in your
 
    ```bash
    # Import an existing key
-   docker exec -it 0g-chain-validator 0gchaind keys unsafe-import-eth-key <key_name> <private_key>
+   docker exec -it <container_name> /bin/bash
+   0gchaind keys unsafe-import-eth-key <key_name> <private_key>
    ```
 
 **5. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
    ```bash
-   docker exec -it 0g-chain-validator 0gchaind tx staking create-validator \
+   0gchaind tx staking create-validator \
    --amount=<staking_amount>ua0gi \ 
-   --pubkey=$(docker exec -it 0g-chain-validator 0gchaind tendermint show-validator) \
+   --pubkey=$(0gchaind tendermint show-validator) \
    --moniker="<your_validator_name>" \ 
    --chain-id=zgtendermint_16600-2 \
    --commission-rate="0.10" \
@@ -56,6 +57,28 @@ Once you have the tokens, register your node operator account by putting in your
    --gas=auto \
    --gas-adjustment=1.4
    ```
+***Note: Only the top 125 staked validators will be active.***
+
+## Check the Status on Your Validator
+
+**6. Check Validator Consensus Status:** You can check the status of your validator, by executing the command below and you can confirm if your validator is active and participating in consensus.
+
+    ```bash
+    0gchaind q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
+    ```
+
+**7. Check Validator Sync Status:**
+
+   ```bash
+   0gchaind status | jq '{ latest_block_height: .sync_info.latest_block_height, catching_up: .sync_info.catching_up }'
+   ```
+
+**11. Unjail Your Validator (If Needed):** If your validator gets "jailed" due to downtime or other issues, you can  unjail using the following command and resume participation in the network.
+
+    ```bash
+    0gchaind tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999neuron -y
+    ```
+
 ***Note: Only the top 125 staked validators will be active.***
 
 ### Remember

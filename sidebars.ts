@@ -22,11 +22,11 @@ const sidebars: SidebarsConfig = {
         id: 'run-a-node/index',
       },
       items: [
-        'run-a-node/node-overview',
+        'run-a-node/overview',
         'run-a-node/testnet-information',
-        'run-a-node/storage',
-        'run-a-node/da',
-        'run-a-node/validator',
+        'run-a-node/storage-node',
+        'run-a-node/da-node',
+        'run-a-node/validator-node',
       ],
     },
     {
