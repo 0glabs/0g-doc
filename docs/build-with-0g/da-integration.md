@@ -1,6 +1,6 @@
 ---
 id: da-integration
-title: Posting Data to 0G DA
+title: Setting Up DA Client Nodes
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 # 0G Data Availability (DA): Integration
 ----
 
-To submit data to the 0G DA, you need to run a DA client, which interfaces with the Encoder for data encoding and the Retriever for data access.
+To submit data to the 0G DA, you must run a DA Client node and the Encoder node. The DA client interfaces with the Encoder for data encoding and the Retriever for data access.
 
 ### Maximum blob size
 
@@ -23,7 +23,18 @@ As the DA user, you pay a fee which is the (BLOB_PRICE) when submitting DA blob 
 
 See example here https://github.com/0glabs/0g-da-example-rust/blob/main/src/disperser.proto
 
+### Hardware Requirements
+
+The following table outlines the hardware requirements for different types of DA Client nodes:
+
+| Node Type | Memory | CPU | Disk | Bandwidth | Additional Notes |
+|-----------|--------|-----|------|-----------|------------------|
+| DA Client | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
+| DA Encoder | - | - | - | - | NVIDIA Drivers: 12.04 on the RTX 4090* |
+| DA Retriever | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
+
 ### Standing up DA Client, Encoder, Retriever
+
 
 <Tabs>
 <TabItem value="binary" label="DA Client" default>
