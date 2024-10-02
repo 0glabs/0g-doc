@@ -12,8 +12,6 @@ While there are various approaches to running a DA (Data Availability) node, thi
 
 ## Hardware Requirements
 
-The following table outlines the hardware requirement for a DA node:
-
 | Node Type | Memory | CPU | Disk | Bandwidth | Additional Notes |
 |-----------|--------|-----|------|-----------|------------------|
 | DA Node | 16 GB | 8 cores | 1 TB NVME SSD | 100 MBps | For Download / Upload |
@@ -65,9 +63,9 @@ The following table outlines the hardware requirement for a DA node:
 
   </TabItem>
 
-<TabItem value="Da-node" label="DA Node" default>
+<TabItem value="Da-node" label="Build from Source" default>
 
-## DA Node Installation
+
 
 ## Step 1: Clone and Build the Repository
 
@@ -177,7 +175,7 @@ You have now successfully set up and run a 0g DA node as a DA Signer. For more a
 
 Remember to keep your private keys secure and regularly update your node software to ensure optimal performance and security.
   </TabItem>
-<TabItem value="signer" label="DA Signers">
+<TabItem value="signer" label="Become a Signer">
 
 # DA Signers
 
