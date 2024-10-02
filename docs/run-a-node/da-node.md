@@ -20,48 +20,6 @@ While there are various approaches to running a DA (Data Availability) node, thi
 
 ## Standing up a DA Node and DA Signer
 <Tabs>
-<TabItem value="Da-node-docker" label="Run with Docker" default>
-
-**1. Clone the DA Node Repo:** 
-
-   ```
-   git clone https://github.com/0glabs/0g-da-node.git
-   cd 0g-da-node
-   git checkout tags/v1.1.2 -b v1.1.2
-   ```
-
-**2. Add a Dockerfile:**
-
-   ```
-    FROM rust:1.70 AS build
-
-    WORKDIR /0g-da-node
-
-    RUN apt-get update && \
-        apt-get install -y git bash curl clang llvm-dev libclang-dev libprotobuf-dev protobuf-compiler
-
-    RUN git clone https://github.com/0glabs/0g-da-node.git .
-
-    RUN cargo build --release
-
-    RUN chmod +x ./dev_support/download_params.sh && ./dev_support/download_params.sh
-
-    EXPOSE 34000
-
-    FROM debian:buster-slim AS runtime
-
-    WORKDIR /0g-da-node
-
-    COPY --from=build /0g-da-node/target/release/server /0g-da-node/server
-    COPY --from=build /0g-da-node/params /0g-da-node/params
-
-    COPY config.toml /0g-da-node/config.toml
-
-    CMD ["./server", "--config", "config.toml"]
-
-   ```
-
-  </TabItem>
 
 <TabItem value="Da-node" label="Build from Source" default>
 
@@ -175,6 +133,50 @@ You have now successfully set up and run a 0g DA node as a DA Signer. For more a
 
 Remember to keep your private keys secure and regularly update your node software to ensure optimal performance and security.
   </TabItem>
+
+  <TabItem value="Da-node-docker" label="Run with Docker" default>
+
+**1. Clone the DA Node Repo:** 
+
+   ```
+   git clone https://github.com/0glabs/0g-da-node.git
+   cd 0g-da-node
+   git checkout tags/v1.1.2 -b v1.1.2
+   ```
+
+**2. Add a Dockerfile:**
+
+   ```
+    FROM rust:1.70 AS build
+
+    WORKDIR /0g-da-node
+
+    RUN apt-get update && \
+        apt-get install -y git bash curl clang llvm-dev libclang-dev libprotobuf-dev protobuf-compiler
+
+    RUN git clone https://github.com/0glabs/0g-da-node.git .
+
+    RUN cargo build --release
+
+    RUN chmod +x ./dev_support/download_params.sh && ./dev_support/download_params.sh
+
+    EXPOSE 34000
+
+    FROM debian:buster-slim AS runtime
+
+    WORKDIR /0g-da-node
+
+    COPY --from=build /0g-da-node/target/release/server /0g-da-node/server
+    COPY --from=build /0g-da-node/params /0g-da-node/params
+
+    COPY config.toml /0g-da-node/config.toml
+
+    CMD ["./server", "--config", "config.toml"]
+
+   ```
+
+  </TabItem>
+
 <TabItem value="signer" label="Become a Signer">
 
 # DA Signers
