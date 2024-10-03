@@ -50,17 +50,9 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Rollup as a Service',
+          label: 'Rollup-as-a-Service (coming soon)',
           items: [
             'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'AVSs',
-          items: [
-            'build-with-0g/AVSs/eigenlayer-avs-on-0g-da',
-            'build-with-0g/AVSs/babylon-avs-on-0g-da',
           ],
         },
         'build-with-0g/faucet',
