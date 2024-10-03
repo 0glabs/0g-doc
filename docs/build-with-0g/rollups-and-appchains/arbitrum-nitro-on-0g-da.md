@@ -23,8 +23,8 @@ Find the [repository for this integration](https://github.com/0glabs/nitro) at h
 
 ## Prerequisites
 
-- [0G DA Client Node](../build-with-0g/da-client-node.md)
-- [0G DA Encoder Node](../build-with-0g/da-encoder-node.md)
+- [0G DA Client Node]('../build-with-0g/da-client-node')
+- [0G DA Encoder Node]('../build-with-0g/da-encoder-node')
 - [0G Arbitrum Nitro Rollup Kit](https://github.com/0glabs/nitro)
 
 
