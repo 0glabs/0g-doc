@@ -30,30 +30,36 @@ Running a validator node in the 0G ecosystem means actively participating in the
 
 ## Registering Your Validator
 
-**3. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your Node Operator ECDSA public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. Make sure you have the corresponding ECDSA private key for importing into the validator node.
+**3. Create or Import an Account:** 
 
-**4. Registering Node Operator Account:**
-Once you have the tokens, register your node operator account by putting in your ECDSA private key. This step would prompt you to choose and enter a passphrase. 
+   ```bash 
+   # Create a wallet and export the private key
+   docker exec -it <container_name> /bin/bash
+   0gchaind keys add <key_name> --eth
+   0gchaind keys unsafe-export-eth-key <key_name>
+   ```
 
    ```bash
-   # Import an existing key
+   # Import an existing key by entering the mnemonic
    docker exec -it <container_name> /bin/bash
-   0gchaind keys unsafe-import-eth-key <key_name> <private_key>
+   0gchaind keys add <key_name> --recover --eth
    ```
+
+**4. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. 
 
 **5. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
    ```bash
    0gchaind tx staking create-validator \
-   --amount=<staking_amount>ua0gi \ 
+   --amount=<staking_amount>ua0gi \
    --pubkey=$(0gchaind tendermint show-validator) \
-   --moniker="<your_validator_name>" \ 
+   --moniker="<your_validator_name>" \
    --chain-id=zgtendermint_16600-2 \
    --commission-rate="0.10" \
    --commission-max-rate="0.20" \
    --commission-max-change-rate="0.01" \
    --min-self-delegation="1" \
-   --from=<key_name> \ 
+   --from=<key_name> \
    --gas=auto \
    --gas-adjustment=1.4
    ```
