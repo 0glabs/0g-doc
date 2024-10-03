@@ -4,7 +4,7 @@ sidebar_position: 5
 ---
 
 
-# 0G Serving
+# 0G Serving: Decentralized Inference & Beyond
 ---
 In today's world, AI models are transforming industries, driving innovation, and powering new applications. But despite their increasing value, there's a critical gap in how AI services are delivered. Centralized platforms limit access, inflate costs, and restrict the flexibility of AI developers. That’s where 0G Serving comes in.
 
