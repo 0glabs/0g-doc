@@ -7,75 +7,67 @@ sidebar_position: 4
 # 0G DA: Infinitely Scalable and Programmable DA
 ---
 
-0G DA is a groundbreaking Data Availability Layer that offers unparalleled throughput and scalability, making it uniquely suited for high-performance applications like on-chain AI and large-scale data processing.
-
 ## What is DA and Why is it Important?
 
-Data availability (DA) refers to proving that data is readily accessible, verifiable, and retrievable. For example, Layer 2 rollups such as Arbitrum or Base handle transactions off-chain and then publish the data to Ethereum. On Ethereum, validators confirm that transactions were indeed handled honestly, and they store this data as well.
+Data availability (DA) refers to proving that data is readily accessible, verifiable, and retrievable. For example, Layer 2 rollups such as Arbitrum or Base reduce the burden from Ethereum by handling transactions off-chain and then publishing the data back to Ethereum, thereby freeing up L1 Ethereum throughput and reducing gas. The transaction data, however, still needs to be made available so that anyone can validate or challenge the transactions through fraud-proofs during the challenge-period. 
 
-The amount of data stored on Ethereum is therefore growing exponentially alongside blockchain adoption, posing a risk to decentralization as fewer and fewer validators will be able to efficiently store vast amounts of data.
+As such, DA is crucial to blockchains as it allows for full validation of the blockchain's history and current state by any participant, thus maintaining the decentralized and trustless nature of the network. Without this, validators would not be able to independently verify the legitimacy of transactions and blocks, leading to potential issues like fraud or censorship.
+ 
+This led to the arrival of *Data Availability Layers (DALs)*, which provide a significantly more efficient manner of storing and verifying data than publishing directly to Ethereum. DALs are critical for several reasons:
 
-This led to the arrival of Data Availability Layers (DALs), which provide a significantly more efficient manner of storing and verifying data than publishing directly to Ethereum. However, existing DALs cannot adequately support high-performance dApps or use cases such as on-chain AI.
-
-DALs are critical for several reasons:
-- **Scalability**: DALs allow networks to process more transactions and larger datasets without overwhelming the system, reducing the burden on network nodes and significantly enhancing network scalability.
-- **Increased Efficiencies**: DALs optimize how and where data is stored and made available, increasing data throughput and reducing latency while also minimizing associated costs.
-- **Interoperability & Innovation**: DALs that can interact with multiple ecosystems allow for fast and highly secure interoperability for data and assets.
+* **Scalability**: DALs allow networks to process more transactions and larger datasets without overwhelming the system, reducing the burden on network nodes and significantly enhancing network scalability.
+* **Increased Efficiencies**: DALs optimize how and where data is stored and made available, increasing data throughput and reducing latency while also minimizing associated costs.
+* **Interoperability & Innovation**: DALs that can interact with multiple ecosystems allow for fast and highly secure interoperability for data and assets.
 
 However, it's worth noting that not all DALs are built equally.
 
 ## The Challenge Today
 
-While existing DA solutions like Celestia and Avail have been instrumental for Layer 2s, they fall short in critical ways that make them ill-suited for high-performance needs such as on-chain AI, high-frequency trading, fully on-chain gaming, and much more.
+Existing DALs tend to require that data be simultaneously sent to all of their network nodes, preventing horizontal scalability and limiting network speed to its slowest node. They also do not have built-in storage systems, requiring connectivity to external systems that impact throughput, latency, and cost. 
 
-This is for several reasons:
-- DALs tend to require that data be simultaneously sent to all of their network nodes, preventing horizontal scalability and limiting network speed to its slowest node.
-- Today's blockchain infrastructure falls short in meeting the needs of real-world AI applications due to limited throughput: Ethereum processes 10-20 TPS, Solana [less than 4,000 TPS](https://explorer.solana.com/), and Layer 2s [less than 400 TPS](https://l2beat.com/scaling/activity). This equates to data throughput of ~1.5 mbps on average, which is 33,333x lower than the 50+ gbps that's needed to fuel AI applications. 
-- They also do not have built-in storage systems, requiring connectivity to external systems that impact throughput, latency, and cost.
-- 0G inherits Ethereum's security, while other systems rely upon their own security mechanisms that fall short.
-- Even more issues exist, including EigenDA's lack of randomization over its data committees.
+Additionally, 0G inherits Ethereum's security, while other systems rely upon their own security mechanisms that fall short. This is significant because Ethereum's network is secured by over 34 million ETH staked, representing approximately $80 billion in cryptoeconomic security at the time of writing. In contrast, competitors rely on security mechanisms that, at best, represent only a fraction of Ethereum's total security. This gives 0G a distinct advantage, as it leverages the vast economic incentives and decentralization of Ethereum's staking system, providing a level of protection that competitors cannot match.
 
-0G's core differentiation is massive throughput and scalability. This is possible through 0G's unique design, which includes a built-in storage system and horizontally scalable consensus design, alongside other clever design mechanisms.
+Even more issues exist, including EigenDA's lack of randomization over its data committees. As data committees are core to a DA system's integrity, a lack of randomization means that collusion is theoretically possible for malicious nodes to predict when they might be on a committee together.
+
+**0G's core differentiation is massive throughput and scalability.**
+
+This is possible through 0G's unique design includes a built-in storage system and horizontally scalable consensus design, alongside other clever design mechanisms that we'll cover below.
 
 The result is that 0G serves as the foundational layer for decentralized AI applications, bringing on-chain AI and more to life.
 
+## Why 0G Is The Superior DA Solution
 
-## Why 0G Is The Superior DA Solution?
+There are 4 differentiators of 0G worth highlighting:
 
-There are 4 key differentiators of 0G:
+1. **Infinitely Scalable DA:** 0G's infinitely scalable DAL can quickly query or confirm data as valid, whether data is held by 0G Storage, or external Web2 or Web3 databases. Infinite scalability comes from the ability to continuously add new consensus networks, supporting workloads that far surpass the capacity of existing systems.
 
-1. **Infinitely Scalable DA**: 0G DA is 0G's infinitely scalable DAL that can quickly query or confirm data as valid, whether data held by 0G Storage, or held in external sources. Infinite scalability comes from the ability to continuously add new consensus networks, supporting workloads that far surpass the capacity of existing systems.
+2. **Modular and Layered Architecture**: 0G's design decouples storage, data availability, and consensus, allowing each component to be optimized for its specific function. Data availability is ensured through redundancy, with data distributed across decentralized Storage Nodes. Cryptographic proofs (like Merkle trees and zk-proofs) verify data integrity at regular intervals, automatically replacing nodes that fail to produce valid proofs. And combined with 0G's ability to keep adding new consensus networks that scale with demand, 0G can scale efficiently and is ideal for complex AI workflows and large-scale data processing.
 
-2. **Modular and Layered Architecture**: 0G is designed with a modular blockchain approach, where each component (storage, data availability, and consensus) is optimized for its specific function. This approach makes 0G particularly well-suited for handling complex AI workflows.
-
-3. **Decentralized AI Operating System (dAIOS)**: 0G is the first decentralized AI operating system designed to give users control over their data while ensuring transparency and fairness throughout the AI lifecycle.
-
-4. **High Throughput for AI Workloads**: 0G's infrastructure is specifically built to handle the large data throughput demands of AI applications, which current blockchain platforms cannot meet. With a demonstrated throughput of 50 Gbps on the Newton Testnet, 0G supports all on-chain AI requirements, including training large language models and storing entire AI agent networks.
+3. **Decentralized AI Operating System & High Throughput**: 0G is the first decentralized AI operating system (dAIOS) designed to give users control over their data, while providing the infrastructure necessary to handle the massive throughput demands of AI applications. Beyond its modular architecture and infinite consensus layers, 0G achieves high throughput through parallel data processing, enabled by erasure coding, horizontally scalable consensus networks, and more. With a demonstrated throughput of 50 Gbps on the Newton Testnet, 0G seamlessly supports AI workloads and other high-performance needs, including training large language models and managing AI agent networks.
 
 These differentiators make 0G uniquely positioned to tackle the challenges of scaling AI on a decentralized platform, which is critical for the future of Web3 and decentralized intelligence.
 
-### 0G has achieved 50 gbps DA throughput per consensus layer.
-
-On [Testnet](/run-a-node/testnet-information), each 0G node demonstrated 10mbps throughput. With 5,000 nodes, that’s 50,000mbps or **50gbps** per consensus layer. As the consensus layer becomes the bottleneck, 0G plans to implement its own custom consensus (currently using Tendermint), akin to adding more AWS servers in a Web2 context, ultimately enabling infinite throughput.
-
-This is possible by incorporating cutting-edge horizontal scaling and sharding mechanisms to achieve remarkable speed. By distributing AI workloads across a network of specialized nodes, 0G reduces latency and accelerates processing times, making it highly competitive with centralized Web2 AI systems. This efficiency is critical as AI applications scale and require increasingly powerful resources. You can read more about this in the following [section](/intro).
-
-0G’s novel approach to decoupling data availability from consensus allows independent scaling of storage and validation layers. This architecture not only addresses the scalability challenges faced by traditional blockchain systems, but also enhances data resilience and retrieval efficiency. 
-
-
 ## How Does This Work?
 
-As covered in [0G Storage](./og-storage.md), data within the 0G ecosystem is first erasure-coded and split into "data chunks," which are then distributed across various Storage Nodes in the 0G Storage network. 
+As covered in #0G_Storage, data within the 0G ecosystem is first erasure-coded and split into "data chunks," which are then distributed across various Storage Nodes in the 0G Storage network. 
 
-To ensure data availability, 0G utilizes DA nodes that are randomly selected through a Verifiable Random Function (VRF). These DA nodes form quorums to query and verify the stored data, operating under an "honest majority" assumption. Once consensus is reached on the availability of the data, the availability proofs are submitted to the 0G Consensus network.
+To ensure data availability, 0G uses **Data Availability Nodes** that are randomly chosen using a Verifiable Random Function (VRF). A VRF generates random values in a way that is unpredictable yet verifiable by others, which is important as it prevents potentially malicious nodes from collusion.
 
+These DA nodes work together in small groups, called quorums, to check and verify the stored data. The system assumes that most nodes in each group will act honestly, known as an "honest majority" assumption. 
+
+The consensus mechanism used by 0G is fast and efficient due to its sampling-based approach. Rather than verifying all data, DA nodes sample portions of it, drastically reducing the data they need to handle. Once enough nodes agree that the sampled data is available and correct, they submit availability proofs to the 0G Consensus network. This lightweight, sample-driven approach enables faster verification while maintaining strong security.
+<div style={{textAlign: 'center'}}>
+  <img src="/img/Validators in the 0G Consensus network.png" alt="Validators in the 0G Consensus network Image" style={{maxWidth: '100%'}} />
+</div>
+<br />
 Validators in the 0G Consensus network, who are separate from the DA nodes, verify and finalize these proofs. Although DA nodes ensure data availability, they do not directly participate in the final consensus process, which is the responsibility of 0G validators. Validators use a shared staking mechanism where they stake $0G tokens on a primary network (likely Ethereum). Any slashable event across connected networks leads to slashing on the main network, securing the system's scalability while maintaining robust security. 
 
 This is a key mechanism that allows for the system to scale infinitely while maintaining data availability. In return, validators engaged in shared staking receive $0G tokens on any network managed, which can then be burnt in return for $0G tokens on the mainnet.
-
-## Getting Started
-
-[Link to guide]
+<div style={{textAlign: 'center'}}>
+  <img src="/img/consensus process.png" alt="consensus process Image" style={{maxWidth: '100%'}} />
+</div>
+<br />
+**Getting started:** [link to guide]('.../run-a-node/da-node')
 
 ## Use Cases
 
@@ -83,7 +75,7 @@ This is a key mechanism that allows for the system to scale infinitely while mai
 
 ### L1s / L2s
 
-Layer 1 and Layer 2 chains can utilize 0G DA to handle data availability and storage requirements for decentralized AI models, large datasets, and on-chain applications. Existing partners include networks like **Polygon, Arbitrum, Fuel, Manta Network**, **and countless more,** which leverage 0G's scalable infrastructure to store data more efficiently and support fast retrieval.
+Layer 1 and Layer 2 chains can utilize 0G DA to handle data availability and storage requirements for decentralized AI models, large datasets, and on-chain applications. Existing partners include networks like **Polygon, Optimism, Arbitrum, Fuel, Manta Network**, **and countless more,** which leverage 0G's scalable infrastructure to store data more efficiently and support fast retrieval.
 
 ### Decentralized Shared Sequencers
 
@@ -111,4 +103,4 @@ Web3 data markets can benefit from 0G DA by storing datasets on-chain. The decen
 
 ### AI & Machine Learning
 
-0G DA is particularly focused on supporting decentralized AI, allowing full AI models and vast datasets to be stored and accessed on-chain. This infrastructure is essential for advanced AI applications that demand high data throughput and availability, such as training large language models (LLMs) and managing entire AI agent networks.
+0G DA is particularly focused on supporting decentralized AI, allowing full AI models and vast datasets to be stored and accessed on-chain. This infrastructure is essential for advanced AI applications that demand high data throughput and availability, such as training large language models (LLMs) and managing entire AI agent Networks.
