@@ -59,8 +59,8 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'AVSs',
           items: [
-            'build-with-0g/avss/eigenlayer-avs-on-0g-da',
-            'build-with-0g/avss/babylon-avs-on-0g-da',
+            'build-with-0g/AVSs/eigenlayer-avs-on-0g-da',
+            'build-with-0g/AVSs/babylon-avs-on-0g-da',
           ],
         },
         'build-with-0g/faucet',
