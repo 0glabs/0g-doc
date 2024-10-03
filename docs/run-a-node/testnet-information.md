@@ -25,9 +25,9 @@ In Testnet-V2, we've implemented a fair and transparent process for selecting va
 
 **What happens if I'm not selected to be a validator?**
 - Validators are rotated every ~two weeks, so even if you're not selected for this round, you may be selected in the next rotation. Furthermore, validators are just one of the node types -- you can also run any of the other node types, like storage and DA. For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
-  - [Run a Storage Node](run-a-node/storage.md)
-  - [Run a DA Node](run-a-node/da.md)
-  - [Run a Validator Node](run-a-node/validator.md)
+  - [Run a Storage Node](/run-a-node/storage-node.md)
+  - [Run a DA Node](/run-a-node/da-node)
+  - [Run a Validator Node](/run-a-node/validator-node)
 
 ## 0G Testnet Configuration
 
@@ -38,8 +38,8 @@ In Testnet-V2, we've implemented a fair and transparent process for selecting va
 | Token Symbol | A0GI |
 | Chain RPC | https://evmrpc-testnet.0g.ai |
 | Chain Websocket | https://cosmosrpc-testnet.0g.ai |
-| Storage Standard RPC | https://rpc-storage-testnet.0g.ai |
-| Storage Turbo RPC | https://rpc-storage-testnet-turbo.0g.ai |
+| Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
+| Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
 | Chain Explorer | https://chainscan-newton.0g.ai/ |
 | Storage Explorer | https://storagescan-newton.0g.ai/ |
 
