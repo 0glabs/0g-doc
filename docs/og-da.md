@@ -7,7 +7,7 @@ sidebar_position: 4
 # 0G DA: Infinitely Scalable and Programmable DA
 ---
 
-## What is DA and Why is it Important?
+## The Rise of Data Availability Layers
 
 Data availability (DA) refers to proving that data is readily accessible, verifiable, and retrievable. For example, Layer 2 rollups such as Arbitrum or Base reduce the burden from Ethereum by handling transactions off-chain and then publishing the data back to Ethereum, thereby freeing up L1 Ethereum throughput and reducing gas. The transaction data, however, still needs to be made available so that anyone can validate or challenge the transactions through fraud-proofs during the challenge-period. 
 
@@ -35,7 +35,7 @@ This is possible through 0G's unique design includes a built-in storage system a
 
 The result is that 0G serves as the foundational layer for decentralized AI applications, bringing on-chain AI and more to life.
 
-## Why 0G Is The Superior DA Solution
+## Why 0G 
 
 There are 4 differentiators of 0G worth highlighting:
 
