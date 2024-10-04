@@ -4,7 +4,7 @@ title: 0G Storage
 sidebar_position: 3
 ---
 
-# 0G Storage: Distributed Storage for Heavy Data Volumes
+# 0G Storage: Built for Massive Data
 ---
 
 ## Intro to Storage Systems
