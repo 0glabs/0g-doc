@@ -58,7 +58,7 @@ Miners with more resources can still participate by dividing their machines acro
   <img src="/img/data-chanks.png" alt="Data chunks Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
-## Why Choose 0G Storage?
+## Comparison to Filecoin and Arweave
 
 Decentralized storage systems like Filecoin and Arweave face significant limitations surrounding structured data, scalability, cost, and data availability functionality.
 
