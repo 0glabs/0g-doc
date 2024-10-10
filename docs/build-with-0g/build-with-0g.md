@@ -12,7 +12,7 @@ A DA Client allows you to submit data to the 0G DA system and retrieve it later.
 
 1. **DA Client**: Allows you to submit data to the 0G DA system and retrieve it later.
 2. **Encoder**: Processes and encodes data for efficient storage and retrieval.
-3. **Retriever**: Retrieves data from the 0G DA system.
+3. **Retriever**: Retrieves data from the 0G DA system (optional only for retrieval)
 
 #### Integrating with the DA Node
 
