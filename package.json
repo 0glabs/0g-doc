@@ -1,6 +1,6 @@
 {
   "name": "docs-0-g",
-  "version": "18.x",
+  "version": ">=20.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
