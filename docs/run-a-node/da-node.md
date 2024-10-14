@@ -21,6 +21,98 @@ While there are various approaches to running a DA (Data Availability) node, thi
 ## Standing up a DA Node and DA Signer
 <Tabs>
 
+  <TabItem value="Da-node-docker" label="Run with Docker" default>
+
+**1. Clone the DA Node Repo:** 
+
+   ```
+   git clone https://github.com/0glabs/0g-da-node.git
+   cd 0g-da-node
+   ```
+
+**2. Generate BLS Private Key (if needed):**
+
+If you don't have a BLS private key, generate one:
+
+```
+cargo run --bin key-gen
+```
+
+Keep the generated BLS private key secure.
+
+**3. Set up config.toml:**
+
+1. Create a configuration file named `config.toml` in the project root directory.
+2. Add the following content to the file, adjusting values as needed:
+
+   ```toml
+   log_level = "info"
+
+   data_path = "/data"
+
+   # path to downloaded params folder
+   encoder_params_dir = "/params"
+
+   # grpc server listen address
+   grpc_listen_address = "0.0.0.0:34000"
+   # chain eth rpc endpoint
+   eth_rpc_endpoint = "https://rpc-testnet.0g.ai"
+   # public grpc service socket address to register in DA contract
+   # ip:34000 (keep same port as the grpc listen address)
+   # or if you have dns, fill your dns
+   socket_address = "<public_ip/dns>:34000"
+
+   # data availability contract to interact with
+   da_entrance_address = "0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9" # testnet config
+   # deployed block number of da entrance contract
+   start_block_number = 940000 # testnet config
+
+   # signer BLS private key
+   signer_bls_private_key = ""
+   # signer eth account private key
+   signer_eth_private_key = ""
+   # miner eth account private key, (could be the same as `signer_eth_private_key`, but not recommended)
+   miner_eth_private_key = ""
+
+   # whether to enable data availability sampling
+   enable_das = "true"
+   ```
+
+   Make sure to fill in the `signer_bls_private_key`, `signer_eth_private_key`, and `miner_eth_private_key` fields with your actual private keys.
+
+**4. Build and Start the Docker Container:**
+
+   ```
+   docker build -t 0g-da-node .
+   docker run -d --name 0g-da-node 0g-da-node
+   ```
+**5: Verify the Node is Running**
+
+On the first run, the DA node will register the signer information in the DA contract. You can monitor the console output to ensure the node is running correctly and has successfully registered.
+
+### Node Operations
+
+As a DA node operator, your node will perform the following tasks:
+- Encoded blob data verification
+- Signing of verified data
+- Storing blob data for further farming
+- Receiving rewards for these operations
+
+### Troubleshooting
+
+- If you encounter any issues, check the console output for error messages.
+- Ensure that the ports specified in your `config.toml` file are not being used by other applications.
+- Verify that you have the latest stable version of Rust installed.
+- Make sure your system meets the minimum hardware requirements.
+
+### Conclusion
+
+You have now successfully set up and run a 0g DA node as a DA Signer. For more advanced configuration options and usage instructions, please refer to the official GitHub repository.
+
+Remember to keep your private keys secure and regularly update your node software to ensure optimal performance and security.
+
+  </TabItem>
+
 <TabItem value="Da-node" label="Build from Source" default>
 
 
@@ -134,48 +226,7 @@ You have now successfully set up and run a 0g DA node as a DA Signer. For more a
 Remember to keep your private keys secure and regularly update your node software to ensure optimal performance and security.
   </TabItem>
 
-  <TabItem value="Da-node-docker" label="Run with Docker" default>
 
-**1. Clone the DA Node Repo:** 
-
-   ```
-   git clone https://github.com/0glabs/0g-da-node.git
-   cd 0g-da-node
-   git checkout tags/v1.1.2 -b v1.1.2
-   ```
-
-**2. Add a Dockerfile:**
-
-   ```
-    FROM rust:1.70 AS build
-
-    WORKDIR /0g-da-node
-
-    RUN apt-get update && \
-        apt-get install -y git bash curl clang llvm-dev libclang-dev libprotobuf-dev protobuf-compiler
-
-    RUN git clone https://github.com/0glabs/0g-da-node.git .
-
-    RUN cargo build --release
-
-    RUN chmod +x ./dev_support/download_params.sh && ./dev_support/download_params.sh
-
-    EXPOSE 34000
-
-    FROM debian:buster-slim AS runtime
-
-    WORKDIR /0g-da-node
-
-    COPY --from=build /0g-da-node/target/release/server /0g-da-node/server
-    COPY --from=build /0g-da-node/params /0g-da-node/params
-
-    COPY config.toml /0g-da-node/config.toml
-
-    CMD ["./server", "--config", "config.toml"]
-
-   ```
-
-  </TabItem>
 
 <TabItem value="signer" label="Become a Signer">
 
