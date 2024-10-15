@@ -389,7 +389,7 @@ Running a 0G Storage KV node is an important part of the 0G ecosystem, providing
 
 ## **0G Storage (CLI) Overview**
 
-The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storage network. It simplifies the process of uploading and downloading files, as well as managing other aspects of your decentralised storage experience. The CLI translates your commands into actions that the network can interpret and execute, making it easier to control your data without needing in-depth knowledge of the underlying blockchain technology.
+The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storage network. It simplifies the process of uploading and downloading files, as well as managing other aspects of your decentralized storage experience. The CLI translates your commands into actions that the network can interpret and execute, making it easier to control your data without needing in-depth knowledge of the underlying blockchain technology.
 
 **Getting Started**
 

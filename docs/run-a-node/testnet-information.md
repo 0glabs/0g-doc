@@ -25,9 +25,9 @@ In Testnet-V2, we've implemented a fair and transparent process for selecting va
 
 **What happens if I'm not selected to be a validator?**
 - Validators are rotated every ~two weeks, so even if you're not selected for this round, you may be selected in the next rotation. Furthermore, validators are just one of the node types -- you can also run any of the other node types, like storage and DA. For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
-  - [Run a Storage Node](/run-a-node/storage-node.md)
-  - [Run a DA Node](/run-a-node/da-node)
-  - [Run a Validator Node](/run-a-node/validator-node)
+  - [Run a Storage Node](./storage-node.md)
+  - [Run a DA Node](./da-node.md)
+  - [Run a Validator Node](./validator-node.md)
 
 ## 0G Testnet Configuration
 
@@ -66,8 +66,12 @@ Deployed Block Number: `595059`
 ### Third-party RPCs
 
 - [thirdweb RPC](https://thirdweb.com/0g-newton-testnet)
+- [Ankr](https://rpc.ankr.com/0g_newton)
 
 ### Community RPCs
 
 **community RPCs will be listed here**
 
+[Originstake](https://0g-json-rpc-public.originstake.com)
+[Validatorvn](https://0g-rpc-evm01.validatorvn.com)
+[Itrocket](https://og-testnet-jsonrpc.itrocket.net)

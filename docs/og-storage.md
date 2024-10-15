@@ -13,7 +13,7 @@ Storage systems play a critical role in managing, organizing, and ensuring the a
 
 ## 0G's Storage System
 
-0G Storage is a distributed data storage system designed with on-chain elements to incentivize storage nodes to store data on behalf of a user. Anyone can run a storage node and receive rewards for maintaining one. For information on how to do so, check out our guide [here](../run-a-node/storage-node.md). 
+0G Storage is a distributed data storage system designed with on-chain elements to incentivize storage nodes to store data on behalf of a user. Anyone can run a storage node and receive rewards for maintaining one. For information on how to do so, check out our guide [here](./run-a-node/storage-node.md). 
 
 0G's system itself has two parts:
 

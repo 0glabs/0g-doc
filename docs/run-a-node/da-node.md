@@ -236,7 +236,7 @@ The DASigners contract is an interface through which Solidity contracts can inte
 
 # Becoming a DA Signer and Running a 0g DA Node
 
-You can use the DA node installation guide found [here](run-a-node/da.md) To become a DA Signer and run your own DA node you can also our repository: [0G DA node](https://github.com/0glabs/0g-da-node)
+You can use the DA node installation guide found [here](./da-node.md) To become a DA Signer and run your own DA node you can also our repository: [0G DA node](https://github.com/0glabs/0g-da-node)
 
 ## Becoming a DA Signer
 

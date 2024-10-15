@@ -94,13 +94,13 @@ Running a validator node in the 0G ecosystem means actively participating in the
 
 ### Troubleshooting
 
-If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](learn-more/how-to-contribute.md) or reach out to our community support channels.
+If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](../learn-more/how-to-contribute.md) or reach out to our community support channels.
 
 ### Next Steps
 
 After successfully setting up your validator node, consider exploring the following:
 
-- [Node Monitoring and Maintenance](/docs/run-a-node/testnet-information)
+- [Node Monitoring and Maintenance](./testnet-information.md)
 
 Thank you for contributing to the security and decentralization of the 0g network!
 
@@ -204,13 +204,13 @@ Thank you for contributing to the security and decentralization of the 0g networ
 
 ## Troubleshooting
 
-If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](learn-more/how-to-contribute.md) or reach out to our community support channels.
+If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](../learn-more/how-to-contribute.md) or reach out to our community support channels.
 
 ## Next Steps
 
 After successfully setting up your validator node, consider exploring the following:
 
-- [Node Monitoring and Maintenance](/docs/run-a-node/testnet-information)
+- [Node Monitoring and Maintenance](./testnet-information.md)
 
 Thank you for contributing to the security and decentralization of the 0g network!
 
