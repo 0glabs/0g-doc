@@ -95,7 +95,7 @@ html[data-theme='dark'] .header-github-link::before {
 }
 /* Global Styles */
 body {
-  font-family: 'Verdana', sans-serif;
+  font-family: 'Familjen G', sans-serif;
   font-size: var(--ifm-font-size-base);
   line-height: 1.5;
 }
