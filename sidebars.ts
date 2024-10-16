@@ -5,13 +5,25 @@ const sidebars: SidebarsConfig = {
     'preface',
     {
       type: 'category',
-      label: 'Introduction to 0G',
+      label: '0G Overview',
       className: 'sidebar-category intro',
       link: {
         type: 'doc',
         id: 'intro',
       },
-    items: ['og-storage', 'og-da', 'og-serving','og-chain'],
+      items: [
+        'og-storage', 
+        {
+          type: 'category',
+          label: '0G DA',
+          items: [
+            'da/og-da',
+            'da/og-da-deep-dive',
+          ],
+        },
+        'og-serving',
+        'og-chain',
+      ],
     },
     {
       type: 'category',

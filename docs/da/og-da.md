@@ -1,7 +1,7 @@
 ---
 id: og-da
-title: 0G DA 
-sidebar_position: 4
+title: 0G's Infinitely Scalable and Programmable DA
+sidebar_position: 1
 ---
 
 # 0G DA: Infinitely Scalable and Programmable DA
