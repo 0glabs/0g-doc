@@ -106,7 +106,7 @@ start by installing all the essential tools and libraries required to build the 
     git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
     ```
 
-5.  **Build the Source Code**
+**Build the Source Code**
 
     ```bash
     cd 0g-storage-node
@@ -115,11 +115,12 @@ start by installing all the essential tools and libraries required to build the 
     cargo build --release
     ```
 
-    *   This compiles the Rust code into an executable binary. The `--release` flag optimizes the build for performance.
+This compiles the Rust code into an executable binary. The `--release` flag optimizes the build for performance.
 
-6.  **Configure the Node**
+**Configure the Node**
 
- Navigate to the run directory and open config.toml for editing:
+Navigate to the run directory and open config.toml for editing. Follow the steps below. 
+
 
 ## Configuration
 
