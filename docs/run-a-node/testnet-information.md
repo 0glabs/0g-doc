@@ -70,8 +70,6 @@ Deployed Block Number: `595059`
 
 ### Community RPCs
 
-**community RPCs will be listed here**
-
-[Originstake](https://0g-json-rpc-public.originstake.com)
-[Validatorvn](https://0g-rpc-evm01.validatorvn.com)
-[Itrocket](https://og-testnet-jsonrpc.itrocket.net)
+- [Originstake](https://0g-json-rpc-public.originstake.com)
+- [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
+- [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
