@@ -21,7 +21,7 @@ We regularly conduct thorough security audits of our smart contracts, protocols,
 
 For a complete list of our audits and their detailed reports, please visit our [GitHub repository](https://github.com/0glabs/0g-doc-new/tree/main/audit).
 
-## [0G Labs Bug Bounty Program with hackenproof](https://hackenproof.com/programs/0g-labs-smart-contracts)
+## [0G Labs Bug Bounty Program with Hackenproof](https://hackenproof.com/programs/0g-labs-smart-contracts)
 
 At 0G, we believe in the power of **community-driven security**. Our bug bounty program invites security researchers and developers to help us identify and resolve potential vulnerabilities, ensuring the robustness of our systems. 
 
