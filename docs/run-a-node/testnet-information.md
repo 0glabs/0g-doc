@@ -6,29 +6,6 @@ sidebar_position: 3
 
 Welcome to Testnet-V2, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
 
-:::important note
-The validator selection process described here applies **only to the testnet**. Mainnet will have a different selection mechanism.
-While it's possible to run nodes (ex: DA node vs Validator Node) independently, your chances of being selected as a _validator_ increases if you run multiple node types. 
-If your validator is selected, it will manually be delegated by our team within a few days.
-If you have any questions, reach out to us on [discord](https://discord.com/invite/0glabs)
-:::
-
-## Node FAQ (Frequently Asked Questions)
-
-In Testnet-V2, we've implemented a fair and transparent process for selecting validators and managing various node types. Here's a summary of the key features:
-
-**How do I become a validator?**
-- You can apply to be a validator [here](https://shorturl.at/fgkoR). We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
-
-**Why are there limited validator slots?** 
-- Since we are currently using Cosmos/Tendermint consensus and they are limited to ~125 validators, we can only select 125 validators at this time. However, we anticipate this number will increase in the future when we transition to our own custom consensus. 
-
-**What happens if I'm not selected to be a validator?**
-- Validators are rotated every ~two weeks, so even if you're not selected for this round, you may be selected in the next rotation. Furthermore, validators are just one of the node types -- you can also run any of the other node types, like storage and DA. For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
-  - [Run a Storage Node](./storage-node.md)
-  - [Run a DA Node](./da-node.md)
-  - [Run a Validator Node](./validator-node.md)
-
 ## 0G Testnet Configuration
 
 | Field | Value |
@@ -74,3 +51,37 @@ Deployed Block Number: `595059`
 - [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
 - [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
 - [Zstake](https://0g-evmrpc.zstake.xyz/)
+
+### Faucet
+[Faucet](https://faucet.0g.ai/) 
+
+See [here](https://0g-doc-new.vercel.app/build-with-0g/faucet) for more info.
+
+### Explorers
+- [Chain Scan](https://chainscan-newton.0g.ai/): Chain Scan provides a comprehensive view of 0G chain activity and transactions.
+- [Storage Scan](https://storagescan-newton.0g.ai/): Storage Scan is your go-to tool for exploring storage-related activities within the network.
+  
+See [here](https://0g-doc-new.vercel.app/build-with-0g/explorer) for more info.
+
+## Node FAQ (Frequently Asked Questions)
+
+In Testnet-V2, we've implemented a fair and transparent process for selecting validators and managing various node types. Here's a summary of the key features:
+
+**How do I become a validator?**
+- You can apply to be a validator [here](https://shorturl.at/fgkoR). We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
+
+**Why are there limited validator slots?** 
+- Since we are currently using Cosmos/Tendermint consensus and they are limited to ~125 validators, we can only select 125 validators at this time. However, we anticipate this number will increase in the future when we transition to our own custom consensus. 
+
+**What happens if I'm not selected to be a validator?**
+- Validators are rotated every ~two weeks, so even if you're not selected for this round, you may be selected in the next rotation. Furthermore, validators are just one of the node types -- you can also run any of the other node types, like storage and DA. For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
+  - [Run a Storage Node](./storage-node.md)
+  - [Run a DA Node](./da-node.md)
+  - [Run a Validator Node](./validator-node.md)
+
+:::important note
+The validator selection process described here applies **only to the testnet**. Mainnet will have a different selection mechanism.
+While it's possible to run nodes (ex: DA node vs Validator Node) independently, your chances of being selected as a _validator_ increases if you run multiple node types. 
+If your validator is selected, it will manually be delegated by our team within a few days.
+If you have any questions, reach out to us on [discord](https://discord.com/invite/0glabs)
+:::
