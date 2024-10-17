@@ -10,7 +10,7 @@ import Lottie from '@lottielab/lottie-player/react';
 
 ## The First Decentralized AI Operating System (dAIOS)
 
-**0G (Zero Gravity) ** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications and chains. It efficiently orchestrates utilization of hardware resources such as storage and compute and software assets such as data and models to handle the scale and complexity of AI workloads. 
+**0G (Zero Gravity)** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications and chains. It efficiently orchestrates utilization of hardware resources such as storage and compute and software assets such as data and models to handle the scale and complexity of AI workloads. 
 
 Specifically designed for AI (d)applications and chains, 0G features the fastest, infinitely scalable data availability (DA) layer, the cheapest decentralized storage system, and a novel flexible serving framework for inferences and finetuning. Prior to 0G, resource-intensive AI applications would only be feasible “off-chain” due to burdensome on-chain costs, low latency and throughput, and a lack of builder-friendly tooling. 
 
