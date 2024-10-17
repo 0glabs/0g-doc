@@ -27,7 +27,7 @@ Find the repository for this integration at [https://github.com/0glabs/0g-da-op-
 * Set up a [0G DA encoder node]('../build-with-0g/da-integration').
 * [0G 0P stack rollup kit](https://github.com/0glabs/0g-da-op-plasma)
 
-Refer here for more comprehensive guide:[run OP Stack with 0G DA](https://github.com/0glabs/0g-da-op-plasma/blob/main/OP%20Stack%20integration.md)
+Refer here for more comprehensive guide: [run OP Stack with 0G DA](https://github.com/0glabs/0g-da-op-plasma/blob/main/OP%20Stack%20integration.md)
 
 **Important Notes:**
 
