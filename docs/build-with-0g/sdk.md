@@ -231,7 +231,7 @@ if (err === null) {
 
 ```javascript
 try {
-    const [tx, err] = await indexer.upload(file, 0, evmRpc, flowContract);
+    const [tx, err] = await indexer.upload(file, 0, evmRpc, signer, flowAddr);
     if (err === null) {
         console.log("File uploaded successfully, tx: ", tx);
     } else {
