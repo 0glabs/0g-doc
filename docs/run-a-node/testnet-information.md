@@ -65,7 +65,7 @@ Deployed Block Number: `595059`
 
 ### Third-party RPCs
 
-- [thirdweb RPC](https://thirdweb.com/0g-newton-testnet)
+- [Thirdweb](https://thirdweb.com/0g-newton-testnet)
 - [Ankr](https://rpc.ankr.com/0g_newton)
 
 ### Community RPCs
