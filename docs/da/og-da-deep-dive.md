@@ -141,10 +141,6 @@ The funds for the base reward will be manually deposited into the reward contrac
 
 A system service fee is charged as a proportion of the DA fees paid by the user, according to the parameter `SERVICE_FEE_RATE_BP`.
 
-## Data Sharding
-
-When the total data size in the network exceeds the storage capacity of a single node, the node will only store a part of the
-
 ## Run a node
 
 See [here](../run-a-node/da-node.md) for instructions to become DA signer and run your own node.
