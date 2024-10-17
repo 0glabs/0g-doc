@@ -13,6 +13,8 @@ Welcome to Testnet-V2, where you can contribute to our network by operating vari
 | Chain Name | 0G-Newton-Testnet |
 | Chain ID | 16600 (`zgtendermint_16600-2`) |
 | Token Symbol | A0GI |
+| Chain RPC - Thirdweb | https://16600.rpc.thirdweb.com/ |
+| Chain RPC - Ankr | https://rpc.ankr.com/0g_newton |
 | Chain RPC | https://evmrpc-testnet.0g.ai |
 | Chain Websocket | https://cosmosrpc-testnet.0g.ai |
 | Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
@@ -51,6 +53,10 @@ Deployed Block Number: `595059`
 - [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
 - [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
 - [Zstake](https://0g-evmrpc.zstake.xyz/)
+
+:::caution
+Do not rely on the free community endpoints listed below for production deployments. Production deployments should rely on service providers with SLAs or your own node.
+:::
 
 ### Faucet
 [Faucet](https://faucet.0g.ai/) 
