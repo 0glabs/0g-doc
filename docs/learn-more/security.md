@@ -30,10 +30,10 @@ Our bug bounty program covers:
 - Smart Contracts
 - Infrastructure
 - Protocol
-- 
+  
 ## Focus Area
 
-### In-Scope Vulnerabilities: Smart Contracts
+### In-Scope Vulnerabilities: 
 We are interested in vulnerabilities that result in incorrect behavior of the smart contract and could lead to unintended functionality, including:
 
 - Stealing or loss of funds
@@ -44,7 +44,7 @@ We are interested in vulnerabilities that result in incorrect behavior of the sm
 - Reordering transactions
 - Overflows and underflows
 
-### Out-of-Scope Vulnerabilities: Smart Contracts
+### Out-of-Scope Vulnerabilities: 
 The following are out of scope for the bug bounty program:
 
 - Theoretical vulnerabilities without proof or demonstration
