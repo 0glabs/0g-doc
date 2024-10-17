@@ -32,4 +32,5 @@ Refer here for a more comprehensive guide: [run OP Stack with 0G DA](https://git
 :::important note 
 * This is a beta integration, and active development is ongoing
 * Ensure all necessary ports are open in your firewall configuration
-* Refer to the [Optimism documentation](https://docs.optimism.io/) for additional configuration options and troubleshooting:::
+* Refer to the [Optimism documentation](https://docs.optimism.io/) for additional configuration options and troubleshooting
+:::
