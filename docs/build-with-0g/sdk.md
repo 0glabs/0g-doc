@@ -114,7 +114,7 @@ import { ethers } from 'ethers';
 **Then, set up the necessary configurations:**
 
 ```javascript
-const evmRpc = 'https://evmrpc-test-us.0g.ai';
+const evmRpc = 'https://evmrpc-testnet.0g.ai/';
 const privateKey = ''; // Add your private key with balance to pay for gas
 const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768";
 const indRpc = 'https://rpc-storage-testnet-turbo.0g.ai';
@@ -124,6 +124,7 @@ const signer = new ethers.Wallet(privateKey, provider);
 const flowContract = getFlowContract(flowAddr, signer);
 const indexer = new Indexer(indRpc);
 ```
+Note, the flowAddr can be either Turbo or Standard. Turbo (0xbD2C3F0E65eDF5582141C35969d66e34629cC768) is faster but more expensive, Standard (0x0460aA47b41a66694c0a73f667a1b795A5ED3556) is cheaper but slower.
 
 **Replace `privateKey` with your specific configuration details.**
 
@@ -145,7 +146,7 @@ await file.close();
 **To upload a file to the 0G Storage network:**
 
 ```javascript
-const [tx, err] = await indexer.upload(file, 0, evmRpc, flowContract);
+const [tx, err] = await indexer.upload(file, 0, evmRpc, signer, flowAddr);
 if (err === null) {
   console.log("File uploaded successfully, tx: ", tx);
 } else {
