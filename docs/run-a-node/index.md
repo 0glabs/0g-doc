@@ -5,7 +5,7 @@ sidebar_position: 2
 # Run a Node
 ---
 
-Zero Gravity (OG) is currently live on [Testnet-V2](testnet-information.md), with Mainnet coming soon. The networks support various node types, each node playing a crucial role in maintaining and securing the network. 
+0G is currently live on [Testnet-V2](testnet-information.md), with Mainnet coming soon. The networks support various node types, each node playing a crucial role in maintaining and securing the network. 
 
 In this section, explore the different types of nodes you can run and learn about its specific role and how it contributes to the overall network functionality.
 
