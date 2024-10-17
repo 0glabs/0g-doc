@@ -17,12 +17,11 @@ The 0G Faucet provides free testnet tokens, essential for interacting with the 0
 - **Use the Faucet Website:** The easiest way to request tokens is through our [faucet website](https://faucet.0g.ai). Each user can receive up to 1 A0GI token per day, which is sufficient for most testing needs.
 - **Request via Discord:** If you require more than 1 A0GI token per day, please reach out in our vibrant [Discord community](https://discord.com/invite/0glabs) to request additional tokens.
 
-:::Important Notes
+:::important note
 - Testnet tokens have no real-world value and are for testing purposes only.
 - Ensure you have an EVM-compatible wallet to receive 0G testnet tokens. An example of such is [MetaMask](https://metamask.io/download/)
 - There may be a limit to how often you can request tokens.
-- If you encounter any issues, please reach out to our support team on [Discord](https://discord.com/invite/0glabs).
-:::
+- If you encounter any issues, please reach out to our support team on [Discord](https://discord.com/invite/0glabs).:::
 
 ## 🎓 Learn More
 
