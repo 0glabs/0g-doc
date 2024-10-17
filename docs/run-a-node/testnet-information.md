@@ -55,7 +55,7 @@ Deployed Block Number: `595059`
 - [Zstake](https://0g-evmrpc.zstake.xyz/)
 
 :::caution
-Do not rely on the free community endpoints listed below for production deployments. Production deployments should rely on service providers with SLAs or your own node.
+Do not rely on the free community endpoints listed above for production deployments. Production deployments should rely on service providers with SLAs or your own node.
 :::
 
 ### Faucet
