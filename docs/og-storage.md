@@ -66,7 +66,7 @@ These can be summarized as follows:
 
 * **Unstructured Data Only:** Both of these systems are optimized only for unstructured data, limiting their versatility. In contrast, 0G supports both structured and unstructured data, making it suitable for a wider range of applications, including complex AI workflows and their vast databases.
 * **Scalability:** Filecoin or Arweave struggle to handle data at a massive scale. In contrast, 0G partitions both its data storage and network throughput to enable scalability that meets the massive data requirements associated with on-chain AI. 
-* **Cost:** Benchmarking has shown that permanent storage with Arweave can cost up to $17,000 per TB, while 0G offers a much more cost-effective solution at just $10-11 per TB. 
+* **Cost:** Benchmarking has shown that permanent storage with Arweave can cost up to \$17,000 per TB, while 0G offers a much more cost-effective solution at just \$10-11 per TB. 
 * **Data Availability:** 0G's integrated data availability layer provides ultra-fast, infinitely scalable access to data, enabling a fully vertically integrated solution that supports high-performance applications like decentralized AI.
 
 All in all, 0G Storage is the ultimate solution for any on-chain data storage needs, regardless of whether a project is in the AI space or not.
