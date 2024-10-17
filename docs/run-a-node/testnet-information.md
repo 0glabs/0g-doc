@@ -73,3 +73,4 @@ Deployed Block Number: `595059`
 - [Originstake](https://0g-json-rpc-public.originstake.com)
 - [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
 - [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
+- [Zstake](https://0g-evmrpc.zstake.xyz/)
