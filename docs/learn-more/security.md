@@ -12,57 +12,58 @@ At 0G, we prioritize the security and integrity of our platform. Our commitment 
 
 We regularly conduct thorough security audits of our smart contracts, protocols, and infrastructure to ensure the highest level of security for our users.
 
-### Recent Audits - to be added 
+### Recent Audits 
 
 | Date | Auditor | Scope | Report |
 |------|---------|-------|--------|
-| [Date] | [Auditor Name] | [Audit Scope] | [Link to Report] |
-| [Date] | [Auditor Name] | [Audit Scope] | [Link to Report] |
+| Aug 2024 - Sept 2024 | Halborn | 0G Storage | [Report](https://github.com/0glabs/0g-doc-new/blob/main/audit/Halborn%200G%20Storage%20Node%20Audit.pdf) |
+| Aug 2024 | Zellic | 0G Storage and 0G DA | [Report](https://github.com/0glabs/0g-doc-new/blob/main/audit/Zellic%200G%20Storage%20and%200G%20DA%20Audit.pdf) |
 
-For a complete list of our audits and their detailed reports, please visit our [GitHub repository](https://github.com/0glabs/audits).
+For a complete list of our audits and their detailed reports, please visit our [GitHub repository](https://github.com/0glabs/0g-doc-new/tree/main/audit).
 
 ## [0G Labs Bug Bounty Program with hackenproof](https://hackenproof.com/programs/0g-labs-smart-contracts)
 
-We believe in the power of community driven security. Our bug bounty program encourages security researchers and developers to help us identify and resolve potential vulnerabilities.
+At 0G, we believe in the power of **community-driven security**. Our bug bounty program invites security researchers and developers to help us identify and resolve potential vulnerabilities, ensuring the robustness of our systems. 
 
-### Scope
-
+### Scope of the Bug Bounty Program
 Our bug bounty program covers:
 - Smart Contracts
 - Infrastructure
 - Protocol
-# Focus Area
+- 
+## Focus Area
 
-### IN SCOPE VULNERABILITIES Smart Contracts
+### In-Scope Vulnerabilities: Smart Contracts
+We are interested in vulnerabilities that result in incorrect behavior of the smart contract and could lead to unintended functionality, including:
 
-We are looking for evidence and reasons for incorrect behavior of the smart contract, which could cause unintended functionality:
+- Stealing or loss of funds
+- Unauthorized transactions
+- Transaction manipulation
+- Attacks on logic (behavior that deviates from the intended business logic)
+- Reentrancy attacks
+- Reordering transactions
+- Overflows and underflows
 
-Stealing or loss of funds
-Unauthorized transaction
-Transaction manipulation
-Attacks on logic (behavior of the code is different from the business description)
-Reentrancy
-Reordering
-Over and underflows
+### Out-of-Scope Vulnerabilities: Smart Contracts
+The following are out of scope for the bug bounty program:
 
-### OUT OF SCOPE VULNERABILITIES Smart Contracts
+- Theoretical vulnerabilities without proof or demonstration
+- Old compiler versions
+- Unlocked compiler version
+- Vulnerabilities in imported contracts
+- Code style guide violations
+- Redundant code
+- Gas optimizations
+- Best practice issues
+- Vulnerabilities exploitable through front-run attacks only
 
-Theoretical vulnerabilities without any proof or demonstration
-Old compiler version
-The compiler version is not locked
-Vulnerabilities in imported contracts
-Code style guide violations
-Redundant code
-Gas optimizations
-Best practice issues
-Vulnerabilities that can be exploited through front-run attacks only
-Codes out of scope in 0g-storage-contract:
-cashier;
-token;
-reward/OnePoolReward;
-reward/ChunkDecayReward;
-uploadMarket;
-utils/Exponent.sol.
+Additionally, the following contracts are out of scope for 0g-storage-contract:
+- `cashier`
+- `token`
+- `reward/OnePoolReward`
+- `reward/ChunkDecayReward`
+- `uploadMarket`
+- `utils/Exponent.sol`
 
 ### Rewards
 
@@ -77,31 +78,34 @@ Rewards are based on the severity of the discovered vulnerability:
 
 ### Program Rules
 
-Avoid using web application scanners for automatic vulnerability searching which generates massive traffic
-Make every effort not to damage or restrict the availability of products, services, or infrastructure
-Avoid compromising any personal data, interruption, or degradation of any service
-Don’t access or modify other user data, localize all tests to your accounts
-Perform testing only within the scope
-Don’t exploit any DoS/DDoS vulnerabilities, social engineering attacks, or spam
-Don’t spam forms or account creation flows using automated scanners
-In case you find chain vulnerabilities we’ll pay only for vulnerability with the highest severity.
-Don’t break any law and stay in the defined scope
-Any details of found vulnerabilities must not be communicated to anyone who is not a HackenProof Team or an authorized employee of this Company without appropriate permission
+- Avoid using web application scanners for automatic vulnerability searching which generates massive traffic
+- Make every effort not to damage or restrict the availability of products, services, or infrastructure
+- Avoid compromising any personal data, interruption, or degradation of any service
+- Don’t access or modify other user data, localize all tests to your accounts
+- Perform testing only within the scope
+- Don’t exploit any DoS/DDoS vulnerabilities, social engineering attacks, or spam
+- Don’t spam forms or account creation flows using automated scanners
+- In case you find chain vulnerabilities we’ll pay only for vulnerability with the highest severity.
+- Don’t break any law and stay in the defined scope
+- Any details of found vulnerabilities must not be communicated to anyone who is not a HackenProof Team or an authorized employee of this Company without appropriate permission
 
 ### Disclosure Guidelines
-
-Do not discuss this program or any vulnerabilities (even resolved ones) outside of the program without express consent from the organization
-No vulnerability disclosure, including partial is allowed for the moment.
-Please do NOT publish/discuss bugs
+:::important
+- Do not discuss this program or any vulnerabilities (even resolved ones) outside of the program without express consent from the organization
+- No vulnerability disclosure, including partial is allowed for the moment.
+- Please do NOT publish/discuss bugs
+:::
 
 ### Eligibility and Coordinated Disclosure
 
 We are happy to thank everyone who submits valid reports which help us improve the security. However, only those that meet the following eligibility requirements may receive a monetary reward:
 
-You must be the first reporter of a vulnerability.
-The vulnerability must be a qualifying vulnerability
-Any vulnerability found must be reported no later than 24 hours after discovery and exclusively through hackenproof.com
-You must send a clear textual description of the report along with steps to reproduce the issue, include attachments such as screenshots or proof of concept code as necessary.
-You must not be a former or current employee of us or one of its contractor.
-ONLY USE the EMAIL under which you registered your HackenProof account (in case of violation, no bounty can be awarded)
-Provide detailed but to-the point reproduction steps
+- You must be the first reporter of a vulnerability.
+- The vulnerability must be a qualifying vulnerability
+- Any vulnerability found must be reported no later than 24 hours after discovery and exclusively through hackenproof.com
+- You must send a clear textual description of the report along with steps to reproduce the issue, include attachments such as screenshots or proof of concept code as necessary.
+- You must not be a former or current employee of us or one of its contractor.
+- ONLY USE the EMAIL under which you registered your HackenProof account (in case of violation, no bounty can be awarded)
+- Provide detailed but to-the point reproduction steps
+
+We look forward to working with the community to enhance 0G's security! 
