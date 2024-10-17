@@ -23,14 +23,13 @@ Find the repository for this integration at [https://github.com/0glabs/0g-da-op-
 
 ## Prerequisites
 
-* Follow the instructions to set up a [0G DA client node]('../build-with-0g/da-integration').
-* Set up a [0G DA encoder node]('../build-with-0g/da-integration').
+* Follow the instructions to set up a [0G DA client node]('../build-with-0g/da-integration')
+* Set up a [0G DA encoder node]('../build-with-0g/da-integration')
 * [0G 0P stack rollup kit](https://github.com/0glabs/0g-da-op-plasma)
 
-Refer here for more comprehensive guide: [run OP Stack with 0G DA](https://github.com/0glabs/0g-da-op-plasma/blob/main/OP%20Stack%20integration.md)
+Refer here for a more comprehensive guide: [run OP Stack with 0G DA](https://github.com/0glabs/0g-da-op-plasma/blob/main/OP%20Stack%20integration.md)
 
-**Important Notes:**
-
-* This is a beta integration, and active development is ongoing.
-* Ensure all necessary ports are open in your firewall configuration.
-* Refer to the [Optimism documentation](https://docs.optimism.io/) for additional configuration options and troubleshooting.
+:::important note 
+* This is a beta integration, and active development is ongoing
+* Ensure all necessary ports are open in your firewall configuration
+* Refer to the [Optimism documentation](https://docs.optimism.io/) for additional configuration options and troubleshooting:::
