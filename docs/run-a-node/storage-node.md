@@ -63,42 +63,9 @@ start by installing all the essential tools and libraries required to build the 
 
     ```bash
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    ```   
+    ```
 
-**Install Go**
-
-<Tabs
-  defaultValue="linux"
-  values={[
-    {label: 'Linux', value: 'linux'},
-    {label: 'Mac', value: 'mac'},
-    ]}>
-
-  <TabItem value="linux">
-
-        ```bash
-        # Download the Go installer
-        wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-
-        # Extract the archive
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
-
-        # Add /usr/local/go/bin to the PATH environment variable
-        export PATH=$PATH:/usr/local/go/bin
-        ```
-</TabItem>
-  <TabItem value="mac">
-
-        ```bash
-        brew install go
-        ```
-</TabItem>
-</Tabs>
-        *   Or download the Go installer from https://go.dev/dl.
-
-        *   Go is a programming language used for certain components of the 0G node.
-
- **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
+**Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
 
     ```bash
     git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
@@ -230,37 +197,8 @@ Follow the same steps to install dependencies and Rust as in the storage node se
 
     ```bash
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    ```   
+    ```
 
-**Install Go**
-
-<Tabs
-  defaultValue="linux"
-  values={[
-    {label: 'Linux', value: 'linux'},
-    {label: 'Mac', value: 'mac'},
-    ]}>
-
-  <TabItem value="linux">
-
-        ```bash
-        # Download the Go installer
-        wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-
-        # Extract the archive
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
-
-        # Add /usr/local/go/bin to the PATH environment variable
-        export PATH=$PATH:/usr/local/go/bin
-        ```
-</TabItem>
-  <TabItem value="mac">
-
-        ```bash
-        brew install go
-        ```
-</TabItem>
-</Tabs>
 #### 1. Download the Source Code
 
 ```bash
