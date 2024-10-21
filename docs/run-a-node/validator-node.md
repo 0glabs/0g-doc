@@ -194,7 +194,11 @@ Thank you for contributing to the security and decentralization of the 0g networ
     ```bash
     0gchaind tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999neuron -y
     ```
+**12. Delegate to Another account:**
 
+   ```bash
+   0gchaind tx staking delegate <0gvaloper> <amount>ua0gi --gas auto --gas-adjustment 1.4 --from ga-testnet --node <tendermint_rpc> --chain-id <chain-id>
+   ```
 ***Note: Only the top 125 staked validators will be active.***
 
 ## Remember
