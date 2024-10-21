@@ -4,7 +4,7 @@ title: Node Overview
 sidebar_position: 1
 ---
 
-### What is the role of a node in the Zero Gravity network?
+### What is the role of a node in the 0G Ecosystem?
 Nodes validate transactions, contribute to AI computations, and maintain the security of the network.
 
 ### What are the rewards for running a node?
