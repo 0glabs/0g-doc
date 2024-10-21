@@ -86,6 +86,51 @@ const sidebars: SidebarsConfig = {
 
       ],
     },
+    {
+      type: 'category',
+      label: 'Node Sale',
+      className: 'sidebar-category node-sale',
+      link: {
+        type: 'doc',
+        id: 'node-sale/node-sale-landing',
+      },
+      items: [
+        {
+          type: 'category',
+          label: 'Introduction',
+          items: [
+            'node-sale/intro/what-is-an-ai-alignment-node',
+            'node-sale/intro/why-run-a-node',
+            'node-sale/intro/node-rewards',
+          ],
+          link: {
+            type: 'doc',
+            id: 'node-sale/intro/intro',
+          },
+        },
+        {
+          type: 'category',
+          label: 'Node Sale Details',
+          items: [
+            'node-sale/details/details',
+            'node-sale/details/how-to-purchase-nodes',
+            'node-sale/details/whats-next',
+            'node-sale/details/user-discounts-and-referrals',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Node Sale FAQ',
+          items: [
+            'node-sale/faq/node-overview',
+            'node-sale/faq/whitelist-and-node-sale',
+            'node-sale/faq/payment-and-licenses',
+            'node-sale/faq/node-operations',
+          ],
+        },
+        'node-sale/disclaimer', 
+      ],
+    },
   ],
 };
 
