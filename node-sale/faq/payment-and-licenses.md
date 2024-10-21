@@ -17,7 +17,7 @@ To facilitate payment for users on different chains, the Alignment Node Sale wil
      - (SOL, [USDC](https://solana.fm/address/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v))
 
 ### How will the node licenses be distributed?
-After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user. 
+After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user. **Please ensure that you are using an EVM wallet (0x...).**
 
 ### What will I receive from participating in the node sale?
 You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs will be minted and transferred to your wallet after the conclusion of the node sale. You will be able to operate the node after 0g Mainnet is live. 
