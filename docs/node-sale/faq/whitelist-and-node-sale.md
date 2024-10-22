@@ -11,4 +11,4 @@ Whitelist is a pre-approved list of participants who are given exclusive access 
 Your whitelist guarantees an allocation during the Whitelist sale period (11/11 - 13/11). Your allocation will be released if purchase is not made within this period.
 
 ### How to join the whitelist?
-To get a whitelist spot for the 0G Node Sale, community members and ecosystem participants are eligible for reserved allocations. You can also apply for a waitlist  spot by filling out the application form [here](https://docs.google.com/forms/d/e/1FAIpQLScZSiIn3WBEdztzCObFBnLa0c6f1YoRwlN_eI8NxGPuG4w-zg/viewform). 
+To get a whitelist spot for the 0G Foundation Node Sale, community members and ecosystem participants are eligible for allocations, please visit 0G X and Discord for ways to receive a whitelist. You can also apply for a whitelist spot by filling out the whitelist form [here](https://docs.google.com/forms/d/e/1FAIpQLScZSiIn3WBEdztzCObFBnLa0c6f1YoRwlN_eI8NxGPuG4w-zg/viewform). 
