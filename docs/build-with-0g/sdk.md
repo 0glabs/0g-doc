@@ -117,7 +117,7 @@ import { ethers } from 'ethers';
 const evmRpc = 'https://evmrpc-testnet.0g.ai/';
 const privateKey = ''; // Add your private key with balance to pay for gas
 const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768";
-const indRpc = 'https://rpc-storage-testnet-turbo.0g.ai';
+const indRpc = 'https://indexer-storage-testnet-standard.0g.ai';
 
 const provider = new ethers.JsonRpcProvider(evmRpc);
 const signer = new ethers.Wallet(privateKey, provider);
