@@ -61,13 +61,14 @@ Do not rely on the free community endpoints listed above for production deployme
 ### Faucet
 [Faucet](https://faucet.0g.ai/) 
 
-See [here](https://0g-doc-new.vercel.app/build-with-0g/faucet) for more info.
+See [here](https://docs.0g.ai/build-with-0g/faucet) for more info.
 
 ### Explorers
 - [Chain Scan](https://chainscan-newton.0g.ai/): Chain Scan provides a comprehensive view of 0G chain activity and transactions.
 - [Storage Scan](https://storagescan-newton.0g.ai/): Storage Scan is your go-to tool for exploring storage-related activities within the network.
+- [Nodes Guru](https://testnet.0g.explorers.guru/): Nodes Guru provides key information and monitoring tools for validators and node operators to track the health and performance of the network.
   
-See [here](https://0g-doc-new.vercel.app/build-with-0g/explorer) for more info.
+See [here](https://docs.0g.ai/build-with-0g/explorer) for more info.
 
 ## Node FAQ (Frequently Asked Questions)
 
