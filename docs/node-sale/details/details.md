@@ -11,4 +11,4 @@ sidebar_position: 1
 - Public Node Sale Launch: November 13th, 2024, at 12 PM UTC, all users can purchase.
 
 ## Disclaimer
-Please review the full details and terms of the 0G Node Sale by visiting our disclaimer (Node Sale Disclaimer Link)
+Please review the full details and terms of the 0G Node Sale by visiting our disclaimer (Node Sale Disclaimer [Link](https://0gfoundation.ai/node-disclaimer))
