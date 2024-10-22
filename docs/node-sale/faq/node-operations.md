@@ -14,7 +14,7 @@ As for device requirements, the configuration needed is very minimal:
 - 10Mbps Internet Connection
 
 ### When can I begin operating my node?
-Light utility is estimated to go live Q1 2025. AI Alignment utility will go live in 2025, after 0G Mainnet Launch.
+AI Alignment utility will go live in 2025, after 0G Mainnet Launch.
 
 ### How many nodes can I purchase?
 The number of purchasable nodes will be capped per tier. Please refer to the Node Sale Tier documentation for reference.
