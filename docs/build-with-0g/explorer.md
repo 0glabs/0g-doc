@@ -26,3 +26,12 @@ Use Chain Scan to:
 - View real-time blockchain transactions
 - Explore blocks, addresses, and smart contracts
 - Analyze network performance and activity trends
+
+## [Nodes Guru](https://testnet.0g.explorers.guru/)
+
+Nodes Guru provides key information and monitoring tools for validators and node operators to track the health and performance of the network.
+
+Use Nodes Guru to:
+- View Validator performance metrics like uptime, block proposals, and missed blocks
+- Obtain staking and rewards info
+- Participate in governance proposals and vote on network upgrades or changes 
