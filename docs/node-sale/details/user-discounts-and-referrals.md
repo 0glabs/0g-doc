@@ -73,5 +73,5 @@ It is their wallet address. Anyone who purchases a node can refer someone else b
 ### What benefit do users get for successful referrals?
 Users with successful referrals (users used your code to purchase a node) will receive a 5% cashback.
 
-### How will I receive my commission?
+### How will I receive my commission? (For Referrers) 
 The commission you will receive is based on the total node purchase amount sold via your referral code in USDC. After the team has verified your Alignment Node purchase(s), you will be airdropped your USDC amount to the wallet address of the registered referral code. 
