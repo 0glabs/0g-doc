@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ### What payment methods will be accepted for purchasing a node?
 To facilitate payment for users on different chains, the Alignment Node Sale will be accepting multiple tokens across different chains: 
-- EVM" 
+- EVM:
      - Arbitrum ([wETH](https://arbiscan.io/token/0x82af49447d8a07e3bd95bd0d56f35241523fbab1), [USDC](https://arbiscan.io/token/0xaf88d065e77c8cC2239327C5EDb3A432268e5831), [wBTC](https://arbiscan.io/token/0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f))
      - BNB (BNB, [USDC](https://bscscan.com/token/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d))
 
