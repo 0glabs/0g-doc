@@ -29,10 +29,10 @@ It is their wallet address. Anyone who purchases a node can refer someone else b
     **Rebate Amount to Buyer**
     </td>
     <td>
-    5.55%
+    10%
     </td>
     <td>
-    5.55%
+    10%
     </td>
   </tr>
   <tr>
@@ -44,17 +44,6 @@ It is their wallet address. Anyone who purchases a node can refer someone else b
     </td>
     <td>
     5%
-    </td>
-  </tr>
-    <tr>
-    <td>
-    **How do I get it**
-    </td>
-    <td>
-    You can get a code from 0G’s partners either by clicking on their official referral code links or by copying their links into the referral code field during the node sale checkout process.
-    </td>
-    <td>
-    Every buyer can have their own referral code. The wallet address you use during the node sale is your personal referral code. Users can share their wallet addresses as referral codes with other potential buyers.
     </td>
   </tr>
   <tr>
@@ -74,4 +63,4 @@ It is their wallet address. Anyone who purchases a node can refer someone else b
 Users with successful referrals (users used your code to purchase a node) will receive a 5% cashback.
 
 ### How will I receive my commission? (For Referrers) 
-The commission you will receive is based on the total node purchase amount sold via your referral code in USDC. After the team has verified your Alignment Node purchase(s), you will be airdropped your USDC amount to the wallet address of the registered referral code. 
+The commission you will receive is based on the total sales amount sold via your referral code in USDC. After the team has verified your Alignment Node purchase(s), you can receive your USDC amount to the wallet address of the registered referral code. 
