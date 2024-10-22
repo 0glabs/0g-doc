@@ -23,6 +23,6 @@ The number of purchasable nodes will be capped per tier. Please refer to the Nod
 Running a node can be quite straightforward and easy, typically involving just a few steps. We will soon provide a video tutorial to guide you through the process. If you prefer not to manage the node yourself, you can delegate to other node operators with just a single click through our explorer, which will be available shortly.
 
 ### Will the sale be accessible from other platforms?
-All public and Whitelist sale cards will be available on https://node.0g.ai except for Partnered Launchpads like Impossible Finance, in which case the front end will be on 0G Partners' website.
+All public and Whitelist sale cards will be available on [https://node.0g.ai](https://0g.ai/node-sale) except for Partnered Launchpads like Impossible Finance, in which case the front end will be on 0G Partners' website.
 
 
