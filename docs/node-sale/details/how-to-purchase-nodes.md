@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # How to Purchase Nodes
 
-### Step 1 - Go to https://alignment.0g.ai
+### Step 1 - Go to https://alignment.0g.ai (will be available soon)
 Go to https://alignment.0g.ai  and connect your wallet
 
 ### Step 2 - Select chain and token
