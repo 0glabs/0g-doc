@@ -4,7 +4,7 @@ title: What's Next?
 sidebar_position: 3
 ---
 
-# Congratulations, you have successfully purchased your Alignment Node License! 
+# What happens after you purchase a node?
 ## What's Next?
 
 After purchasing an 0G Alignment node node, holders will receive an ERC-721 NFT to the wallet addresses used during the node sale. The NFT contains the license and terms of ownership of the purchased 0g node and participation in the 0G community.
