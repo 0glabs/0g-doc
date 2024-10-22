@@ -14,7 +14,7 @@ To facilitate payment for users on different chains, the Alignment Node Sale wil
 After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user. **Please ensure that you are using an EVM wallet (0x...).**
 
 ### What will I receive from participating in the node sale?
-You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs will be minted and transferred to your wallet after the conclusion of the node sale. You will be able to operate the node after 0g Mainnet is live. 
+You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs will be minted and transferred to your wallet after the conclusion of the node sale. You will be able to operate the node after 0G Mainnet is live. 
 
 ### When will rebates or commissions be distributed?
 The rebates and commissions generated from promo code usage will be distributed 6 weeks after the sale ends. 0G will consolidate the funds received through different tokens and convert it as USDC for final distribution.  
