@@ -46,13 +46,10 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Build with 0G',
       className: 'sidebar-category build-with-0g',
-      link:{
-        type: 'doc',
-        id: 'build-with-0g/build-with-0g',
-      },
       items: [
-        'build-with-0g/da-integration',
+
         'build-with-0g/storage-sdk',
+        'build-with-0g/da-integration',
         {
           type: 'category',
           label: 'Rollups and Appchains',
