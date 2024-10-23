@@ -101,7 +101,7 @@ start by installing all the essential tools and libraries required to build the 
  **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
 
     ```bash
-    git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
+    git clone -b v0.6.0 https://github.com/0glabs/0g-storage-node.git
     ```
 
 **Build the Source Code**
@@ -133,7 +133,7 @@ nano config.toml
 
 ```toml
 # ENR address: Your instance's public IP
-network_enr_address = "YOUR_PUBLIC_IP"
+# network_enr_address = ""
 
 # Peer nodes: Check 0g-storage/run/config-testnet.toml for official configurations
 network_boot_nodes = []
