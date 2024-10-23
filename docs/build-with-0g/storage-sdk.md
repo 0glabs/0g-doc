@@ -46,7 +46,7 @@ import (
 func main() {
     // ... (Obtain necessary configuration parameters: network endpoint, contract addresses, private key)
 
-    client, err := storage.NewClient(context.Background(), networkEndpoint, logContractAddress, privateKey)
+    client, err := storage.NewClient(context.Background(), networkEndpoint, flowContractAddress, privateKey)
     if err != nil {
         // Handle error
     }
@@ -57,7 +57,7 @@ func main() {
 
 * `context.Background()`: Creates a background context for managing the lifecycle of the client's operations.
 * `networkEndpoint`: The URL of the 0G network's RPC endpoint.
-* `logContractAddress`: The address of the 0G Log Contract on the blockchain.
+* `flowContractAddress`: The address of the 0G Flow Contract on the blockchain.
 * `privateKey`: Your private key, used for authentication and transaction signing.
 
 The `if err != nil` block handles any potential errors during client creation. Once the client is successfully created, you can use it to interact with the 0G Storage network.
@@ -116,7 +116,9 @@ import { ethers } from 'ethers';
 ```javascript
 const evmRpc = 'https://evmrpc-testnet.0g.ai/';
 const privateKey = ''; // Add your private key with balance to pay for gas
-const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768";
+const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768"; 
+// The flowAddr can be either Turbo or Standard. Turbo (0xbD2C3F0E65eDF5582141C35969d66e34629cC768) is faster but more expensive, Standard (0x0460aA47b41a66694c0a73f667a1b795A5ED3556) is cheaper but slower. Check testnet page for the latest info.
+
 const indRpc = 'https://indexer-storage-testnet-standard.0g.ai';
 
 const provider = new ethers.JsonRpcProvider(evmRpc);
@@ -124,9 +126,7 @@ const signer = new ethers.Wallet(privateKey, provider);
 const flowContract = getFlowContract(flowAddr, signer);
 const indexer = new Indexer(indRpc);
 ```
-Note, the flowAddr can be either Turbo or Standard. Turbo (0xbD2C3F0E65eDF5582141C35969d66e34629cC768) is faster but more expensive, Standard (0x0460aA47b41a66694c0a73f667a1b795A5ED3556) is cheaper but slower.
 
-**Replace `privateKey` with your specific configuration details.**
 
 ## Key Functionalities
 
@@ -272,13 +272,6 @@ downloadStream.pipe(process.stdout);
 ## Conclusion
 
 The 0g-ts-sdk provides a powerful and flexible way to interact with the 0G Storage network. By following this guide, you should now be able to perform basic and advanced operations using the SDK. For more detailed information and updates, always refer to the [official GitHub repository](https://github.com/0glabs/0g-ts-sdk).
-
-</TabItem>
-<TabItem value="tab3" label="Access Storage through CLI">
-
-## Access Storage through CLI
-
-There are two ways to access the 0G Storage, The first simple and straightforward way is to use the [web tool](https://storagescan-newton.0g.ai/tool). If you want more control on the data location and versioning, you can use 0G Storage CLI to easily upload/download data to 0G Storage System. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. you can develop your own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
 
 </TabItem>
 </Tabs>
