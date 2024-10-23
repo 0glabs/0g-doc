@@ -94,9 +94,6 @@ start by installing all the essential tools and libraries required to build the 
         ```
 </TabItem>
 </Tabs>
-        *   Or download the Go installer from https://go.dev/dl.
-
-        *   Go is a programming language used for certain components of the 0G node.
 
  **Download the Source Code**: 
 
@@ -132,14 +129,11 @@ nano config.toml
 2. Update `config.toml` with your settings:
 
 ```toml
-# ENR address: Your instance's public IP
-# network_enr_address = ""
-
-# Peer nodes: Check 0g-storage/run/config-testnet.toml for official configurations
+# Peer nodes: Check inside0g-storage/run directory for official configurations
 network_boot_nodes = []
 
 # Contract addresses
-log_contract_address = "CONTRACT_ADDRESS"
+log_contract_address = "CONTRACT_ADDRESS" #flow contract address, see testnet information
 mine_contract_address = "CONTRACT_ADDRESS"
 
 # Layer one blockchain RPC endpoint
@@ -153,6 +147,9 @@ miner_key = "YOUR_PRIVATE_KEY"
 
 # Max chunk entries in db (affects storage size)
 db_max_num_chunks = MAX_CHUNKS
+
+# ENR address: Your instance's public IP, currently automatically set by the node
+# network_enr_address = ""
 ```
 :::note
 *   `network_enr_address`: Your node's public IP address, essential for other nodes to discover and connect to you.
@@ -173,10 +170,8 @@ db_max_num_chunks = MAX_CHUNKS
 2. Run the storage service:
 ```bash
 cd run
-../target/release/zgs_node --config config-testnet.toml --miner-key <your_private_key>
+../target/release/zgs_node --config config.toml --miner-key <your_private_key>
 ```
-
-For long-running sessions, use `tmux` or `screen`.
 
 **Additional Notes**
 
