@@ -55,6 +55,10 @@ Running a validator node in the 0G ecosystem means actively participating in the
    --pubkey=$(0gchaind tendermint show-validator) \
    --moniker="<your_validator_name>" \
    --chain-id=zgtendermint_16600-2 \
+   --details "<validator_description>" \
+   --website "<https://yourwebsite.com>" \
+   --identity "<keybase_id>" \
+   --security-contact "<mail-address>" \
    --commission-rate="0.10" \
    --commission-max-rate="0.20" \
    --commission-max-change-rate="0.01" \
