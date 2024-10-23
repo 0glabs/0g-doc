@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
       items: [
 
         'build-with-0g/storage-sdk',
+        'build-with-0g/storage-cli',
         'build-with-0g/da-integration',
         {
           type: 'category',

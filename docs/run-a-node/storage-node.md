@@ -25,10 +25,6 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 <Tabs>
   <TabItem value="binary" label="Storage Node" default>
 
-## Overview
-
-The 0G System comprises multiple components, each with specific functionalities. This guide provides detailed steps to deploy and run a storage node, a crucial part of the 0G network.
-
 ## Prerequisites
 
 Before setting up your storage node:
@@ -36,8 +32,8 @@ Before setting up your storage node:
 - Understand that 0G Storage interacts with on-chain contracts for blob root confirmation and PoRA mining.
 - Check [here](run-a-node/testnet-information.md) for deployed contract addresses.
 
-**Deployment Steps**
-**Install Dependencies**
+
+## Install Dependencies
 start by installing all the essential tools and libraries required to build the 0G storage node software.
 
 <Tabs
@@ -112,12 +108,9 @@ start by installing all the essential tools and libraries required to build the 
 
 This compiles the Rust code into an executable binary. The `--release` flag optimizes the build for performance.
 
-**Configure the Node**
+## Configuration
 
 Navigate to the run directory and open config.toml for editing. Follow the steps below. 
-
-
-## Configuration
 
 1. Edit the configuration file:
 
@@ -186,9 +179,9 @@ cd run
 **Remember:** Running a storage node is a valuable contribution to the 0G network. You'll be helping to maintain its decentralization and robustness while earning rewards for your efforts.
 
   </TabItem>
-  <TabItem value="docker" label="Storage KV">
+  <TabItem value="docker" label="Storage KV Node">
 
-  ## Overview
+## Overview
   0G Storage KV is a key-value store built on top of the 0G Storage system. This guide provides detailed steps to deploy and run a 0G Storage KV node.
 
 ## Prerequisites
@@ -199,15 +192,10 @@ Before setting up your 0G Storage KV node:
 - For official deployed contract addresses, visit the [official 0G documentation page].
   Follow the same steps to install dependencies and Rust as in the storage node setup:
 
-### Install Dependencies
+## Install Dependencies
 
 Follow the same steps to install dependencies and Rust as in the storage node setup:
-<Tabs
-  defaultValue="linux"
-  values={[
-    {label: 'Linux', value: 'linux'},
-    {label: 'Mac', value: 'mac'},
-    ]}>
+<Tabs>
   <TabItem value="linux">
 
         ```bash
@@ -229,13 +217,7 @@ Follow the same steps to install dependencies and Rust as in the storage node se
 
 **Install Go**
 
-<Tabs
-  defaultValue="linux"
-  values={[
-    {label: 'Linux', value: 'linux'},
-    {label: 'Mac', value: 'mac'},
-    ]}>
-
+<Tabs>
   <TabItem value="linux">
 
         ```bash
@@ -304,8 +286,8 @@ kv_db_dir = "kv.DB"
 ###                     Log Sync Config Options                     ###
 #######################################################################
 
-blockchain_rpc_endpoint = "YOUR_BLOCKCHAIN_RPC_ENDPOINT"
-log_contract_address = "YOUR_LOG_CONTRACT_ADDRESS"
+blockchain_rpc_endpoint = "BLOCKCHAIN_RPC_ENDPOINT" #rpc endpoint, see testnet information
+log_contract_address = "LOG_CONTRACT_ADDRESS" #flow contract address, see testnet information
 # log_sync_start_block_number should be earlier than the block number of the first transaction that writes to the stream being monitored.
 log_sync_start_block_number = 0
 
@@ -378,83 +360,5 @@ If you need assistance:
 ## Conclusion
 
 Running a 0G Storage KV node is an important part of the 0G ecosystem, providing key-value storage capabilities. By following this guide, you should be able to set up and operate your node successfully. Remember to keep your node updated and monitor its performance regularly to ensure optimal operation.
-</TabItem>
-  <TabItem value="source" label="Storage Node CLI">
-
-## **0G Storage (CLI) Overview**
-
-The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storage network. It simplifies the process of uploading and downloading files, as well as managing other aspects of your decentralized storage experience. The CLI translates your commands into actions that the network can interpret and execute, making it easier to control your data without needing in-depth knowledge of the underlying blockchain technology.
-
-**Getting Started**
-
-1.  **Download the Source Code**
-
-    Downloads the source code for the 0G Storage CLI from the GitHub repository onto your local machine.
-
-    ```bash
-    git clone https://github.com/0glabs/0g-storage-client.git
-    ```
-2.  **Build the Source Code**
-    
-    Command to compiles the Go code into an executable binary called `0g-storage-client`, which you will use to run the CLI commands.
-
-    ```bash
-    cd 0g-storage-client
-    go build
-    ```
-**Key Commands**
-
-*   **File Upload**
-
-    uploads a file to the 0G Storage network.
-    ```bash
-    ./0g-storage-client upload --url <blockchain_rpc_endpoint> --contract <log_contract_address> --key <private_key> --node <storage_node_rpc_endpoint> --file <file_path>
-    ```
-    *   **Options:**
-        *   `--url`: The URL of an RPC endpoint to interact with the blockchain where the 0G smart contracts reside.
-        *   `--contract`: The address of the 0G log contract on the blockchain.
-        *   `--key`: Your private key, which is necessary to sign the transaction that initiates the file upload.
-        *   `--node`: The RPC endpoint of a 0G storage node to handle the actual file storage. You can use the team-deployed node at `https://rpc-storage-testnet.0g.ai` or run your own node.
-        *   `--file`: The path to the file you want to upload.
-
-*   **File Download**
-    
-    To download a file from the 0G Storage network.
-
-    ```bash
-    ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path>
-    ```
-    *   **Options:**
-        *   `--node`: The RPC endpoint of a 0G storage node where the file you want to download is stored.
-        *   `--root`: The root hash of the file, a unique identifier used to locate the file on the network.
-        *   `--file`: The path where you want to save the downloaded file.
-
-*   **File Download with Verification**
-
-   Similar to the basic download command, but it additionally requests a proof of data integrity from the storage node, ensuring the downloaded file hasn't been tampered with.
-
-    ```bash
-    ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path> --proof
-    ```
-
-**Important Considerations**
-
-*   **Contract Addresses:** You need the accurate contract addresses for the 0G log contract on the specific blockchain you are using. You can find these on the 0G Storage explorer or in the official documentation.
-*   **File Root Hash:** To download a file, you must have its root hash. This is provided when you upload a file or can be found by looking up your transaction on the 0G Storage explorer ([https://storagescan-newton.0g.ai/](https://storagescan-newton.0g.ai/)).
-*   **Storage Node RPC Endpoint:** You can use the team-deployed storage node or run your own node for more control and the potential to earn rewards.
-
-**Example Usage**
-
-```bash
-# Upload a file named "my_document.txt"
-./0g-storage-client upload --url https://rpc-testnet.0g.ai --contract 0x123...abc --key 0x456...def --node https://rpc-storage-testnet.0g.ai --file my_document.txt
-
-# Download a file with root hash "0x789...ghi" and save it as "downloaded_file.txt"
-./0g-storage-client download --node https://rpc-storage-testnet.0g.ai --root 0x789...ghi --file downloaded_file.txt
-```
-
-**Remember:** The 0G Storage CLI is a tool for interacting with the 0G network. By understanding its commands and options, you can efficiently manage your data stored on this decentralized platform.
-
-
 </TabItem>
 </Tabs>
