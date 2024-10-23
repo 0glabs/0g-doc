@@ -29,10 +29,6 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Run a Node',
       className: 'sidebar-category run-node',
-      link: {
-        type: 'doc',
-        id: 'run-a-node/index',
-      },
       items: [
         'run-a-node/overview',
         'run-a-node/testnet-information',
