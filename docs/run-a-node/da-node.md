@@ -116,13 +116,17 @@ Remember to keep your private keys secure and regularly update your node softwar
 
 ## Step 1: Clone and Build the Repository
 
-1. Open a terminal or command prompt.
+1. Install dependencies:
+
+   ```
+   sudo apt-get update && sudo apt-get install clang cmake build-essential pkg-config libssl-dev protobuf-compiler llvm llvm-dev
+   ```
+
 2. Clone the repository and checkout the specific version:
 
    ```
    git clone https://github.com/0glabs/0g-da-node.git
    cd 0g-da-node
-   git checkout tags/v1.1.2 -b v1.1.2
    ```
 
 3. Build the project:
@@ -145,7 +149,7 @@ If you don't have a BLS private key, generate one:
 cargo run --bin key-gen
 ```
 
-Keep the generated BLS private key secure.
+**Keep the generated BLS private key secure.**
 
 ## Step 3: Configure the Node
 
@@ -170,7 +174,8 @@ Keep the generated BLS private key secure.
    socket_address = "<public_ip/dns>:34000"
 
    # data availability contract to interact with
-   da_entrance_address = "0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9" # testnet config
+   da_entrance_address = "0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9" # testnet config and see testnet page for the latest info
+
    # deployed block number of da entrance contract
    start_block_number = 940000 # testnet config
 
@@ -227,21 +232,26 @@ Remember to keep your private keys secure and regularly update your node softwar
 
 <TabItem value="signer" label="Become a Signer">
 
-# DA Signers
+## Overview
 
 The DASigners contract is an interface through which Solidity contracts can interact with the 0G chain module DASigners. It is registered as a precompiled contract, similar to other precompiled EVM extensions.
 
-# Becoming a DA Signer and Running a 0g DA Node
-
-You can use the DA node installation guide found [here](./da-node.md) To become a DA Signer and run your own DA node you can also our repository: [0G DA node](https://github.com/0glabs/0g-da-node)
-
 ## Becoming a DA Signer
 
-To become a DA signer, you must:
-1. Have sufficient delegations (10 A0GI) to validators
-2. Register your signer information in the DASigners precompile contract
+To become a DA signer, you must meet the following requirements:
 
-Registration can be automated by operating a DA node. See the DASigners documentation for more details.
+1. Delegation Requirement: To become a signer, an address must receive enough delegations, equivalent to at least the TokensPerVote amount of A0GI tokens (10 tokens per vote in the testnet), registered in the DASigners module.
+
+2. Node Operation: Each signer needs to run a DA (Data Availability) node that verifies blob encoding and generates BLS signatures for signed blobs.
+
+3. Registration: Signers must register their information using the registerSigner function. This includes providing their address, node socket address, BLS public key, and a signature signed by their BLS private key.
+
+4. Epoch Participation: Signers must submit a registration message (using the registerNextEpoch function) with a signature for each epoch they wish to participate in. This is necessary for joining quorums in the next epoch.
+
+5. Voting Power: Each signer’s voting power is determined by the number of tokens delegated to them. Signers can have up to 1024 votes, and the votes are distributed randomly into quorums.
+
+6. Quorum Responsibilities: Each signer in a quorum is responsible for validating, signing, and storing a specific row of encoded blob data during an epoch.
+
 ## Prerequisites
 
 Ensure you have the following installed on your system:
