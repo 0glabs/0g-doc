@@ -98,10 +98,10 @@ start by installing all the essential tools and libraries required to build the 
 
         *   Go is a programming language used for certain components of the 0G node.
 
- **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
+ **Download the Source Code**: 
 
     ```bash
-    git clone -b v0.6.0 https://github.com/0glabs/0g-storage-node.git
+    git clone https://github.com/0glabs/0g-storage-node.git
     ```
 
 **Build the Source Code**
