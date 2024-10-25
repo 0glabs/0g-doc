@@ -8,19 +8,41 @@ Welcome to Testnet-V2, where you can contribute to our network by operating vari
 
 ## 0G Testnet Configuration
 
-| Field | Value |
+Summary Table
+| Detail | Value |
 |-------|-------|
 | Chain Name | 0G-Newton-Testnet |
 | Chain ID | 16600 (`zgtendermint_16600-2`) |
 | Token Symbol | A0GI |
-| Chain RPC - Thirdweb | https://16600.rpc.thirdweb.com/ |
-| Chain RPC - Ankr | https://rpc.ankr.com/0g_newton |
-| Chain RPC | https://evmrpc-testnet.0g.ai |
+| **Recommended RPC** - Thirdweb  | https://16600.rpc.thirdweb.com/ |
+| RPC - Ankr | https://rpc.ankr.com/0g_newton |
+| RPC | https://evmrpc-testnet.0g.ai |
 | Chain Websocket | https://cosmosrpc-testnet.0g.ai |
 | Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
 | Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
 | Chain Explorer | https://chainscan-newton.0g.ai/ |
 | Storage Explorer | https://storagescan-newton.0g.ai/ |
+| Faucet | https://faucet.0g.ai/ |
+
+## RPCs
+
+**Comprehensive RPC Dashboard:** https://0g.originstake.com/rpc-api
+
+### Highly Recommended Third-party RPCs
+
+- [Thirdweb](https://thirdweb.com/0g-newton-testnet)
+- [Ankr](https://rpc.ankr.com/0g_newton)
+
+### Community RPCs and Resources 
+
+- [Originstake](https://0g-json-rpc-public.originstake.com)
+- [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
+- [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
+- [Zstake](https://0g-evmrpc.zstake.xyz/)
+
+:::caution
+Do not rely on the free community endpoints listed above for production deployments. Production deployments should rely on service providers with SLAs or your own node.
+:::
 
 ## Contract Addresses
 
@@ -42,21 +64,6 @@ The contract address might change during the public testnet phase, so please che
 
 Deployed Block Number: `595059`
 
-### Third-party RPCs
-
-- [Thirdweb](https://thirdweb.com/0g-newton-testnet)
-- [Ankr](https://rpc.ankr.com/0g_newton)
-
-### Community RPCs
-
-- [Originstake](https://0g-json-rpc-public.originstake.com)
-- [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
-- [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
-- [Zstake](https://0g-evmrpc.zstake.xyz/)
-
-:::caution
-Do not rely on the free community endpoints listed above for production deployments. Production deployments should rely on service providers with SLAs or your own node.
-:::
 
 ### Faucet
 [Faucet](https://faucet.0g.ai/) 
