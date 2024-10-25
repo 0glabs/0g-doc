@@ -119,40 +119,37 @@ cd run
 nano config.toml
 ```
 
-2. Update `config.toml` with your settings:
+2. Update configuration with your preferred settings:
 
-```toml
-# Peer nodes: Check inside0g-storage/run directory for official configurations
+
+Below is just an example configuration for illustration purposes.
+For official default values, copy over the `config-testnet-turbo.toml` file or `config-testnet-standard.toml` file to your `config.toml` file.
+
+
+```
+# Peer nodes: A list of peer nodes to help your node join the network. Check inside 0g-storage/run directory for suggested configurations.
 network_boot_nodes = []
 
 # Contract addresses
 log_contract_address = "CONTRACT_ADDRESS" #flow contract address, see testnet information
-mine_contract_address = "CONTRACT_ADDRESS"
+mine_contract_address = "CONTRACT_ADDRESS" #Address of the smart contract on the host blockchain that manages mining.
 
-# Layer one blockchain RPC endpoint
+# L1 host blockchain RPC endpoint URL. See testnet information page for RPC endpoints
 blockchain_rpc_endpoint = "RPC_ENDPOINT"
 
-# Start sync block number
+# Start sync block number: The block number from which your node should start synchronizing the log data.
 log_sync_start_block_number = BLOCK_NUMBER
 
-# Your private key (64 chars, no '0x' prefix, include leading zeros)
+# Your private key (64 chars, no '0x' prefix, include leading zeros): Your private key (without the `0x` prefix) if you want to participate in PoRA mining and earn rewards.
 miner_key = "YOUR_PRIVATE_KEY"
 
-# Max chunk entries in db (affects storage size)
+# Max chunk entries in db (affects storage size): The maximum number of chunk entries (each 256 bytes) to store in the database. This effectively limits the database size.
 db_max_num_chunks = MAX_CHUNKS
 
-# ENR address: Your instance's public IP, currently automatically set by the node
+# ENR address: Your node's public IP address, essential for other nodes to discover and connect to you. Currently automatically set by the node.
 # network_enr_address = ""
 ```
-:::note
-*   `network_enr_address`: Your node's public IP address, essential for other nodes to discover and connect to you.
-        *   `network_boot_nodes`: A list of peer nodes to help your node join the network. You can find official configurations in the `0g-storage/run/config-t` file.
-        *   `log_contract_address`, `mine_contract_address`: The addresses of the smart contracts on the host blockchain that manage the log and mining processes, respectively.
-        *   `blockchain_rpc_endpoint`: The URL of an RPC endpoint to interact with the host blockchain.
-        *   `log_sync_start_block_number`: The block number from which your node should start synchronizing the log data.
-        *   `miner_key`: Your private key (without the `0x` prefix) if you want to participate in PoRA mining and earn rewards.
-        *   `db_max_num_chunks`: The maximum number of chunk entries (each 256 bytes) to store in the database. This effectively limits the database size.
-        :::
+
 ## Running the Storage Node
 
 1. Check configuration options:
