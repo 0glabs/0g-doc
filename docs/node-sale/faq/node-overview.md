@@ -19,7 +19,7 @@ Whitelist Node Sale Launch: November 11th, 2024, at 12 PM UTC (available for 2 d
 Public Node Sale Launch: November 13th, 2024, at 12 PM UTC, all users can purchase.
 
 ### Where will the node sale take place?
-node.0g.ai 
+Coming Soon. 
 
 ### What are the sale types available within each Tier?
 Within each tier, there are nodes available for public sale and whitelist sale.
