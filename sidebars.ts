@@ -64,6 +64,16 @@ const sidebars: SidebarsConfig = {
         },
         'build-with-0g/faucet',
         'build-with-0g/explorer',
+        {
+          type: 'category',
+          label: 'Serving Network',
+          items: [
+            'build-with-0g/serving-network/overview',
+            'build-with-0g/serving-network/provider',
+            'build-with-0g/serving-network/sdk',
+            'build-with-0g/serving-network/marketplace',
+          ],
+        },
       ],
     },
     {
