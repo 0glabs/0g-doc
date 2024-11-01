@@ -6,6 +6,9 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import GetConstantValue from '@site/src/components/GetConstantValue';
+
+
 
 # 0G Storage SDKs
 ---
@@ -24,11 +27,11 @@ Both SDKs provide a streamlined interface to interact with the 0G Storage networ
 <TabItem value="binary" label="GO SDK Integration" default>
 ## Overview
 
-The 0g Go SDK enables seamless interaction with the 0g decentralized storage network. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
+The 0G Go SDK enables seamless interaction with the 0G decentralized storage network. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
 
 ## Installation
 
-To install the 0g Storage Client library:
+To install the 0G Storage Client library:
 
 ```bash
 go get github.com/0glabs/0g-storage-client
@@ -51,11 +54,6 @@ import (
 Create the necessary clients to interact with the network:
 
 ```go
-const (
-    evmRpc = "https://evmrpc-testnet.0g.ai/"        // EVM RPC endpoint
-    indRpc = "https://indexer-storage-testnet-standard.0g.ai" // Indexer RPC endpoint
-)
-
 // Create Web3 client for blockchain interactions
 w3client := blockchain.MustNewWeb3(evmRpc, privateKey)
 defer w3client.Close()
@@ -68,16 +66,16 @@ if err != nil {
 ```
 
 **Parameters:**
-- `evmRpc`: Ethereum RPC URL ("https://evmrpc-testnet.0g.ai")
+- `evmRpc`: Ethereum RPC URL (<GetConstantValue configKey="EVMRPC_ENDPOINT" />)
 - `privateKey`: Your Ethereum private key for signing transactions
-- `indRpc`: Indexer RPC endpoint ("https://indexer-storage-testnet-standard.0g.ai")
+- `indRpc`: Indexer RPC endpoint (<GetConstantValue configKey="EVMRPC_ENDPOINT" />)
 
 ### Node Selection
 
 Select storage nodes before performing file operations:
 
 ```go
-nodes, err := indexerClient.SelectNodes(ctx, 0, 1, []string{})
+nodes, err := indexerClient.SelectNodes(ctx, segmentNumber, expectedReplicas, excludedNodes)
 if err != nil {
     // Handle error
 }
@@ -85,9 +83,9 @@ if err != nil {
 
 **Parameters:**
 - `ctx`: Context for operation management
-- `0`: Segment number for storage segmentation
-- `1`: Number of file replicas to maintain (minimum: 1)
-- `[]string{}`: Nodes to exclude from selection
+- `segmentNumber`: Identifies which storage segment to use
+- `expectedReplicas`: Number of file copies to maintain (minimum 1)
+- `excludedNodes`: List of nodes to exclude from selection
 
 ### File Upload
 
@@ -113,7 +111,7 @@ if err != nil {
 
 ### File Hash Calculation
 
-Calculate a file's Merkle root hash before upload, this will be used for identify file from 0g storage:
+Calculate a file's Merkle root hash before upload, this will be used for identify file from 0G storage:
 
 ```go
 rootHash, err := core.MerkleRoot(filePath)
@@ -165,7 +163,7 @@ if err != nil {
 
 ## Conclusion
 
-The 0g Go SDK provides a robust way to interact with the 0G Storage network, enabling decentralized file storage, data integrity verification, and efficient transaction management. For more detailed information, refer to the [official GitHub repository](https://github.com/0glabs/0g-storage-client).
+The 0G Go SDK provides a robust way to interact with the 0G Storage network, enabling decentralized file storage, data integrity verification, and efficient transaction management. For more detailed information, refer to the [official GitHub repository](https://github.com/0glabs/0g-storage-client).
 
 </TabItem>
 <TabItem value="tab2" label="TypeScript SDK Integration">
