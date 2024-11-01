@@ -82,7 +82,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/0G-Labs/0g-docs',
+          href: 'https://github.com/0G-Labs/0g-doc',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
