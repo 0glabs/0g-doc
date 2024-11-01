@@ -1,7 +1,6 @@
 ---
 id: faucet
 title: Faucet
-sidebar_position: 6
 ---
 
 # 0G Faucet
