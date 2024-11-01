@@ -4,10 +4,12 @@ title: Why Run a Node?
 sidebar_position: 3
 ---
 
-# Why Run a Node?
+# Sale Structure, Dates, and Tiers
 
-Running a node on the 0G network offers participants a chance to directly contribute to the growth and security of our decentralized AI ecosystem. Nodes are the backbone of our network, enabling the following:
-- **Decentralization**: Ensure the network remains decentralized and resilient.
-- **Network Security**: Enhance the security and reliability of the network by verifying transactions.
-- **AI Processing Power**: Support AI computations, thereby contributing to the network's ability to deliver on-chain AI services.
-- **Reward Opportunities**: Node operators can earn rewards in the form of native tokens or other incentives for their contribution to the network.
+## Sale Phases
+The sale is structured into two phases:
+- Whitelist Sale: Opens November 11, 2024, at 12 PM UTC and remains open for two days. Only whitelisted participants may purchase nodes during this phase.
+- Public Sale: Opens November 13, 2024, at 12 PM UTC, available to all users  .
+
+## Tiered Pricing
+The node sale is segmented into 32 pricing tiers, beginning at 0.05 ETH per node, allowing for varied entry points that cater to diverse participant levels.
