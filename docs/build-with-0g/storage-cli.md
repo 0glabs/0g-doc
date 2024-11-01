@@ -1,7 +1,6 @@
 ---
 id: storage-cli
 title: Storage CLI
-sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';

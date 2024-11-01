@@ -1,7 +1,6 @@
 ---
 id: explorer
 title: 0G Explorers
-sidebar_position: 4
 ---
 # 0G Explorers: Visualize the Blockchain Ecosystem
 ---
