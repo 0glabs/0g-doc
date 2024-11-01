@@ -5,4 +5,4 @@ sidebar_position: 1
 ---
 
 
-0G is the first decentralized AI operating system (dAIOS), offering unparalleled infrastructure to power the next generation of decentralized AI applications. The 0G Node Sale is designed to build a vibrant ecosystem where AI is treated as a public good, fostering long-term growth and innovation. Our focus is on creating a community of dedicated owners and contributors who actively shape secure the future of decentralized AI, rather than simply be passive participants.
+The objective of 0G Foundation: The 0G Foundation’s node sale aims to create a decentralized AI operating system (dAIOS) that operates transparently, safely, and under community influence. Centralized AI structures may lack these attributes, creating potential risks for data integrity and security. The 0G Foundation’s goal is to develop AI as a public good, fostering an ecosystem that prioritizes transparency and reduces reliance on central authorities, making it suitable for broad public utility.
