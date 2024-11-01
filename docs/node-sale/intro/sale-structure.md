@@ -1,6 +1,6 @@
 ---
-id: why-run-a-node
-title: Why Run a Node?
+id: sale-structure
+title: Sale Structure & Dates
 sidebar_position: 3
 ---
 
