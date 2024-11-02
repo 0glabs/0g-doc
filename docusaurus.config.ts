@@ -130,11 +130,6 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} 0G Labs, Built with Docusaurus.`,
     },
   } satisfies Preset.ThemeConfig,
-
-  customFields: {
-    EVMRPC_ENDPOINT: process.env.EVMRPC_ENDPOINT || '',
-    INDEXER_ENDPOINT: process.env.INDEXER_ENDPOINT || '',
-  },
 };
 
 export default config;
