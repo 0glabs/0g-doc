@@ -11,4 +11,4 @@ In this section, learn more about the 0G Foundation Node Sale.
 - What is the 0G Foundation AI Alignment Node Sale?
 - What is an AI Alignment Node?
 - How can I participate? 
-- [FAQ](docs/node-sale/faq/node-operations.md)
+- [FAQ](docs/node-sale/faq/faq.md)

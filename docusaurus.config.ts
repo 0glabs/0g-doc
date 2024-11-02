@@ -82,7 +82,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/0G-Labs',
+          href: 'https://github.com/0glabs',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
@@ -102,7 +102,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             { label: 'Introduction', to: '/intro' },
-            { label: 'Run a Node', to: '/run-a-node/node-overview' },
+            { label: 'Run a Node', to: '/run-a-node/overview' },
           ],
         },
         {
