@@ -1,5 +1,5 @@
 ---
-id: details
+id: purchasing-nodes
 title: Purchasing Nodes
 sidebar_position: 1
 ---
