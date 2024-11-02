@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Frequently Asked Questions
+title: FAQ
 sidebar_position: 1
 ---
 
