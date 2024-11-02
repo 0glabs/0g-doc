@@ -13,3 +13,4 @@ The sale is structured into two phases:
 
 ## Tiered Pricing
 The node sale is segmented into 32 pricing tiers, beginning at 0.05 ETH per node, allowing for varied entry points that cater to diverse participant levels.
+![Node Sale Price Table](/img/nodesale-tier.png)

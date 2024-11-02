@@ -18,8 +18,8 @@ To implement this server specification, 0G DA provides a `da-server` that runs a
 
 Below are the requisite steps to deploy an OP Stack rollup on 0G DA, which the following documentation will walk you through:
 
-* Follow the instructions to set up a [0G DA client node]('../build-with-0g/da-integration')
-* Set up a [0G DA encoder node]('../build-with-0g/da-integration')
+* Follow the instructions to set up a [0G DA client node](/build-with-0g/da-integration)
+* Set up a [0G DA encoder node](/build-with-0g/da-integration)
 * Deploy a 0G DA Server as shown below
 * Deploy the OP Stack components with configuation adjustments as shown below
 
