@@ -44,7 +44,7 @@ You will receive a soulbound NFT (ERC-721) which represents your Node License. T
 0G Foundation’s AI Alignment nodes are designed for adoption - they can be run on community members’ laptops, desktops, mobiles, or even on cloud instances.
 As for device requirements, the configuration needed is very minimal:
 - 64MB RAM
-- 1 X86 CPU Cores@2.1GHz
+- 1 X86 CPU Cores @2.1GHz
 - 10GB Disk Space
 - 10Mbps Internet Connection
 
