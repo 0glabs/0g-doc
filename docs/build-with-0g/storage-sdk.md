@@ -22,71 +22,146 @@ Both SDKs provide a streamlined interface to interact with the 0G Storage networ
 * **Leverage Decentralization:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
 <Tabs>
 <TabItem value="binary" label="GO SDK Integration" default>
+## Overview
 
-## Getting Started with the Go SDK
+The 0G Go SDK enables seamless interaction with the 0G decentralized storage network. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
 
-### 1. Installation
+## Installation
 
-Download and install 0G Storage Client library, which provides the Go SDK functionalities, from the GitHub repository.
+To install the 0G Storage Client library:
 
 ```bash
 go get github.com/0glabs/0g-storage-client
 ```
 
-### 2. Initialization
-
-Imports the necessary packages, including the 0G Storage Client library and creates a new `storage.Client` instance, providing it with the required configuration parameters:
+**First, import the necessary packages:**
 
 ```go
 import (
     "context"
-    "github.com/0glabs/0g-storage-client"
+    "github.com/0glabs/0g-storage-client/blockchain"
+    "github.com/0glabs/0g-storage-client/indexer"
+    "github.com/0glabs/0g-storage-client/transfer"
 )
+```
 
-func main() {
-    // ... (Obtain necessary configuration parameters: network endpoint, contract addresses, private key)
+## Key Functionalities
+### Initialization
 
-    client, err := storage.NewClient(context.Background(), networkEndpoint, flowContractAddress, privateKey)
-    if err != nil {
-        // Handle error
-    }
+Create the necessary clients to interact with the network:
 
-    // ... (Use the client to interact with the 0G Storage network)
+```go
+// Create Web3 client for blockchain interactions
+w3client := blockchain.MustNewWeb3(evmRpc, privateKey)
+defer w3client.Close()
+
+// Create indexer client for node management
+indexerClient, err := indexer.NewClient(indRpc)
+if err != nil {
+    // Handle error
 }
 ```
 
-* `context.Background()`: Creates a background context for managing the lifecycle of the client's operations.
-* `networkEndpoint`: The URL of the 0G network's RPC endpoint.
-* `flowContractAddress`: The address of the 0G Flow Contract on the blockchain.
-* `privateKey`: Your private key, used for authentication and transaction signing.
+**Parameters:**
+- `evmRpc`: Ethereum RPC URL
+- `privateKey`: Your Ethereum private key for signing transactions
+- `indRpc`: Indexer RPC endpoint
 
-The `if err != nil` block handles any potential errors during client creation. Once the client is successfully created, you can use it to interact with the 0G Storage network.
+### Node Selection
 
-### 3. Uploading a File
-
-Utilize the `client.UploadFile` method to upload the file specified by `filePath` to the 0G network. The method returns the `fileRoot` (the unique identifier or hash of the uploaded file) and an error if any occurred during the upload process. The `if err != nil` block handles potential errors. If the upload is successful, the `fileRoot` is printed, which you'll need to retrieve the file later.
+Select storage nodes before performing file operations:
 
 ```go
-fileRoot, err := client.UploadFile(filePath)
+nodes, err := indexerClient.SelectNodes(ctx, segmentNumber, expectedReplicas, excludedNodes)
+if err != nil {
+    // Handle error
+}
+```
+
+**Parameters:**
+- `ctx`: Context for operation management
+- `segmentNumber`: Identifies which storage segment to use
+- `expectedReplicas`: Number of file copies to maintain (minimum 1)
+- `excludedNodes`: List of nodes to exclude from selection
+
+### File Upload
+
+Upload files to the network:
+
+```go
+uploader, err := transfer.NewUploader(ctx, w3client, nodes)
 if err != nil {
     // Handle error
 }
 
-fmt.Println("File uploaded with root hash:", fileRoot)
+txHash, err := uploader.UploadFile(ctx, filePath)
+if err != nil {
+    // Handle error
+}
 ```
 
-### 4. Downloading a File
+**Parameters:**
+- `ctx`: Context for upload operation
+- `w3client`: Web3 client instance
+- `nodes`: Selected storage nodes
+- `filePath`: Path to the file being uploaded
 
-Uses the `client.DownloadFile` method to download a file from the 0G network. You need to provide the `fileRoot` (obtained during the upload) and the `outputFilePath` where you want to save the downloaded file. The method returns an error if any occurred during the download. The `if err != nil` block handles potential errors. If the download is successful, a success message is printed.
+### File Hash Calculation
+
+Calculate a file's Merkle root hash before upload, this will be used for identify file from 0G storage:
 
 ```go
-err := client.DownloadFile(fileRoot, outputFilePath)
+rootHash, err := core.MerkleRoot(filePath)
+if err != nil {
+    // Handle error
+}
+fmt.Printf("File hash: %s\n", rootHash.String())
+```
+
+**Parameters:**
+- `filePath`: Path to the file you want to hash
+
+**Returns:**
+- `rootHash`: A unique identifier for the file based on its content
+  - Used for file verification
+  - Required for downloading files
+
+### File Download
+
+Download files from the network:
+
+```go
+downloader, err := transfer.NewDownloader(nodes)
 if err != nil {
     // Handle error
 }
 
-fmt.Println("File downloaded successfully!")
+err = downloader.Download(ctx, rootHash, outputPath, withProof)
+if err != nil {
+    // Handle error
+}
 ```
+
+**Parameters:**
+- `ctx`: Context for download operation
+- `rootHash`: File's unique identifier (Merkle root hash)
+- `outputPath`: Where to save the downloaded file
+- `withProof`: Enable/disable Merkle proof verification
+  - `true`: Performs verification
+  - `false`: Skips verification
+
+## Best Practices
+
+1. **Error Handling**: Implement proper error handling and cleanup
+2. **Context Management**: Use contexts for operation timeouts and cancellation
+3. **Resource Cleanup**: Always close clients when done using `defer client.Close()`
+4. **Verification**: Enable proof verification for sensitive files
+5. **Monitoring**: Track transaction status for important uploads
+
+## Conclusion
+
+The 0G Go SDK provides a robust way to interact with the 0G Storage network, enabling decentralized file storage, data integrity verification, and efficient transaction management. For more detailed information, refer to the [official GitHub repository](https://github.com/0glabs/0g-storage-client).
+
 </TabItem>
 <TabItem value="tab2" label="TypeScript SDK Integration">
 
