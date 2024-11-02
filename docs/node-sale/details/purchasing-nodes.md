@@ -11,7 +11,7 @@ sidebar_position: 1
 ### Step 1 - Go to https://node.0gfoundation.ai and connect your wallet
 ### Step 2 - Select the chain and token you want to purchase in 
 ### Step 3 - View the tiers available and purchase
-In total there are [32] available for purchase. If you hold a whitelisted address, the Tier that you are entitled to will be shown on the top. Sold out tiers will be moved to the bottom of the page.
+In total there are 32 available for purchase. If you hold a whitelisted address, the Tier that you are entitled to will be shown on the top. Sold out tiers will be moved to the bottom of the page.
 ### Step 4 - Set the quantity
 Start by inputting the number of node(s) that you will be purchasing.
 ### Step 5 - Input Promo Code (Optional)
