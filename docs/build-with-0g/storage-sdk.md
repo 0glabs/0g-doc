@@ -6,9 +6,6 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import GetConstantValue from '@site/src/components/GetConstantValue';
-
-
 
 # 0G Storage SDKs
 ---
@@ -66,9 +63,9 @@ if err != nil {
 ```
 
 **Parameters:**
-- `evmRpc`: Ethereum RPC URL (<GetConstantValue configKey="EVMRPC_ENDPOINT" />)
+- `evmRpc`: Ethereum RPC URL
 - `privateKey`: Your Ethereum private key for signing transactions
-- `indRpc`: Indexer RPC endpoint (<GetConstantValue configKey="EVMRPC_ENDPOINT" />)
+- `indRpc`: Indexer RPC endpoint
 
 ### Node Selection
 
