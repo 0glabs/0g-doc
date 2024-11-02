@@ -93,14 +93,11 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Introduction',
           items: [
+            'node-sale/intro/intro',
             'node-sale/intro/node-holder-benefits',
             'node-sale/intro/sale-structure',
             'node-sale/intro/eligibility',
           ],
-          link: {
-            type: 'doc',
-            id: 'node-sale/intro/intro',
-          },
         },
         {
           type: 'category',
