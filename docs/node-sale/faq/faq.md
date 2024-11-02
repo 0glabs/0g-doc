@@ -6,6 +6,8 @@ sidebar_position: 1
 
 # Frequently Asked Questions
 
+### Who can participate in the Node Sale?
+The 0G AI Alignment Node Sale is open to community members in eligible regions who meet the necessary criteria. Please review all disclaimers and important details regarding the 0G Node Sale by visiting our disclaimer [here](https://0gfoundation.ai/disclaimer). Only persons who meet the requirements for the sale are allowed to participate. KYC will be required from the purchaser before any receival of rewards. 
 ### Are Whitelist and Public Allocations Separate?
 The whitelist allocation is independent and may not be rolled over to the public sale; this remains to be confirmed by the 0G Foundation .
 ### When Can I Operate My Node?
