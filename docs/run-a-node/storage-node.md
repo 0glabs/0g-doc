@@ -182,29 +182,6 @@ Follow the same steps to install dependencies and Rust as in the storage node se
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     ```   
 
-**Install Go**
-
-<Tabs>
-  <TabItem value="linux">
-
-        ```bash
-        # Download the Go installer
-        wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-
-        # Extract the archive
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
-
-        # Add /usr/local/go/bin to the PATH environment variable
-        export PATH=$PATH:/usr/local/go/bin
-        ```
-</TabItem>
-  <TabItem value="mac">
-
-        ```bash
-        brew install go
-        ```
-</TabItem>
-</Tabs>
 #### 1. Download the Source Code
 
 ```bash
