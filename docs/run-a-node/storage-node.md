@@ -61,40 +61,10 @@ start by installing all the essential tools and libraries required to build the 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     ```   
 
-**Install Go**
-
-<Tabs
-  defaultValue="linux"
-  values={[
-    {label: 'Linux', value: 'linux'},
-    {label: 'Mac', value: 'mac'},
-    ]}>
-
-  <TabItem value="linux">
-
-        ```bash
-        # Download the Go installer
-        wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-
-        # Extract the archive
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
-
-        # Add /usr/local/go/bin to the PATH environment variable
-        export PATH=$PATH:/usr/local/go/bin
-        ```
-</TabItem>
-  <TabItem value="mac">
-
-        ```bash
-        brew install go
-        ```
-</TabItem>
-</Tabs>
-
  **Download the Source Code**: 
 
     ```bash
-    git clone https://github.com/0glabs/0g-storage-node.git
+    git clone -b <latest_tag> https://github.com/0glabs/0g-storage-node.git
     ```
 
 **Build the Source Code**
