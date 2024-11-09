@@ -26,17 +26,17 @@ KYC is mandatory for claiming rewards but not required for the initial purchase.
 Whitelist is a pre-approved list of participants who are given exclusive access to certain privileges during a sale event. This system is used to reward and incentivize key contributors, partners, or early supporters of a project.
 
 ### Does entering the whitelist guarantee that I can definitely purchase a node?​
-Your whitelist guarantees an allocation during the Whitelist sale period (11/11 - 13/11). If a purchase is not made within this period, your allocation will be released.
+Your whitelist guarantees an allocation during the Whitelist sale period (Nov 11 - Nov 13). If a purchase is not made within this period, your allocation will be released.
 
 ### How to join the whitelist?​
 To get a whitelist spot for the 0G Foundation Node Sale, community members and ecosystem participants are eligible for allocations, please visit 0G X and Discord for ways to receive a whitelist. You can also apply for a whitelist spot by filling out the whitelist form [here](https://docs.google.com/forms/d/e/1FAIpQLScZSiIn3WBEdztzCObFBnLa0c6f1YoRwlN_eI8NxGPuG4w-zg/viewform).
 
 ## Payment & Licenses
 ### What payment methods will be accepted for purchasing a node?​
-The nodes will be priced in wETH on Arbitrum. However, to facilitate payment for users on different chains, the Alignment Node Sale will be accepting multiple tokens across multiple networks through a bridging aggregator that accepts multichain payment including but not limited to BTC, ETH, ARB, SOL, etc. More info [here](https://docs.li.fi/list-chains-bridges-dex-aggregators-solvers).
+The nodes will be priced in wETH on Arbitrum. However, to facilitate payment for users on different chains, the Alignment Node Sale will be accepting multiple tokens across multiple networks through a live bridging aggregator that accepts multichain payment including but not limited to BTC, ETH, ARB, SOL, etc. More info [here](https://docs.li.fi/list-chains-bridges-dex-aggregators-solvers).
 
 ### How will the node licenses be distributed?​
-After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user. 
+After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user.
 
 ### What will I receive from participating in the node sale?​
 You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs will be minted and transferred to your wallet after the conclusion of the node sale. You will be able to operate the node after 0G Mainnet is live.
@@ -62,5 +62,14 @@ Running a node can be quite straightforward and easy, typically involving just a
 ### Will the sale be accessible from other platforms?​
 Both Public and Whitelist sale will be available soon [here](https://node.0gfoundation.ai/) except for Partnered Launchpads, in which case the front end will be on 0G Partners' website.
 
-### What will we do with any unsold nodes? What will we do with unsold rewards? 
-Reallocate rewards from the unsold nodes to the sold node holders. We will not burn these tokens. 
+### What will happen to any unsold node rewards? 
+Rewards from unsold nodes will be reallocated to the sold node runners. 
+
+### What is your tokenomics?
+
+### What is the % unlocked at TGE? 
+33% of node rewards will be claimable on TGE. In order to encourage long term participation in the 0G ecosystem, there will be a 50% penalty of this node reward if a user selects to claim and withdraw tokens immediately. The remainder of rewards are linearly unlocked (monthly) over 36 months.
+
+### When is KYC required? How is it conducted? 
+KYC is required before NFT is airdropped. It will be provided by a third-party provider. No refund will be offered if the node purchaser does not meet KYC requirements. 
+
