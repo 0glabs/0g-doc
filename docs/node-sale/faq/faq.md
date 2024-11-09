@@ -66,9 +66,12 @@ Both Public and Whitelist sale will be available soon [here](https://node.0gfoun
 Rewards from unsold nodes will be reallocated to the sold node runners. 
 
 ### What is your tokenomics?
+![Tokenomics](https://github.com/user-attachments/assets/5c915d68-426f-4876-97c1-36024c707ea3)
 
 ### What is the % unlocked at TGE? 
 33% of node rewards will be claimable on TGE. In order to encourage long term participation in the 0G ecosystem, there will be a 50% penalty of this node reward if a user selects to claim and withdraw tokens immediately. The remainder of rewards are linearly unlocked (monthly) over 36 months.
+![Emmission Schedule](https://github.com/user-attachments/assets/93973975-9438-4d7f-9b16-dfe151bd7ce2)
+
 
 ### When is KYC required? How is it conducted? 
 KYC is required before NFT is airdropped. It will be provided by a third-party provider. No refund will be offered if the node purchaser does not meet KYC requirements. 
