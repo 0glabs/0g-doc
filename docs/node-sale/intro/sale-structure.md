@@ -8,8 +8,8 @@ sidebar_position: 3
 
 ## Sale Phases
 The sale is structured into two phases:
-- **Whitelist Sale**: Opens November 11, 2024, at 12 PM UTC and remains open for two days. Only whitelisted participants may purchase nodes during this phase.
-- **Public Sale**: Opens November 13, 2024, at 12 PM UTC, available to all users.
+- **Whitelist Sale**: Opens November 11, 2024, at 12 PM UTC and remains open for two days. Only whitelisted participants may purchase nodes during this phase. Denominated in USDC.
+- **Public Sale**: Opens November 13, 2024, at 12 PM UTC, available to all users. Denominated in wETH. 
 
 ![0g-node-sale-timeline-1600x900px (1)](https://github.com/user-attachments/assets/395a233d-d39f-4d3f-a7cc-9244dcb6df6a)
 
