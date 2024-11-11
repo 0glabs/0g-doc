@@ -17,7 +17,6 @@ Summary Table
 | **Recommended RPC** - Thirdweb  | https://16600.rpc.thirdweb.com/ |
 | RPC - Ankr | https://rpc.ankr.com/0g_newton |
 | RPC | https://evmrpc-testnet.0g.ai |
-| Chain Websocket | https://cosmosrpc-testnet.0g.ai |
 | Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
 | Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
 | Chain Explorer | https://chainscan-newton.0g.ai/ |
