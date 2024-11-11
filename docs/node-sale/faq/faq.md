@@ -36,13 +36,16 @@ To get a whitelist spot for the 0G Foundation Node Sale, community members and e
 
 ## Payment & Licenses
 ### What payment methods will be accepted for purchasing a node?​
-The nodes will be priced in USDC for the Whitelist sale and wETH for the Public sale, both on Arbitrum. However, to facilitate payment for users on different chains, the Alignment Node Sale will be accepting multiple tokens across multiple networks through a live bridging aggregator that accepts multichain payment including but not limited to BTC, ETH, ARB, SOL, etc. More info [here](https://docs.li.fi/list-chains-bridges-dex-aggregators-solvers).
+The nodes will be priced in USDC for the Whitelist sale and wETH for the Public sale, both on Arbitrum. However, to facilitate payment for users on different chains, the AI Alignment Node Sale will be accepting multiple tokens across multiple networks through a live bridging aggregator that accepts multichain payment including but not limited to BTC, ETH, ARB, SOL, etc. More info [here](https://docs.li.fi/list-chains-bridges-dex-aggregators-solvers).
 
 ### How will the node licenses be distributed?​
 After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user.
 
 ### What will I receive from participating in the node sale?​
 You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs will be minted and transferred to your wallet after the conclusion of the node sale. You will be able to operate the node after 0G Mainnet is live.
+
+### Will the NFTs be transferrable?
+The Alignment Node license gives buyers lifetime access. The NFTs will be non-transferable for the first year after the node sale.
 
 ## Node Operations
 ### What are the hardware requirements?​
