@@ -16,4 +16,4 @@ The sale is structured into two phases:
 ## Tier Pricing
 The node sale is segmented into 32 pricing tiers, beginning at 0.05 ETH per node, allowing for varied entry points that cater to diverse participant levels. While pegged to an ETH snapshot price of $3,130, both sales are conducted in USDC on Arbitrum. See [here](https://docs.google.com/spreadsheets/d/16dgdbrs0LA_mSSYB7cSEWmQPMJvok0FjqAHX-nLxEzs/edit?gid=2031834824#gid=2031834824) for more details.
 
-![0G-Node-Sale-Model-v4](https://github.com/user-attachments/assets/892570fd-6638-47b2-a6ec-73c34ec56d63)
+![Node Sale Table](https://github.com/user-attachments/assets/a3bedcd9-41ea-45a7-a804-4309b971881c)
