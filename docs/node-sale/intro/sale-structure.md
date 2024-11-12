@@ -16,4 +16,4 @@ The sale is structured into two phases:
 ## Tier Pricing
 The node sale is segmented into 32 pricing tiers, beginning at 0.05 ETH per node, allowing for varied entry points that cater to diverse participant levels. Since the Whitelist sale is in USDC, node prices will be pegged to ETH snapshot price of $3,130. See [here](https://docs.google.com/spreadsheets/d/16dgdbrs0LA_mSSYB7cSEWmQPMJvok0FjqAHX-nLxEzs/edit?gid=2031834824#gid=2031834824) for more details.
 
-![Screenshot 2024-11-11 at 6 35 20 PM](https://github.com/user-attachments/assets/18b8f88a-9c30-471b-ba9e-8fa0315c616d)
+![0G-Node-Sale-Model-v4](https://github.com/user-attachments/assets/892570fd-6638-47b2-a6ec-73c34ec56d63)
