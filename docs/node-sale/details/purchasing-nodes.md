@@ -5,9 +5,13 @@ sidebar_position: 1
 ---
 
 # Purchasing Nodes: Steps and Payment Options
-**Supported Blockchains and Payment Methods**: The sale will be conducted in wETH on ARB, but we provide a live bridging gateway at checkout that supports multiple blockchains (ETH, Arbitrum, BNB), with accepted tokens including ETH and USDC. All purchases require a compatible wallet, and the resulting node licenses are issued as non-transferable ERC-721 NFTs.
+**Supported Blockchains and Payment Methods**: The sale will be conducted in USDC on Arbitrum, but we provide a live bridging gateway at checkout that supports multiple blockchains (ETH, Arbitrum, BNB) and tokens. All purchases require a compatible wallet, and the resulting node licenses are issued as non-transferable ERC-721 NFTs.
 
 ## Video Tutorial 
+:::important
+Please note: Initially, the Public Sale was intended to use wETH on Arbitrum, but after the community’s feedback, it will be USDC on Arbitrum. Please note this correction to USDC on Arbitrum as the video says wETH.
+:::
+
 https://www.youtube.com/watch?v=Z2QHJfjqCtM&ab_channel=0G
 
 Note that this video is for demonstrative purposes only, may not reflect exact details and have different prices or tokens than the actual sale.
