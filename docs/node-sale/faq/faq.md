@@ -13,10 +13,10 @@ See the step by step guide [here](docs/node-sale/details/purchasing-nodes.md).
 ### Who can participate in the Node Sale?
 The 0G AI Alignment Node Sale is open to community members in eligible regions who meet the necessary criteria. Please review all disclaimers and important details regarding the 0G Node Sale by visiting our disclaimer [here](https://0gfoundation.ai/disclaimer). Only persons who meet the requirements for the sale are allowed to participate. KYC will be required from the purchaser before any receival of rewards. 
 ### Are Whitelist and Public Allocations Separate?
-The whitelist allocation is independent and will not be rolled over to the public sale. The **Whitelist Sale** opens November 11, 2024, at 12 PM UTC. The sale will be denominated in USDC on Arbitrum, and only whitelisted participants may purchase nodes during this phase. The **Public Sale** opens November 13, 2024, at 12 PM UTC, is denominated in wETH on Arbitrum, and is available to all users, subject to geographic and regulatory restrictions. Please see our disclaimer for more information.
+The whitelist allocation is independent and will not be rolled over to the public sale. The **Whitelist Sale** opens November 11, 2024, at 12 PM UTC. The sale will be denominated in USDC on Arbitrum, and only whitelisted participants may purchase nodes during this phase. The **Public Sale** opens November 13, 2024, at 12 PM UTC, is denominated in USDC on Arbitrum, and is available to all users, subject to geographic and regulatory restrictions. Please see our disclaimer for more information.
 ![0g-node-sale-timeline-1600x900px](https://github.com/user-attachments/assets/dd6746d7-a102-43f3-9a1f-ae33d0ca7f72)
-### What price will the Whitelist sale be pegged to?
-The Whitelist Sale is denominated in USDC on Arbitrum. Node pricing will be pegged to a snapshot price of wETH of $3,130. 
+### What price will the sale be pegged to?
+Both the Whitelist and Public Sales are denominated in USDC on Arbitrum. Node pricing will be pegged to a snapshot price of wETH of $3,130. 
 ### When Can I Operate My Node?
 Node operations will commence after the mainnet launch, projected for Q1 2025. License holders will receive further instructions for operation and delegation options if preferred.
 ### How Do Rewards for Alignment Nodes Compare with Other Nodes?
@@ -36,7 +36,7 @@ To get a whitelist spot for the 0G Foundation Node Sale, community members and e
 
 ## Payment & Licenses
 ### What payment methods will be accepted for purchasing a node?​
-The nodes will be priced in USDC for the Whitelist sale and wETH for the Public sale, both on Arbitrum. However, to facilitate payment for users on different chains, the AI Alignment Node Sale will be accepting multiple tokens across multiple networks through a live bridging aggregator that accepts multichain payment including but not limited to BTC, ETH, ARB, SOL, etc. More info [here](https://docs.li.fi/list-chains-bridges-dex-aggregators-solvers).
+The nodes will be priced in USDC for both the Whitelist Sale and Public Sale, both on Arbitrum. However, to facilitate payment for users on different chains, the AI Alignment Node Sale will be accepting multiple tokens across multiple networks through a live bridging aggregator that accepts multichain payment including but not limited to BTC, ETH, ARB, SOL, etc. More info [here](https://docs.li.fi/list-chains-bridges-dex-aggregators-solvers).
 
 ### How will the node licenses be distributed?​
 After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user.
