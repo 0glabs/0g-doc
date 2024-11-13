@@ -262,7 +262,7 @@ Run the following script for complete testing:
   
 ## DA Retriever Node Installation
 
-**1. Clone the DA Retriver Node Repo:** 
+**1. Clone the DA Retriever Node Repo:** 
 
 ```bash
 git clone https://github.com/0glabs/0g-da-retriever.git
@@ -300,7 +300,7 @@ COPY --from=builder /0g-da-retriever/run/config.toml ./run/config.toml
 CMD ["/usr/local/bin/retriever"]
 ```
 
-Replace the Config impl in /retriver/src/config.rs with the following:
+Replace the Config impl in /retriever/src/config.rs with the following:
 ```bash
 impl Config {
     pub fn from_cli_file() -> Result<Self> {
