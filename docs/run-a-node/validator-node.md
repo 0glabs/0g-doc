@@ -94,7 +94,7 @@ Running a validator node in the 0G ecosystem means actively participating in the
 ### Remember
 
 - Stay updated with the latest testnet information and announcements on our socials and blog posts.
-- Reach out to us on Discord or to the community for support if you encounter any issues.
+- Reach out to us on [Discord](https://discord.com/invite/0gLabs) or to the community for support if you encounter any issues.
 
 ### Troubleshooting
 
@@ -208,7 +208,7 @@ Thank you for contributing to the security and decentralization of the 0g networ
 ## Remember
 
 - Stay updated with the latest testnet information and announcements on our socials and blog posts.
-- Reach out to us on Discord or to the community for support if you encounter any issues.
+- Reach out to us on [Discord](https://discord.com/invite/0gLabs) or to the community for support if you encounter any issues.
 
 ## Troubleshooting
 

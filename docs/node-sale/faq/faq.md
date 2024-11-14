@@ -32,7 +32,7 @@ Whitelist is a pre-approved list of participants who are given exclusive access 
 Your whitelist guarantees an allocation during the Whitelist sale period (starting Nov 11). If a purchase is not made within this period, your allocation will be released.
 
 ### How to join the whitelist?​
-To get a whitelist spot for the 0G Foundation Node Sale, community members and ecosystem participants are eligible for allocations, please visit 0G X and Discord for ways to receive a whitelist. You can also apply for a whitelist spot by filling out the whitelist form [here](https://docs.google.com/forms/d/e/1FAIpQLScZSiIn3WBEdztzCObFBnLa0c6f1YoRwlN_eI8NxGPuG4w-zg/viewform).
+To get a whitelist spot for the 0G Foundation Node Sale, community members and ecosystem participants are eligible for allocations, please visit 0G [X](https://x.com/0g_Labs) and [Discord](https://discord.com/invite/0gLabs) for ways to receive a whitelist. You can also apply for a whitelist spot by filling out the whitelist form [here](https://docs.google.com/forms/d/e/1FAIpQLScZSiIn3WBEdztzCObFBnLa0c6f1YoRwlN_eI8NxGPuG4w-zg/viewform).
 
 ## Payment & Licenses
 ### What payment methods will be accepted for purchasing a node?​

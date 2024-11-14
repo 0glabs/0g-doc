@@ -297,7 +297,7 @@ If you encounter issues:
 If you need assistance:
 
 1. Check the [GitHub Issues](https://github.com/0glabs/0g-storage-kv/issues) for known problems and solutions.
-2. Join the 0G community channels (Discord, Telegram, etc.) for community support.
+2. Join the 0G community channels ([Discord](https://discord.com/invite/0gLabs), [Telegram](https://t.me/web3_0glabs), etc.) for community support.
 3. For critical issues, consider reaching out to the 0G team directly.
 
 ## Conclusion
