@@ -62,7 +62,7 @@ At 0G, our mission is clear: To Make AI a Public Good.
 Every component of our ecosystem contributes toward this goal, and we invite you to join us in building the foundation for a decentralized AI future.
 
 This introduction serves as your gateway into the 0G ecosystem. For deeper insights on various products, explore the next sections to learn about 0G dAIOS. If you’re ready to dive in, check out our guides:
-- [Run a Node](/run-a-node/node-overview)
+- [Run a Node](/run-a-node/overview)
 - [Use our Storage Network](/build-with-0g/sdk)
 - [Learn more about 0G's Architecture](/learn-more/whitepaper)
 
