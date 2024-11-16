@@ -12,6 +12,6 @@ In this section, learn more about the 0G Foundation AI Alignment Node Sale.
 - [Why should I participate?](docs/node-sale/intro/node-holder-benefits.md)
 - [Who can participate?](docs/node-sale/intro/eligibility.md)
 - [How do I purchase nodes?](docs/node-sale/details/purchasing-nodes.md)
-- [Fequently Asked Questions](docs/node-sale/faq/faq.md)
+- [Frequently Asked Questions](docs/node-sale/faq/faq.md)
   
 ![Launchpads-1600x900px](https://github.com/user-attachments/assets/f034673b-d04f-4006-893c-51a5e9a4d172)
