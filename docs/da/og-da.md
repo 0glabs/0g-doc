@@ -67,7 +67,7 @@ This is a key mechanism that allows for the system to scale infinitely while mai
   <img src="/img/consensus process.png" alt="consensus process Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
-**Getting started:** [link to guide]('.../run-a-node/da-node')
+**Getting started:** [link to guide](.../run-a-node/da-node)
 
 ## Use Cases
 
