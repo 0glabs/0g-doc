@@ -38,7 +38,7 @@ go get github.com/0glabs/0g-storage-client
 ```go
 import (
     "context"
-    "github.com/0glabs/0g-storage-client/blockchain"
+    "github.com/0glabs/0g-storage-client/common/blockchain"
     "github.com/0glabs/0g-storage-client/indexer"
     "github.com/0glabs/0g-storage-client/transfer"
 )
