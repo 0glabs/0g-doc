@@ -83,7 +83,7 @@ Keep the generated BLS private key secure.
    docker build -t 0g-da-node .
    docker run -d --name 0g-da-node 0g-da-node
    ```
-**5: Verify the Node is Running**
+**5. Verify the Node is Running**
 
 On the first run, the DA node will register the signer information in the DA contract. You can monitor the console output to ensure the node is running correctly and has successfully registered.
 
