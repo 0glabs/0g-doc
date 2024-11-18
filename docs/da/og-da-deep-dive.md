@@ -135,7 +135,7 @@ When a DA epoch ends, all the rewards from that DA epoch will be stored in the D
 
 In the early stages of the ecosystem, the foundation can reserve a portion of tokens for system rewards. When the DA node submits a valid response, an additional reward of `BASE_REWARD` will be issued.
 
-The funds for the base reward will be manually deposited into the reward contract and tracked separately. If the balance for the base reward is insufficient to cover a signle base reward, miners will not be able to receive the full base reward.
+The funds for the base reward will be manually deposited into the reward contract and tracked separately. If the balance for the base reward is insufficient to cover a single base reward, miners will not be able to receive the full base reward.
 
 ### Service Fee
 

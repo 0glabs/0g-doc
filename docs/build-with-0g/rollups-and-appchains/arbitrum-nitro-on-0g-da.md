@@ -10,7 +10,7 @@ Arbitrum Nitro is a high-performance Ethereum rollup that uses a new consensus m
 
 0G DA is a high-performance data availability layer that can be used for Arbitrum Nitro to provide a cost-effective and secure solution for storing transaction data.
 
-To implement this server spec, EigenDA provides EigenDA Proxy which is ran as a dependency alongside OP Stack sequencers and full nodes to securely communicate with the EigenDA disperser.
+To implement this server spec, EigenDA provides EigenDA Proxy which is run as a dependency alongside OP Stack sequencers and full nodes to securely communicate with the EigenDA disperser.
 
 ### DA provider implementation
 The Arbitrum Nitro code includes a DataAvailabilityProvider interface, which is utilized throughout the codebase for storing and retrieving data from various providers, including EIP-4844 blobs, Anytrust, and now 0G.
@@ -23,8 +23,8 @@ Find the [repository for this integration](https://github.com/0glabs/nitro) at h
 
 ## Prerequisites
 
-- [0G DA Client Node]('../build-with-0g/da-client-node')
-- [0G DA Encoder Node]('../build-with-0g/da-encoder-node')
+- [0G DA Client Node](/build-with-0g/da-client-node)
+- [0G DA Encoder Node](build-with-0g/da-encoder-node)
 - [0G Arbitrum Nitro Rollup Kit](https://github.com/0glabs/nitro)
 
 

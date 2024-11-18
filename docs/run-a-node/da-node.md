@@ -53,7 +53,7 @@ Keep the generated BLS private key secure.
    # grpc server listen address
    grpc_listen_address = "0.0.0.0:34000"
    # chain eth rpc endpoint
-   eth_rpc_endpoint = "https://rpc-testnet.0g.ai"
+   eth_rpc_endpoint = "https://evmrpc-testnet.0g.ai"
    # public grpc service socket address to register in DA contract
    # ip:34000 (keep same port as the grpc listen address)
    # or if you have dns, fill your dns
@@ -83,7 +83,7 @@ Keep the generated BLS private key secure.
    docker build -t 0g-da-node .
    docker run -d --name 0g-da-node 0g-da-node
    ```
-**5: Verify the Node is Running**
+**5. Verify the Node is Running**
 
 On the first run, the DA node will register the signer information in the DA contract. You can monitor the console output to ensure the node is running correctly and has successfully registered.
 
@@ -167,7 +167,7 @@ cargo run --bin key-gen
    # grpc server listen address
    grpc_listen_address = "0.0.0.0:34000"
    # chain eth rpc endpoint
-   eth_rpc_endpoint = "https://rpc-testnet.0g.ai"
+   eth_rpc_endpoint = "https://evmrpc-testnet.0g.ai"
    # public grpc service socket address to register in DA contract
    # ip:34000 (keep same port as the grpc listen address)
    # or if you have dns, fill your dns
@@ -240,7 +240,7 @@ The DASigners contract is an interface through which Solidity contracts can inte
 
 To become a DA signer, you must meet the following requirements:
 
-1. Delegation Requirement: To become a signer, an address must receive enough delegations, equivalent to at least the TokensPerVote amount of A0GI tokens (10 tokens per vote in the testnet), registered in the DASigners module.
+1. Delegation Requirement: To become a signer, an address must receive enough delegations, equivalent to at least the TokensPerVote amount of A0GI tokens (30 tokens per vote in the testnet), registered in the DASigners module.
 
 2. Node Operation: Each signer needs to run a DA (Data Availability) node that verifies blob encoding and generates BLS signatures for signed blobs.
 
@@ -267,7 +267,7 @@ Ensure you have the following installed on your system:
 ### Contract Params (Testnet)
 
 ```
-TokensPerVote = 10
+TokensPerVote = 30
 MaxVotesPerSigner = 1024
 MaxQuorums = 10
 EpochBlocks = 5760

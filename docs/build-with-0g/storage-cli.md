@@ -11,11 +11,11 @@ import TabItem from '@theme/TabItem';
 
 The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storage network. It simplifies the process of uploading and downloading files, as well as managing other aspects of your decentralized storage experience. 
 
-If you want more control on the data location and versioning, you can use 0G Storage CLI. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. you can develop your own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
+If you want more control over the data location and versioning, you can use 0G Storage CLI. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. You can develop your own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
 
 ### 0G Storage Web Tool
 
-If you want a sample web based tool to upload and download your files and directories, The first simple and straightforward way is to use the [Web Tool](https://storagescan-newton.0g.ai/tool). 
+If you want a sample web based tool to upload and download your files and directories, the first simple and straightforward way is to use the [Web Tool](https://storagescan-newton.0g.ai/tool). 
 
 
 ## Installation
@@ -28,7 +28,7 @@ git clone https://github.com/0glabs/0g-storage-client.git
 
 **Build the Source Code**
     
-    Command to compiles the Go code into an executable binary called `0g-storage-client`, which you will use to run the CLI commands. Make sure you install go first
+    Command to compile the Go code into an executable binary called `0g-storage-client`, which you will use to run the CLI commands. Make sure you install Go first
 
     ```bash
     cd 0g-storage-client
@@ -86,7 +86,7 @@ The command-line help listing is reproduced below for your convenience. The same
 
 **File Upload**
 
-    uploads a file to the 0G Storage network.
+    Uploads a file to the 0G Storage network.
     ```bash
     ./0g-storage-client upload --url <blockchain_rpc_endpoint> --contract <log_contract_address> --key <private_key> --node <storage_node_rpc_endpoint> --file <file_path>
     ```

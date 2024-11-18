@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 const config: Config = {
   title: '0G Documentation',
   tagline: 'The Next Generation Web3 Infrastructure',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   url: 'https://docs.0g.ai',
   baseUrl: '/',
@@ -82,7 +82,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/0G-Labs/0g-docs',
+          href: 'https://github.com/0glabs',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
@@ -102,7 +102,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             { label: 'Introduction', to: '/intro' },
-            { label: 'Run a Node', to: '/run-a-node/node-overview' },
+            { label: 'Run a Node', to: '/run-a-node/overview' },
           ],
         },
         {
