@@ -9,7 +9,7 @@ sidebar_position: 5
 
 0G Chain is a highly scalable, AI-optimized L1 blockchain designed to meet the needs of data-heavy applications. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage—making it ideal for AI-driven workflows. 0G is fully **EVM-compatible**, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
 
-0G Chain supports a [data availability network]('docs/og-da'), [distributed storage network]('docs/og-storage'), and [AI serving network]('docs/og-serving'). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI. 
+0G Chain supports a [data availability network](./da/og-da.md), [distributed storage network]('docs/og-storage'), and [AI serving network]('docs/og-serving'). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI. 
 
 As the demand for network capacity increases, new consensus networks can be added to enable horizontal scalability, thereby boosting the overall bandwidth and performance of the system. By **decoupling data publication from data storage**, 0G optimizes both throughput and scalability, surpassing the limitations seen in existing data availability (DA) solutions.
 
