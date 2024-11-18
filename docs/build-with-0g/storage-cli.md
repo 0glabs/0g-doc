@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 The 0G Storage CLI  acts as your gateway to interact directly with the 0G Storage network. It simplifies the process of uploading and downloading files, as well as managing other aspects of your decentralized storage experience. 
 
-If you want more control on the data location and versioning, you can use 0G Storage CLI. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. You can develop your own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
+If you want more control over the data location and versioning, you can use 0G Storage CLI. This section introduces the 0G Storage CLI in detail, including subcommands for storage and kv operations, in order for users to use through the terminal. You can develop your own scripts, e.g. regular log uploading cron jobs, with the CLI tool.
 
 ### 0G Storage Web Tool
 
