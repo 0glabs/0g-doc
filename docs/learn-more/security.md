@@ -104,7 +104,7 @@ We are happy to thank everyone who submits valid reports which help us improve t
 - The vulnerability must be a qualifying vulnerability
 - Any vulnerability found must be reported no later than 24 hours after discovery and exclusively through hackenproof.com
 - You must send a clear textual description of the report along with steps to reproduce the issue, include attachments such as screenshots or proof of concept code as necessary.
-- You must not be a former or current employee of us or one of its contractor.
+- You must not be a former or current employee of us or one of its contractors.
 - ONLY USE the EMAIL under which you registered your HackenProof account (in case of violation, no bounty can be awarded)
 - Provide detailed but to-the point reproduction steps
 
