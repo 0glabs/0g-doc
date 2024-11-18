@@ -63,7 +63,7 @@ Every component of our ecosystem contributes toward this goal, and we invite you
 
 This introduction serves as your gateway into the 0G ecosystem. For deeper insights on various products, explore the next sections to learn about 0G dAIOS. If you’re ready to dive in, check out our guides:
 - [Run a Node](/run-a-node/overview)
-- [Use our Storage Network](/build-with-0g/sdk)
+- [Use our Storage Network](/build-with-0g/storage-sdk)
 - [Learn more about 0G's Architecture](/learn-more/whitepaper)
 
 ## Join the 0G Community
