@@ -6,7 +6,7 @@ import rehypeKatex from 'rehype-katex';
 const config: Config = {
   title: '0G Documentation',
   tagline: 'The Next Generation Web3 Infrastructure',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   url: 'https://docs.0g.ai',
   baseUrl: '/',
