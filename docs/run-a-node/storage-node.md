@@ -34,7 +34,7 @@ Before setting up your storage node:
 
 
 ## Install Dependencies
-start by installing all the essential tools and libraries required to build the 0G storage node software.
+Start by installing all the essential tools and libraries required to build the 0G storage node software.
 
 <Tabs
   defaultValue="linux"
