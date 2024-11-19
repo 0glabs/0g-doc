@@ -95,6 +95,6 @@ In Testnet-V2, we've implemented a fair and transparent process for selecting va
 :::important note
 The validator selection process described here applies **only to the testnet**. Mainnet will have a different selection mechanism.
 While it's possible to run nodes (ex: DA node vs Validator Node) independently, your chances of being selected as a _validator_ increases if you run multiple node types. 
-If your validator is selected, it will manually be delegated by our team within a few days.
-If you have any questions, reach out to us on [discord](https://discord.com/invite/0glabs)
+If your validator is selected, it will be manually delegated by our team within a few days.
+If you have any questions, reach out to us on [Discord](https://discord.com/invite/0glabs)
 :::
