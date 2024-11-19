@@ -14,12 +14,12 @@ Running a validator node in the 0G ecosystem means actively participating in the
 
 ## Starting Your Node
 ### Normal
-**1. Clone the Validator Node Repo:** 
+   **1. Clone the Validator Node Repo:** 
    ```bash
    git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
    ```
 
-**2. Build and Run the Node:** 
+   **2. Build and Run the Node:** 
    ```bash
       # Run the installation script for the testnet
       ./0g-chain/networks/testnet/install.sh
@@ -47,12 +47,12 @@ Running a validator node in the 0G ecosystem means actively participating in the
    ```
 
 ### Docker
-**1. Clone the Validator Node Repo:** 
+   **1. Clone the Validator Node Repo:** 
    ```bash
    git clone https://github.com/0glabs/0g-chain.git
    ```
 
-**2. Build and Start the Docker Node:** 
+   **2. Build and Start the Docker Node:** 
 
    ```bash
    cd 0g-chain
