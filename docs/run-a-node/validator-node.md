@@ -13,6 +13,40 @@ Running a validator node in the 0G ecosystem means actively participating in the
    <TabItem value="docker" label="Run with Docker" default>
 
 ## Starting Your Node
+### Normal
+**1. Clone the Validator Node Repo:** 
+   ```bash
+   git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
+   ```
+
+**2. Build and Run the Node:** 
+   ```bash
+      # Run the installation script for the testnet
+      ./0g-chain/networks/testnet/install.sh
+      
+      # Configure the chain ID
+      0gchaind config chain-id zgtendermint_16600-2
+      
+      # Initialize the node
+      0gchaind init testnetnode --chain-id zgtendermint_16600-2
+      
+      # Replace the default genesis file
+      rm ~/.0gchain/config/genesis.json
+      wget -P ~/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json
+      
+      # Validate the genesis file
+      0gchaind validate-genesis
+      
+      # Update the seeds in the configuration file
+      sed -i 's|seeds = ""|seeds = "81987895a11f6689ada254c6b57932ab7ed909b6@54.241.167.190:26656,010fb4de28667725a4fef26cdc7f9452cc34b16d@54.176.175.48:26656,e9b4bc203197b62cc7e6a80a64742e752f4210d5@54.193.250.204:26656,68b9145889e7576b652ca68d985826abd46ad660@18.166.164.232:26656"|' $HOME/.0gchain/config/config.toml
+   ```
+
+   ```bash
+   # Start the node
+   0gchaind start
+   ```
+
+### Docker
 **1. Clone the Validator Node Repo:** 
    ```bash
    git clone https://github.com/0glabs/0g-chain.git
@@ -27,6 +61,11 @@ Running a validator node in the 0G ecosystem means actively participating in the
    ```
 
    Recommended on Garbage Collection for Pruning Nodes: To maximize sync speed for validators and other network providers that are running pruning nodes, the above settings are recommended. GOGC=900 instructs golang to start garbage collection when heap has grown to 9x, and GOMEMLIMIT=40GB ensures garbage collection runs whenever memory usage reaches 40GB.
+
+### Notes
+To run a full RPC node, set pruning to nothing.
+
+For the testnet, due to stress testing with a large number of transactions, a full node requires 4TB of storage to sync.
 
 ## Registering Your Validator
 
