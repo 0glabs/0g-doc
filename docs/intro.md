@@ -17,7 +17,7 @@ Specifically designed for AI (d)applications and chains, 0G features the fastest
 For the first time ever, 0G bridges this cost and efficiency gap between Web2 and Web3, empowering builders to confidently deploy AI applications on-chain with _improved_ performance. 
 
 <div style={{textAlign: 'center'}}>
-  <img src="/img/democratized-ai.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
+  <img src="/img/0g-architecture.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
 </div>
 <br />
 The 0G operating system has 4 key components: 

@@ -1,5 +1,5 @@
 ---
-id: og-storage
+id: 0g-storage
 title: 0G Storage
 sidebar_position: 3
 ---
