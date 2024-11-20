@@ -107,7 +107,7 @@ if err != nil {
 
 ### File Hash Calculation
 
-Calculate a file's Merkle root hash before upload, this will be used for identify file from 0G storage:
+Calculate a file's Merkle root hash before upload, this will be used to identify files in 0G storage:
 
 ```go
 rootHash, err := core.MerkleRoot(filePath)
