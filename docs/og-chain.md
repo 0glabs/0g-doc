@@ -9,7 +9,7 @@ sidebar_position: 5
 
 0G Chain is a highly scalable, AI-optimized L1 blockchain designed to meet the needs of data-heavy applications. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage—making it ideal for AI-driven workflows. 0G is fully **EVM-compatible**, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
 
-0G Chain supports a [data availability network]('docs/og-da'), [distributed storage network]('docs/og-storage'), and [AI serving network]('docs/og-serving'). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI. 
+0G Chain supports a [data availability network](./da/og-da.md), [distributed storage network]('docs/og-storage'), and [AI serving network]('docs/og-serving'). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI. 
 
 As the demand for network capacity increases, new consensus networks can be added to enable horizontal scalability, thereby boosting the overall bandwidth and performance of the system. By **decoupling data publication from data storage**, 0G optimizes both throughput and scalability, surpassing the limitations seen in existing data availability (DA) solutions.
 
@@ -23,7 +23,7 @@ As the demand for network capacity increases, new consensus networks can be adde
 
 A key differentiator of 0G is its **ability to efficiently manage large volumes of data with exceptional throughput**, thanks to its horizontally scalable architecture. At the core of this architecture is **0G Consensus**, the system's unique consensus mechanism.
 
-0G Chain is also designed with modularity in mind, making it highly adaptable for AI and other data-heavy applications. Its ability to separate the DAlayer from the data storage layer allows AI tasks, including large-scale training or inference, to access and store data efficiently. This makes 0G an optimal solution for decentralized AI infrastructures.
+0G Chain is also designed with modularity in mind, making it highly adaptable for AI and other data-heavy applications. Its ability to separate the DA layer from the data storage layer allows AI tasks, including large-scale training or inference, to access and store data efficiently. This makes 0G an optimal solution for decentralized AI infrastructures.
 
 ## 0G Consensus: A Distributed Approach
 
@@ -49,6 +49,6 @@ Validators participating in 0G Consensus earn tokens as rewards for their work. 
 <br />
 ## Why 0G?
 
-0G is designed with AI applications in mind, offering a highly scalable, modular infrastructure that addresses the unique challenges of data-heavy use cases. Its EVM compatibility ensures that developers already using Ethereum, Layer 2 rollups, or other chains can easily integrate 0G's services—such as DA and storage—without leaving their current platforms. We are als actively exploring the ability to support the Solana VM, Near VM, and BTC compatibility so that AI applications may scale across a broader user base.
+0G is designed with AI applications in mind, offering a highly scalable, modular infrastructure that addresses the unique challenges of data-heavy use cases. Its EVM compatibility ensures that developers already using Ethereum, Layer 2 rollups, or other chains can easily integrate 0G's services—such as DA and storage—without leaving their current platforms. We are also actively exploring the ability to support the Solana VM, Near VM, and BTC compatibility so that AI applications may scale across a broader user base.
 
 0G is not just another Layer 1 chain. It's a modular, AI-optimized system built for the future of decentralized applications. Whether you're working on AI, large-scale data tasks, or any application needing high performance and scalability, 0G provides the tools to grow without compromising on security, speed, or flexibility.

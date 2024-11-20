@@ -29,7 +29,7 @@ We've made it easy to get started. The table below outlines the hardware require
 
 | Node Type | Description | Memory | CPU | Disk | Bandwidth |
 |-----------|-------------|--------|-----|------|-----------|
-| Validator Node | Validates transactions and maintains network consensus | 64 GB | 8 cores | 1 TB NVME SSD | 100 MBps |
+| Validator Node | Validates transactions and maintains network consensus | 64 GB | 8 cores | 1 TB NVME SSD (4 TB on Testnet) | 100 MBps |
 | Storage Node | Stores data within the 0g network | 16 GB | 4 cores | 500GB / 1T NVME SSD | 500 MBps |
 | Storage KV | Handles key-value storage operations | 4 GB | 2 cores | Matches KV streams size | - |
 | DA Node | Performs blob data verification, signing, and storage | 16 GB | 8 cores | 1 TB NVME SSD | 100 MBps |

@@ -62,6 +62,7 @@ const sidebars: SidebarsConfig = {
             'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
           ],
         },
+        'build-with-0g/contracts',
         'build-with-0g/faucet',
         'build-with-0g/explorer',
       ],
