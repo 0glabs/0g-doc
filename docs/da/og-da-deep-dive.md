@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 # 0G DA Technical Deep Dive
 
-The Data Availability (DA) module allows users to submit a piece of data, referred to as a _**DA blob**_. This data is redundantly encoded by the client's proxy and divided into several slices, which are then sent to DA nodes. _**DA nodes**_ gain eligibility to verify the correctness of DA slices by staking. Each DA node verifies the integrity and correctness of its slice and signs it. Once more than 2/3 of the aggregated signatures are on-chain, the data behind the related hash is considered to be decentralized published.
+The Data Availability (DA) module allows users to submit a piece of data, referred to as a _**DA blob**_. This data is redundantly encoded by the client's proxy and divided into several slices, which are then sent to DA nodes. _**DA nodes**_ gain eligibility to verify the correctness of DA slices by staking. Each DA node verifies the integrity and correctness of its slice and signs it. Once more than 2/3 of the aggregated signatures are on-chain, the data behind the related hash is considered to be decentrally published.
 
 To incentivize DA nodes to store the signed data for a period, the signing process itself does not provide any rewards. Instead, rewards are distributed through a process called _**DA Sampling**_. During each DA Sample round, any DA slice within a certain time frame can generate a lottery chance for a reward. DA nodes need to actually store the corresponding slice to redeem the lottery chance and claim the reward.
 
@@ -53,7 +53,7 @@ $$\forall\, 2048\le i< 3072,\, 0\le j< 1024,\,c_{i,j}=f\left(u\cdot w^{1024j+(i-
 
 The **erasure commitment** is the KZG commitment of $f$, defined as $f(\tau)\cdot G$, where $G$ is the starting point of BN254 G1 curve, and $\tau$ is a latent parameter from the [perpetual powers of tau trusted setup ceremony](https://github.com/privacy-scaling-explorations/perpetualpowersoftau).
 
-The **data root** is defined as the input root by treating the 1024\*3072 32-byte elements as a continuous storage submission input. Specifically, according to the storage submission requirements, these data does not need to pad any zeros, and will be divided into a 16384-element sector array and an 8192-element sector array.
+The **data root** is defined as the input root by treating the 1024\*3072 32-byte elements as a continuous storage submission input. Specifically, according to the storage submission requirements, this data does not need to pad any zeros, and will be divided into a 16384-element sector array and an 8192-element sector array.
 
 DA nodes need to verify two parts:
 
