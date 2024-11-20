@@ -27,7 +27,7 @@ Running a validator node in the 0G ecosystem means actively participating in the
    ```bash
    0gchaind config chain-id zgtendermint_16600-2
    ```
-**3. Initialise Your Node:** by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
+**3. Initialize Your Node:** by creating necessary configuration files and a validator key pair, establishing your node's identity within the 0G network.
 
    ```bash
    0gchaind init <your_validator_name> --chain-id zgtendermint_16600-2
@@ -54,7 +54,7 @@ Running a validator node in the 0G ecosystem means actively participating in the
 
 ## Starting Your Node
 
-**5. Start the Testnet Node:** Start your node and it should begin the synchronisation process with the 0G testnet, downloading and verifying the blockchain's history.
+**5. Start the Testnet Node:** Start your node and it should begin the synchronization process with the 0G testnet, downloading and verifying the blockchain's history.
 
    ```bash
    0gchaind start
