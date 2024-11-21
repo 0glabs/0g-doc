@@ -50,6 +50,15 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+    [
+      '@docusaurus/preset-classic',
+      {
+        gtag: {
+          trackingID: 'G-2GB2FSF7Q7',
+          anonymizeIP: true,
+        },
+      },
+    ],
   ],
 
   plugins: [
