@@ -84,7 +84,7 @@ The Optimism codebase has been extended to integrate with the 0G DA `da-server`.
 
 ### 2. Deploy DA Client and DA Encoder
 
-    For guidance on setting up a 0G DA client and DA Encoder, refer to the [DA integration documentation]('../build-with-0g/da-integration').
+    For guidance on setting up a 0G DA client and DA Encoder, refer to the [DA integration documentation](../da-integration.md).
 
 
 ### 3. Deploying OP Stack
