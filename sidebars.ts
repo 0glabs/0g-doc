@@ -12,17 +12,17 @@ const sidebars: SidebarsConfig = {
         id: 'intro',
       },
       items: [
-        'og-storage', 
+        '0g-storage', 
         {
           type: 'category',
           label: '0G DA',
           items: [
-            'da/og-da',
-            'da/og-da-deep-dive',
+            'da/0g-da',
+            'da/0g-da-deep-dive',
           ],
         },
-        'og-serving',
-        'og-chain',
+        '0g-serving',
+        '0g-chain',
       ],
     },
     {

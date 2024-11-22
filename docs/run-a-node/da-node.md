@@ -6,7 +6,7 @@ import TabItem from '@theme/TabItem';
 
 # Data Availability Node
 ---
-While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. DA Nodes performs the core functions of verifying, signing, and storing encoded blob data. It's important to note that your DA signer needs to operate a DA node to verify encoded blob data, sign it, and store it for future farming and rewards. Currently, in order to run a DA Node on Testnet, users must stake 10 A0GI tokens. These can be obtained via our [faucet](https://faucet.0g.ai/) or via rewards from running Storage Nodes or Validator Nodes. You can also reach out to our technical moderators on [Discord](https://discord.com/invite/0glabs).
+While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. DA Nodes perform the core functions of verifying, signing, and storing encoded blob data. It's important to note that your DA signer needs to operate a DA node to verify encoded blob data, sign it, and store it for future farming and rewards. Currently, in order to run a DA Node on Testnet, users must stake 10 A0GI tokens. These can be obtained via our [faucet](https://faucet.0g.ai/) or via rewards from running Storage Nodes or Validator Nodes. You can also reach out to our technical moderators on [Discord](https://discord.com/invite/0glabs).
 
 ## Hardware Requirements
 
