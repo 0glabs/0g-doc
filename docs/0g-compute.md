@@ -7,11 +7,11 @@ title: 0G Compute Network
 
 ---
 
-In today's world, AI models are transforming industries, driving innovation, and powering new applications. But despite their increasing value, there's a critical gap in how AI services are delivered. Centralized platforms limit access, inflate costs, and restrict the flexibility of AI developers. That’s where 0G Compute Network comes in.
+In today's world, AI models are transforming industries, driving innovation, and powering new applications. Despite their growing value, there's a significant gap in how AI services are delivered. Centralized platforms often limit access, increase costs, and restrict the flexibility of AI developers. This is where the 0G Compute Network steps in to make a difference.
 
 ## What is 0G Compute Network?
 
-0G Compute Network is our decentralized framework that supports AI model inference, data retrieval, and training tasks.
+The 0G Compute Network is a decentralized framework that provides AI computing capabilities to our community. It forms a crucial part of dAIOS and, together with the storage network, offers comprehensive end-to-end support for dApp development and services.
 
 The first iteration focuses specifically on decentralized settlement for inference, connecting buyers (who want to use AI models) with sellers (who run these models on their GPUs) in a trustless, transparent manner. Sellers, known as service providers, are able to set the price for each model they support and be rewarded real-time for their contributions. It’s a fully decentralized marketplace that eliminates the need for intermediaries, redefining how AI services are accessed and delivered and making them cheaper, more efficient, and accessible to anyone, anywhere.
 

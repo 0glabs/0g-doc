@@ -13,7 +13,7 @@ To integrate a service into the 0G Compute Network, you need to transform your s
 
 ### Service Interface Requirements
 
-Your service need to adhere to the [OpenAI API Interface Standards](https://platform.openai.com/docs/api-reference/chat).
+Your service needs to adhere to one of the available interface standards, with our first version supporting the [OpenAI API Interface Standards](https://platform.openai.com/docs/api-reference/chat). More options will be available soon.
 
 ### Verification Interfaces
 
@@ -59,15 +59,15 @@ Each response should include a unique ID that can be utilized to retrieve its si
 </TabItem>
 
 <TabItem value="OpML" label="OPML">
-Under construction...
+Coming soon
 </TabItem>
 
 <TabItem value="ZKML" label="ZKML">
-Under construction...
+Coming soon
 </TabItem>
 
 <TabItem value="SPML" label="SPML">
-Under construction...
+Coming soon
 </TabItem>
 </Tabs>
 
