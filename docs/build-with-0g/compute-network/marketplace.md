@@ -4,4 +4,4 @@ title: Marketplace
 sidebar_position: 4
 ---
 
-Under construction...
+Coming soon

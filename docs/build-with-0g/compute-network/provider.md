@@ -81,13 +81,7 @@ To register and manage services, handle user request proxies, and offer settleme
 
 ### Download the Installation Package
 
-[Download the Package](./data/provider-broker.tar.gz).
-
-### Extract the Installation Package
-
-```bash
-tar -zxvf provider-broker.tar.gz
-```
+Please visit the [releases page](https://github.com/0glabs/0g-serving-broker/releases) to download and extract the latest version of the installation package.
 
 ### Configuration Setup
 
@@ -115,15 +109,16 @@ docker compose -f provider-broker/docker-compose.yml up -d
    -H "Content-Type: application/json" \
    -d '{
          "URL": "<endpoint_of_the_prepared_service>",
-         "inputPrice": 100000,
-         "outputPrice": 200000,
+         "inputPrice": "10000000",
+         "outputPrice": "20000000",
          "Type": "chatbot",
          "Name": "llama8Bb",
-         "Model": "llama-3.1-8B-Instruct"
+         "Model": "llama-3.1-8B-Instruct",
+         "verifiability":"TeeML"
    }'
    ```
 
-   - `inputPrice` and `outputPrice` vary by service type, for `chatbot`, they represent the cost per token.
+   - `inputPrice` and `outputPrice` vary by service type, for `chatbot`, they represent the cost per token. The unit is in neuron. 1 A0GI = 10^18 neuron.
 
 2. **Settle the Fee**
 
