@@ -24,6 +24,8 @@ To ensure the integrity and trustworthiness of services, different verification 
 
 For TEE (Trusted Execution Environment) verification, when a service starts, it should generate a signing key within the TEE. We require CPU and GPU attestations to ensure the service is running in a Confidential VM with an NVIDIA GPU in TEE mode. These attestations should include the public key of the signing key, verifying its creation within the TEE. All inference results must be signed with this signing key.
 
+_Note_: Ensure that Intel TDX (Trusted Domain eXtensions) is enabled on the CPU
+
 #### 1. Attestation Download Interface
 
 To facilitate attestation downloads, set up an API endpoint at:
@@ -58,17 +60,10 @@ Each response should include a unique ID that can be utilized to retrieve its si
 
 </TabItem>
 
-<TabItem value="OpML" label="OPML">
+<TabItem value="OPML_ZKML_and_others" label="OPML, ZKML, and others">
 Coming soon
 </TabItem>
 
-<TabItem value="ZKML" label="ZKML">
-Coming soon
-</TabItem>
-
-<TabItem value="SPML" label="SPML">
-Coming soon
-</TabItem>
 </Tabs>
 
 ## Provider Broker
@@ -130,4 +125,4 @@ docker compose -f provider-broker/docker-compose.yml up -d
 
 ### Additional API Information
 
-For more details, please [Download the PDF](./data/0G-Serving-Broker-API.pdf).
+For more details, please refer to the <a href="/html/compute-network-provider-api.html" target="_blank" rel="noopener noreferrer">API Page</a>.
