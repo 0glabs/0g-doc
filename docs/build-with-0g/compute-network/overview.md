@@ -12,20 +12,20 @@ We additionally integrate with many different sources of AI demand, enabling the
 
 ## Components
 
-**Contract:** This component stores key variables during the service process, including account information, service details (such as name and URL), and consensus logic. It determines the legitimacy of settlement proofs, manages accounts, and handles service information.
+**Contract:** This component determines the legitimacy of settlement proofs, manages accounts, and handles service information. To do this, it stores variables during the service process, including account information, service details (such as name and URL), and consensus logic.
 
 **Provider:** These are the owners of models and hardware who offer their services to earn revenue.
 
-**User Broker:** These individuals use the services. They can either directly access the provider's services or use these services to develop their own applications.
+**User:** Individuals or organizations who use the services listed by providers. It is possible to use AI services directly and build applications on top of our API.
 
 ## Process Overview
 
-Here's a concise description of how the 0G Compute Network operates:
+The 0G Serving Network implements the following workflow:
 
 1. **Service Registration**
    - Providers register their services' types, URLs, and prices in the smart contract.
-2. **User Pre-Deposit**
-   - Users pre-deposit a certain amount into the smart contract to cover service fees.
+2. **User Stake**
+   - Users deposit a certain amount into the smart contract for service fees. If the accumulated charges from user requests exceed their deposit, the provider will stop responding.
 3. **Request Submission**
    - Users or developers send requests, along with metadata and signatures, to the service provider.
 4. **Provider Response**

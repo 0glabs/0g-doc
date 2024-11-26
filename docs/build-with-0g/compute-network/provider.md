@@ -20,7 +20,7 @@ Your service need to adhere to the [OpenAI API Interface Standards](https://plat
 To ensure the integrity and trustworthiness of services, different verification mechanisms are employed. Each mechanism comes with its own specific set of protocols and requirements to ensure service verification and security.
 
 <Tabs>
-<TabItem value="tee" label="TEE" default>
+<TabItem value="TEEML" label="TEEML" default>
 
 For TEE (Trusted Execution Environment) verification, when a service starts, it should generate a signing key within the TEE. We require CPU and GPU attestations to ensure the service is running in a Confidential VM with an NVIDIA GPU in TEE mode. These attestations should include the public key of the signing key, verifying its creation within the TEE. All inference results must be signed with this signing key.
 
@@ -41,7 +41,7 @@ This endpoint should return a JSON structure in the following format:
 }
 ```
 
-_Note_: Ensure that the "nvidia_payload" can be verified using NVIDIA's [GPU Attestation API](https://docs.attestation.nvidia.com/api-docs/nras.html#post-/v3/attest/gpu).
+_Note_: Ensure that the "nvidia_payload" can be verified using NVIDIA's GPU Attestation API. Support for decentralized TEE attestation is planned for the future, and relevant interfaces will be provided. Stay tuned.
 
 #### 2. Signature Download Interface
 
@@ -58,7 +58,15 @@ Each response should include a unique ID that can be utilized to retrieve its si
 
 </TabItem>
 
-<TabItem value="zk" label="ZK">
+<TabItem value="OpML" label="OPML">
+Under construction...
+</TabItem>
+
+<TabItem value="ZKML" label="ZKML">
+Under construction...
+</TabItem>
+
+<TabItem value="SPML" label="SPML">
 Under construction...
 </TabItem>
 </Tabs>
@@ -100,7 +108,7 @@ docker compose -f provider-broker/docker-compose.yml up -d
 
 1. **Register the Service**
 
-   The compute network currently supports `chatbot` services, with plans to support additional types.
+   The compute network currently supports `chatbot` services. Additional services are in the pipeline to be released soon.
 
    ```bash
    curl -X POST http://127.0.0.1:3080/v1/service \
