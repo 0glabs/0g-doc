@@ -133,6 +133,14 @@ cd run
 ../target/release/zgs_node --config config.toml --miner-key <your_private_key>
 ```
 
+## Snapshot
+
+To run the storage node from a snapshot, download the snapshot data from below:
+| **Network** | **Endpoint** |
+|-----------|------------|
+| Standard | https://storage-node-snapshot.oss-cn-hongkong.aliyuncs.com/standard/db-seq184040.zip |
+| Turbo | https://storage-node-snapshot.oss-cn-hongkong.aliyuncs.com/turbo/db-seq3221605.zip |
+
 **Additional Notes**
 
 *   **Security:** Keep your private key (`miner_key`) safe and secure. Anyone with access to it can control your node and potentially claim your mining rewards.
