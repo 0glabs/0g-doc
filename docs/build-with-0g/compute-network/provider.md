@@ -81,13 +81,7 @@ To register and manage services, handle user request proxies, and offer settleme
 
 ### Download the Installation Package
 
-[Download the Package](./data/provider-broker.tar.gz).
-
-### Extract the Installation Package
-
-```bash
-tar -zxvf provider-broker.tar.gz
-```
+Please visit the [releases page](https://github.com/0glabs/0g-serving-broker/releases) to download and extract the latest version of the installation package.
 
 ### Configuration Setup
 
