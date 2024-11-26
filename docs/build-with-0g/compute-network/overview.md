@@ -31,7 +31,7 @@ The 0G Serving Network implements the following workflow:
 4. **Provider Response**
    - Providers respond based on the user's balance and the request's validity.
 5. **Settlement and Verification**
-   - Providers generate a zero-knowledge proof (ZK-proof) and submit it to the smart contract for verification and settlement.
+   - Providers generate a [zero-knowledge proof (ZK-proof)](https://github.com/0glabs/0g-zk-settlement-server?tab=readme-ov-file) and submit it to the smart contract for verification and settlement.
 6. **User Verification**
    - Users verify the provider's response and can stop requests if the verification fails.
 
