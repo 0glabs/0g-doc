@@ -7,7 +7,7 @@ sidebar_position: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-To integrate a service into the 0G Serving Network, you need to transform your service into a **verifiable service** and connect it through the **provider broker container**.
+To integrate a service into the 0G Compute Network, you need to transform your service into a **verifiable service** and connect it through the **provider broker container**.
 
 ## Verifiable Services
 
@@ -100,7 +100,7 @@ docker compose -f provider-broker/docker-compose.yml up -d
 
 1. **Register the Service**
 
-   The serving system currently supports `chatbot` services, with plans to support additional types.
+   The compute network currently supports `chatbot` services, with plans to support additional types.
 
    ```bash
    curl -X POST http://127.0.0.1:3080/v1/service \

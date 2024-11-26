@@ -23,7 +23,7 @@ For the first time ever, 0G bridges this cost and efficiency gap between Web2 an
 The 0G operating system has 4 key components: 
 - **0G Storage**: A decentralized storage network optimized for massive data loads.
 - **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
-- **0G Serving**: A versatile framework for any serving needs, such as fast data retrieval, AI inference, and model training.
+- **0G Compute Network**: A versatile framework for any serving needs, such as fast data retrieval, AI inference, and model training.
 - **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
 
 <details>
@@ -34,8 +34,8 @@ Decentralized storage distributes data across multiple network nodes rather than
 **What is data availability?**
 Data availability guarantees that data stored within the system is readily accessible and retrievable whenever required. 0G's data availability network employs erasure coding and a quorum-based attestation system to ensure data remains available even in scenarios where some nodes might fail.
 
-**What is an AI serving framework?**
-An AI serving framework is a system that facilitates the deployment and execution of AI models. 0G's decentralized serving network supports data retrieval, AI inference, and model training, ensuring efficient resource management for AI applications.
+**What is an AI compute network?**
+An AI compute network is a system that facilitates the deployment and execution of AI models. 0G's decentralized compute network supports data retrieval, AI inference, and model training, ensuring efficient resource management for AI applications.
 
 **What is a modular blockchain?**
 A modular blockchain is one where each layer or component is specialized for a particular function, improving scalability and flexibility. 0G Chain uses this architecture to optimize its components, allowing for independent optimization of consensus, execution, and chain storage. This modular architecture enables each component to be fine-tuned for its specific requirements, resulting in enhanced performance, scalability, and flexibility for decentralized AI applications.

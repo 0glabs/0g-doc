@@ -6,7 +6,9 @@ sidebar_position: 1
 
 ![architecture](./architecture.png)
 
-The 0G Serving Network is designed to seamlessly connect service providers with service users, making it easy for anyone capable of providing services to reach potential customers. It supports AI service providers by integrating with various AI services, enabling them to charge for their offerings while ensuring that the services delivered to users are verifiable.
+The 0G Compute Network is designed to seamlessly connect AI users and providers, making it easy for AI users to access a wide range of compute and model services. As part of this, the framework is built to provide trust and settlement between providers and users that do not know each other, as would be expected in the distributed AI economy.
+
+We additionally integrate with many different sources of AI demand, enabling them to charge for their offerings while ensuring that the services delivered to users are verifiable.
 
 ## Components
 
@@ -18,7 +20,7 @@ The 0G Serving Network is designed to seamlessly connect service providers with 
 
 ## Process Overview
 
-Here's a concise description of how the 0G Serving Network operates:
+Here's a concise description of how the 0G Compute Network operates:
 
 1. **Service Registration**
    - Providers register their services' types, URLs, and prices in the smart contract.
