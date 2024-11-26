@@ -225,7 +225,7 @@ For more information, please [download the example](./data/ts-sdk-example.ts).
 </TabItem>
 
 <TabItem value="other" label="Other SDKs">
-Under construction...
+Coming soon
 </TabItem>
 
 </Tabs>

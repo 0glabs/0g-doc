@@ -22,10 +22,10 @@ For the first time ever, 0G bridges this cost and efficiency gap between Web2 an
   <img src="/img/0g-architecture.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
 </div>
 <br />
-The 0G operating system has 4 key components: 
-- **0G Storage**: A decentralized storage network optimized for massive data loads.
+The 0G dAIOS has 4 key components: 
+- **0G Storage Network**: A decentralized storage network optimized for massive data loads.
 - **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
-- **0G Compute Network**: A versatile framework for any serving needs, such as fast data retrieval, AI inference, and model training.
+- **0G Compute Network**: A versatile framework for AI compute, including fast data retrieval, model inference/training and etc.
 - **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
 
 <details>

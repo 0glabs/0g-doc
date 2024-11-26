@@ -20,7 +20,7 @@ We additionally integrate with many different sources of AI demand, enabling the
 
 ## Process Overview
 
-The 0G Serving Network implements the following workflow:
+The 0G Compute Network implements the following workflow:
 
 1. **Service Registration**
    - Providers register their services' types, URLs, and prices in the smart contract.
