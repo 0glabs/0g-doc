@@ -1,13 +1,15 @@
 ---
 id: provider
-title: Provider
+title: Becoming a Service Provider
 sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-To integrate a service into the 0G Compute Network, you need to transform your service into a **verifiable service** and connect it through the **provider broker container**.
+To integrate your AI services into the 0G Compute Network and become a Service Provider, you must first transform your service into a verifiable service and connect it through the provider broker container.
+
+This is easy to do, and we will provide a walkthrough below.
 
 ## Verifiable Services
 
@@ -24,7 +26,7 @@ To ensure the integrity and trustworthiness of services, different verification 
 
 For TEE (Trusted Execution Environment) verification, when a service starts, it should generate a signing key within the TEE. We require CPU and GPU attestations to ensure the service is running in a Confidential VM with an NVIDIA GPU in TEE mode. These attestations should include the public key of the signing key, verifying its creation within the TEE. All inference results must be signed with this signing key.
 
-_Note_: Ensure that Intel TDX (Trusted Domain eXtensions) is enabled on the CPU
+_Note_: Ensure that Intel TDX (Trusted Domain Extensions) is enabled on the CPU. Additionally, an H100 or H200 GPU is required for GPU TEE.
 
 #### 1. Attestation Download Interface
 
@@ -68,7 +70,7 @@ Coming soon
 
 ## Provider Broker
 
-To register and manage services, handle user request proxies, and offer settlement endpoints, you should use the Provider Broker.
+To register and manage services, handle user request proxies, and perform settlements, you need to use the Provider Broker.
 
 ### Prerequisites
 
@@ -80,18 +82,17 @@ Please visit the [releases page](https://github.com/0glabs/0g-serving-broker/rel
 
 ### Configuration Setup
 
-- Copy the `provider-broker/config.example.yaml` file.
+- Copy the `config.example.yaml` file.
 - Modify `servingUrl` to point to your publicly exposed URL.
 - Set `privateKeys` to your wallet's private key for the 0G blockchain.
-- Save the file as `provider-broker/config.local.yaml`.
+- Save the file as `config.local.yaml`.
+- Replace `#PORT#` in `docker-compose.yml` with the port you want to use. It should be the same as the port of `servingUrl` in `config.local.yaml`.
 
 ### Start the Provider Broker
 
 ```bash
-docker compose -f provider-broker/docker-compose.yml up -d
+docker compose -f docker-compose.yml up -d
 ```
-
-- The broker listening on `127.0.0.1:3080` by default.
 
 ### Key Commands
 
@@ -100,7 +101,7 @@ docker compose -f provider-broker/docker-compose.yml up -d
    The compute network currently supports `chatbot` services. Additional services are in the pipeline to be released soon.
 
    ```bash
-   curl -X POST http://127.0.0.1:3080/v1/service \
+   curl -X POST http://127.0.0.1:<PORT>/v1/service \
    -H "Content-Type: application/json" \
    -d '{
          "URL": "<endpoint_of_the_prepared_service>",
@@ -113,12 +114,12 @@ docker compose -f provider-broker/docker-compose.yml up -d
    }'
    ```
 
-   - `inputPrice` and `outputPrice` vary by service type, for `chatbot`, they represent the cost per token. The unit is in neuron. 1 A0GI = 10^18 neuron.
+   - `inputPrice` and `outputPrice` vary by service type, for `chatbot`, they represent the cost per token. The unit is in neuron. 1 A0GI = 1e18 neuron.
 
 2. **Settle the Fee**
 
    ```bash
-   curl -X POST http://127.0.0.1:3080/v1/settle
+   curl -X POST http://127.0.0.1:<PORT>/v1/settle
    ```
 
    - The provider broker has an automatic settlement engine that ensures you can collect fees promptly before your customer's account balance is insufficient, while also minimizing the frequency of charges to reduce gas consumption.

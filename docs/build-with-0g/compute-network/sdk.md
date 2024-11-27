@@ -7,7 +7,9 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-You can integrate the services provided by our provider into their own products using our SDK.
+Developers can integrate AI inference services offered by providers on the 0G Compute Network into their own applications using the 0G SDK. To begin, only Large Language Models (LLMs) inference services are available. Fine-turing and other features will be added in the future.
+
+The SDK ensures a straightforward process to connect with and utilize these services efficiently.
 
 <Tabs>
 <TabItem value="ts-web" label="TypeScript SDK" default>
@@ -22,7 +24,7 @@ pnpm add @0glabs/0g-serving-broker @types/crypto-js@4.2.2 crypto-js@4.2.0
 
 ### Step 2: Initialize a Broker Instance
 
-The broker instance is initialized with a `signer`. This signer is an instance that implements the ethers.js Signer interface and is used to sign transactions for a specific Ethereum account. You can create this instance using your private key via the ethers.js library or use a wallet framework tool like [wagmi](https://wagmi.sh/react/guides/ethers) to initialize the signer.
+The broker instance is initialized with a `signer`. This signer is an instance that implements the `JsonRpcSigner` or `Wallet` interface from the ethers package and is used to sign transactions for a specific Ethereum account. You can create this instance using your private key via the ethers library or use a wallet framework tool like [wagmi](https://wagmi.sh/react/guides/ethers) to initialize the signer.
 
 ```typescript
 import { createZGServingNetworkBroker } from "@0glabs/0g-serving-broker";
@@ -30,7 +32,7 @@ import { createZGServingNetworkBroker } from "@0glabs/0g-serving-broker";
 /**
  * createZGServingNetworkBroker is used to initialize ZGServingUserBroker
  *
- * @param signer - Signer from ethers.js.
+ * @param signer - A signer that implements the 'JsonRpcSigner' or 'Wallet' interface from the ethers package.
  * @param contractAddress - 0G Serving contract address, use default address if not provided.
  *
  * @returns broker instance.
@@ -42,8 +44,6 @@ const broker = await createZGServingNetworkBroker(signer);
 
 ### Step 3: List Available Services
 
-You can retrieve a list of services.
-
 ```typescript
 /**
  * Retrieves a list of services from the contract.
@@ -53,7 +53,7 @@ You can retrieve a list of services.
  *
  * type ServiceStructOutput = {
  *   provider: string;  // Address of the provider
- *   name: string;      // Name of the service
+ *   name: string;
  *   serviceType: string;
  *   url: string;
  *   inputPrice: bigint;
@@ -130,10 +130,10 @@ const { endpoint, model } = await broker.getRequestMetadata(
  *
  * In the 0G Serving system, a request with valid billing headers
  * is considered a settlement proof and will be used by the provider
- * for contract settlement.
+ * for settlement in contract.
  *
  * @param providerAddress - The address of the provider.
- * @param svcName - The name of the service.
+ * @param serviceName - The name of the service.
  * @param content - The content being billed. For example, in a chatbot service, it is the text input by the user.
  *
  * @returns headers. Records information such as the request fee and user signature.
@@ -200,7 +200,7 @@ await fetch(`${endpoint}/chat/completions`, {
  * with the chat ID.
  *
  * @param providerAddress - The address of the provider.
- * @param svcName - The name of the service.
+ * @param serviceName - The name of the service.
  * @param content - The main content returned by the service. For example, in the case of a chatbot service,
  * it would be the response text.
  * @param chatID - Only for verifiable services. You can provide the chat ID obtained from the response to
