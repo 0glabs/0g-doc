@@ -41,7 +41,7 @@ async function main() {
     console.log("Account created successfully.");
 
     // Step 4.2: Deposit funds into the account
-    const depositAmount = 0.00000007;
+    const depositAmount = 0.00000002;
     console.log("Depositing funds...");
     await broker.depositFund(providerAddress, depositAmount);
     console.log("Funds deposited successfully.");
