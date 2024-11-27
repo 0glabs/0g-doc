@@ -211,12 +211,34 @@ await fetch(`${endpoint}/chat/completions`, {
  *
  * @throws An error if any issues occur during the processing of the response.
  */
-const valid = broker.processResponse(
+const valid = await broker.processResponse(
   providerAddress,
   serviceName,
   content,
   chatID
 );
+```
+
+#### 5.5 Settle Fees Manually
+
+```typescript
+/**
+ * settleFee is used to settle the fee for the provider service.
+ *
+ * Normally, the fee for each request will be automatically settled in processResponse.
+ * However, if processResponse fails due to network issues or other reasons,
+ * you can manually call settleFee to settle the fee. The unit of the fee is neuron.
+ * 1 A0GI = 1e18 neuron.
+ *
+ * @param providerAddress - The address of the provider.
+ * @param svcName - The name of the service.
+ * @param fee - The fee to be settled.
+ *
+ * @returns A promise that resolves when the fee settlement is successful.
+ *
+ * @throws An error if any issues occur during the fee settlement process.
+ */
+await broker.settleFee(providerAddress, serviceName, fee);
 ```
 
 By following these steps, you can effectively integrate provider services into your applications.
