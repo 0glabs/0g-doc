@@ -1,31 +1,31 @@
 ---
-id: arbitrum-nitro-on-0g-da
-title: Arbitrum Nitro on 0G DA
-sidebar_position: 2
+идентификатор: арбитраж-нитро-он-0г-да
+Название: Арбитрум Нитро на 0G DA
+боковая_позиция: 2
 ---
 
-# Run an Arbitrum Nitro Rollup on 0G DA
+# Запускаем Arbitrum Nitro Rollup на 0G DA
 
-Arbitrum Nitro is a high-performance Ethereum rollup that uses a new consensus mechanism called "Nitro" to achieve scalability and efficiency. 
+Arbitrum Nitro — это высокопроизводительный пакет Ethereum, который использует новый механизм консенсуса под названием «Nitro» для достижения масштабируемости и эффективности. 
 
-0G DA is a high-performance data availability layer that can be used for Arbitrum Nitro to provide a cost-effective and secure solution for storing transaction data.
+0G DA — это высокопроизводительный уровень доступности данных, который можно использовать для Arbitrum Nitro, чтобы обеспечить экономичное и безопасное решение для хранения данных транзакций.
 
-To implement this server spec, EigenDA provides EigenDA Proxy which is run as a dependency alongside OP Stack sequencers and full nodes to securely communicate with the EigenDA disperser.
+Для реализации этой спецификации сервера EigenDA предоставляет прокси-сервер EigenDA, который запускается как зависимость вместе с секвенсорами OP Stack и полными узлами для безопасного взаимодействия с диспергатором EigenDA.
 
-### DA provider implementation
-The Arbitrum Nitro code includes a DataAvailabilityProvider interface, which is utilized throughout the codebase for storing and retrieving data from various providers, including EIP-4844 blobs, Anytrust, and now 0G.
+### Реализация провайдера DA
+Код Arbitrum Nitro включает интерфейс DataAvailabilityProvider, который используется во всей кодовой базе для хранения и получения данных от различных поставщиков, включая BLOB-объекты EIP-4844, Anytrust, а теперь и 0G.
 
-This integration adds an implementation of the DataAvailabilityProvider interface specifically for Celestia. The main functionality for posting and retrieving data is found in the das/zerogravity.go file, where the data is stored on 0G.
+Эта интеграция добавляет реализацию интерфейса DataAvailabilityProvider специально для Celestia. Основные функции публикации и получения данных находятся в файле das/zerogradity.go, где данные хранятся в 0G.
 
-## GitHub repository
+## Репозиторий GitHub
 
-Find the [repository for this integration](https://github.com/0glabs/nitro) at https://github.com/0glabs/nitro.
+Найдите [репозиторий для этой интеграции](https://github.com/0glabs/nitro) at https://github.com/0glabs/nitro.
 
-## Prerequisites
+## Предварительные условия
 
 - [0G DA Client Node](../da-integration.md)
 - [0G DA Encoder Node](../da-integration.md)
 - [0G Arbitrum Nitro Rollup Kit](https://github.com/0glabs/nitro)
 
 
-WARNING:This is a beta integration and we are working on resolving open issues.
+ВНИМАНИЕ: Это бета-интеграция, и мы работаем над решением открытых проблем.
