@@ -1,81 +1,79 @@
 ---
-id: intro
-title: Introduction to 0G
-sidebar_position: 2
+идентификатор: введение
+Название: Введение в 0G
+боковая_позиция: 2
 ---
 
-# Introduction to 0G
+# Введение в 0G
 
 ---
 
 import LottieAnimation from '@site/src/components/lottieAnimation';
 
-## The First Decentralized AI Operating System (dAIOS)
+## Первая децентрализованная операционная система ИИ (dAIOS)
 
-**0G (Zero Gravity)** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications and chains. It efficiently orchestrates utilization of hardware resources such as storage and compute and software assets such as data and models to handle the scale and complexity of AI workloads.
+**0G (Zero Gravity)** - это первая децентрализованная ИИ [операционная система](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/), которая выступает в качестве фундаментального слоя для децентрализованных ИИ-приложений и цепочек. Она эффективно организует использование аппаратных ресурсов, таких как хранилища и вычисления, и программных активов, таких как данные и модели, чтобы справиться с масштабом и сложностью рабочих нагрузок ИИ.
 
-Specifically designed for AI (d)applications and chains, 0G features the fastest, infinitely scalable data availability (DA) layer, the cheapest decentralized storage system, and a novel flexible serving framework for inferences and finetuning. Prior to 0G, resource-intensive AI applications would only be feasible “off-chain” due to burdensome on-chain costs, low latency and throughput, and a lack of builder-friendly tooling.
+Специально разработанный для ИИ-приложений и цепочек, 0G имеет самый быстрый, бесконечно масштабируемый уровень доступности данных (DA), самую дешевую децентрализованную систему хранения, а также новую гибкую структуру обслуживания для выводов и тонкой настройки. До появления 0G ресурсоемкие приложения для ИИ можно было реализовать только «вне цепи» из-за обременительных затрат на цепь, низкой задержки и пропускной способности, а также отсутствия удобного для разработчиков инструментария.
 
-For the first time ever, 0G bridges this cost and efficiency gap between Web2 and Web3, empowering builders to confidently deploy AI applications on-chain with _improved_ performance.
+Впервые в истории 0G преодолевает этот разрыв в стоимости и эффективности между Web2 и Web3, позволяя разработчикам уверенно развертывать приложения ИИ на цепи с _улучшенной_ производительностью.
 
 <div style={{textAlign: 'center'}}>
   <img src="/img/0g-architecture.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
 </div>
 <br />
-The 0G operating system has 4 key components: 
-- **0G Storage**: A decentralized storage network optimized for massive data loads.
-- **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
-- **0G Serving**: A versatile framework for any serving needs, such as fast data retrieval, AI inference, and model training.
-- **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
+Операционная система 0G состоит из 4 ключевых компонентов: 
+- **0G Storage**: Децентрализованная сеть хранения данных, оптимизированная для работы с большими объемами данных.
+- **0G DA**: Бесконечно масштабируемый и программируемый уровень доступности данных, предназначенный для высокопроизводительных цепей.
+- **0G Serving**: Универсальный фреймворк для любых задач обслуживания, таких как быстрый поиск данных, вывод ИИ и обучение моделей.
+- **0G Chain**: Самый быстрый и модульный блокчейн, делающий игры на цепочке и искусственный интеллект реальностью.
 
 <details>
-<summary> **What is decentralized storage?** </summary>
+<summary> **Что такое децентрализованное хранение данных?** </summary>
 
-Decentralized storage distributes data across multiple network nodes rather than relying on a central server. This approach enhances data security, resilience, and accessibility by eliminating the single point of failure common in centralized systems.
+Децентрализованное хранилище распределяет данные между несколькими узлами сети, а не полагается на центральный сервер. Такой подход повышает безопасность, устойчивость и доступность данных за счет устранения единой точки отказа, характерной для централизованных систем.
 
-**What is data availability?**
-Data availability guarantees that data stored within the system is readily accessible and retrievable whenever required. 0G's data availability network employs erasure coding and a quorum-based attestation system to ensure data remains available even in scenarios where some nodes might fail.
+**Что такое доступность данных?
+Доступность данных гарантирует, что данные, хранящиеся в системе, легко доступны и могут быть получены в любой момент, когда это необходимо. Сеть доступности данных 0G использует кодирование стирания и систему аттестации на основе кворума, чтобы обеспечить доступность данных даже в сценариях, когда некоторые узлы могут выйти из строя.
 
-**What is an AI serving framework?**
-An AI serving framework is a system that facilitates the deployment and execution of AI models. 0G's decentralized serving network supports data retrieval, AI inference, and model training, ensuring efficient resource management for AI applications.
+**Что такое фреймворк для обслуживания ИИ?
+Сервисный фреймворк ИИ - это система, которая облегчает развертывание и выполнение моделей ИИ. Децентрализованная сеть обслуживания 0G поддерживает поиск данных, выводы ИИ и обучение моделей, обеспечивая эффективное управление ресурсами для приложений ИИ.
 
-**What is a modular blockchain?**
-A modular blockchain is one where each layer or component is specialized for a particular function, improving scalability and flexibility. 0G Chain uses this architecture to optimize its components, allowing for independent optimization of consensus, execution, and chain storage. This modular architecture enables each component to be fine-tuned for its specific requirements, resulting in enhanced performance, scalability, and flexibility for decentralized AI applications.
+**Что такое модульный блокчейн?
+Модульный блокчейн - это блокчейн, в котором каждый слой или компонент специализирован для выполнения определенной функции, что повышает масштабируемость и гибкость. 0G Chain использует эту архитектуру для оптимизации своих компонентов, позволяя независимо оптимизировать консенсус, исполнение и хранение цепочки. Такая модульная архитектура позволяет точно настроить каждый компонент под конкретные требования, что повышает производительность, масштабируемость и гибкость децентрализованных приложений ИИ.
 
- </details>
+ </details
 
-All of these network components utilize carefully designed and innovative sharding mechanisms to achieve infinite horizontal scalability, thereby removing obstacles to the true democratization of AI.
+Все эти сетевые компоненты используют тщательно разработанные и инновационные механизмы шардинга для достижения бесконечной горизонтальной масштабируемости, устраняя тем самым препятствия для настоящей демократизации ИИ.
 
-## 0G’s Namesake
+## Название 0G
 
-“0G” gets its name from “Zero Gravity,” personifying the ultimate goal of achieving a state of weightlessness where transactions and data exchanges can occur effortlessly. Infrastructure should be customizable for developers and invisible to the end-user.
+Название «0G» происходит от слова «Zero Gravity», олицетворяющего конечную цель достижения состояния невесомости, когда транзакции и обмен данными происходят без усилий. Инфраструктура должна быть настраиваемой для разработчиков и невидимой для конечного пользователя.
 
-With 0G’s technology, the possibilities are endless. Previously infeasible use cases are now within reach, including:
+С технологией 0G возможности безграничны. Ранее неосуществимые сценарии использования теперь в пределах досягаемости, включая:
 
-- On-chain AI, including training large language models (LLMs)
-- Storage of entire AI agent networks on-chain
-- Storage of large datasets for data cleaning and labeling
+- ИИ на цепочке, включая обучение больших языковых моделей (LLM).
+- Хранение целых сетей агентов ИИ на цепи
+- Хранение больших наборов данных для очистки и маркировки данных
 
-And this is just the beginning.
+**И это только начало.**
 
-## Our Mission: Make AI a Public Good
+## Наша миссия: сделать ИИ общественным благом
 
-At 0G, our mission is clear: To Make AI a Public Good.
+Каждый компонент нашей экосистемы способствует достижению этой цели, и мы приглашаем вас присоединиться к нам в создании основы для децентрализованного будущего искусственного интеллекта.
 
-Every component of our ecosystem contributes toward this goal, and we invite you to join us in building the foundation for a decentralized AI future.
-
-This introduction serves as your gateway into the 0G ecosystem. For deeper insights on various products, explore the next sections to learn about 0G dAIOS. If you’re ready to dive in, check out our guides:
+Это введение станет вашим входом в экосистему 0G. Для более подробной информации о различных продуктах изучите следующие разделы, посвященные 0G dAIOS. Если вы готовы погрузиться с головой, ознакомьтесь с нашими руководствами:
 
 - [Run a Node](/run-a-node/overview)
 - [Use our Storage Network](/build-with-0g/storage-sdk)
 - [Learn more about 0G's Architecture](/learn-more/whitepaper)
 
-## Join the 0G Community
+## Присоединяйтеси к 0G Сообществу
 
 - [Discord](https://discord.gg/0gLabs)
 - [Twitter](https://twitter.com/0g_Labs)
 - [GitHub](https://github.com/0G-Labs/0g-docs)
 
-We're excited to have you on board as we build the future of Web3xAI infrastructure together!
+Мы рады видеть вас на борту, поскольку мы вместе строим будущее инфраструктуры Web3xAI!
 
 <LottieAnimation />
