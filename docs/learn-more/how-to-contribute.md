@@ -1,12 +1,12 @@
 ---
 id: how-to-contribute
-title: How to Contribute?
+title: Как внести свой вклад?
 sidebar_position: 4
 ---
 
-# Contribute to 0G Blockchain
-We welcome and encourage you to contribute to our open-source project! 
+# Вклад в 0G Blockchain
+Мы приветствуем и призываем вас внести свой вклад в наш проект с открытым исходным кодом! 
 
-Whether you're a seasoned developer or new to the community, your participation helps us push decentralized AI forward. Every contribution, no matter the size, makes a difference. Please check out our Contribution Guidelines to learn more about our criteria and how you can get involved. All submissions will be reviewed by a team member to ensure they meet our standards. 
+Будь вы опытным разработчиком или новичком в сообществе, ваше участие поможет нам продвинуть децентрализованный ИИ вперед. Каждый вклад, независимо от его размера, имеет значение. Ознакомьтесь с нашими правилами внесения вклада, чтобы узнать больше о наших критериях и о том, как вы можете принять участие в проекте. Все заявки будут рассмотрены одним из членов команды, чтобы убедиться, что они соответствуют нашим стандартам. 
 
-Let's build the future of decentralized AI together. 
+Давайте вместе строить будущее децентрализованного ИИ. 
