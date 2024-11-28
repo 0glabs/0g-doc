@@ -1,54 +1,55 @@
 ---
 id: 0g-chain
-title: 0G Chain 
+название: 0G Chain 
 sidebar_position: 5
 ---
 
-# 0G Chain: The Fastest Modular AI Chain
+# 0G Chain: Самая быстрая модульная цепочка ИИ
 ---
 
-0G Chain is a highly scalable, AI-optimized L1 blockchain designed to meet the needs of data-heavy applications. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage—making it ideal for AI-driven workflows. 0G is fully **EVM-compatible**, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
+0G Chain - это высокомасштабируемый, оптимизированный для ИИ блокчейн L1, разработанный для удовлетворения потребностей приложений с большим объемом данных. Построенный по модульной архитектуре, он позволяет независимо оптимизировать такие ключевые компоненты, как консенсус, исполнение и хранение, что делает его идеальным для рабочих процессов, управляемых искусственным интеллектом. 0G полностью **EVM-совместима**, поэтому децентрализованные приложения (dApps), уже развернутые на других цепочках L1 или L2 (например, Ethereum или rollups), могут легко использовать продукты 0G без необходимости полной миграции.
 
-0G Chain supports a [data availability network](./da/0g-da.md), [distributed storage network](0g-storage.md), and [AI serving network](0g-serving.md). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI. 
+0G Chain поддерживает [сеть доступности данных](./da/0g-da.md), [сеть распределенного хранения](0g-storage.md) и [сеть обслуживания ИИ](0g-serving.md). Все эти сети интегрируются с высокомасштабируемой сетью консенсуса 0G Chain, созданной для обработки огромных объемов данных, подходящих для ИИ. 
 
-As the demand for network capacity increases, new consensus networks can be added to enable horizontal scalability, thereby boosting the overall bandwidth and performance of the system. By **decoupling data publication from data storage**, 0G optimizes both throughput and scalability, surpassing the limitations seen in existing data availability (DA) solutions.
+По мере роста спроса на сетевую емкость можно добавлять новые сети консенсуса для горизонтального масштабирования, тем самым увеличивая общую пропускную способность и производительность системы. Благодаря **отделению публикации данных от их хранения**, 0G оптимизирует как пропускную способность, так и масштабируемость, превосходя ограничения, наблюдаемые в существующих решениях по обеспечению доступности данных (DA).
 
-0G Chain has 3 unique features:
+0G Chain имеет 3 уникальные особенности:
 
-1. Modular Scalability for AI
-2. Custom Consensus
-3. Shared Staking
+1. Модульная масштабируемость для искусственного интеллекта
+2. Пользовательский консенсус
+3. Общие ставки
 
-## Modular Scalability for AI
+## Модульная масштабируемость для ИИ
 
-A key differentiator of 0G is its **ability to efficiently manage large volumes of data with exceptional throughput**, thanks to its horizontally scalable architecture. At the core of this architecture is **0G Consensus**, the system's unique consensus mechanism.
+Ключевым отличием системы 0G является ее **способность эффективно управлять большими объемами данных с исключительной пропускной способностью** благодаря горизонтально масштабируемой архитектуре. В основе этой архитектуры лежит **0G Consensus**, уникальный механизм консенсуса системы.
 
-0G Chain is also designed with modularity in mind, making it highly adaptable for AI and other data-heavy applications. Its ability to separate the DA layer from the data storage layer allows AI tasks, including large-scale training or inference, to access and store data efficiently. This makes 0G an optimal solution for decentralized AI infrastructures.
+0G Chain также разработан с учетом модульности, что делает его легко адаптируемым для ИИ и других приложений с большим объемом данных. Способность отделять уровень DA от уровня хранения данных позволяет задачам ИИ, включая масштабное обучение или выводы, эффективно получать и хранить данные. Это делает 0G оптимальным решением для децентрализованных инфраструктур ИИ.
 
-## 0G Consensus: A Distributed Approach
+## 0G Consensus: Распределенный подход
 
-Unlike traditional blockchains that rely on a single, monolithic consensus layer, 0G Consensus is a distributed system composed of multiple independent consensus networks. These networks can expand dynamically based on demand, ensuring that as data volumes grow exponentially, 0G's throughput scales accordingly (e.g. 1, 100, or even 1,000 networks). 
+В отличие от традиционных блокчейнов, которые полагаются на единый монолитный уровень консенсуса, 0G Consensus - это распределенная система, состоящая из множества независимых сетей консенсуса. Эти сети могут динамически расширяться в зависимости от спроса, гарантируя, что при экспоненциальном росте объемов данных пропускная способность 0G будет увеличиваться соответственно (например, 1, 100 или даже 1000 сетей). 
 
-This works by having 0G Consensus collaborate with #0G_Storage to validate data. DA Nodes are randomly queried (using a VRF) and collectively reach a consensus on the validity of the data, which is broadcasted to 0G Consensus. As the amount of data to be confirmed grows exponentially, the consensus networks (that in aggregate form 0G Consensus) can expand.  
+Для проверки данных 0G Consensus сотрудничает с #0G_Storage. DA-узлы случайным образом запрашиваются (с помощью VRF) и коллективно приходят к консенсусу о достоверности данных, который транслируется в 0G Consensus. По мере экспоненциального роста объема данных, подлежащих подтверждению, сети консенсуса (которые в совокупности образуют 0G Consensus) могут расширяться.  
 <div style={{textAlign: 'center'}}>
   <img src="/img/broadcasted to 0G Consensus.png" alt="0G Consensus" style={{maxWidth: '100%'}} />
 </div>
 <br />
-## Shared Staking
+## Общая ставка
 
-Traditionally, adding more consensus networks would require validators to stake additional assets for each network, making it difficult to maintain sufficient security across the entire system. 0G overcomes this challenge by implementing a **shared staking model**.
+Традиционно добавление большего количества сетей консенсуса требует от валидаторов закладывать дополнительные активы для каждой сети, что затрудняет поддержание достаточной безопасности всей системы. 0G решает эту проблему, реализуя модель **общего стейкинга**.
 
-In this model, validators stake their funds on the Ethereum mainnet, providing security across all the 0G Consensus networks they participate in. If a slashable event occurs on any of the 0G networks, the validator's stake on the Ethereum mainnet is subject to slashing. This ensures that **mainnet-level security** is extended to all of 0G's consensus networks simultaneously, creating a unified and secure staking environment.
+В этой модели валидаторы размещают свои средства в главной сети Ethereum, обеспечивая безопасность всех сетей 0G Consensus, в которых они участвуют. Если в какой-либо из сетей 0G происходит событие, приводящее к слэшингу, ставка валидатора в основной сети Ethereum подвергается слэшингу. Таким образом, безопасность **уровня мейннета** распространяется на все сети консенсуса 0G одновременно, создавая единую и безопасную среду стакинга.
 
-## Reward Mechanism
 
-Validators participating in 0G Consensus earn tokens as rewards for their work. These tokens are burned on the 0G networks, and equivalent tokens are minted on the Ethereum mainnet, where the original funds were staked. This ensures a seamless and efficient reward system that bridges 0G Consensus with Ethereum's robust infrastructure.
+## Механизм вознаграждения
+
+Валидаторы, участвующие в 0G Consensus, получают токены в качестве вознаграждения за свою работу. Эти токены сжигаются в сети 0G, а эквивалентные им токены чеканятся в сети Ethereum, где были размещены первоначальные средства. Это обеспечивает бесперебойную и эффективную систему вознаграждений, которая соединяет 0G Consensus с надежной инфраструктурой Ethereum.
 <div style={{textAlign: 'center'}}>
   <img src="/img/0G Consensus.png" alt="0G Consensus Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
-## Why 0G?
+## Почему 0G?
 
-0G is designed with AI applications in mind, offering a highly scalable, modular infrastructure that addresses the unique challenges of data-heavy use cases. Its EVM compatibility ensures that developers already using Ethereum, Layer 2 rollups, or other chains can easily integrate 0G's services—such as DA and storage—without leaving their current platforms. We are also actively exploring the ability to support the Solana VM, Near VM, and BTC compatibility so that AI applications may scale across a broader user base.
+0G разработан с учетом особенностей приложений искусственного интеллекта, предлагая высокомасштабируемую модульную инфраструктуру, которая решает уникальные задачи, связанные с использованием большого объема данных. Благодаря совместимости с EVM разработчики, уже использующие Ethereum, Layer 2 rollups или другие цепочки, могут легко интегрировать сервисы 0G, такие как DA и хранилища, не покидая своих текущих платформ. Мы также активно изучаем возможность поддержки Solana VM, Near VM и совместимости с BTC, чтобы приложения ИИ могли масштабироваться на более широкую пользовательскую базу.
 
-0G is not just another Layer 1 chain. It's a modular, AI-optimized system built for the future of decentralized applications. Whether you're working on AI, large-scale data tasks, or any application needing high performance and scalability, 0G provides the tools to grow without compromising on security, speed, or flexibility.
+0G - это не просто очередная цепочка первого уровня. Это модульная система, оптимизированная для ИИ, созданная для будущего децентрализованных приложений. Если вы работаете над искусственным интеллектом, масштабными задачами с данными или любым другим приложением, требующим высокой производительности и масштабируемости, 0G предоставляет инструменты для развития без ущерба для безопасности, скорости и гибкости.
