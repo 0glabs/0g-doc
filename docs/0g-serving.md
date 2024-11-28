@@ -1,31 +1,33 @@
 ---
-id: 0g-serving
-title: 0G Serving
+id: 0g-Обслуживание
+title: 0G Обслуживание
 ---
 
 
-# 0G Serving: Decentralized Inference & Beyond
+# 0G Обслуживание: децентрализованный вывод и не только
 ---
-In today's world, AI models are transforming industries, driving innovation, and powering new applications. But despite their increasing value, there's a critical gap in how AI services are delivered. Centralized platforms limit access, inflate costs, and restrict the flexibility of AI developers. That’s where 0G Serving comes in.
+В современном мире модели ИИ преобразуют отрасли, стимулируют инновации и создают новые приложения. Однако, несмотря на растущую ценность этих моделей, существует критический пробел в способах предоставления услуг ИИ. Централизованные платформы ограничивают доступ, повышают стоимость и ограничивают гибкость разработчиков ИИ. Именно здесь на помощь приходит 0G Serving.
 
-## What is 0G Serving?
+## Что такое 0G Serving?
 
-0G Serving is our decentralized framework that supports AI model inference, data retrieval, and training tasks.
+0G Serving - это наш децентрализованный фреймворк, который поддерживает вывод моделей ИИ, поиск данных и задачи обучения.
 
-The first iteration focuses specifically on decentralized settlement for inference, connecting buyers (who want to use AI models) with sellers (who run these models on their GPUs) in a trustless, transparent manner. Sellers, known as service providers, are able to set the price for each model they support and be rewarded real-time for their contributions. It’s a fully decentralized marketplace that eliminates the need for intermediaries, redefining how AI services are accessed and delivered and making them cheaper, more efficient, and accessible to anyone, anywhere.
+Первая итерация сфокусирована на децентрализованных расчетах для выводов, соединяющих покупателей (которые хотят использовать модели ИИ) с продавцами (которые запускают эти модели на своих GPU) в доверительной, прозрачной манере. Продавцы, известные как поставщики услуг, могут устанавливать цену на каждую модель, которую они поддерживают, и получать вознаграждение за свой вклад в режиме реального времени. Это полностью децентрализованный рынок, который устраняет необходимость в посредниках, пересматривая способы получения и предоставления услуг ИИ и делая их дешевле, эффективнее и доступнее для всех и каждого.
 
-## How does it work?
+##В современном мире модели ИИ преобразуют отрасли, стимулируют инновации и создают новые приложения. Однако, несмотря на растущую ценность этих моделей, существует критический пробел в способах предоставления услуг ИИ. Централизованные платформы ограничивают доступ, повышают стоимость и ограничивают гибкость разработчиков ИИ. Именно здесь на помощь приходит 0G Serving.
 
-The 0G Serving contract facilitates secure interactions between users (AI buyers) and service providers (GPU owners running AI models), ensuring smooth data retrieval, fee collection, and service execution. Here’s how it works:
-1. **Service Provider Registration:** Service providers first register the type of AI service they offer (e.g., model inference) and set pricing for each type within the smart contract.
-2. **User Pre-deposits Fees:** When a user wants to access a service, they pre-deposit a fee into the smart contract associated with the selected service provider. This ensures that funds are available to compensate the service provider.
-3. **Request and Response System:** Users send requests for AI inference, and the service provider decides whether to respond based on the sufficiency of the user’s remaining balance. Both the user and the provider sign each request and response, ensuring trustless verification of transactions.
+## Как это работает?
 
-Here are some of the key features of the system:
-- **Open Access with Fair Rewards:** Anyone with the right hardware can become a service provider and earn fair compensation for running AI models. This open-access, decentralized structure enables a global network of contributors, where providers are directly rewarded for their computational resources and services, fostering a new ecosystem of decentralized AI. 
-- **Optimized Efficiency:** 0G Serving uses a variety of different mechanisms to minimize costs and maximize performance. Service providers can batch-process multiple user requests to minimize the number of on-chain settlements, optimizing transaction costs and network efficiency. ZK-proofs are used to compress transaction data, lowering on-chain settlement costs. Additionally, to reduce the on-chain costs of storing request traces with data keys, 0G Storage allows for scalable off-chain data management, enabling more efficient storage and retrieval while keeping costs low.
-- **User-Centric Design:** The platform offers a smooth user experience, with a built-in refund mechanism that ensures users can reclaim unused funds within a clearly defined time window. This process is executed by smart contracts, ensuring a reliable, secure, and frictionless process for both service providers and users. 
+Контракт 0G Serving обеспечивает безопасное взаимодействие между пользователями (покупателями ИИ) и поставщиками услуг (владельцами GPU, запускающими модели ИИ), гарантируя бесперебойное получение данных, сбор платы и выполнение услуг. Вот как это работает:
+1. ** Регистрация поставщиков услуг:** Поставщики услуг сначала регистрируют тип предлагаемых ими услуг ИИ (например, вывод модели) и устанавливают цены для каждого типа в рамках смарт-контракта.
+2. **Пользователь вносит плату:** Когда пользователь хочет получить доступ к услуге, он предварительно вносит плату в смарт-контракт, связанный с выбранным поставщиком услуг. Это гарантирует наличие средств для выплаты вознаграждения поставщику услуг.
+3. **Система запросов и ответов:** Пользователи отправляют запросы на вывод ИИ, а поставщик услуг решает, отвечать ли на них, основываясь на достаточности оставшегося баланса пользователя. И пользователь, и поставщик подписывают каждый запрос и ответ, что обеспечивает беспричинную проверку транзакций.
 
-By decentralizing both services and settlement, 0G Serving provides a scalable and trustless alternative to centralized AI platforms.
+Вот некоторые ключевые особенности системы:
+- **Открытый доступ со справедливым вознаграждением:** Любой человек, имеющий соответствующее оборудование, может стать поставщиком услуг и получать справедливое вознаграждение за работу моделей ИИ. Эта децентрализованная структура с открытым доступом позволяет создать глобальную сеть участников, где поставщики получают прямое вознаграждение за свои вычислительные ресурсы и услуги, способствуя развитию новой экосистемы децентрализованного ИИ. 
+- **Оптимизированная эффективность:** 0G Serving использует множество различных механизмов для минимизации затрат и максимизации производительности. Поставщики услуг могут пакетно обрабатывать множество пользовательских запросов, чтобы минимизировать количество расчетов на цепочке, оптимизируя транзакционные издержки и эффективность сети. ZK-доказательства используются для сжатия данных транзакций, что снижает стоимость расчетов на цепи. Кроме того, чтобы снизить затраты на хранение трассировки запросов с ключами данных, 0G Storage позволяет масштабировать управление данными вне цепи, обеспечивая более эффективное хранение и поиск, сохраняя при этом низкие затраты.
+- **Пользовательско-ориентированный дизайн:** Платформа предлагает плавный пользовательский опыт, со встроенным механизмом возврата средств, который гарантирует, что пользователи смогут вернуть неиспользованные средства в четко определенное время. Этот процесс осуществляется с помощью смарт-контрактов, что обеспечивает надежность, безопасность и отсутствие трения как для поставщиков услуг, так и для пользователей. 
 
-Over time, we aim to decentralize the entire AI workflow—from inference to data and training—by keeping everything on-chain and autonomous.
+Децентрализуя как услуги, так и расчеты, 0G Serving обеспечивает масштабируемую и надежную альтернативу централизованным платформам искусственного интеллекта.
+
+Со временем мы стремимся децентрализовать весь рабочий процесс ИИ — от вывода до данных и обучения — сохраняя все в цепочке и автономно.
