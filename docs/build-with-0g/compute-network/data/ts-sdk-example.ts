@@ -56,7 +56,7 @@ async function main() {
     const content = "Please input your message here";
 
     // Step 5.1: Get the request metadata
-    const { endpoint, model } = await broker.getRequestMetadata(
+    const { endpoint, model } = await broker.getServiceMetadata(
       providerAddress,
       serviceName
     );
