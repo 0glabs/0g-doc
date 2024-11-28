@@ -1,63 +1,63 @@
 ---
-id: security
-title: Security
+идентификатор: безопасность
+Название: Безопасность
 sidebar_position: 4
 ---
 
-# Security at 0G
+# Безопасность в 0G
 
-At 0G, we prioritize the security and integrity of our platform. Our commitment to security is reflected in our rigorous audit processes and our active bug bounty program.
+В компании 0G мы уделяем первостепенное внимание безопасности и целостности нашей платформы. Наша приверженность безопасности отражается в строгих процессах аудита и активной программе «bug bounty».
 
-## Audits
+## Аудиты
 
-We regularly conduct thorough security audits of our smart contracts, protocols, and infrastructure to ensure the highest level of security for our users.
+Мы регулярно проводим тщательный аудит безопасности наших смарт-контрактов, протоколов и инфраструктуры, чтобы обеспечить максимальный уровень безопасности для наших пользователей.
 
-### Recent Audits 
+## Последние аудиты 
 
-| Date | Auditor | Scope | Report |
+| Дата | Аудитор | Область применения | Отчет |
 |------|---------|-------|--------|
-| Aug 2024 - Sept 2024 | Halborn | 0G Storage | [Report](https://github.com/0glabs/0g-doc-new/blob/main/audit/Halborn%200G%20Storage%20Node%20Audit.pdf) |
-| Aug 2024 | Zellic | 0G Storage and 0G DA | [Report](https://github.com/0glabs/0g-doc-new/blob/main/audit/Zellic%200G%20Storage%20and%200G%20DA%20Audit.pdf) |
+| Aug 2024 - Sept 2024 | Halborn | 0G Storage | [Отчет](https://github.com/0glabs/0g-doc-new/blob/main/audit/Halborn%200G%20Storage%20Node%20Audit.pdf) |
+| Aug 2024 | Zellic | 0G Storage and 0G DA | [Отчет](https://github.com/0glabs/0g-doc-new/blob/main/audit/Zellic%200G%20Storage%20and%200G%20DA%20Audit.pdf) |
 
-For a complete list of our audits and their detailed reports, please visit our [GitHub repository](https://github.com/0glabs/0g-doc-new/tree/main/audit).
+Полный список наших аудиторских проверок и подробные отчеты о них можно найти на нашем сайте [GitHub repository](https://github.com/0glabs/0g-doc-new/tree/main/audit).
 
 ## [0G Labs Bug Bounty Program with Hackenproof](https://hackenproof.com/programs/0g-labs-smart-contracts)
 
-At 0G, we believe in the power of **community-driven security**. Our bug bounty program invites security researchers and developers to help us identify and resolve potential vulnerabilities, ensuring the robustness of our systems. 
+В компании 0G мы верим в силу **общественной безопасности**. Наша программа bug bounty приглашает исследователей безопасности и разработчиков помочь нам выявить и устранить потенциальные уязвимости, обеспечивая надежность наших систем. 
 
-### Scope of the Bug Bounty Program
-Our bug bounty program covers:
-- Smart Contracts
-- Infrastructure
-- Protocol
+### Сфера применения программы «Баг Баунти
+Наша программа по борьбе с ошибками охватывает:
+- Смарт-контракты
+- Инфраструктура
+- Протокол
   
-## Focus Area
+## Область внимания
 
-### In-Scope Vulnerabilities: 
-We are interested in vulnerabilities that result in incorrect behavior of the smart contract and could lead to unintended functionality, including:
+### Уязвимости: 
+Нас интересуют уязвимости, которые приводят к некорректному поведению смарт-контракта и могут привести к нежелательной функциональности, включая:
 
-- Stealing or loss of funds
-- Unauthorized transactions
-- Transaction manipulation
-- Attacks on logic (behavior that deviates from the intended business logic)
-- Reentrancy attacks
-- Reordering transactions
-- Overflows and underflows
+- Кража или потеря средств
+- несанкционированные транзакции
+- Манипулирование транзакциями
+- Атаки на логику (поведение, отклоняющееся от запланированной бизнес-логики)
+- Атаки на реентерабельность
+- Переупорядочивание транзакций
+- Переполнения и недополнения
 
-### Out-of-Scope Vulnerabilities: 
-The following are out of scope for the bug bounty program:
+### Уязвимости вне зоны действия программы: 
+Следующие уязвимости не входят в сферу действия программы bug bounty:
 
-- Theoretical vulnerabilities without proof or demonstration
-- Old compiler versions
-- Unlocked compiler version
-- Vulnerabilities in imported contracts
-- Code style guide violations
-- Redundant code
-- Gas optimizations
-- Best practice issues
-- Vulnerabilities exploitable through front-run attacks only
+- Теоретические уязвимости без доказательств или демонстрации
+- Старые версии компиляторов
+- Разблокированная версия компилятора
+- Уязвимости в импортированных контрактах
+- Нарушения руководства по стилю кода
+- Избыточный код
+- Газовые оптимизации
+- Проблемы лучшей практики
+- Уязвимости, эксплуатируемые только с помощью фронтальных атак
 
-Additionally, the following contracts are out of scope for 0g-storage-contract:
+Кроме того, следующие контракты не входят в сферу действия 0g-storage-contract:
 - `cashier`
 - `token`
 - `reward/OnePoolReward`
@@ -65,47 +65,47 @@ Additionally, the following contracts are out of scope for 0g-storage-contract:
 - `uploadMarket`
 - `utils/Exponent.sol`
 
-### Rewards
+### Награды
 
 Rewards are based on the severity of the discovered vulnerability:
 
-| Severity | Reward Range |
-|----------|--------------|
-| Critical | $35,000 |
-| High     | $8000 |
-| Medium   | $2000 |
-| Low      | $500 |
+| Сложность | Диапазон вознаграждений |
+|-----------|-------------------------|
+| Критичная |         $35,000         |
+| Сложно    |         $8000           |
+| Средне    |         $2000           |
+| Легко     |         $500            |
 
-### Program Rules
+### Правила программы
 
-- Avoid using web application scanners for automatic vulnerability searching which generates massive traffic
-- Make every effort not to damage or restrict the availability of products, services, or infrastructure
-- Avoid compromising any personal data, interruption, or degradation of any service
-- Don’t access or modify other user data, localize all tests to your accounts
-- Perform testing only within the scope
-- Don’t exploit any DoS/DDoS vulnerabilities, social engineering attacks, or spam
-- Don’t spam forms or account creation flows using automated scanners
-- In case you find chain vulnerabilities we’ll pay only for vulnerability with the highest severity.
-- Don’t break any law and stay in the defined scope
-- Any details of found vulnerabilities must not be communicated to anyone who is not a HackenProof Team or an authorized employee of this Company without appropriate permission
+- Избегайте использования сканеров веб-приложений для автоматического поиска уязвимостей, которые генерируют огромный трафик
+- Приложите все усилия, чтобы не повредить и не ограничить доступность продуктов, услуг или инфраструктуры
+- Избегайте компрометации личных данных, прерывания или ухудшения качества услуг.
+- Не получайте доступ к данным других пользователей и не изменяйте их, локализуйте все тесты в своих учетных записях
+- Проводите тестирование только в рамках установленного объема
+- Не используйте уязвимости DoS/DDoS, атаки социальной инженерии или спам.
+- Не спамьте формы или потоки создания учетных записей с помощью автоматических сканеров.
+- В случае обнаружения цепочки уязвимостей мы оплатим только уязвимости с наибольшей степенью серьезности.
+- Не нарушайте никаких законов и оставайтесь в установленных рамках
+- Любые детали найденных уязвимостей не должны сообщаться никому, кто не является членом команды HackenProof или уполномоченным сотрудником этой компании, без соответствующего разрешения.
 
-### Disclosure Guidelines
-:::important
-- Do not discuss this program or any vulnerabilities (even resolved ones) outside of the program without express consent from the organization
-- No vulnerability disclosure, including partial is allowed for the moment.
-- Please do NOT publish/discuss bugs
+### Рекомендации по раскрытию информации
+:::важно
+- Не обсуждайте эту программу и любые уязвимости (даже устраненные) за ее пределами без прямого согласия организации
+- Никакое раскрытие уязвимостей, в том числе частичное, на данный момент не разрешено.
+- Пожалуйста, НЕ публикуйте/обсуждайте ошибки
 :::
 
-### Eligibility and Coordinated Disclosure
+### Правомочность и согласованное раскрытие информации
 
-We are happy to thank everyone who submits valid reports which help us improve the security. However, only those that meet the following eligibility requirements may receive a monetary reward:
+Мы рады поблагодарить всех, кто присылает достоверные сообщения, которые помогают нам улучшить безопасность. Однако денежное вознаграждение могут получить только те, кто отвечает следующим требованиям:
 
-- You must be the first reporter of a vulnerability.
-- The vulnerability must be a qualifying vulnerability
-- Any vulnerability found must be reported no later than 24 hours after discovery and exclusively through hackenproof.com
-- You must send a clear textual description of the report along with steps to reproduce the issue, include attachments such as screenshots or proof of concept code as necessary.
-- You must not be a former or current employee of us or one of its contractors.
-- ONLY USE the EMAIL under which you registered your HackenProof account (in case of violation, no bounty can be awarded)
-- Provide detailed but to-the point reproduction steps
+- Вы должны быть первым, кто сообщил об уязвимости.
+- Уязвимость должна быть квалифицированной.
+- О любой найденной уязвимости должно быть сообщено не позднее чем через 24 часа после обнаружения и исключительно через сайт hackenproof.com.
+- Вы должны прислать четкое текстовое описание сообщения вместе с шагами по воспроизведению проблемы, при необходимости приложить скриншоты или код доказательства концепции.
+- Вы не должны быть бывшим или действующим сотрудником нашей компании или одного из ее подрядчиков.
+- Используйте ТОЛЬКО EMAIL, под которым вы зарегистрировали свой аккаунт на HackenProof (в случае нарушения, вознаграждение не будет начислено).
+- Предоставьте подробные, но понятные шаги по воспроизведению
 
-We look forward to working with the community to enhance 0G's security! 
+Мы с нетерпением ждем совместной работы с сообществом, чтобы повысить безопасность 0G!
