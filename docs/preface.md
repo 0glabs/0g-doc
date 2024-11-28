@@ -1,19 +1,19 @@
 ---
-id: preface
-title: Preface
+id: Предисловие
+title: Предисловие
 sidebar_position: 1
 slug: /
 ---
-# Preface
+# Предисловие
 
-Artificial Intelligence (AI) is changing the course of human history. On the back of six decades of Moore's Law and three decades of the internet comprising all of human knowledge, [large language models (LLMs)](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) scale at an unprecedented rate towards AGI - 
-by some [accounts](https://situational-awareness.ai/from-gpt-4-to-agi/), arriving as soon as 2027. 
+Искусственный интеллект (ИИ) меняет ход человеческой истории. На фоне шести десятилетий действия закона Мура и трех десятилетий существования интернета, в котором хранятся все человеческие знания, [большие языковые модели (LLM)](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) беспрецедентно быстро масштабируются в направлении AGI - по некоторым [данным](https://www.cloudflare.com/learning/ai/what-is-large-language-model/), уже в 2027 году. 
+по некоторым данным (https://situational-awareness.ai/from-gpt-4-to-agi/), уже в 2027 году. 
 
-Limitless, abundant productivity and creativity brought by AGI will free humanity to pursue our highest potential. AGI is poised to contribute [trillions](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier#key-insights) to the global economy annually, transform industries by driving the marginal cost of intelligence toward zero, and morph society by accompanying us as thought partner and companion. This global-scale change could uplift all of humanity. 
+Безграничная, изобильная производительность и творческий потенциал AGI освободят человечество для реализации нашего наивысшего потенциала. AGI может ежегодно приносить [триллионы](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier#key-insights) в мировую экономику, трансформировать отрасли промышленности за счет снижения предельной стоимости интеллекта до нуля и изменить общество, сопровождая нас в качестве идейного партнера и компаньона. Эти изменения глобального масштаба могут поднять все человечество. 
 
-However, our current computing infrastructure is [insufficient](https://www.goldmansachs.com/insights/articles/AI-poised-to-drive-160-increase-in-power-demand) to support the development of AGI, and even more alarming is that this immense power is concentrated in the [hands of a few](https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/10/consumers-are-voicing-concerns-about-ai). 
+Однако наша современная вычислительная инфраструктура [недостаточна](https://www.goldmansachs.com/insights/articles/AI-poised-to-drive-160-increase-in-power-demand) для поддержки развития AGI, и еще более тревожным является то, что эта огромная мощь сосредоточена в [руках немногих](https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/10/consumers-are-voicing-concerns-about-ai). 
 
-A global-scale technology revolution requires both a global-scale technological infrastructure and a global-scale alignment mechanism. A world AI infrastructure could leapfrog the confines of data-centers and support exponential scaling towards AGI so that humanity could benefit from unlimited intelligence. A global scale coordination and alignment mechanism ensure that the benefits of AI can be widely, fairly, and safely distributed. 
+Глобальная технологическая революция требует как глобальной технологической инфраструктуры, так и механизма глобального согласования. Мировая инфраструктура искусственного интеллекта могла бы выйти за рамки центров обработки данных и поддерживать экспоненциальное масштабирование в сторону искусственного интеллекта, чтобы человечество могло извлечь выгоду из неограниченного интеллекта. Механизм координации и согласования в глобальном масштабе гарантирует широкое, справедливое и безопасное распределение преимуществ ИИ.
 
 
 <div style={{border: '1px solid #ccc', borderRadius: '15px', padding: '15px', maxWidth: '500px', fontFamily: 'Arial, sans-serif'}}>
@@ -40,29 +40,27 @@ A global-scale technology revolution requires both a global-scale technological 
 </div>
 
 
-## The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
-0G is building the global foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives. 
+## Первая децентрализованная ИИ [операционная система](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
+0G создает глобальный фундамент для лучшей, более справедливой и открытой экосистемы ИИ, где власть распределена, а инновации процветают. 
 
-With 0G dAIOS, the **TOMA** (transparent, owned, monetized, and aligned) future for AGI is near:
+Благодаря 0G dAIOS будущее AGI **TOMA** (прозрачного, принадлежащего, монетизируемого и согласованного) уже близко:
 
-- **Transparency**: Centralized AI systems operate as black boxes, with opaque decision-making processes and no clear data provenance. Users who provide training data rarely receive adequate rewards for their contributions, and the system lacks transparency in how value is distributed. _Decentralized AI fosters transparency by providing open, auditable decision-making processes and verifiable data sources, ensuring accountability at every step._ **0G’s modular architecture enables transparent data traceability and verifiable AI models, making every decision and data source traceable.**
+- **Прозрачность**: Централизованные системы ИИ работают как «черные ящики», с непрозрачными процессами принятия решений и отсутствием четкого происхождения данных. Пользователи, предоставляющие обучающие данные, редко получают адекватное вознаграждение за свой вклад, а системе не хватает прозрачности в том, как распределяется ценность. Децентрализованный ИИ способствует прозрачности, обеспечивая открытые, проверяемые процессы принятия решений и верифицируемые источники данных, гарантируя подотчетность на каждом шагу.* **Модульная архитектура 0G обеспечивает прозрачную отслеживаемость данных и верифицируемые модели ИИ, делая каждое решение и источник данных отслеживаемыми.**.
 
-- **Ownership**: Centralized AI platforms often sell or misuse personal data, with users having little control or ownership over how their information is collected, stored, or used. _Blockchain technology empowers users to retain control over their data, deciding how and when it’s used. _**With 0G, users can store and manage data on-chain through decentralized storage networks, retaining full ownership and control.**
+- **Владение**: Централизованные платформы искусственного интеллекта часто продают или неправильно используют личные данные, при этом пользователи не имеют достаточного контроля или права собственности на то, как их информация собирается, хранится или используется. Технология блокчейн позволяет пользователям сохранять контроль над своими данными, решая, как и когда они будут использоваться. С 0G пользователи могут хранить данные и управлять ими в цепочке через децентрализованные сети хранения, сохраняя полную собственность и контроль**.
+ 
+- **Монетизация**: Централизованные системы искусственного интеллекта часто монополизируют прибыль и оставляют мало стимулов для отдельных участников. Блокчейн позволяет выдавать вознаграждения для стимулирования участия и последующего распределения вознаграждений справедливым и прозрачным образом.* **Пользователи платформ хранения, доступности данных или обслуживания 0G платят небольшую плату за эти услуги, и эти вознаграждения затем распределяются между узлами.**. 
   
-- **Monetization**: Centralized AI systems often monopolize profits and leave little incentive for individual contributors. _Blockchain enables the issuance of rewards to incentivize participation and subsequently distribute rewards in a fair and transparent manner._ **Users of 0G’s storage, data availability, or serving platforms pay a small fee for these services, and these rewards are then distributed to the nodes.** 
-  
-- **Alignment**: Centralized AI systems lack oversight and governance processes. A select group may have the authority to censor or promote material, leading to misalignment with human values. _Decentralized AI platforms promote collective governance and oversight by increasing access to AI development, fostering inclusivity and innovation by a broader community rather than a single entity._ **0G provides access to lower-cost compute resources, lowering the high cost barrier to entry for inference, fine-tuning, and training.** 
+- **Согласование**: Централизованным системам ИИ не хватает надзора и процессов управления. Избранная группа может иметь право цензурировать или продвигать материалы, что приводит к несоответствию человеческим ценностям. Децентрализованные платформы ИИ способствуют коллективному управлению и надзору, расширяя доступ к разработкам ИИ, способствуя инклюзивности и инновациям со стороны более широкого сообщества, а не одной организации.* **0G обеспечивает доступ к дешевым вычислительным ресурсам, снижая высокий барьер стоимости входа для выводов, тонкой настройки и обучения.**. 
 
-As the first dAIOS, 0G brings together models, compute and data on a single global platform, enabling developers to build AI applications that are more **PLG** (performant, limitless, and global) than ever before: 
+Будучи первым dAIOS, 0G объединяет модели, вычисления и данные на единой глобальной платформе, позволяя разработчикам создавать приложения ИИ, которые являются более **PLG** (производительными, безграничными и глобальными), чем когда-либо прежде: 
 
-- **Performant**: Currently, developers and researchers lack access to high-grade computing and storage resources, limiting their ability to advance at the cutting edge of AI development. _Decentralized GPU networks that run on blockchains provide high-performance compute resources pooled by the community and available to all._ **0G provides access to enterprise-grade compute resources, enabling developers to build AI applications that are more performant than ever before.** 
+- **Перформанс**: В настоящее время разработчики и исследователи не имеют доступа к высокопроизводительным вычислительным ресурсам и ресурсам хранения данных, что ограничивает их возможности по продвижению на передний край развития ИИ. Децентрализованные сети GPU, работающие на блокчейне, предоставляют высокопроизводительные вычислительные ресурсы, объединенные сообществом и доступные всем.* **0G обеспечивает доступ к вычислительным ресурсам корпоративного уровня, позволяя разработчикам создавать ИИ-приложения, производительность которых выше, чем когда-либо прежде.**. 
 
-- **Limitless**: Currently, compute clusters and data sets are siloed and limited in scale. _Decentralized blockchain-based compute networks and data sources empower AI developers to scale their dapps beyond the confines of currently available compute and data._ **0G provides infinite scalability and access to compute resources and data from anywhere in the world.** 
+- **Безграничность**: В настоящее время вычислительные кластеры и наборы данных разрознены и ограничены по масштабу. Децентрализованные вычислительные сети и источники данных на основе блокчейна позволяют разработчикам ИИ масштабировать свои приложения, выходя за рамки доступных в настоящее время вычислений и данных.* **0G обеспечивает бесконечную масштабируемость и доступ к вычислительным ресурсам и данным из любой точки мира.**. 
 
-- **Global**: Currently, only certain regions in the world provide the infrastructure needed to advance AI. _Decentralized AI platforms built on blockchain networks can democratize access to AI development._ **Users of 0G's global AI operating system can build AI applications that are accessible to everyone, everywhere.** 
+- **Глобальный**: В настоящее время только в некоторых регионах мира существует инфраструктура, необходимая для развития ИИ. Децентрализованные платформы ИИ, построенные на блокчейн-сетях, могут демократизировать доступ к разработке ИИ.* ** Пользователи глобальной операционной системы ИИ 0G могут создавать приложения ИИ, доступные всем и везде.**. 
 
-In the following sections, we’ll dive deeper into how 0G enables this vision and what it means for the future of AI.
-
-
+В следующих разделах мы подробнее рассмотрим, как 0G реализует это видение и что оно означает для будущего ИИ.
 
 
