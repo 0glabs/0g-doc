@@ -1,6 +1,6 @@
 ---
 id: da-integration
-title: Setting Up DA Client Nodes
+title: DA Client Nodes
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
