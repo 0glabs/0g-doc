@@ -43,6 +43,15 @@ const sidebars: SidebarsConfig = {
       label: 'Build with 0G',
       className: 'sidebar-category build-with-0g',
       items: [
+        {
+          type: 'category',
+          label: 'Compute Network',
+          items: [
+            'build-with-0g/compute-network/overview',
+            'build-with-0g/compute-network/provider',
+            'build-with-0g/compute-network/sdk',
+          ],
+        },
         'build-with-0g/storage-sdk',
         'build-with-0g/storage-cli',
         'build-with-0g/da-integration',
@@ -62,18 +71,9 @@ const sidebars: SidebarsConfig = {
           ],
         },
         'build-with-0g/contracts',
+        'build-with-0g/marketplace',
         'build-with-0g/faucet',
         'build-with-0g/explorer',
-        {
-          type: 'category',
-          label: 'Compute Network',
-          items: [
-            'build-with-0g/compute-network/overview',
-            'build-with-0g/compute-network/provider',
-            'build-with-0g/compute-network/sdk',
-            'build-with-0g/compute-network/marketplace',
-          ],
-        },
       ],
     },
     {
