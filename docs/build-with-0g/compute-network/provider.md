@@ -15,7 +15,7 @@ This is easy to do, and we will provide a walkthrough below.
 
 ### Service Interface Requirements
 
-Your service needs to adhere to one of the available interface standards, with our first version supporting the [OpenAI API Interface Standards](https://platform.openai.com/docs/api-reference/chat). More options will be available soon.
+Large Language Models (LLMs) revolutionize communication, knowledge access, and automation by generating human-like text, so we start with supporting language models. To have a consistent experience, providers shall support the [OpenAI API Interface Standards](https://platform.openai.com/docs/api-reference/chat).
 
 ### Verification Interfaces
 
