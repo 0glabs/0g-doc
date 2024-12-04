@@ -35,6 +35,6 @@ This brief overview introduces the foundational workflow. For more detailed step
 
 If you're interested in becoming a **Service Provider**, please refer to [the Provider section](./provider.md) for detailed guidelines and requirements.
 
-If you wish to leverage provider services to develop your own projects, relevant resources are available in [the Developer SDK section](./developer-sdk).
+If you wish to leverage provider services to develop your own projects, relevant resources are available in [the Developer SDK section](./sdk).
 
-For those looking to use the 0G Compute Network to access AI services, more information can be found in [the Marketplace section](./marketplace.md).
+For those looking to use the 0G Compute Network to access AI services, more information can be found in [the Marketplace section](../marketplace.md).
