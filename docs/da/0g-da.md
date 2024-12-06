@@ -1,106 +1,106 @@
 ---
 id: 0g-da
-title: 0G's Infinitely Scalable and Programmable DA
+Название: Бесконечно масштабируемая и программируемая система DA от 0G
 sidebar_position: 1
 ---
 
-# 0G DA: Infinitely Scalable and Programmable DA
+# 0G DA: бесконечно масштабируемый и программируемый DA
 ---
 
-## The Rise of Data Availability Layers
+## Возникновение слоев доступности данных
 
-Data availability (DA) refers to proving that data is readily accessible, verifiable, and retrievable. For example, Layer 2 rollups such as Arbitrum or Base reduce the burden from Ethereum by handling transactions off-chain and then publishing the data back to Ethereum, thereby freeing up L1 Ethereum throughput and reducing gas. The transaction data, however, still needs to be made available so that anyone can validate or challenge the transactions through fraud-proofs during the challenge-period. 
+Доступность данных (DA) - это подтверждение того, что данные легко доступны, проверяемы и извлекаемы. Например, ролловеры второго уровня, такие как Arbitrum или Base, снижают нагрузку на Ethereum, обрабатывая транзакции вне цепи и затем публикуя данные обратно в Ethereum, тем самым освобождая пропускную способность L1 Ethereum и снижая уровень газа. Однако данные о транзакциях все равно должны быть доступны, чтобы любой желающий мог подтвердить или оспорить транзакции с помощью средств защиты от мошенничества в течение периода оспаривания. 
 
-As such, DA is crucial to blockchains as it allows for full validation of the blockchain's history and current state by any participant, thus maintaining the decentralized and trustless nature of the network. Without this, validators would not be able to independently verify the legitimacy of transactions and blocks, leading to potential issues like fraud or censorship.
+DA очень важен для блокчейн, так как позволяет любому участнику полностью подтвердить историю и текущее состояние блокчейна, поддерживая тем самым децентрализованный и доверительный характер сети. Без этого валидаторы не смогли бы независимо проверять легитимность транзакций и блоков, что привело бы к потенциальным проблемам, таким как мошенничество или цензура.
  
-This led to the arrival of *Data Availability Layers (DALs)*, which provide a significantly more efficient manner of storing and verifying data than publishing directly to Ethereum. DALs are critical for several reasons:
+Это привело к появлению *слоев доступности данных (DALs)*, которые обеспечивают значительно более эффективный способ хранения и проверки данных, чем публикация непосредственно в Ethereum. DAL очень важны по нескольким причинам:
 
-* **Scalability**: DALs allow networks to process more transactions and larger datasets without overwhelming the system, reducing the burden on network nodes and significantly enhancing network scalability.
-* **Increased Efficiencies**: DALs optimize how and where data is stored and made available, increasing data throughput and reducing latency while also minimizing associated costs.
-* **Interoperability & Innovation**: DALs that can interact with multiple ecosystems allow for fast and highly secure interoperability for data and assets.
+* **Масштабируемость**: DAL позволяют сетям обрабатывать больше транзакций и больших наборов данных, не перегружая систему, снижая нагрузку на узлы сети и значительно повышая ее масштабируемость.
+* **Увеличение эффективности**: DAL оптимизируют способы и места хранения и предоставления данных, увеличивая пропускную способность и снижая задержки, а также минимизируя сопутствующие расходы.
+**Интероперабельность и инновации**: DAL, способные взаимодействовать с различными экосистемами, обеспечивают быстрое и безопасное взаимодействие данных и активов.
 
-However, it's worth noting that not all DALs are built equally.
+Однако стоит отметить, что не все DAL построены одинаково.
 
-## The Challenge Today
+## Вызов сегодня
 
-Existing DALs tend to require that data be simultaneously sent to all of their network nodes, preventing horizontal scalability and limiting network speed to its slowest node. They also do not have built-in storage systems, requiring connectivity to external systems that impact throughput, latency, and cost. 
+Существующие модули обеспечения доступности данных (DALs) обычно требуют, чтобы данные одновременно отправлялись всем узлам их сети. Это препятствует горизонтальной масштабируемости и ограничивает скорость сети до уровня самого медленного узла. Кроме того, у таких модулей отсутствуют встроенные системы хранения, что требует подключения к внешним системам. Это отрицательно влияет на пропускную способность, задержки и стоимость.
 
-Additionally, 0G inherits Ethereum's security, while other systems rely upon their own security mechanisms that fall short. This is significant because Ethereum's network is secured by over 34 million ETH staked, representing approximately $80 billion in cryptoeconomic security at the time of writing. In contrast, competitors rely on security mechanisms that, at best, represent only a fraction of Ethereum's total security. This gives 0G a distinct advantage, as it leverages the vast economic incentives and decentralization of Ethereum's staking system, providing a level of protection that competitors cannot match.
+Кроме того, 0G наследует уровень безопасности Ethereum, тогда как другие системы полагаются на собственные механизмы безопасности, которые значительно уступают. Это важно, поскольку сеть Ethereum защищена более чем 34 миллионами ETH, что составляет около 80 миллиардов долларов криптоэкономической безопасности на момент написания текста. В отличие от этого, конкуренты используют механизмы безопасности, которые в лучшем случае представляют лишь небольшую часть общего уровня безопасности Ethereum. Это даёт 0G существенное преимущество, так как он использует мощные экономические стимулы и децентрализацию системы стейкинга Ethereum, предоставляя уровень защиты, недостижимый для конкурентов.
 
-Even more issues exist, including EigenDA's lack of randomization over its data committees. As data committees are core to a DA system's integrity, a lack of randomization means that collusion is theoretically possible for malicious nodes to predict when they might be on a committee together.
+Существуют и другие проблемы, включая отсутствие рандомизации в системе комитетов данных EigenDA. Так как комитеты данных являются основой целостности системы обеспечения доступности данных, отсутствие рандомизации позволяет злонамеренным узлам теоретически предсказывать моменты, когда они могут оказаться в одном комитете, что создаёт риск сговора.
 
-**0G's core differentiation is massive throughput and scalability.**
+**Основным преимуществом компании **0G является высокая пропускная способность и масштабируемость.
 
-This is possible through 0G's unique design includes a built-in storage system and horizontally scalable consensus design, alongside other clever design mechanisms that we'll cover below.
+Это стало возможным благодаря уникальной конструкции 0G, включающей встроенную систему хранения данных и горизонтально масштабируемую систему консенсуса, а также другие продуманные механизмы, о которых мы расскажем ниже.
 
-The result is that 0G serves as the foundational layer for decentralized AI applications, bringing on-chain AI and more to life.
+В результате 0G служит основой для децентрализованных приложений ИИ, воплощая в жизнь ИИ на цепочке и многое другое.
 
-## Why 0G 
+## Почему 0G 
 
-There are 4 differentiators of 0G worth highlighting:
+Стоит выделить 4 отличительных признака 0G:
 
-1. **Infinitely Scalable DA:** 0G's infinitely scalable DAL can quickly query or confirm data as valid, whether data is held by 0G Storage, or external Web2 or Web3 databases. Infinite scalability comes from the ability to continuously add new consensus networks, supporting workloads that far surpass the capacity of existing systems.
+1. **Бесконечная масштабируемая система DA:** Бесконечная масштабируемая система DAL компании 0G может быстро запрашивать или подтверждать достоверность данных, независимо от того, хранятся ли они в хранилище 0G Storage или во внешних базах данных Web2 или Web3. Бесконечная масштабируемость обеспечивается за счет возможности постоянного добавления новых сетей консенсуса, поддерживающих рабочие нагрузки, значительно превышающие возможности существующих систем.
 
-2. **Modular and Layered Architecture**: 0G's design decouples storage, data availability, and consensus, allowing each component to be optimized for its specific function. Data availability is ensured through redundancy, with data distributed across decentralized Storage Nodes. Cryptographic proofs (like Merkle trees and zk-proofs) verify data integrity at regular intervals, automatically replacing nodes that fail to produce valid proofs. And combined with 0G's ability to keep adding new consensus networks that scale with demand, 0G can scale efficiently and is ideal for complex AI workflows and large-scale data processing.
+2. **Модульная и многоуровневая архитектура**: Конструкция 0G разделяет хранение, доступность данных и консенсус, позволяя оптимизировать каждый компонент для выполнения конкретной функции. Доступность данных обеспечивается за счет избыточности, при этом данные распределяются по децентрализованным узлам хранения. Криптографические доказательства (например, деревья Меркла и zk-доказательства) проверяют целостность данных через регулярные промежутки времени, автоматически заменяя узлы, которые не могут предоставить достоверные доказательства. В сочетании со способностью 0G постоянно добавлять новые сети консенсуса, которые масштабируются в зависимости от спроса, 0G может эффективно масштабироваться и идеально подходит для сложных рабочих процессов ИИ и обработки больших объемов данных.
 
-3. **Decentralized AI Operating System & High Throughput**: 0G is the first decentralized AI operating system (dAIOS) designed to give users control over their data, while providing the infrastructure necessary to handle the massive throughput demands of AI applications. Beyond its modular architecture and infinite consensus layers, 0G achieves high throughput through parallel data processing, enabled by erasure coding, horizontally scalable consensus networks, and more. With a demonstrated throughput of 50 Gbps on the Newton Testnet, 0G seamlessly supports AI workloads and other high-performance needs, including training large language models and managing AI agent networks.
+3. **Децентрализованная операционная система ИИ и высокая пропускная способность**: 0G - это первая децентрализованная операционная система ИИ (dAIOS), созданная для того, чтобы предоставить пользователям контроль над их данными, обеспечивая при этом инфраструктуру, необходимую для удовлетворения огромных потребностей приложений ИИ в пропускной способности. Помимо модульной архитектуры и бесконечного числа уровней консенсуса, 0G достигает высокой пропускной способности за счет параллельной обработки данных, обеспечиваемой кодированием стирания, горизонтально масштабируемыми сетями консенсуса и другими способами. Продемонстрировав пропускную способность в 50 Гбит/с в тестовой сети Newton Testnet, 0G легко поддерживает рабочие нагрузки ИИ и другие высокопроизводительные потребности, включая обучение больших языковых моделей и управление сетями агентов ИИ.
 
-These differentiators make 0G uniquely positioned to tackle the challenges of scaling AI on a decentralized platform, which is critical for the future of Web3 and decentralized intelligence.
+Эти отличительные особенности делают 0G уникальной площадкой для решения проблем масштабирования ИИ на децентрализованной платформе, что очень важно для будущего Web3 и децентрализованного интеллекта.
 
-## How Does This Work?
+## Как это работает?
 
-As covered in #0G_Storage, data within the 0G ecosystem is first erasure-coded and split into "data chunks," which are then distributed across various Storage Nodes in the 0G Storage network. 
+Как описано в #0G_Storage, данные в экосистеме 0G сначала подвергаются стиранию и разбиваются на «куски данных», которые затем распределяются по различным узлам хранения в сети 0G Storage. 
 
-To ensure data availability, 0G uses **Data Availability Nodes** that are randomly chosen using a Verifiable Random Function (VRF). A VRF generates random values in a way that is unpredictable yet verifiable by others, which is important as it prevents potentially malicious nodes from collusion.
+Для обеспечения доступности данных 0G использует **узлы доступности данных**, которые выбираются случайным образом с помощью верифицируемой случайной функции (VRF). VRF генерирует случайные значения непредсказуемым образом, но проверяемым другими, что очень важно, поскольку предотвращает сговор потенциально вредоносных узлов.
 
-These DA nodes work together in small groups, called quorums, to check and verify the stored data. The system assumes that most nodes in each group will act honestly, known as an "honest majority" assumption. 
+Эти узлы DA работают вместе в небольших группах, называемых кворумами, для проверки и верификации сохраненных данных. Система предполагает, что большинство узлов в каждой группе будут действовать честно, что известно как предположение о «честном большинстве». 
 
-The consensus mechanism used by 0G is fast and efficient due to its sampling-based approach. Rather than verifying all data, DA nodes sample portions of it, drastically reducing the data they need to handle. Once enough nodes agree that the sampled data is available and correct, they submit availability proofs to the 0G Consensus network. This lightweight, sample-driven approach enables faster verification while maintaining strong security.
+Механизм консенсуса, используемый в 0G, быстр и эффективен благодаря подходу, основанному на выборке. Вместо того чтобы проверять все данные, узлы DA делают выборку их частей, что значительно сокращает объем данных, которые им приходится обрабатывать. Как только достаточное количество узлов соглашается с тем, что выбранные данные доступны и корректны, они отправляют доказательства доступности в сеть 0G Consensus. Этот легкий подход, основанный на выборке, позволяет ускорить проверку, сохраняя при этом высокую безопасность.
 <div style={{textAlign: 'center'}}>
   <img src="/img/Validators in the 0G Consensus network.png" alt="Validators in the 0G Consensus network Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
-Validators in the 0G Consensus network, who are separate from the DA nodes, verify and finalize these proofs. Although DA nodes ensure data availability, they do not directly participate in the final consensus process, which is the responsibility of 0G validators. Validators use a shared staking mechanism where they stake $0G tokens on a primary network (likely Ethereum). Any slashable event across connected networks leads to slashing on the main network, securing the system's scalability while maintaining robust security. 
+Валидаторы в сети 0G Consensus, которые отделены от узлов DA, проверяют и завершают эти доказательства. Хотя узлы DA обеспечивают доступность данных, они не принимают непосредственного участия в процессе окончательного консенсуса, за который отвечают валидаторы 0G. Валидаторы используют механизм совместного стейкинга, при котором они размещают токены $0G в основной сети (скорее всего, Ethereum). Любое слэш-событие в подключенных сетях приводит к слэш-событию в основной сети, обеспечивая масштабируемость системы при сохранении надежной безопасности. 
 
-This is a key mechanism that allows for the system to scale infinitely while maintaining data availability. In return, validators engaged in shared staking receive $0G tokens on any network managed, which can then be burnt in return for $0G tokens on the mainnet.
+Это ключевой механизм, который позволяет системе бесконечно масштабироваться, сохраняя при этом доступность данных. Взамен валидаторы, участвующие в совместном майнинге, получают токены $0G в любой управляемой сети, которые затем могут быть сожжены в обмен на токены $0G в мейннете.
 <div style={{textAlign: 'center'}}>
   <img src="/img/consensus process.png" alt="consensus process Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
 **Getting started:** [link to guide](../run-a-node/da-node.md)
 
-## Use Cases
+## Примеры использования
 
-0G DA offers an infinitely scalable and high-performance DA solution for a wide range of applications across Web3, AI, and more.
+0G DA предлагает бесконечно масштабируемое и высокопроизводительное решение DA для широкого спектра приложений Web3, AI и других.
 
 ### L1s / L2s
 
-Layer 1 and Layer 2 chains can utilize 0G DA to handle data availability and storage requirements for decentralized AI models, large datasets, and on-chain applications. Existing partners include networks like **Polygon, Optimism, Arbitrum, Fuel, Manta Network**, **and countless more,** which leverage 0G's scalable infrastructure to store data more efficiently and support fast retrieval.
+Сети первого и второго уровней могут использовать 0G DA для обеспечения доступности и хранения данных для децентрализованных моделей искусственного интеллекта, больших массивов данных и внутрицепочечных приложений. Среди существующих партнеров такие сети, как **Polygon, Optimism, Arbitrum, Fuel, Manta Network**, **и многие другие**, которые используют масштабируемую инфраструктуру 0G для более эффективного хранения данных и поддержки быстрого поиска.
 
-### Decentralized Shared Sequencers
+### Децентрализованные секвенсоры с общим доступом
 
-Decentralized Shared Sequencers help order L2 transactions before final settlement on Ethereum. By integrating 0G DA, shared sequencers can streamline data across multiple networks in a decentralized manner, unlike existing sequencers which are often centralized. This also means fast and secure data transfers between L2s.
+Децентрализованные общие секвенсоры помогают упорядочить транзакции L2 перед окончательным расчетом в Ethereum. Благодаря интеграции 0G DA общие секвенсоры могут децентрализованно передавать данные по нескольким сетям, в отличие от существующих секвенсоров, которые часто бывают централизованными. Это также означает быструю и безопасную передачу данных между L2.
 
-### Bridges
+### Мосты
 
-Cross-chain bridges benefit from 0G DA's scalable storage and data availability features. Networks can store and retrieve state data using 0G DA, making state migration between networks faster and more secure. For example, a network can confirm a user's assets and transfer them securely to another chain using 0G's highly efficient data verification.
+Межсетевые мосты получают преимущества от масштабируемого хранилища 0G DA и функций доступности данных. Сети могут хранить и извлекать данные о состоянии с помощью 0G DA, что делает миграцию состояния между сетями более быстрой и безопасной. Например, сеть может подтвердить активы пользователя и безопасно передать их в другую сеть с помощью высокоэффективной проверки данных 0G.
 
-### Rollups-as-a-Service (RaaS)
+### Роллапы как сервис (RaaS)
 
-0G DA can serve as a reliable DA solution for RaaS providers like **Caldera and AltLayer**, enabling seamless configuration and deployment of rollups. With 0G DA's highly scalable infrastructure, RaaS providers can ensure the secure availability of data across multiple rollups without compromising performance.
+0G DA может служить надежным DA-решением для RaaS-провайдеров, таких как **Caldera и AltLayer**, обеспечивая беспрепятственную настройку и развертывание роллапов. Благодаря высокомасштабируемой инфраструктуре 0G DA провайдеры RaaS могут обеспечить безопасную доступность данных в нескольких роллапах без ущерба для производительности.
 
 ### DeFi
 
-0G's DA infrastructure is ideally suited for DeFi applications that require fast settlement and high-frequency trading. For example, by storing order book data on 0G, DeFi projects can achieve faster transaction throughput and enhanced scalability across L2s and L3s.
+Инфраструктура 0G DA идеально подходит для приложений DeFi, требующих быстрых расчетов и высокочастотной торговли. Например, храня данные книги заявок на 0G, проекты DeFi могут достичь более высокой пропускной способности транзакций и улучшенной масштабируемости между L2 и L3.
 
-### On-Chain Gaming
+### Цепочечные игры
 
-On-chain gaming platforms rely on cryptographic proofs and metadata related to player assets, actions, and scores. 0G DA's ability to handle large volumes of data securely and efficiently makes it an optimal solution for gaming applications that require reliable data storage and fast retrieval.
+Игровые платформы на цепочке полагаются на криптографические доказательства и метаданные, связанные с активами, действиями и результатами игроков. Способность 0G DA безопасно и эффективно обрабатывать большие объемы данных делает ее оптимальным решением для игровых приложений, требующих надежного хранения и быстрого поиска данных..
 
-### Data Markets
+### Рынки данных
 
-Web3 data markets can benefit from 0G DA by storing datasets on-chain. The decentralized storage and retrieval capabilities of 0G enable real-time updates and querying of data, providing a reliable solution for data market platforms.
+Рынки данных Web3 могут воспользоваться преимуществами 0G DA, храня наборы данных на цепочке. Децентрализованные возможности хранения и поиска данных 0G позволяют обновлять и запрашивать данные в режиме реального времени, обеспечивая надежное решение для платформ рынка данных.
 
-### AI & Machine Learning
+### ИИ и машинное обучение
 
-0G DA is particularly focused on supporting decentralized AI, allowing full AI models and vast datasets to be stored and accessed on-chain. This infrastructure is essential for advanced AI applications that demand high data throughput and availability, such as training large language models (LLMs) and managing entire AI agent Networks.
+0G DA уделяет особое внимание поддержке децентрализованного ИИ, позволяя хранить и получать доступ к полным моделям ИИ и огромным массивам данных на цепочке. Эта инфраструктура необходима для передовых приложений ИИ, требующих высокой пропускной способности и доступности данных, таких как обучение больших языковых моделей (LLM) и управление целыми сетями агентов ИИ.
