@@ -1,72 +1,71 @@
 ---
-id: 0g-storage
-title: 0G Storage
-sidebar_position: 3
+идентификатор: 0g-хранилище
+Название: Хранилище 0G
+боковая_позиция: 3
 ---
 
-# 0G Storage: Built for Massive Data
+# Хранилище 0G: создано для больших объемов данных
 ---
 
-## Intro to Storage Systems
+## Введение в системы хранения данных
 
-Storage systems play a critical role in managing, organizing, and ensuring the accessibility of data. In traditional systems, data is often stored centrally, creating risks around availability, censorship, and data loss due to single points of failure. Decentralized storage, on the other hand, addresses these issues by distributing data across a network of nodes, enhancing security, resilience, and scalability. This decentralization is essential, especially in an era where massive data sets are generated and consumed by AI, Web3 applications, and large-scale businesses.
+Системы хранения данных играют важнейшую роль в управлении, организации и обеспечении доступности данных. В традиционных системах данные часто хранятся централизованно, что создает риски, связанные с доступностью, цензурой и потерей данных из-за единичных точек отказа. Децентрализованное хранение, напротив, решает эти проблемы, распределяя данные по сети узлов, повышая безопасность, устойчивость и масштабируемость. Такая децентрализация крайне важна, особенно в эпоху, когда огромные массивы данных генерируются и потребляются искусственным интеллектом, приложениями Web3 и крупными предприятиями.
 
-## 0G's Storage System
+## Система хранения данных 0G
 
-0G Storage is a distributed data storage system designed with on-chain elements to incentivize storage nodes to store data on behalf of a user. Anyone can run a storage node and receive rewards for maintaining one. For information on how to do so, check out our guide [here](./run-a-node/storage-node.md). 
+0G Storage - это распределенная система хранения данных, разработанная с использованием элементов цепочки, стимулирующих узлы хранения хранить данные от имени пользователя. Любой желающий может запустить узел хранения и получать вознаграждение за его обслуживание. Информацию о том, как это сделать, можно найти в нашем руководстве [здесь](./run-a-node/storage-node.md). 
 
-0G's system itself has two parts:
+Сама система 0G состоит из двух частей:
 
-1. **The Data Publishing Lane:** Ensures data availability by allowing quick queries and verification through the 0G Consensus network. This ensures that the data stored can be easily accessed and validated by users or applications when needed. 
-2. **The Data Storage Lane:** Manages large data transfers and storage, utilizing an erasure-coding mechanism. This splits data into smaller, redundant fragments distributed across different nodes, guaranteeing data recovery in case of node failure or downtime. 
+1. **Переулок публикации данных:** Обеспечивает доступность данных, позволяя быстро запрашивать и проверять их через сеть 0G Consensus. Это гарантирует, что хранящиеся данные могут быть легко доступны и проверены пользователями или приложениями, когда это необходимо. 
+2. **Полоса хранения данных:** Управляет передачей и хранением больших объемов данных, используя механизм стирания-кодирования. Это разбивает данные на более мелкие, избыточные фрагменты, распределенные по разным узлам, гарантируя восстановление данных в случае сбоя или простоя узла. 
 
-For any party wishing to store data with 0G, the data must first be provided alongside payment using 0G's token, which is fully embedded into 0G's main chain. To store this data, it is first *erasure-coded,* meaning that the data being stored is fragmented into redundant smaller pieces distributed across multiple storage locations. Redundancy is essential as it ensures the data can always be recovered, even if some storage locations fail or become unavailable. 
+Любая сторона, желающая хранить данные в 0G, должна сначала предоставить их вместе с оплатой с помощью токена 0G, который полностью встроен в основную цепочку 0G. Чтобы хранить эти данные, они сначала подвергаются *эраторному кодированию*, что означает, что хранимые данные разбиваются на избыточные небольшие фрагменты, распределенные по нескольким местам хранения. Избыточность очень важна, так как обеспечивает возможность восстановления данных, даже если некоторые места хранения выйдут из строя или станут недоступными. 
 
-0G system also has "disperse servers" that handle:
+В системе 0G также имеются «дисперсные серверы», которые выполняют:
 
-* Erasure coding the data and distributing it across multiple storage nodes. 
-* Generating a **data root**, which is essentially the Merkle root of the encoded data chunks. This root serves as a **commitment** to the integrity and completeness of the data. A Merkle root is a cryptographic hash that is formed by combining hashes from various individual transactions.
+* кодирование данных и распределение их по нескольким узлам хранения. 
+* Генерирование **корня данных**, который по сути является корнем Меркла для закодированных фрагментов данных. Этот корень служит **обязательством** целостности и полноты данных. Корень Меркла - это криптографический хэш, который формируется путем объединения хэшей от различных отдельных транзакций.
 
-0G's storage infrastructure is designed to support heavy data loads, making it a strong candidate for applications that demand high throughput and reliability. With separate consensus networks managing distinct storage partitions (covered in #0G_CHAIN), 0G's storage system scales effortlessly, addressing the needs of users with data needs of any size.
+Инфраструктура хранения данных 0G рассчитана на большие нагрузки, что делает ее отличным кандидатом для приложений, требующих высокой пропускной способности и надежности. Благодаря отдельным сетям консенсуса, управляющим отдельными разделами хранилища (см. #0G_CHAIN), система хранения 0G легко масштабируется, удовлетворяя потребности пользователей с данными любого объема.
 <div style={{textAlign: 'center'}}>
   <img src="/img/0G Storage Architecture.png" alt="0G Storage Architecture" style={{maxWidth: '100%'}} />
 </div>
 <br />
-## The 0G Storage Architecture
+## Архитектура 0G Storage
 
-0G Storage is built on a layered architecture designed to accommodate both unstructured and structured data, ensuring flexibility and scalability for a wide range of applications.
+Система хранения данных 0G Storage построена на основе многоуровневой архитектуры, предназначенной для работы с неструктурированными и структурированными данными, что обеспечивает гибкость и масштабируемость для широкого спектра приложений.
 
-* **The Log Layer**: Handles unstructured data and functions similarly to a traditional computer file system. This layer is ideal for storing large-scale data storage where the data does not change (e.g. archival purposes, data logs) as it is an append-only system, meaning new data can be added but not modified. 
-* **The Key-Value (KV) Layer**: Built on top of the Log Layer, the Key-Value Layer is optimized for structured data. Unlike the log layer, this layer is mutable and can be updated via new entries that are added to log entries, allowing for efficient storage and retrieval of key-value pairs. This layer is best for dynamic applications that require frequent updates, such as databases or collaborative documents (e.g. an on-chain version of Notion or Google Docs).
+* ** Уровень журналов**: Работает с неструктурированными данными и функционирует аналогично традиционной компьютерной файловой системе. Этот уровень идеально подходит для хранения крупномасштабных данных, в которых данные не меняются (например, архивные цели, журналы данных), поскольку это система «только для добавления», то есть новые данные могут быть добавлены, но не изменены. 
+* **Слой ключей и значений (Key-Value (KV) Layer)**: Построенный поверх слоя журналов, слой «ключ-значение» оптимизирован для структурированных данных. В отличие от слоя журнала, этот слой является изменяемым и может обновляться с помощью новых записей, которые добавляются к записям журнала, что позволяет эффективно хранить и извлекать пары ключ-значение. Этот слой лучше всего подходит для динамических приложений, требующих частого обновления, таких как базы данных или документы для совместной работы (например, цепочечная версия Notion или Google Docs).
 
-Both layers are secured and validated through 0G's Consensus, which guarantees the accuracy and availability of all stored data.
+Оба уровня защищены и проверены с помощью 0G's Consensus, который гарантирует точность и доступность всех хранимых данных.
 
-## Proof of Random Access
+## Доказательство случайного доступа
 
-0G Storage is maintained by a network of miners incentivized to store and manage data through a unique consensus mechanism known as **Proof of Random Access (PoRA)**.
+Хранилище 0G Storage поддерживается сетью майнеров, которые стимулируются к хранению и управлению данными с помощью уникального механизма консенсуса, известного как **Proof of Random Access (PoRA)**.
 
-Miners are periodically challenged to confirm that they are actively storing specific data chunks. This process works similarly to Proof of Work (PoW), where miners must provide a valid cryptographic hash to verify they are storing the correct data. Before a miner can respond to a query, they must be selected by generating a satisfactory cryptographic output: typically, a hash with a certain number of leading zeros.
-
+Майнеры периодически проходят проверку, чтобы подтвердить, что они активно хранят определенные блоки данных. Этот процесс работает по аналогии с Proof of Work (PoW), когда майнеры должны предоставить достоверный криптографический хэш, чтобы подтвердить, что они хранят правильные данные. Прежде чем майнер сможет ответить на запрос, он должен пройти отбор, сгенерировав удовлетворительный криптографический результат: обычно это хэш с определенным количеством ведущих нулей.
 <div style={{textAlign: 'center'}}>
   <img src="/img/pora.png" alt="Proof of Random Access Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
-To promote fairness, the mining range is capped at 8 TB of data per mining operation. This ensures that smaller-scale miners with fewer machines can compete on an even playing field with larger operators. 
+Для обеспечения справедливости диапазон добычи ограничивается 8 ТБ данных на одну операцию. Это гарантирует, что небольшие майнеры с меньшим количеством машин смогут на равных конкурировать с крупными операторами. 
 
-Miners with more resources can still participate by dividing their machines across multiple 8 TB ranges, allowing them to mine simultaneously in various data segments. Meanwhile, smaller miners can focus on a single 8 TB range, ensuring that the process remains competitive and inclusive for all participants, regardless of scale.
+Майнеры с большими ресурсами могут участвовать в проекте, распределяя свои машины между несколькими диапазонами по 8 ТБ, что позволяет им одновременно добывать данные в различных сегментах. В то же время более мелкие майнеры могут сосредоточиться на одном диапазоне 8 ТБ, чтобы процесс оставался конкурентным и всеохватывающим для всех участников, независимо от масштаба.
 <div style={{textAlign: 'center'}}>
   <img src="/img/data-chanks.png" alt="Data chunks Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
-## Comparison to Filecoin and Arweave
+## Сравнение с Filecoin и Arweave
 
-Decentralized storage systems like Filecoin and Arweave face significant limitations surrounding structured data, scalability, cost, and data availability functionality.
+Децентрализованные системы хранения данных, такие как Filecoin и Arweave, сталкиваются со значительными ограничениями, связанными со структурированными данными, масштабируемостью, стоимостью и функциональностью доступности данных.
 
-These can be summarized as follows:
+Вкратце их можно описать следующим образом:
 
-* **Unstructured Data Only:** Both of these systems are optimized only for unstructured data, limiting their versatility. In contrast, 0G supports both structured and unstructured data, making it suitable for a wider range of applications, including complex AI workflows and their vast databases.
-* **Scalability:** Filecoin or Arweave struggle to handle data at a massive scale. In contrast, 0G partitions both its data storage and network throughput to enable scalability that meets the massive data requirements associated with on-chain AI. 
-* **Cost:** Benchmarking has shown that permanent storage with Arweave can cost up to \$17,000 per TB, while 0G offers a much more cost-effective solution at just \$10-11 per TB. 
-* **Data Availability:** 0G's integrated data availability layer provides ultra-fast, infinitely scalable access to data, enabling a fully vertically integrated solution that supports high-performance applications like decentralized AI.
+* ** Только неструктурированные данные:** Обе эти системы оптимизированы только для неструктурированных данных, что ограничивает их универсальность. В отличие от них, 0G поддерживает как структурированные, так и неструктурированные данные, что делает ее подходящей для более широкого спектра приложений, включая сложные рабочие процессы ИИ и их обширные базы данных.
+* **Масштабируемость:** Filecoin или Arweave не справляются с обработкой данных в огромных масштабах. В отличие от них, 0G разделяет как хранилище данных, так и пропускную способность сети, обеспечивая масштабируемость, которая соответствует требованиям к огромным данным, связанным с цепочечным ИИ. 
+* **Стоимость:** Бенчмаркинг показал, что постоянное хранилище Arweave может стоить до \$17 000 за ТБ, в то время как 0G предлагает гораздо более экономичное решение по цене всего \$10-11 за ТБ. 
+* **Доступность данных:** Интегрированный уровень доступности данных 0G обеспечивает сверхбыстрый, бесконечно масштабируемый доступ к данным, что позволяет создать полностью вертикально интегрированное решение, поддерживающее высокопроизводительные приложения, такие как децентрализованный искусственный интеллект.
 
-All in all, 0G Storage is the ultimate solution for any on-chain data storage needs, regardless of whether a project is in the AI space or not.
+В целом, 0G Storage - это идеальное решение для любых потребностей в хранении данных на цепочке, независимо от того, относится ли проект к сфере ИИ или нет.
