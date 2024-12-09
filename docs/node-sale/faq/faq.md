@@ -9,7 +9,7 @@ sidebar_position: 1
 ### Where do I purchase AI Alignment Nodes?
 https://node.0gfoundation.ai/
 ### How do I purchase AI Alignment Nodes?
-See the step by step guide [here](docs/node-sale/details/purchasing-nodes.md).
+See the step-by-step guide [here](docs/node-sale/details/purchasing-nodes.md).
 ### Who can participate in the Node Sale?
 The 0G AI Alignment Node Sale is open to community members in eligible regions who meet the necessary criteria. Please review all disclaimers and important details regarding the 0G Node Sale by visiting our disclaimer [here](https://0gfoundation.ai/disclaimer). Only persons who meet the requirements for the sale are allowed to participate. KYC will be required from the purchaser before any receipt of rewards. 
 ### Are Whitelist and Public Allocations Separate?
