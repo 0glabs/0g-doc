@@ -42,7 +42,7 @@ The nodes will be priced in USDC for both the Whitelist Sale and Public Sale, bo
 After the node sale period is completed, node licenses will be distributed as an NFT to the purchase wallet of the user.
 
 ### What will I receive from participating in the node sale?​
-You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs will be minted and transferred to your wallet after the conclusion of the node sale. You will be able to operate the node after 0G Mainnet is live.
+You will receive a soulbound NFT (ERC-721) which represents your Node License. The NFTs can be minted and transferred to your wallet via claim.0gfoundation.ai after the conclusion of the node sale. You will be able to operate the node after 0G Mainnet is live.
 
 ### Will the NFTs be transferable?
 The Alignment Node license gives buyers lifetime access. The NFTs will be non-transferable for the first year after the node sale.
