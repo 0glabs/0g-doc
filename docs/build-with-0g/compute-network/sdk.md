@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-The 0G SDK enables developers to integrate AI inference services from the 0G Compute Network into their applications. Currently, the SDK supports Large Language Model (LLM) inference services, with fine-tuning and additional features planned for future releases. 
+The 0G Compute Network SDK enables developers to integrate AI inference services from the 0G Compute Network into their applications. Currently, the 0G Compute Network SDK supports Large Language Model (LLM) inference services, with fine-tuning and additional features planned for future releases. 
 
 In just five minutes, you can initialize your broker to manage operations, set up and fund your account to pay for services, and learn how to send requests and handle responses.
 
