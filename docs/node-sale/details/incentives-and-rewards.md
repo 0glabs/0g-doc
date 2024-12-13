@@ -7,6 +7,8 @@ sidebar_position: 2
 
 # Incentives, Rewards, and Vesting Mechanisms
 
+Rebate/Commission portal tutorial: https://www.youtube.com/watch?v=poc3NPiFGi0&ab_channel=0G
+
 ## How can node buyers create a referral code?
 Node buyers will be able to share their wallet address as the referral code after they made a purchase, it would give a 10% rebate to their referrals. 
 
