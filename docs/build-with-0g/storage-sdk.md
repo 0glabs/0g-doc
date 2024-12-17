@@ -185,39 +185,66 @@ import { ZgFile, Indexer, getFlowContract } from '@0glabs/0g-ts-sdk';
 import { ethers } from 'ethers';
 ```
 
-**Then, set up the necessary configurations:**
+## Configuration
+
+Set up the necessary configurations for network interaction:
 
 ```javascript
 const evmRpc = 'https://evmrpc-testnet.0g.ai/';
 const privateKey = ''; // Add your private key with balance to pay for gas
 const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768"; 
-// The flowAddr can be either Turbo or Standard. Turbo (0xbD2C3F0E65eDF5582141C35969d66e34629cC768) is faster but more expensive, Standard (0x0460aA47b41a66694c0a73f667a1b795A5ED3556) is cheaper but slower. Check testnet page for the latest info.
+// The flowAddr can be either Turbo or Standard. Turbo (0xbD2C3F0E65eDF5582141C35969d66e34629cC768) is faster but more expensive, 
+// Standard (0x0460aA47b41a66694c0a73f667a1b795A5ED3556) is cheaper but slower. Check testnet page for the latest info.
 
 const indRpc = 'https://indexer-storage-testnet-standard.0g.ai';
+```
 
+**Parameters:**
+- `evmRpc`: Ethereum RPC endpoint URL for blockchain interactions
+- `privateKey`: Your private key for transaction signing (keep secure)
+- `flowAddr`: Contract address for storage operations
+  - Turbo: Faster processing, higher gas costs
+  - Standard: Normal processing, lower gas costs
+- `indRpc`: Indexer RPC endpoint for storage node coordination
+
+## Key Functionalities
+
+### Initialization
+
+Create the necessary clients to interact with the network:
+
+```javascript
 const provider = new ethers.JsonRpcProvider(evmRpc);
 const signer = new ethers.Wallet(privateKey, provider);
 const flowContract = getFlowContract(flowAddr, signer);
 const indexer = new Indexer(indRpc);
 ```
 
+**Parameters:**
+- `provider`: Ethereum provider instance for network communication
+- `signer`: Wallet instance for signing transactions
+- `flowContract`: Contract instance for storage operations
+- `indexer`: Indexer client for node management
 
-## Key Functionalities
+### Creating a File Object
 
-### 1. Creating a File Object and Getting Merkle Tree
-
-To create a file object and get its Merkle tree:
+Create a file object and calculate its Merkle tree for network storage:
 
 ```javascript
-const file = await ZgFile.fromFilePath('<file_path>');
+const file = await ZgFile.fromFilePath('');
 const [tree, err] = await file.merkleTree();
 console.log("File Root Hash: ", tree.rootHash());
 await file.close();
 ```
 
-### 2. Uploading Files
+**Parameters:**
+- `file_path`: Path to the file you want to store
+- `tree`: Merkle tree containing file verification data
+- `err`: Error object if operation fails
 
-**To upload a file to the 0G Storage network:**
+### Uploading Files
+
+Upload files to the 0G Storage network with error handling:
 
 ```javascript
 const [tx, err] = await indexer.upload(file, 0, evmRpc, signer, flowAddr);
@@ -228,12 +255,19 @@ if (err === null) {
 }
 ```
 
-### 3. Downloading Files
+**Parameters:**
+- `file`: File object created using ZgFile
+- `0`: Storage segment number 
+- `evmRpc`: Ethereum RPC endpoint
+- `signer`: Transaction signer instance
+- `flowAddr`: Flow contract address
 
-**To download a file from the 0G Storage network:**
+### Downloading Files
+
+Retrieve files from the network with optional verification:
 
 ```javascript
-const err = await indexer.download('<root_hash>', '<output_file>', <with_proof>);
+const err = await indexer.download('', '', );
 if (err !== null) {
   console.log("Error downloading file: ", err);
 } else {
@@ -241,9 +275,14 @@ if (err !== null) {
 }
 ```
 
-### 4. Uploading Data to 0g-kv
+**Parameters:**
+- `root_hash`: File's unique Merkle root identifier
+- `output_file`: Local path to save the file
+- `with_proof`: Enable/disable verification (boolean)
 
-**To upload data to 0g-kv:**
+### Uploading Data to 0g-kv
+
+Store key-value pairs in the network:
 
 ```javascript
 const [nodes, err] = await indexer.selectNodes(1);
@@ -254,9 +293,9 @@ if (err !== null) {
 
 const batcher = new Batcher(1, nodes, flowContract, evmRpc);
 
-const key1 = Uint8Array.from(Buffer.from("TESTKEY0", 'utf-8'));
-const val1 = Uint8Array.from(Buffer.from("TESTVALUE0", 'utf-8'));
-batcher.streamDataBuilder.set("0x...", key1, val1);
+const key = Uint8Array.from(Buffer.from("TESTKEY0", 'utf-8'));
+const val = Uint8Array.from(Buffer.from("TESTVALUE0", 'utf-8'));
+batcher.streamDataBuilder.set("0x...", key, val);
 
 const [tx, batchErr] = await batcher.exec();
 if (batchErr === null) {
@@ -266,9 +305,15 @@ if (batchErr === null) {
 }
 ```
 
-### 5. Downloading Data from 0g-kv
+**Parameters:**
+- `nodes`: Selected storage nodes
+- `batcher`: Handles batch operations for efficiency
+- `key`, `val`: Key-value pair to store
+- `streamId`: Unique identifier for data stream
 
-**To download data from 0g-kv:**
+### Downloading Data from 0g-kv
+
+Retrieve stored key-value pairs:
 
 ```javascript
 const KvClientAddr = "http://3.101.147.150:6789"
@@ -279,18 +324,23 @@ let val = await kvClient.getValue(streamId, ethers.encodeBase64(key1));
 console.log(val)
 ```
 
+**Parameters:**
+- `KvClientAddr`: KV client service endpoint
+- `streamId`: Stream identifier for data retrieval
+- `key`: Key to retrieve value for
+
 ### Working with Browser Environment
 
-**For browser environments, import the SDK in your HTML file:**
+For browser-based applications:
 
 ```html
-<script type="module">
+
   import { Blob, Indexer } from "./dist/zgstorage.esm.js";
   // Your code here...
-</script>
+
 ```
 
-**Create a file object from a blob:**
+Create a file object from a blob:
 
 ```javascript
 const file = new Blob(blob);
@@ -299,9 +349,10 @@ if (err === null) {
   console.log("File Root Hash: ", tree.rootHash());
 }
 ```
+
 ### Error Handling
 
-**Always implement proper error handling in your code:**
+Implement robust error handling:
 
 ```javascript
 try {
@@ -315,9 +366,10 @@ try {
     console.error("Error uploading file: ", error);
 }
 ```
+
 ### Working with Streams
 
-**The SDK also supports working with streams for efficient data handling:**
+Handle large files or real-time data using streams:
 
 ```typescript
 import { Readable } from 'stream';
@@ -335,6 +387,13 @@ console.log("Stream uploaded with root hash:", streamRoot);
 const downloadStream = await client.downloadFileAsStream(streamRoot);
 downloadStream.pipe(process.stdout);
 ```
+
+**Parameters:**
+- `readableStream`: Source stream for data
+- `streamRoot`: Identifier for uploaded stream
+- `downloadStream`: Stream for downloaded data
+
+
 ## Best Practices
 
 1. **Initialize Once**: Create the indexer and flow contract once and reuse them for multiple operations.
