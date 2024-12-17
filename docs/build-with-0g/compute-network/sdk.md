@@ -94,6 +94,7 @@ type ServiceStructOutput = {
   outputPrice: bigint; // Price for output generation
   updatedAt: bigint;  // Last update timestamp
   model: string;      // Model identifier
+  verifiability: string // Indicates how the service's outputs can be verified. 'TeeML' means it runs with verification in a Trusted Execution Environment. An empty value means no verification.
 };
 ```
 
