@@ -7,154 +7,127 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Developers can integrate AI inference services offered by providers on the 0G Compute Network into their own applications using the 0G SDK. To begin, only Large Language Models (LLMs) inference services are available. Fine-turing and other features will be added in the future.
+## Overview
 
-The SDK ensures a straightforward process to connect with and utilize these services efficiently.
+The 0G Compute Network SDK enables developers to integrate AI inference services from the 0G Compute Network into their applications. Currently, the 0G Compute Network SDK supports Large Language Model (LLM) inference services, with fine-tuning and additional features planned for future releases. 
+
+In just five minutes, you can initialize your broker to manage operations, set up and fund your account to pay for services, and learn how to send requests and handle responses.
+
+## Features
+
+- Easy integration with AI providers on the 0G Network with built-in billing and account management
+- Compatible with OpenAI SDK format
+- Support for verifiable responses
 
 <Tabs>
 <TabItem value="ts-web" label="TypeScript SDK" default>
 
-### Step 1: Install the dependency
-
-To get started, you need to install the `@0glabs/0g-serving-broker` package:
+## Installation
 
 ```bash
-pnpm add @0glabs/0g-serving-broker @types/crypto-js@4.2.2 crypto-js@4.2.0
+pnpm add @0glabs/0g-serving-broker @types/crypto-js@4.2.2 crypto-js@4.2.0
 ```
 
-### Step 2: Initialize a Broker Instance
+## Quick Start Guide
 
-The broker instance is initialized with a `signer`. This signer is an instance that implements the `JsonRpcSigner` or `Wallet` interface from the ethers package and is used to sign transactions for a specific Ethereum account. You can create this instance using your private key via the ethers library or use a wallet framework tool like [wagmi](https://wagmi.sh/react/guides/ethers) to initialize the signer.
+### Initialize the Broker
 
+The broker is your main interface to the 0G Compute Network. It handles authentication, billing, and service communication.
+
+Before initializing the broker, you need:
+1. A wallet signer (implements either `JsonRpcSigner` or `Wallet` from ethers package)
+2. (Optional) The contract address for the 0G Serving contract
+
+**Option 1: Using a private key**
 ```typescript
+const { ethers } = require("ethers");
+const { createZGServingNetworkBroker } = require("@0glabs/0g-serving-broker");
+
+const provider = new ethers.JsonRpcProvider("https://evmrpc-testnet.0g.ai");
+
+// Get the signer
+const privateKey = "INPUT_PRIVATE_KEY_HERE";
+const wallet = new ethers.Wallet(privateKey, provider);
+
+// Initialize broker
+const broker = await createZGServingNetworkBroker(wallet);
+```
+
+**Option 2: Using a browser wallet**
+```typescript
+import { BrowserProvider } from "ethers";
 import { createZGServingNetworkBroker } from "@0glabs/0g-serving-broker";
 
-/**
- * 'createZGServingNetworkBroker' is used to initialize ZGServingUserBroker
- *
- * @param {JsonRpcSigner | Wallet} signer - A signer that implements the 'JsonRpcSigner' or
- * 'Wallet' interface from the ethers package.
- *
- * @param {string} contractAddress - 0G Serving contract address, use default address if not provided.
- *
- * @returns broker instance.
- *
- * @throws An error if the broker cannot be initialized.
- */
-const broker = await createZGServingNetworkBroker(signer);
+async function initializeBrokerWithWallet() {
+  // Ensure wallet is installed
+  if (typeof window.ethereum !== 'undefined') {
+    // Create a provider
+    const provider = new BrowserProvider(window.ethereum);
+    
+    // Get the signer
+    const signer = await provider.getSigner();
+    
+    // Initialize broker
+    const broker = await createZGServingNetworkBroker(signer);
+  }
+}
 ```
 
-### Step 3: List Available Services
+> 💡 The `contractAddress` parameter is optional - the SDK uses a default address if not provided.
+
+### Discover Available Services
+
+The 0G Compute Network hosts multiple AI service providers. The service discovery process helps you find and select the appropriate services for your needs.
 
 ```typescript
-/**
- * 'listService' retrieves a list of services from the contract.
- *
- * @returns {Promise<ServiceStructOutput[]>} A promise that resolves to an array of ServiceStructOutput
- * objects.
- *
- * type ServiceStructOutput = {
- *   provider: string;  // Provider's wallet address, which is the unique identifier for the provider.
- *   name: string;
- *   serviceType: string;
- *   url: string;
- *   inputPrice: bigint;
- *   outputPrice: bigint;
- *   updatedAt: bigint;
- *   model: string;
- * };
- *
- * @throws An error if the service list cannot be retrieved.
- */
 const services = await broker.listService();
 ```
 
-### Step 4: Manage Accounts
-
-Before using the provider's services, you need to create an account specifically for the chosen provider. The provider checks the account balance before responding to requests. If the balance is insufficient, the request will be denied.
-
-#### 4.1 Create an Account
-
+Each service contains the following information:
 ```typescript
-/**
- * 'addAccount' creates a new account in the contract.
- *
- * @param {string} providerAddress - The wallet address of the provider for whom the account is being created.
- * You can obtain the `providerAddress` from the service list.
- *
- * @param {number} balance - The initial balance to be assigned to the new account. The unit is A0GI.
- *
- * @throws  An error if the account creation fails.
- */
-await broker.addAccount(providerAddress, balance);
+type ServiceStructOutput = {
+  provider: string;  // Provider's wallet address (unique identifier)
+  name: string;      // Service name
+  serviceType: string; // Type of service
+  url: string;       // Service URL
+  inputPrice: bigint; // Price for input processing
+  outputPrice: bigint; // Price for output generation
+  updatedAt: bigint;  // Last update timestamp
+  model: string;      // Model identifier
+  verifiability: string // Indicates how the service's outputs can be verified. 'TeeML' means it runs with verification in a Trusted Execution Environment. An empty value means no verification.
+};
 ```
 
-#### 4.2 Deposit Funds into the Account
+### Account Management
 
+The 0G Compute Network uses a prepaid account system for each provider. Before using any services, you need to set up and fund an account for each provider you want to use.
+
+#### Create an Account
 ```typescript
-/**
- * 'depositFund' deposits a specified amount of funds into an existing account.
- *
- * @param {string} providerAddress - The wallet address of the provider, which serves as the identifier
- * for the account associated with the provider.
- *
- * @param {number} amount - The amount of funds to be deposited. The unit is A0GI.
- *
- * @throws  An error if the deposit fails.
- */
+await broker.addAccount(providerAddress, initialBalance);
+```
+The `initialBalance` needs to be specified in A0GI units.
+
+#### Add Funds
+```typescript
 await broker.depositFund(providerAddress, amount);
 ```
+The `amount` needs to be specified in A0GI units.
 
-### Step 5: Use the Provider's Services
+### Making Service Requests
 
-#### 5.1 Get Service metadata
+Service usage in the 0G Network involves two key steps:
+1. Retrieving service metadata
+2. Generating authenticated request headers
 
 ```typescript
-/**
- * 'getServiceMetadata' returns metadata for the provider service. Includes:
- *
- *  1. Service endpoint of the provider service
- *
- *  2. Model information for the provider service
- *
- * @param {string} providerAddress - The wallet address of the provider, which, along with the `serviceName`,
- * serves as the identifier for the service in the 0G Compute Network.
- *
- * @param {string} serviceName - The name of the service.
- *
- * @returns { endpoint, model } - Object containing endpoint and model.
- *
- * @throws An error if errors occur during the processing of the request.
- */
+// Get service metadata
 const { endpoint, model } = await broker.getServiceMetadata(
   providerAddress,
   serviceName
 );
-```
 
-#### 5.2 Get Request Headers
-
-```typescript
-/**
- * 'getRequestHeaders' generates billing-related headers for the request
- * when the user uses the provider service.
- *
- * In the 0G Serving system, a request with valid billing headers
- * is considered a settlement proof and will be used by the provider
- * for settlement in contract.
- *
- * @param {string} providerAddress - The wallet address of the provider, which, along with the `serviceName`,
- * serves as the identifier for the service in the 0G Compute Network.
- *
- * @param {string} serviceName - The name of the service.
- *
- * @param {string} content - The content being billed. For example, in a chatbot service, it is the text input
- * by the user.
- *
- * @returns headers. Records information such as the request fee and user signature.
- *
- * @throws An error if errors occur during the processing of the request.
- */
+// Generate request headers
 const headers = await broker.getRequestHeaders(
   providerAddress,
   serviceName,
@@ -162,24 +135,15 @@ const headers = await broker.getRequestHeaders(
 );
 ```
 
-#### 5.3 Send Request
+**Note:** Headers generated by `getRequestHeaders` are single-use only & Each request requires new headers
 
-Once you have the `endpoint`, `model`, and `headers`, you can send an HTTP request to the provider service, as demonstrated in the example below.
+### Send Request
 
+You can make requests using either the native fetch API or the OpenAI SDK.
+
+**Using fetch:**
 ```typescript
-/**
- * 1. The `endpoint` and `model` are obtained from `getServiceMetadata`.
- *    You only need to call `getServiceMetadata` once for each service.
- *
- * 2. The `headers` are obtained from `getRequestHeaders`.
- *    You need to generate `headers` for each request, as they depend on the request content.
- *
- * 3. The `content` is the input data for the request and should match the input used in `getRequestHeaders`.
- *
- * 4. The organization of the message content may vary depending on the provider service.
- *    Currently, the 0G Compute Network supports OpenAI's format.
- */
-await fetch(`${endpoint}/chat/completions`, {
+const response = await fetch(`${endpoint}/chat/completions`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -190,21 +154,15 @@ await fetch(`${endpoint}/chat/completions`, {
     model: model,
   }),
 });
+```
 
-/**
- * Already using the OpenAI SDK in your application? Seamlessly decentralize your application by switching
- * to the 0G Compute Network. Here's how to modify your OpenAI API call to use a 0G Compute Network service:
- *
- * 1. Replace the OpenAI API endpoint and model with those obtained from `getServiceMetadata`.
- *
- * 2. Leave the API key field empty.
- *
- * 3. Add the billing headers generated by `getRequestHeaders`.
- */
+**Using OpenAI SDK:**
+```typescript
 const openai = new OpenAI({
   baseURL: endpoint,
-  apiKey: " ",
+  apiKey: "", // Leave empty
 });
+
 const completion = await openai.chat.completions.create(
   {
     messages: [{ role: "system", content }],
@@ -218,69 +176,41 @@ const completion = await openai.chat.completions.create(
 );
 ```
 
-**Note**: After receiving the response, you must use `processResponse` as demonstrated in step 5.4 to settle the response fee. Failure to do so will result in subsequent requests being denied due to unpaid fees. If this happens, you can manually settle the fee using `settleFee` as shown in step 5.5. The amount owed will be specified in the error message.
+### Response Processing
 
-**Note**: Generated `headers` are valid for a single use only and cannot be reused.
-
-#### 5.4 Process Responses
+This function is used to verify the response and settle the fee. If it is a verifiable service, it will return whether the response is valid.
 
 ```typescript
-/**
- * 'processResponse' is used after the user successfully obtains a response from the provider service.
- *
- * It will settle the fee for the response content. Additionally, if the service is verifiable,
- * input the chat ID from the response and 'processResponse' will determine the validity of the
- * returned content by checking the provider service's response and corresponding signature associated
- * with the chat ID.
- *
- * @param {string} providerAddress - The address of the provider.
- *
- * @param {string} serviceName - The name of the service.
- *
- * @param {string} content - The main content returned by the service. For example, in the case of a
- * chatbot service, it would be the response text.
- *
- * @param {string} chatID - Only for verifiable services. You can provide the chat ID obtained from the
- * response to automatically download the response signature. The function will verify the reliability
- * of the response using the service's signing address.
- *
- * @returns A boolean value. True indicates the returned content is valid, otherwise it is invalid.
- *
- * @throws An error if any issues occur during the processing of the response.
- */
 const valid = await broker.processResponse(
   providerAddress,
   serviceName,
   content,
-  chatID
+  chatID // Optional: Only for verifiable services
 );
 ```
 
-#### 5.5 Settle Fees Manually
+### Manual Fee Settlement
+
+If `processResponse` fails, you can settle fees manually by calling `settleFee` function.
 
 ```typescript
-/**
- * 'settleFee' is used to settle the fee for the provider service.
- *
- * Normally, the fee for each request will be automatically settled in 'processResponse'.
- * However, if 'processResponse' fails due to network issues or other reasons,
- * you can manually call settleFee to settle the fee.
- *
- * @param {string} providerAddress - The address of the provider.
- *
- * @param {string} serviceName - The name of the service.
- *
- * @param {number} fee - The fee to be settled. The unit is A0GI.
- *
- * @returns A promise that resolves when the fee settlement is successful.
- *
- * @throws An error if any issues occur during the fee settlement process.
- */
 await broker.settleFee(providerAddress, serviceName, fee);
 ```
 
-By following these steps, you can effectively integrate provider services into your applications.
-For more information, please [download the example](./data/ts-sdk-example.ts).
+### Helper Functions
+
+#### Get Account Details
+This function is used to get account details (like balance) on the given provider address.
+```typescript
+const accountDetails = await broker.getAccount(providerAddress);
+```
+
+#### Request Refund
+This function is used to request a refund from your account.
+```typescript
+await broker.requestRefund(user, providerAddress, amount);
+```
+
 
 </TabItem>
 
