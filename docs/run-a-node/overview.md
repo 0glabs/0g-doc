@@ -37,7 +37,7 @@ We've made it easy to get started. The table below outlines the hardware require
 | DA Encoder* | Encodes data for availability purposes | - | - | - | - |
 | DA Client | Interacts with the Data Availability layer | 8 GB | 2 cores | - | 100 MBps |
 
-*Note: DA Encoder Note: GPU support is currently tested with NVIDIA 12.04 drivers on the RTX 4090. Other NVIDIA GPUs may require parameter adjustments and have not been tuned yet.*
+*Note: DA Encoder GPU support is currently tested with NVIDIA 12.04 drivers on the RTX 4090. Other NVIDIA GPUs may require parameter adjustments and have not been tuned yet.*
 
 #### Next Steps
 Ready to set up your node? Check out our detailed guides:
