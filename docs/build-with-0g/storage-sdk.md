@@ -166,7 +166,7 @@ The 0G Go SDK provides a robust way to interact with the 0G Storage network, ena
 
 ## Overview
 
-The 0g-ts-sdk is a JavaScript SDK for 0g-storage, a decentralized storage platform. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
+The 0g-ts-sdk is a JavaScript SDK for 0g-storage, a decentralized storage platform. This guide will walk you through the installation, setup, and usage of the 0G Storage SDK, including examples of key functionalities.
 
 ## Installation
 
@@ -203,8 +203,8 @@ const indRpc = 'https://indexer-storage-testnet-standard.0g.ai';
 - `evmRpc`: Ethereum RPC endpoint URL for blockchain interactions
 - `privateKey`: Your private key for transaction signing (keep secure)
 - `flowAddr`: Contract address for storage operations
-  - Turbo: Faster processing, higher gas costs
-  - Standard: Normal processing, lower gas costs
+  - Turbo: Faster with higher gas costs
+  - Standard: Normal speed with lower gas costs
 - `indRpc`: Indexer RPC endpoint for storage node coordination
 
 ## Key Functionalities
@@ -257,7 +257,6 @@ if (err === null) {
 
 **Parameters:**
 - `file`: File object created using ZgFile
-- `0`: Storage segment number 
 - `evmRpc`: Ethereum RPC endpoint
 - `signer`: Transaction signer instance
 - `flowAddr`: Flow contract address
@@ -267,7 +266,7 @@ if (err === null) {
 Retrieve files from the network with optional verification:
 
 ```javascript
-const err = await indexer.download('', '', );
+const err = await indexer.download(root_hash, output_file, with_proof);
 if (err !== null) {
   console.log("Error downloading file: ", err);
 } else {
@@ -404,7 +403,6 @@ downloadStream.pipe(process.stdout);
 
 ## Conclusion
 
-The 0g-ts-sdk provides a powerful and flexible way to interact with the 0G Storage network. By following this guide, you should now be able to perform basic and advanced operations using the SDK. For more detailed information and updates, always refer to the [official GitHub repository](https://github.com/0glabs/0g-ts-sdk).
-
+The 0g-ts-sdk provides a powerful and flexible way to interact with the 0G Storage network. By following this guide, you should now be able to perform basic and advanced operations using the 0G Storage SDK. For more detailed information and updates, always refer to the [official GitHub repository](https://github.com/0glabs/0g-ts-sdk).
 </TabItem>
 </Tabs>
