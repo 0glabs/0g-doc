@@ -6,14 +6,15 @@ import TabItem from '@theme/TabItem';
 
 # Data Availability Node
 ---
-While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. DA Nodes perform the core functions of verifying, signing, and storing encoded blob data. It's important to note that your DA signer needs to operate a DA node to verify encoded blob data, sign it, and store it for future farming and rewards. Currently, in order to run a DA Node on Testnet, users must stake 10 A0GI tokens. These can be obtained via our [faucet](https://faucet.0g.ai/) or via rewards from running Storage Nodes or Validator Nodes. You can also reach out to our technical moderators on [Discord](https://discord.com/invite/0glabs).
+While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. DA Nodes perform the core functions of verifying, signing, and storing encoded blob data. 
+
+To operate effectively, your DA signer needs to run a DA node to verify encoded blob data, sign it, and store it for future farming and rewards. Currently, to run a DA Node on Testnet, users must stake 10 A0GI tokens. These can be obtained through our [faucet](https://faucet.0g.ai/) or via rewards from running Storage Nodes or Validator Nodes. You can also reach out to our technical moderators on [Discord](https://discord.com/invite/0glabs).
 
 ## Hardware Requirements
 
 | Node Type | Memory | CPU | Disk | Bandwidth | Additional Notes |
 |-----------|--------|-----|------|-----------|------------------|
-| DA Node | 16 GB | 8 cores | 1 TB NVME SSD | 100 MBps | For Download / Upload |
-
+| DA Node | 16 GB | 8 cores | 1 TB NVMe SSD | 100 MBps | For Download/Upload |
 
 ## Standing up a DA Node and DA Signer
 <Tabs>
@@ -104,7 +105,7 @@ As a DA node operator, your node will perform the following tasks:
 
 ### Conclusion
 
-You have now successfully set up and run a 0g DA node as a DA Signer. For more advanced configuration options and usage instructions, please refer to the official GitHub repository.
+You have now successfully set up and run a 0g DA node as a DA Signer. For more advanced configuration options and usage instructions, please refer to the [Official GitHub repository](https://github.com/0glabs/0g-da-node).
 
 Remember to keep your private keys secure and regularly update your node software to ensure optimal performance and security.
 
@@ -223,7 +224,7 @@ As a DA node operator, your node will perform the following tasks:
 
 ## Conclusion
 
-You have now successfully set up and run a 0g DA node as a DA Signer. For more advanced configuration options and usage instructions, please refer to the official GitHub repository.
+You have now successfully set up and run a 0g DA node as a DA Signer. For more advanced configuration options and usage instructions, please refer to the [Official GitHub repository](https://github.com/0glabs/0g-da-node).
 
 Remember to keep your private keys secure and regularly update your node software to ensure optimal performance and security.
   </TabItem>

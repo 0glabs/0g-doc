@@ -10,7 +10,7 @@ This guide details the process of running a storage node, including hardware spe
 
 | Component | Storage Node | Storage KV |
 |-----------|--------------|------------|
-| Memory    | 32 GB RAM    | 32 GB RAM   |
+| Memory    | 32 GB RAM    | 32 GB RAM  |
 | CPU       | 8 cores      | 8 cores    |
 | Disk      | 500GB / 1TB NVMe SSD | Size matches the KV streams it maintains |
 | Bandwidth | 100 Mbps (Download / Upload) | - |
@@ -55,7 +55,7 @@ Start by installing all the essential tools and libraries required to build the 
         ```
 </TabItem>
 </Tabs>
-**Install `rustup`**: (`rustup`) is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
+**Install `rustup`**: rustup is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
 
     ```bash
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -156,8 +156,7 @@ cd run
 Before setting up your 0G Storage KV node:
 
 - Understand that 0G KV interacts with on-chain contracts and storage nodes to simulate KV data streams.
-- For official deployed contract addresses, visit the [official 0G documentation page].
-  Follow the same steps to install dependencies and Rust as in the storage node setup:
+- For official deployed contract addresses, visit the [testnet information page](./testnet-information.md).
 
 ## Install Dependencies
 
@@ -176,7 +175,7 @@ Follow the same steps to install dependencies and Rust as in the storage node se
         ```
 </TabItem>
 </Tabs>
-**Install `rustup`**: (`rustup`) is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
+**Install `rustup`**: rustup is the Rust toolchain installer, necessary as the 0G node software is written in Rust.
 
     ```bash
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

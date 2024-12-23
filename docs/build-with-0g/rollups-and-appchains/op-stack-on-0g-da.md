@@ -68,8 +68,7 @@ The Optimism codebase has been extended to integrate with the 0G DA `da-server`.
   </TabItem>
 </Tabs>
 
-0G DA DA-server accepts the following flags for 0G DA storage using
-[0G DA Open API](https://docs.0g.ai/0g-doc/docs/0g-da/rpc-api/api-1)
+0G DA DA-server accepts the following flags for 0G DA storage using 0G DA Open API
 
 ````
     --zg.server    (default: "localhost:51001") 

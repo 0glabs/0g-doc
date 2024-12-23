@@ -122,7 +122,7 @@ For the testnet, due to stress testing with a large number of transactions, a fu
 
 ### Troubleshooting
 
-If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](../learn-more/how-to-contribute.md) or reach out to our community support channels.
+If you encounter any issues during the setup or operation of your validator node, please consult our [FAQ section](./testnet-information.md#node-faq-frequently-asked-questions) or reach out to our community support channels.
 
 ### Next Steps
 

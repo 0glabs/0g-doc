@@ -6,7 +6,7 @@ sidebar_position: 1
 ---
 Want to become an active participant in the 0G network and earn rewards while you're at it? 👇
 
-Each node type plays a crucial role in maintaining the 0G network's functionality, from transaction validation and data storage to ensuring data availability and retrieval. Here, we'll introduce you to the various types of nodes you can run, each playing a crucial role in maintaining the network's health and security.
+Each node type plays a crucial role in maintaining the 0G network's functionality, from transaction validation and data storage to ensuring data availability and retrieval. Here, we'll introduce you to the various types of nodes you can run, each contributing to the network's health and security.
 
 ### What Nodes Can I Run?
 
@@ -14,10 +14,10 @@ Each node type plays a crucial role in maintaining the 0G network's functionalit
 The guardians of the network, validator nodes are responsible for verifying transactions, ensuring consensus, and maintaining the blockchain. They're essential for keeping the 0G blockchain secure and running smoothly.
 
 ##### **Storage Nodes**
-Unlike the Validator Nodes that focus on securing the blockchain itself, Storage Nodes focus on managing and serving data. They are the backbone of the network's data storage capabilities, ensuring persistence and long-term availability for long-term data storage (e.g. training datasets, large AI models). By running a storage node, you'll be contributing to the decentralized storage of 0G data, making it accessible and resilient. 
+Unlike Validator Nodes that focus on securing the blockchain itself, Storage Nodes focus on managing and serving data. They are the backbone of the network's data storage capabilities, ensuring persistence and availability for long-term data storage (e.g., training datasets, large AI models). By running a storage node, you'll contribute to the decentralized storage of 0G data, making it accessible and resilient.
 
 ##### **Data Availability Services**
-DA Nodes are similar to Storage Nodes, but they are focused on immediacy and short-term accessibility to support real-time operations. This data is typically used by Layer 2 and rollup solutions for data availability and is not typically stored long-term. Think of these nodes as the librarians of the network, ensuring that data stored on the network can be quickly retrieved when needed. 
+DA Nodes are similar to Storage Nodes but focus on immediacy and short-term accessibility to support real-time operations. This data is typically used by Layer 2 and rollup solutions for data availability and is not typically stored long-term. Think of these nodes as the network's librarians, ensuring that data can be quickly retrieved when needed.
 
 ### Why Run a Node?
 
@@ -37,7 +37,7 @@ We've made it easy to get started. The table below outlines the hardware require
 | DA Encoder* | Encodes data for availability purposes | - | - | - | - |
 | DA Client | Interacts with the Data Availability layer | 8 GB | 2 cores | - | 100 MBps |
 
-*Note: DA Encoder Note: GPU support is currently tested with NVIDIA 12.04 drivers on the RTX 4090. Other NVIDIA GPUs may require parameter adjustments and have not been tuned yet.*
+*Note: For DA Encoder, GPU support is currently tested with NVIDIA 12.04 drivers on the RTX 4090. Other NVIDIA GPUs may require parameter adjustments and have not been tuned yet.*
 
 #### Next Steps
 Ready to set up your node? Check out our detailed guides:
