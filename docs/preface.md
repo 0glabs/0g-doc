@@ -40,10 +40,10 @@ A global-scale technology revolution requires both a global-scale technological 
 </div>
 
 
-## The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (dAIOS)
+## The First Decentralized  AI [Operating System](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) (deAIOS)
 0G is building the global foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives. 
 
-With 0G dAIOS, the **TOMA** (transparent, owned, monetized, and aligned) future for AGI is near:
+With 0G deAIOS, the **TOMA** (transparent, owned, monetized, and aligned) future for AGI is near:
 
 - **Transparency**: Centralized AI systems operate as black boxes, with opaque decision-making processes and no clear data provenance. Users who provide training data rarely receive adequate rewards for their contributions, and the system lacks transparency in how value is distributed. _Decentralized AI fosters transparency by providing open, auditable decision-making processes and verifiable data sources, ensuring accountability at every step._ **0G’s modular architecture enables transparent data traceability and verifiable AI models, making every decision and data source traceable.**
 
@@ -53,7 +53,7 @@ With 0G dAIOS, the **TOMA** (transparent, owned, monetized, and aligned) future 
   
 - **Alignment**: Centralized AI systems lack oversight and governance processes. A select group may have the authority to censor or promote material, leading to misalignment with human values. _Decentralized AI platforms promote collective governance and oversight by increasing access to AI development, fostering inclusivity and innovation by a broader community rather than a single entity._ **0G provides access to lower-cost compute resources, lowering the high cost barrier to entry for inference, fine-tuning, and training.** 
 
-As the first dAIOS, 0G brings together models, compute, and data on a single global platform, enabling developers to build AI applications that are more **PLG** (performant, limitless, and global) than ever before: 
+As the first deAIOS, 0G brings together models, compute, and data on a single global platform, enabling developers to build AI applications that are more **PLG** (performant, limitless, and global) than ever before: 
 
 - **Performant**: Currently, developers and researchers lack access to high-grade computing and storage resources, limiting their ability to advance at the cutting edge of AI development. _Decentralized GPU networks that run on blockchains provide high-performance compute resources pooled by the community and available to all._ **0G provides access to enterprise-grade compute resources, enabling developers to build AI applications that are more performant than ever before.** 
 
