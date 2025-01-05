@@ -14,16 +14,10 @@ Most of the officially endorsed 0G docker implementation can be found under the 
 
 Below is a list of community-maintained Docker images for 0G DA. Please note that these images are not officially endorsed by 0G and users should proceed with caution.
 
-### All Node Types:
+### All Node Types
 [Ember Stake](https://docs.emberstake.xyz/networks/zero-gravity/nodes-guide/getting-started)
 
-### Validator Node:
+### Validator Node
 [CryptoWarden](https://medium.com/@CryptoWarden/guide-to-running-a-node-in-the-0g-labs-project-0g-ai-1bee56ea53ca)
-
-### Storage Node:
-[RuthWright](https://medium.com/@Ruth_Wright/how-to-set-up-a-0g-storage-node-by-0g-labs-541c4116ebd7)
-
-### DA Node:
-[RuthWright](https://medium.com/@Ruth_Wright/how-to-set-up-a-da-node-by-0g-labs-6c11061667a8)
 
 
