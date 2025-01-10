@@ -23,10 +23,10 @@ For the first time ever, 0G bridges this cost and efficiency gap between Web2 an
 </div>
 <br />
 The 0G deAIOS has 4 key components: 
-- **0G Storage Network**: A decentralized storage network optimized for massive data loads.
-- **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
-- **0G Compute Network**: A versatile framework for AI compute, including fast data retrieval, model inference/training, etc.
 - **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
+- **0G Storage Network**: A decentralized storage network optimized for massive data loads.
+- **0G Compute Network**: A versatile framework for AI compute, including fast data retrieval, model inference/training, etc.
+- **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
 
 <details>
 <summary> **What is decentralized storage?** </summary>

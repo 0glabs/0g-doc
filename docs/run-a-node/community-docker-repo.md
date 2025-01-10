@@ -14,11 +14,3 @@ Below is a list of community-maintained Docker images for 0G DA. Please note tha
 
 ### Validator Node
 [CryptoWarden](https://medium.com/@CryptoWarden/guide-to-running-a-node-in-the-0g-labs-project-0g-ai-1bee56ea53ca)
-
-### Storage Node
-[RuthWright](https://medium.com/@Ruth_Wright/how-to-set-up-a-0g-storage-node-by-0g-labs-541c4116ebd7)
-
-### DA Node
-[RuthWright](https://medium.com/@Ruth_Wright/how-to-set-up-a-da-node-by-0g-labs-6c11061667a8)
-
-

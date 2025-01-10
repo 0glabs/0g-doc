@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 # 0G DA Technical Deep Dive
 
-The Data Availability (DA) module allows users to submit a piece of data, referred to as a _**DA blob**_. This data is redundantly encoded by the client's proxy and divided into several slices, which are then sent to DA nodes. _**DA nodes**_ gain eligibility to verify the correctness of DA slices by staking. Each DA node verifies the integrity and correctness of its slice and signs it. Once more than two-thirds of the aggregated signatures are on-chain, the data behind the related hash is considered to be decentrally published.
+The Data Availability (DA) module allows users to submit a piece of data, referred to as a _**DA blob**_. This data is redundantly encoded by the client's proxy and divided into several slices, which are then sent to DA nodes. _**DA nodes**_ gain eligibility to verify the correctness of DA slices by staking. Each DA node verifies the integrity and correctness of its slice and signs it. Once more than 2/3 of the aggregated signatures are on-chain, the data behind the related hash is considered to be published decentrally.
 
 To incentivize DA nodes to store the signed data for a period, the signing process itself does not provide any rewards. Instead, rewards are distributed through a process called _**DA Sampling**_. During each DA Sample round, any DA slice within a certain timeframe can generate a lottery chance for a reward. DA nodes must store the corresponding slice to redeem the lottery chance and claim the reward.
 
