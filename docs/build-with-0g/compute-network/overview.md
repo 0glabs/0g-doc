@@ -12,11 +12,11 @@ We integrate various stages of the AI process to make these services both verifi
 
 ## Components
 
-**Contract:** This component determines the legitimacy of settlement proofs, manages accounts, and handles service information. To do this, it stores variables during the service process, including account information, service details (such as name and URL), and consensus logic.
+**Contract:** This component determines the legitimacy of settlement proofs, manages accounts, and handles service information. It stores variables during the service process, including account information, service details (such as name and URL), and consensus logic.
 
 **Provider:** The owners of AI models and hardware who offer their services for a fee.
 
-**User:** Individuals or organizations who use the services listed by Service Providers. They may also use AI services directly or build applications on top of our API.
+**User:** Individuals or organizations who use the services listed by Service Providers. They may use AI services directly or build applications on top of our API.
 
 ## Process Overview
 

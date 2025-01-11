@@ -28,4 +28,4 @@ Find the [repository for this integration](https://github.com/0glabs/nitro) at h
 - [0G Arbitrum Nitro Rollup Kit](https://github.com/0glabs/nitro)
 
 
-WARNING:This is a beta integration and we are working on resolving open issues.
+> **WARNING:** This is a beta integration and we are working on resolving open issues.

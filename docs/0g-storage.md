@@ -9,16 +9,16 @@ sidebar_position: 3
 
 ## Intro to Storage Systems
 
-Storage systems play a critical role in managing, organizing, and ensuring the accessibility of data. In traditional systems, data is often stored centrally, creating risks around availability, censorship, and data loss due to single points of failure. Decentralized storage, on the other hand, addresses these issues by distributing data across a network of nodes, enhancing security, resilience, and scalability. This decentralization is essential, especially in an era where massive data sets are generated and consumed by AI, Web3 applications, and large-scale businesses.
+Storage systems play a critical role in managing, organizing, and ensuring the accessibility of data. In traditional systems, data is often stored centrally, creating risks around availability, censorship, and data loss due to single points of failure. Decentralized storage addresses these issues by distributing data across a network of nodes, enhancing security, resilience, and scalability. This decentralization is essential, especially in an era where massive datasets are generated and consumed by AI, Web3 applications, and large-scale businesses.
 
 ## 0G's Storage System
 
-0G Storage is a distributed data storage system designed with on-chain elements to incentivize storage nodes to store data on behalf of a user. Anyone can run a storage node and receive rewards for maintaining one. For information on how to do so, check out our guide [here](./run-a-node/storage-node.md). 
+0G Storage is a distributed data storage system designed with on-chain elements to incentivize storage nodes to store data on behalf of users. Anyone can run a storage node and receive rewards for maintaining one. For information on how to do so, check out our guide [here](./run-a-node/storage-node.md). 
 
-0G's system itself has two parts:
+0G's system consists of two parts:
 
-1. **The Data Publishing Lane:** Ensures data availability by allowing quick queries and verification through the 0G Consensus network. This ensures that the data stored can be easily accessed and validated by users or applications when needed. 
-2. **The Data Storage Lane:** Manages large data transfers and storage, utilizing an erasure-coding mechanism. This splits data into smaller, redundant fragments distributed across different nodes, guaranteeing data recovery in case of node failure or downtime. 
+1. **The Data Publishing Lane:** Ensures data availability by allowing quick queries and verification through the 0G Consensus network. This ensures that stored data can be easily accessed and validated by users or applications when needed. 
+2. **The Data Storage Lane:** Manages large data transfers and storage using an erasure-coding mechanism. This splits data into smaller, redundant fragments distributed across different nodes, guaranteeing data recovery even if some nodes fail or experience downtime. 
 
 For any party wishing to store data with 0G, the data must first be provided alongside payment using 0G's token, which is fully embedded into 0G's main chain. To store this data, it is first *erasure-coded,* meaning that the data being stored is fragmented into redundant smaller pieces distributed across multiple storage locations. Redundancy is essential as it ensures the data can always be recovered, even if some storage locations fail or become unavailable. 
 

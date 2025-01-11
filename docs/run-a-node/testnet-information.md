@@ -14,7 +14,7 @@ Summary Table
 | Chain Name | 0G-Newton-Testnet |
 | Chain ID | 16600 (`zgtendermint_16600-2`) |
 | Token Symbol | A0GI |
-| **Recommended RPC** - Thirdweb  | https://16600.rpc.thirdweb.com/ |
+| **Recommended RPC** - Thirdweb | https://16600.rpc.thirdweb.com/ |
 | RPC - Ankr | https://rpc.ankr.com/0g_newton |
 | RPC | https://evmrpc-testnet.0g.ai |
 | Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
@@ -30,14 +30,17 @@ Summary Table
 ### Highly Recommended Third-party RPCs
 
 - [Thirdweb](https://thirdweb.com/0g-newton-testnet)
-- [Ankr](https://rpc.ankr.com/0g_newton)
+- [Ankr](https://www.ankr.com/rpc/0g/)
+- [QuickNode](https://www.quicknode.com/chains/0g)
 
-### Community RPCs and Resources 
+### Community RPCs and Resources
 
-- [Originstake](https://0g-json-rpc-public.originstake.com)
-- [Validatorvn](https://0g-rpc-evm01.validatorvn.com)
-- [Itrocket](https://og-testnet-jsonrpc.itrocket.net)
-- [Zstake](https://0g-evmrpc.zstake.xyz/)
+| Provider | RPC Endpoint |
+|----------|--------------|
+| Originstake | https://0g-json-rpc-public.originstake.com |
+| Validatorvn | https://0g-rpc-evm01.validatorvn.com |
+| Itrocket | https://og-testnet-jsonrpc.itrocket.net |
+| Zstake | https://0g-evmrpc.zstake.xyz/ |
 
 :::caution
 Do not rely on the free community endpoints listed above for production deployments. Production deployments should rely on service providers with SLAs or your own node.

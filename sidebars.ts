@@ -12,7 +12,9 @@ const sidebars: SidebarsConfig = {
         id: 'intro',
       },
       items: [
+        '0g-chain',
         '0g-storage', 
+        '0g-compute',
         {
           type: 'category',
           label: '0G DA',
@@ -21,8 +23,6 @@ const sidebars: SidebarsConfig = {
             'da/0g-da-deep-dive',
           ],
         },
-        '0g-compute',
-        '0g-chain',
       ],
     },
     {

@@ -10,11 +10,11 @@ sidebar_position: 2
 
 import LottieAnimation from '@site/src/components/lottieAnimation';
 
-## The First Decentralized AI Operating System (dAIOS)
+## The First Decentralized AI Operating System (deAIOS)
 
 **0G (Zero Gravity)** is the first decentralized AI [operating system](https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/) that acts as the foundational layer for decentralized AI applications and chains. It efficiently orchestrates utilization of hardware resources such as storage and compute and software assets such as data and models to handle the scale and complexity of AI workloads.
 
-Specifically designed for AI (d)applications and chains, 0G features the fastest, infinitely scalable data availability (DA) layer, the cheapest decentralized storage system, and a novel flexible serving framework for inferences and finetuning. Prior to 0G, resource-intensive AI applications would only be feasible “off-chain” due to burdensome on-chain costs, low latency and throughput, and a lack of builder-friendly tooling.
+Specifically designed for AI (d)applications and chains, 0G features the fastest, infinitely scalable data availability (DA) layer, the cheapest decentralized storage system, and a novel flexible serving framework for inferences and fine-tuning. Prior to 0G, resource-intensive AI applications would only be feasible "off-chain" due to burdensome on-chain costs, low latency and throughput, and a lack of builder-friendly tooling.
 
 For the first time ever, 0G bridges this cost and efficiency gap between Web2 and Web3, empowering builders to confidently deploy AI applications on-chain with _improved_ performance.
 
@@ -22,11 +22,11 @@ For the first time ever, 0G bridges this cost and efficiency gap between Web2 an
   <img src="/img/0g-architecture.png" alt="Democratized AI" style={{maxWidth: '100%'}} />
 </div>
 <br />
-The 0G dAIOS has 4 key components: 
-- **0G Storage Network**: A decentralized storage network optimized for massive data loads.
-- **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
-- **0G Compute Network**: A versatile framework for AI compute, including fast data retrieval, model inference/training and etc.
+The 0G deAIOS has 4 key components: 
 - **0G Chain**: The fastest, most modular blockchain, making on-chain gaming and AI a reality.
+- **0G Storage Network**: A decentralized storage network optimized for massive data loads.
+- **0G Compute Network**: A versatile framework for AI compute, including fast data retrieval, model inference/training, etc.
+- **0G DA**: An infinitely scalable and programmable data availability layer designed for high-performance chains.
 
 <details>
 <summary> **What is decentralized storage?** </summary>
@@ -64,7 +64,7 @@ At 0G, our mission is clear: To Make AI a Public Good.
 
 Every component of our ecosystem contributes toward this goal, and we invite you to join us in building the foundation for a decentralized AI future.
 
-This introduction serves as your gateway into the 0G ecosystem. For deeper insights on various products, explore the next sections to learn about 0G dAIOS. If you’re ready to dive in, check out our guides:
+This introduction serves as your gateway into the 0G ecosystem. For deeper insights on various products, explore the next sections to learn about 0G deAIOS. If you’re ready to dive in, check out our guides:
 
 - [Run a Node](/run-a-node/overview)
 - [Use our Storage Network](/build-with-0g/storage-sdk)

@@ -7,9 +7,9 @@ sidebar_position: 5
 # 0G Chain: The Fastest Modular AI Chain
 ---
 
-0G Chain is a highly scalable, AI-optimized L1 blockchain designed to meet the needs of data-heavy applications. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage—making it ideal for AI-driven workflows. 0G is fully **EVM-compatible**, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
+0G is the largest AI Layer 1 ecosystem, powered by the fastest DeAIOS (decentralized AI Operating System). With $325M raised, 0G is the ultimate home for DeAI. Built with a modular architecture, it allows for the independent optimization of key components like consensus, execution, and storage—making it ideal for AI-driven workflows. 0G is fully **EVM-compatible**, so decentralized applications (dApps) already deployed on other L1 or L2 chains (such as Ethereum or rollups) can easily leverage 0G's products without needing to migrate entirely.
 
-0G Chain supports a [data availability network](./da/0g-da.md), [distributed storage network](0g-storage.md), and [AI compute network](0g-compute.md). All of these networks integrate with 0G Chain's highly scalable consensus network, built to handle massive data volumes suitable for AI.
+0G Chain supports a [data availability network](./da/0g-da.md), [distributed storage network](0g-storage.md), and [AI compute network](0g-compute.md). These networks integrate with 0G Chain's highly scalable consensus network, which is built to handle massive data volumes suitable for AI.
 
 As the demand for network capacity increases, new consensus networks can be added to enable horizontal scalability, thereby boosting the overall bandwidth and performance of the system. By **decoupling data publication from data storage**, 0G optimizes both throughput and scalability, surpassing the limitations seen in existing data availability (DA) solutions.
 
