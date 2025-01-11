@@ -31,6 +31,7 @@ Summary Table
 
 - [Thirdweb](https://thirdweb.com/0g-newton-testnet)
 - [Ankr](https://www.ankr.com/rpc/0g/)
+- [QuickNode](https://www.quicknode.com/chains/0g)
 
 ### Community RPCs and Resources
 
