@@ -80,7 +80,7 @@ For the testnet, due to stress testing with a large number of transactions, a fu
    0gchaind keys add <key_name> --eth
    0gchaind keys unsafe-export-eth-key <key_name>
    ```
-**8. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet from our [website](https://faucet.0g.ai) or by requesting them on their [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator.
+**8. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet from our [website](https://faucet.0g.ai) or by requesting them on their [Discord](https://discord.com/invite/0glabs). These tokens are necessary for staking and becoming a validator.
 
 **9. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
