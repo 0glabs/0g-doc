@@ -1,10 +1,15 @@
 ---
 sidebar_position: 3
 ---
+
+import MetaMaskButton from '@site/src/components/MetaMaskButton';
+
 # Testnet Information
 ---
 
 Welcome to Testnet-V2, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
+
+<MetaMaskButton />
 
 ## 0G Testnet Configuration
 
