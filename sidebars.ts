@@ -40,6 +40,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'AI Alignment Node',
+      className: 'sidebar-category ai-alignment-node',
+      items: [
+        'ai-alignment-node/overview',
+        'ai-alignment-node/node-owners',
+        'ai-alignment-node/node-operators',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Build with 0G',
       className: 'sidebar-category build-with-0g',
       items: [
