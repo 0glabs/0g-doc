@@ -13,7 +13,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         '0g-chain',
-        '0g-storage', 
+        '0g-storage',
         '0g-compute',
         {
           type: 'category',
@@ -70,7 +70,23 @@ const sidebars: SidebarsConfig = {
             'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
           ],
         },
-        'build-with-0g/contracts',
+        {
+          type: 'category',
+          label: 'Contracts on 0G',
+          items: [
+            'build-with-0g/contracts-on-0g/deploy-contracts',
+            {
+              type: 'category',
+              label: 'Precompiles',
+              items: [
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-overview',
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-dasigners',
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-staking',
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-wrappeda0gibase',
+              ],
+            },
+          ],
+        },
         'build-with-0g/marketplace',
         'build-with-0g/faucet',
         'build-with-0g/explorer',
