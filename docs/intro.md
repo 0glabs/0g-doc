@@ -74,7 +74,7 @@ This introduction serves as your gateway into the 0G ecosystem. For deeper insig
 
 - [Discord](https://discord.gg/0gLabs)
 - [Twitter](https://twitter.com/0g_Labs)
-- [GitHub](https://github.com/0glabs/0g-doc))
+- [GitHub](https://github.com/0glabs/0g-doc)
 
 We're excited to have you on board as we build the future of Web3xAI infrastructure together!
 
