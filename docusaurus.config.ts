@@ -86,6 +86,13 @@ const config: Config = {
           position: 'right',
         },
         {
+          href: 'https://hub.0g.ai',
+          position: 'right',
+          className: 'header-hubs-link',
+          'aria-label': '0G Hub',
+          html: '<span class="header-hubs-link-text"><i class="fas fa-globe"></i> 0G Hub</span>',
+        },
+        {
           href: 'https://github.com/0glabs',
           position: 'right',
           className: 'header-github-link',

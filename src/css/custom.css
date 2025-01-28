@@ -437,3 +437,34 @@ pre[class*="language-"] {
 [data-theme='dark'] .tabs__item--active {
   color: var(--ifm-tabs-color-active);
 }
+
+/* Hubs icon */
+.header-hubs-link {
+  padding: 0.5rem 1rem;
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: var(--ifm-color-primary);
+  color: white !important;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.header-hubs-link:hover {
+  background-color: var(--ifm-color-primary-darker);
+  text-decoration: none;
+}
+
+html[data-theme='dark'] .header-hubs-link {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='dark'] .header-hubs-link:hover {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+.header-hubs-link-text {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* Move search bar to center */
