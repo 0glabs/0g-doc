@@ -9,16 +9,28 @@ import TabItem from '@theme/TabItem';
 # 0G Storage SDKs
 ---
 
-0G offers two Software (SDKs) to seamlessly integrate decentralized storage into your applications:
+0G offers two Software Development Kits (SDKs) to seamlessly integrate decentralized storage into your applications:
 
 * **Go SDK:** Ideal for backend systems and applications built with the Go programming language.
 * **TypeScript SDK:** Perfect for frontend development and JavaScript-based projects.
+
+## SDK Features
 
 Both SDKs provide a streamlined interface to interact with the 0G Storage network, enabling you to:
 
 * **Upload and Download Files:** Securely store and retrieve data of various sizes and formats. Note: you can also use the explorers to do so.
 * **Manage Data:** List uploaded files, check their status, and control access permissions.
 * **Leverage Decentralization:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
+
+## Quick Start
+
+To get started quickly, check out our starter kits:
+
+* [**TypeScript Starter Kit**](https://github.com/0glabs/0g-storage-ts-starter-kit) - Complete examples with Express.js server and CLI tool
+* [**Go Starter Kit**](https://github.com/0glabs/0g-storage-go-starter-kit) - Ready-to-use examples with Gin server and CLI tool
+
+Both repositories include working examples, API documentation, and everything you need to start building with 0G Storage.
+
 <Tabs>
 <TabItem value="binary" label="GO SDK Integration" default>
 ## Overview
