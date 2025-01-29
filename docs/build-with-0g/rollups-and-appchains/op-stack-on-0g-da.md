@@ -576,7 +576,7 @@ cat deployments/artifact.json | jq -r .L1StandardBridgeProxy
 
 ## Conduct Test Transactions
 
-You now have a fully operational 0gDA-Powered Optimism-based EVM Rollup. Experiment with it as you would with any other test blockchain.
+You now have a fully operational 0G DA-Powered Optimism-based EVM Rollup. Experiment with it as you would with any other test blockchain.
 
 **Congratulations on setting up your chain!**
 
