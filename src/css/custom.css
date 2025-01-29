@@ -1,11 +1,11 @@
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #2E9AE8;
+  --ifm-color-primary-dark: #1B8BDE;
+  --ifm-color-primary-darker: #1782D4;
+  --ifm-color-primary-darkest: #136BAF;
+  --ifm-color-primary-light: #46A7EB;
+  --ifm-color-primary-lighter: #5DB0ED;
+  --ifm-color-primary-lightest: #85C3F2;
   --ifm-code-font-size: 95%;
   --ifm-font-size-base: 15px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
