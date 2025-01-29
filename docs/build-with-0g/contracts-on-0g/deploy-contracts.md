@@ -1,6 +1,6 @@
 ---
-id: contracts
-title: Contracts on 0G Chain
+id: deploy-contracts
+title: Deploy Contracts on 0G Chain
 ---
 # Deploying Contracts on 0G Chain
 
