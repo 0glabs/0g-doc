@@ -45,49 +45,60 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'Compute Network',
-          items: [
-            'build-with-0g/compute-network/overview',
-            'build-with-0g/compute-network/provider',
-            'build-with-0g/compute-network/sdk',
-          ],
-        },
-        'build-with-0g/storage-sdk',
-        'build-with-0g/storage-cli',
-        'build-with-0g/da-integration',
-        {
-          type: 'category',
-          label: 'Rollups and Appchains',
-          items: [
-            'build-with-0g/rollups-and-appchains/op-stack-on-0g-da',
-            'build-with-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Rollup-as-a-Service (coming soon)',
-          items: [
-            'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Contracts on 0G',
+          label: '0G Chain',
           items: [
             'build-with-0g/contracts-on-0g/deploy-contracts',
             {
               type: 'category',
               label: 'Precompiles',
               items: [
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-overview',
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-dasigners',
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-staking',
                 'build-with-0g/contracts-on-0g/precompiles/precompiles-wrappeda0gibase',
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-staking',
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-dasigners',
               ],
             },
           ],
         },
-        'build-with-0g/marketplace',
+        {
+          type: 'category',
+          label: '0G Compute',
+          items: [
+            'build-with-0g/compute-network/overview',
+            'build-with-0g/compute-network/provider',
+            'build-with-0g/compute-network/sdk',
+            'build-with-0g/marketplace',
+          ],
+        },
+        {
+          type: 'category',
+          label: '0G Storage',
+          items: [
+            'build-with-0g/storage-sdk',
+            'build-with-0g/storage-cli',
+          ],
+        },
+        {
+          type: 'category',
+          label: '0G DA',
+          items: [
+            'build-with-0g/da-integration',
+            {
+              type: 'category',
+              label: 'Rollups and Appchains',
+              items: [
+                'build-with-0g/rollups-and-appchains/op-stack-on-0g-da',
+                'build-with-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
+                {
+                  type: 'category',
+                  label: 'Rollup-as-a-Service (coming soon)',
+                  items: [
+                    'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
+                  ],
+                },
+              ],
+            },
+          ],
+        },
         'build-with-0g/faucet',
         'build-with-0g/explorer',
       ],
