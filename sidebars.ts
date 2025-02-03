@@ -42,6 +42,10 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Build with 0G',
       className: 'sidebar-category build-with-0g',
+      link: {
+        type: 'doc',
+        id: 'build-with-0g/introduction',
+      },
       items: [
         {
           type: 'category',
