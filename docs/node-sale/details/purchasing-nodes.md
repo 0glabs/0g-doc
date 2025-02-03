@@ -4,6 +4,10 @@ title: How to Purchase Nodes
 sidebar_position: 1
 ---
 
+:::warning SALE CLOSED
+The public node sale is now closed. Thank you for your interest in becoming a node operator. Stay tuned to our [X](https://x.com/0G_labs) for future opportunities.
+:::
+
 # Purchasing Nodes: Steps and Payment Options
 **Supported Blockchains and Payment Methods**: The sale will be conducted in USDC on Arbitrum, but we provide a live bridging gateway at checkout that supports multiple blockchains (ETH, Arbitrum, BNB) and tokens. All purchases require a compatible wallet, and the resulting node licenses are issued as non-transferable ERC-721 NFTs.
 
