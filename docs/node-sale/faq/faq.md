@@ -49,7 +49,7 @@ The Alignment Node license gives buyers lifetime access. The NFTs will be non-tr
 
 ## Node Operations
 ### What are the hardware requirements?​
-0G Foundation’s AI Alignment nodes are designed for adoption - they can be run on community members’ laptops, desktops, mobiles, or even on cloud instances.
+0G Foundation's AI Alignment nodes are designed for adoption - they can be run on community members' laptops, desktops, mobiles, or even on cloud instances.
 As for device requirements, the configuration needed is very minimal:
 - 64MB RAM
 - 1 x86 CPU Core @2.1GHz
@@ -63,7 +63,19 @@ AI Alignment utility will go live in 2025, after 0G Mainnet Launch.
 The number of purchasable nodes will be capped per tier. Please refer to the [Node Sale Tier documentation](https://docs.google.com/spreadsheets/d/16dgdbrs0LA_mSSYB7cSEWmQPMJvok0FjqAHX-nLxEzs/edit?gid=2031834824#gid=2031834824) for reference.
 
 ### How do I run a node? Is it complicated?​
-Running a node can be quite straightforward and easy, typically involving just a few steps. See [here](https://www.youtube.com/watch?v=Z2QHJfjqCtM&ab_channel=0G) for a video tutorial to guide you through the process. If you prefer not to manage the node yourself, you can delegate to other node operators with just a single click through our explorer, which will be available shortly.
+Running a node can be quite straightforward and easy, typically involving just a few steps. Here's a video tutorial to guide you through the process:
+
+<iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/Z2QHJfjqCtM"
+    title="Node Setup Tutorial"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+If you prefer not to manage the node yourself, you can delegate to other node operators with just a single click through our explorer, which will be available shortly.
 
 ### Will the sale be accessible from other platforms?​
 Both Public and Whitelist sale will be available [here](https://node.0gfoundation.ai/) except for Partnered Launchpads, in which case the front end will be on 0G Partners' website.

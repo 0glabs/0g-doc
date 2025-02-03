@@ -12,7 +12,15 @@ sidebar_position: 1
 Please note: Initially, the Public Sale was intended to use wETH on Arbitrum, but after the community’s feedback, it will be USDC on Arbitrum. Please note this correction to USDC on Arbitrum as the video says wETH.
 :::
 
-https://www.youtube.com/watch?v=Z2QHJfjqCtM&ab_channel=0G
+<iframe
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/Z2QHJfjqCtM"
+    title="Node Purchase Tutorial"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
 
 Note that this video is for demonstrative purposes only, may not reflect exact details and have different prices or tokens than the actual sale.
 
