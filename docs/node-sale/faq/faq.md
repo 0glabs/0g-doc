@@ -49,7 +49,7 @@ The Alignment Node license gives buyers lifetime access. The NFTs will be non-tr
 
 ## Node Operations
 ### What are the hardware requirements?​
-0G Foundation's AI Alignment nodes are designed for adoption - they can be run on community members' laptops, desktops, mobiles, or even on cloud instances.
+0G Foundation’s AI Alignment nodes are designed for adoption - they can be run on community member's laptops, desktops, mobiles, or even on cloud instances.
 As for device requirements, the configuration needed is very minimal:
 - 64MB RAM
 - 1 x86 CPU Core @2.1GHz
