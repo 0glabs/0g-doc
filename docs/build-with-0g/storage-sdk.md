@@ -193,63 +193,81 @@ Note: `ethers` is a peer dependency of this project.
 **First, import the necessary components from the SDK:**
 
 ```javascript
-import { ZgFile, Indexer, getFlowContract } from '@0glabs/0g-ts-sdk';
+import { ZgFile, Indexer } from '@0glabs/0g-ts-sdk';
 import { ethers } from 'ethers';
 ```
 
 **Then, set up the necessary configurations:**
 
 ```javascript
-const evmRpc = 'https://evmrpc-testnet.0g.ai/';
-const privateKey = ''; // Add your private key with balance to pay for gas
-const flowAddr = "0xbD2C3F0E65eDF5582141C35969d66e34629cC768"; 
-// The flowAddr can be either Turbo or Standard. Turbo (0xbD2C3F0E65eDF5582141C35969d66e34629cC768) is faster but more expensive, Standard (0x0460aA47b41a66694c0a73f667a1b795A5ED3556) is cheaper but slower. Check testnet page for the latest info.
+// Network Constants
+const RPC_URL = 'https://evmrpc-testnet.0g.ai/';
+const INDEXER_RPC = 'https://indexer-storage-testnet-standard.0g.ai';
 
-const indRpc = 'https://indexer-storage-testnet-standard.0g.ai';
-
-const provider = new ethers.JsonRpcProvider(evmRpc);
+// Initialize provider and signer
+// Make sure to use a private key with sufficient balance for transactions
+const privateKey = 'YOUR_PRIVATE_KEY'; // Replace with your private key
+const provider = new ethers.JsonRpcProvider(RPC_URL);
 const signer = new ethers.Wallet(privateKey, provider);
-const flowContract = getFlowContract(flowAddr, signer);
-const indexer = new Indexer(indRpc);
-```
 
+// Initialize indexer
+const indexer = new Indexer(INDEXER_RPC);
+```
 
 ## Key Functionalities
 
 ### 1. Creating a File Object and Getting Merkle Tree
 
-To create a file object and get its Merkle tree:
+The first step in uploading a file is creating a `ZgFile` object and generating its Merkle tree. This is required for file verification:
 
 ```javascript
+// Create file object from file path
 const file = await ZgFile.fromFilePath('<file_path>');
-const [tree, err] = await file.merkleTree();
-console.log("File Root Hash: ", tree.rootHash());
+
+// Generate Merkle tree for verification
+const [tree, treeErr] = await file.merkleTree();
+if (treeErr !== null) {
+  throw new Error(`Error generating Merkle tree: ${treeErr}`);
+}
+
+// Get root hash for future reference
+console.log("File Root Hash:", tree?.rootHash() ?? '');
+
+// Always close the file when done
 await file.close();
 ```
 
 ### 2. Uploading Files
 
-**To upload a file to the 0G Storage network:**
+When uploading files, proper error handling is essential. The upload process returns both a transaction hash and potential error:
 
 ```javascript
-const [tx, err] = await indexer.upload(file, 0, evmRpc, signer, flowAddr);
-if (err === null) {
-  console.log("File uploaded successfully, tx: ", tx);
-} else {
-  console.log("Error uploading file: ", err);
+try {
+  const [tx, uploadErr] = await indexer.upload(zgFile, RPC_URL, signer);
+  if (uploadErr !== null) {
+    throw new Error(`Upload error: ${uploadErr}`);
+  }
+  console.log("Upload successful!");
+  console.log("Transaction Hash:", tx);
+} catch (error) {
+  console.error("Upload error:", error instanceof Error ? error.message : error);
 }
 ```
 
 ### 3. Downloading Files
 
-**To download a file from the 0G Storage network:**
+For downloading, you need the root hash of the file. The download process supports optional proof verification:
 
 ```javascript
-const err = await indexer.download('<root_hash>', '<output_file>', <with_proof>);
-if (err !== null) {
-  console.log("Error downloading file: ", err);
-} else {
-  console.log("File downloaded successfully");
+try {
+  // withProof = true enables Merkle proof verification
+  const err = await indexer.download(rootHash, outputPath, true);
+  if (err !== null) {
+    throw new Error(`Download error: ${err}`);
+  }
+  console.log("Download successful!");
+} catch (error) {
+  console.error("Download error:", error instanceof Error ? error.message : error);
 }
 ```
 
@@ -291,7 +309,7 @@ let val = await kvClient.getValue(streamId, ethers.encodeBase64(key1));
 console.log(val)
 ```
 
-### Working with Browser Environment
+### 6. Working with Browser Environment
 
 **For browser environments, import the SDK in your HTML file:**
 
@@ -311,25 +329,10 @@ if (err === null) {
   console.log("File Root Hash: ", tree.rootHash());
 }
 ```
-### Error Handling
-
-**Always implement proper error handling in your code:**
-
-```javascript
-try {
-    const [tx, err] = await indexer.upload(file, 0, evmRpc, signer, flowAddr);
-    if (err === null) {
-        console.log("File uploaded successfully, tx: ", tx);
-    } else {
-        throw err;
-    }
-} catch (error) {
-    console.error("Error uploading file: ", error);
-}
-```
 ### Working with Streams
 
-**The SDK also supports working with streams for efficient data handling:**
+**The SDK also supports working with streams for efficient data 
+handling:**
 
 ```typescript
 import { Readable } from 'stream';
@@ -340,16 +343,18 @@ readableStream.push('Hello, 0G Storage!');
 readableStream.push(null);
 
 // Upload using a stream
-const streamRoot = await client.uploadStream(readableStream, 'example.txt');
+const streamRoot = await client.uploadStream(readableStream, 'example.
+txt');
 console.log("Stream uploaded with root hash:", streamRoot);
 
 // Download as a stream
 const downloadStream = await client.downloadFileAsStream(streamRoot);
 downloadStream.pipe(process.stdout);
 ```
+
 ## Best Practices
 
-1. **Initialize Once**: Create the indexer and flow contract once and reuse them for multiple operations.
+1. **Initialize Once**: Create the indexer once and reuse it for multiple operations.
 2. **Handle Errors**: Always implement proper error handling to manage network issues or other potential problems.
 3. **Use Appropriate Methods**: Use `ZgFile.fromFilePath` for Node.js environments and `Blob` for browser environments.
 4. **Secure Keys**: Never expose your private key in client-side code. Use secure methods to manage and store keys.
