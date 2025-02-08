@@ -11,12 +11,12 @@ Running a validator node in the 0G ecosystem means actively participating in the
 
 ## Hardware Requirements
 
-```
-- Memory: 64 GB
-- CPU: 8 cores
-- Disk: 1 TB NVME SSD
-- Bandwidth: 100 MBps for Download / Upload
-```
+| Component  | Mainnet | Testnet |
+|------------|---------|----------|
+| Memory     | 64 GB   | 64 GB    |
+| CPU        | 8 cores | 8 cores  |
+| Disk       | 1 TB NVME SSD | 4 TB NVME SSD |
+| Bandwidth  | 100 MBps for Download / Upload | 100 MBps for Download / Upload |
 
 <Tabs>
   <TabItem value="binary" label="Build from Source" default>
