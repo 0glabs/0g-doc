@@ -99,7 +99,7 @@ const config: Config = {
           'aria-label': 'GitHub repository',
         },
         {
-          href: 'https://twitter.com/0g_labs',
+          href: 'https://x.com/0g_labs',
           position: 'right',
           className: 'header-twitter-link',
           'aria-label': 'Twitter profile',
@@ -121,7 +121,7 @@ const config: Config = {
           items: [
             { label: 'Discord', href: 'https://discord.gg/0glabs' },
             { label: 'Telegram', href: 'https://t.me/zgcommunity' },
-            { label: 'Twitter', href: 'https://twitter.com/0g_labs' },
+            { label: 'Twitter', href: 'https://x.com/0g_labs' },
           ],
         },
         {
