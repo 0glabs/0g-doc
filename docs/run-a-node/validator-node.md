@@ -15,7 +15,7 @@ Running a validator node in the 0G ecosystem means actively participating in the
 |------------|---------|----------|
 | Memory     | 64 GB   | 64 GB    |
 | CPU        | 8 cores | 8 cores  |
-| Disk       | 1 TB NVME SSD | 4 TB NVME SSD |
+| Disk       | 1 TB NVMe SSD | 4 TB NVMe SSD |
 | Bandwidth  | 100 MBps for Download / Upload | 100 MBps for Download / Upload |
 
 <Tabs>
@@ -158,7 +158,7 @@ Thank you for contributing to the security and decentralization of the 0g networ
    docker run -d --name 0g-chain-validator -p 26656:26656 -p 26657:26657 -e GOGC=900 -e GOMEMLIMIT=40GiB 0g-chain-validator
    ```
 
-   Recommended on Garbage Collection for Pruning Nodes: To maximize sync speed for validators and other network providers that are running pruning nodes, the above settings are recommended. GOGC=900 instructs golang to start garbage collection when heap has grown to 9x, and GOMELIMIT=40GB ensures garbage collection runs whenever memory usage reaches 40GB.
+   Recommended on Garbage Collection for Pruning Nodes: To maximize sync speed for validators and other network providers that are running pruning nodes, the above settings are recommended. GOGC=900 instructs golang to start garbage collection when heap has grown to 9x, and GOMEMLIMIT=40GB ensures garbage collection runs whenever memory usage reaches 40GB.
 
 ## Registering Your Validator
 
