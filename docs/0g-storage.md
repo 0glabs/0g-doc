@@ -55,7 +55,7 @@ To promote fairness, the mining range is capped at 8 TB of data per mining opera
 
 Miners with more resources can still participate by dividing their machines across multiple 8 TB ranges, allowing them to mine simultaneously in various data segments. Meanwhile, smaller miners can focus on a single 8 TB range, ensuring that the process remains competitive and inclusive for all participants, regardless of scale.
 <div style={{textAlign: 'center'}}>
-  <img src="/img/data-chanks.png" alt="Data chunks Image" style={{maxWidth: '100%'}} />
+  <img src="/img/data-chunks.png" alt="Data chunks Image" style={{maxWidth: '100%'}} />
 </div>
 <br />
 ## Comparison to Filecoin and Arweave
