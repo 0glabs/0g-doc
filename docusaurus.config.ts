@@ -72,6 +72,10 @@ const config: Config = {
       },
     ],
   ],
+  // key for mendable.ai
+  customFields:{
+    mendableAnonKey: MENDABLE_AI_KEY,
+  },
 
   themeConfig: {
     navbar: {
