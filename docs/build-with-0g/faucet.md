@@ -13,9 +13,10 @@ Welcome to the 0G Faucet – your gateway to obtaining testnet tokens for the 0G
 The 0G Faucet provides free testnet tokens, essential for interacting with the 0G testnet. Whether you're running a node, utilizing our storage or data availability (DA) network, you'll need these tokens to test and explore the 0G environment without using real cryptocurrency.
 
 ## How to Get Testnet Tokens
-- **Use the Faucet Website:** The easiest way to request tokens is through our [faucet website](https://faucet.0g.ai). Each user can receive up to 1 A0GI token per day, which is sufficient for most testing needs.
+- **Use the Faucet Website:** The easiest way to request tokens is through our [Official Faucet](https://faucet.0g.ai), [Hub Faucet](https://hub.0g.ai/faucet). Each user can receive up to 0.1 A0GI token per day, which is sufficient for most testing needs.
+
 - **Request via thirdweb:** From [thirdweb faucet](https://thirdweb.com/0g-newton-testnet?utm_source=0g&utm_medium=docs), Each user can receive up to 0.01 A0GI token per day.
-- **Request via Discord:** If you require more than 1 A0GI token per day, please reach out in our vibrant [Discord community](https://discord.com/invite/0glabs) to request additional tokens.
+- **Request via Discord:** If you require more than 0.01 A0GI token per day, please reach out in our vibrant [Discord community](https://discord.com/invite/0glabs) to request additional tokens.
 
 :::important 
 - Testnet tokens have no real-world value and are for testing purposes only.

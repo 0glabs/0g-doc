@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 To integrate your AI services into the 0G Compute Network and become a Service Provider, you must first transform your service into a verifiable service and connect it through the provider broker container.
 
-This is easy to do, and we will provide a walkthrough below.
+This guide will walk you through the process of setting up your verifiable model service and integrating it with the network.
 
 ## Verifiable Services
 
