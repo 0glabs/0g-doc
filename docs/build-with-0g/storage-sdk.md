@@ -343,13 +343,23 @@ readableStream.push('Hello, 0G Storage!');
 readableStream.push(null);
 
 // Upload using a stream
-const streamRoot = await client.uploadStream(readableStream, 'example.
-txt');
-console.log("Stream uploaded with root hash:", streamRoot);
+try {
+  const streamRoot = await client.uploadStream(readableStream, 'example.txt');
+  console.log("Stream uploaded with root hash:", streamRoot);
 
-// Download as a stream
-const downloadStream = await client.downloadFileAsStream(streamRoot);
-downloadStream.pipe(process.stdout);
+  // Download as a stream
+  const downloadStream = await client.downloadFileAsStream(streamRoot);
+  downloadStream
+    .on('error', (error) => {
+      console.error('Error during download:', error);
+    })
+    .pipe(process.stdout)
+    .on('error', (error) => {
+      console.error('Error writing to stdout:', error);
+    });
+} catch (error) {
+  console.error('Error during upload:', error);
+}
 ```
 
 ## Best Practices
