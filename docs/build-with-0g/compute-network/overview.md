@@ -26,15 +26,21 @@ The 0G Compute Network implements the following workflow:
 2. **Fee Staking:** Users deposit a certain amount into the smart contract for service fees. If the accumulated charges from user requests exceed their deposit, the provider will stop responding.
 3. **Request Submission:** Users or developers send requests, along with metadata and signatures, to the Service Provider.
 4. **Provider Response:** Providers respond based on the user's balance and the request's validity.
-5. **Settlement and Verification:** Providers generate a [zero-knowledge proof (ZK-proof)](https://github.com/0glabs/0g-zk-settlement-server?tab=readme-ov-file) and submit it to the smart contract for verification and settlement.
+5. **Settlement and Verification:** Providers generate a proof ([zero-knowledge proof (ZK-proof)](https://github.com/0glabs/0g-zk-settlement-server?tab=readme-ov-file)/[TEE proof](#SOME TAG)) and submit it to the smart contract for verification and settlement.
 6. **User Verification:** Users verify the Service Provider's response and can stop requests if the verification fails.
 
 This brief overview introduces the foundational workflow. For more detailed steps, please refer to the full documentation.
 
 ## Get Involved
 
-If you're interested in becoming a **Service Provider**, please refer to [the Provider section](./provider.md) for detailed guidelines and requirements.
+The 0G Compute Network supports two main types of services: Inference and Fine-Tuning. Each service offers unique opportunities for providers to contribute to the AI ecosystem and additional features planned for future releases.
 
-If you wish to leverage provider services to develop your own projects, relevant resources are available in [the Developer SDK section](./sdk).
+To become an **Inference Service Provider**, please refer to [the Inference Provider section](./provider.md) for detailed guidelines and requirements.
+
+To become a **Fine-Tuning Service Provider**, please refer to [the Fine-Tuning Provider section](./fine-tuning-provider.md) for comprehensive instructions and criteria.
+
+If you wish to leverage provider services to develop your own projects, relevant resources are available in [the Developer SDK section](./sdk) for inference.
+
+If you wish to use your own data to optimize existing models, please refer to the [Fine-Tuning CLI section](./cli.md) to utilize the services provided by the compute network.
 
 For those looking to use the 0G Compute Network to access AI services, more information can be found in [the Marketplace section](../marketplace.md).

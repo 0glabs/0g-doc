@@ -1,6 +1,6 @@
 ---
 id: provider
-title: Becoming a Service Provider
+title: Inference Provider
 sidebar_position: 2
 ---
 
