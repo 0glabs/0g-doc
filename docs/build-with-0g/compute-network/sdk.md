@@ -1,6 +1,6 @@
 ---
 id: sdk
-title: AI Inferencing SDK
+title: Inference SDK
 sidebar_position: 3
 ---
 
