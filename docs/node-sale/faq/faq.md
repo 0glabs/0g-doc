@@ -84,7 +84,9 @@ Both Public and Whitelist sale will be available [here](https://node.0gfoundatio
 Rewards from unsold nodes will be reallocated to the sold node runners. 
 
 ### What is your tokenomics?
-![0G-Tokenomics](https://github.com/user-attachments/assets/7ad31a03-ff79-44d8-bc7f-3449796334db)
+![token table-v4 (1)](https://github.com/user-attachments/assets/125b812b-cd4f-4f8f-bb95-a1933d70b84b)
+![token pie chart-v4](https://github.com/user-attachments/assets/814b1112-7ed6-47de-bf95-582cd55569d9)
+
 
 ### What is the % unlocked at TGE? 
 33% of node rewards will be initially claimable on TGE. In order to encourage long term participation in the 0G ecosystem, there will be a penalty based on duration in which a participant chooses to receive this initial reward. The remaining 67% of alignment rewards are linearly unlocked (daily) over 36 months. This penalty mechanism is subject to community vote, further showcasing the "community first approach" of 0G.
