@@ -6,14 +6,14 @@ sidebar_position: 4
 
 This guide provides a comprehensive walkthrough for setting up and offering computing power as a fine-tuning provider on the 0G Compute Network.
 
-## Steps to Set Up a Verifiable Service
+## Preparation
 
-### 1. Download the Installation Package
+### Download the Installation Package
 
 - **Visit the Releases Page:** [0G Serving Broker Releases](https://github.com/0glabs/0g-serving-broker/releases)
 - **Download and Extract:** Get the latest version of the fine-tuning installation package.
 
-### 2. Configuration Setup
+### Configuration Setup
 
 - **Copy the Config File:** Duplicate `config.example.yaml` to create `config.local.yaml`.
 - **Modify Settings:**
@@ -21,9 +21,9 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
   - Set `privateKeys` using your wallet's private key for the 0G blockchain.
 - **Edit `docker-compose.yml`:** Replace `#PORT#` with the desired port, matching the port in `config.local.yaml`.
 
-### 3. Build the TDX Guest Image
+## Build the TDX Guest Image
 
-#### Prerequisites
+### Prerequisites Installation
 
 - **Install Docker:**
   ```bash
@@ -41,7 +41,7 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
   docker run hello-world
   ```
 
-#### Build CVM Image
+### Build CVM Image
 
 To ensure secure and private execution of fine-tuning tasks, you will build an image suitable for running in a Confidential Virtual Machine (CVM). This process leverages NVIDIA's TEE GPU technology and Intel CPUs with TDX support, enhancing security by running model training in an isolated environment.
 
@@ -54,10 +54,12 @@ To ensure secure and private execution of fine-tuning tasks, you will build an i
   ```
 
 - **Image Files Location:** Check out `private-ml-sdk/images/`. Available images include:
-  - `dstack-nvidia-0.3.0/`: Production image without developer tools.
-  - `dstack-nvidia-dev-0.3.0/`: Development image with tools like `sshd`, `strace`.
+  - `dstack-nvidia-0.3.0`: Production image without developer tools.
+  - `dstack-nvidia-dev-0.3.0`: Development image with tools like `sshd`, `strace`.
 
-### 4. Run the Local KMS
+## Run Application
+
+### Run the Local KMS
 
 The Local KMS provides essential keys for CVM initialization, derived from local TEE hardware.
 
@@ -67,7 +69,7 @@ The Local KMS provides essential keys for CVM initialization, derived from local
   ./run.sh
   ```
 
-### 5. Run the TDX Guest Image
+### Run the TDX Guest Image
 
 Ensure you have a TDX host machine with the TDX driver and a compatible NVIDIA GPU.
 
@@ -98,7 +100,7 @@ Ensure you have a TDX host machine with the TDX driver and a compatible NVIDIA G
          --port tcp:0.0.0.0:#PORT#:#PORT#
   ```
 
-### 6. Run the CVM
+### Run the CVM
 
 - **Copy Config File:**
 
