@@ -134,6 +134,7 @@ cd run
 ```
 
 **Additional Notes**
+*   **Snapshot:** Make sure to only include `flow_db` and delete `data_db` under `db` folder when you use a snapshot from a 3rd party ! (Using others' `data_db` will make the node mine for others!)
 
 *   **Security:** Keep your private key (`miner_key`) safe and secure. Anyone with access to it can control your node and potentially claim your mining rewards.
 
