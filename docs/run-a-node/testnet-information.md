@@ -19,9 +19,9 @@ Summary Table
 | Chain Name | 0G-Newton-Testnet |
 | Chain ID | 16600 (`zgtendermint_16600-2`) |
 | Token Symbol | A0GI |
-| **Recommended RPC** - Thirdweb | https://16600.rpc.thirdweb.com/ |
-| RPC - Ankr | https://rpc.ankr.com/0g_newton |
 | RPC | https://evmrpc-testnet.0g.ai |
+| Thirdweb | https://16600.rpc.thirdweb.com/ |
+| Ankr | https://rpc.ankr.com/0g_newton |
 | Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
 | Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
 | Chain Explorer | https://chainscan-newton.0g.ai/ |
@@ -32,11 +32,13 @@ Summary Table
 
 **Comprehensive RPC Dashboard:** https://0g.originstake.com/rpc-api
 
-### Highly Recommended Third-party RPCs
+### ✅ Highly Recommended Third-party RPCs
 
-- [Thirdweb](https://thirdweb.com/0g-newton-testnet)
-- [Ankr](https://www.ankr.com/rpc/0g/)
-- [QuickNode](https://www.quicknode.com/chains/0g)
+> **For optimal performance and reliability, we strongly recommend using these trusted providers:**
+
+- [**QuickNode**](https://www.quicknode.com/chains/0g)
+- [**Thirdweb**](https://thirdweb.com/0g-newton-testnet)
+- [**Ankr**](https://www.ankr.com/rpc/0g/)
 
 ### Community RPCs and Resources
 
