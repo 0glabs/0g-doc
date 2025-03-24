@@ -65,7 +65,7 @@ export default function MetaMaskButton(): JSX.Element {
           gap: '10px'
         }}>
         <img
-          src="https://raw.githubusercontent.com/MetaMask/brand-resources/master/SVG/SVG_MetaMask_Icon_Color.svg"
+          src="https://images.ctfassets.net/clixtyxoaeas/1ezuBGezqfIeifWdVtwU4c/d970d4cdf13b163efddddd5709164d2e/MetaMask-icon-Fox.svg"
           alt="MetaMask Fox"
           style={{ height: '18px' }}
         />
