@@ -71,6 +71,8 @@ const config: Config = {
         hideSearchBarWithNoSearchContext: false,
       },
     ],
+    // Add security headers plugin
+    require.resolve('./src/plugins/security-headers-plugin'),
   ],
 
   themeConfig: {
