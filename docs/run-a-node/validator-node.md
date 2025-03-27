@@ -158,7 +158,7 @@ Thank you for contributing to the security and decentralization of the 0g networ
    docker run -d --name 0g-chain-validator -p 26656:26656 -p 26657:26657 -e GOGC=900 -e GOMEMLIMIT=40GiB 0g-chain-validator
    ```
 
-   Recommended on Garbage Collection for Pruning Nodes: To maximize sync speed for validators and other network providers that are running pruning nodes, the above settings are recommended. GOGC=900 instructs golang to start garbage collection when heap has grown to 9x, and GOMELIMIT=40GB ensures garbage collection runs whenever memory usage reaches 40GB.
+   Recommended on Garbage Collection for Pruning Nodes: To maximize sync speed for validators and other network providers that are running pruning nodes, the above settings are recommended. GOGC=900 instructs golang to start garbage collection when heap has grown to 9x, and GOMEMLIMIT=40GB ensures garbage collection runs whenever memory usage reaches 40GB.
 
 ## Registering Your Validator
 
@@ -177,7 +177,7 @@ Thank you for contributing to the security and decentralization of the 0g networ
    0gchaind keys add <key_name> --recover --eth
    ```
 
-**4. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. 
+**4. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](https://discord.gg/0gLabs). These tokens are necessary for staking and becoming a validator. 
 
 **5. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
