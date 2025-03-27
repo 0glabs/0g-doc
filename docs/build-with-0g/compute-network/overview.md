@@ -35,7 +35,7 @@ This brief overview introduces the foundational workflow. For more detailed step
 
 The 0G Compute Network supports two main types of services: Inference and Fine-Tuning. Each service offers unique opportunities for providers to contribute to the AI ecosystem and additional features planned for future releases.
 
-To become an **Inference Service Provider**, please refer to [the Inference Provider section](./provider.md) for detailed guidelines and requirements.
+To become an **Inference Service Provider**, please refer to [the Inference Provider section](./inference-provider.md) for detailed guidelines and requirements.
 
 To become a **Fine-Tuning Service Provider**, please refer to [the Fine-Tuning Provider section](./fine-tuning-provider.md) for comprehensive instructions and criteria.
 
