@@ -6,7 +6,11 @@ declare global {
   }
 }
 
-export default function MetaMaskButton(): JSX.Element {
+interface MetaMaskButtonProps {
+  label?: string;
+}
+
+export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskButtonProps): JSX.Element {
   const getChainID = (networkId: string): string => {
     return '0x' + parseInt(networkId).toString(16);
   };
@@ -52,7 +56,7 @@ export default function MetaMaskButton(): JSX.Element {
       <button
         onClick={addNetwork}
         style={{
-          backgroundColor: '#1fa588',
+          backgroundColor: '#E2761B', // Updated MetaMask brand color (more accurate)
           color: 'white',
           padding: '10px 20px',
           border: 'none',
@@ -65,11 +69,11 @@ export default function MetaMaskButton(): JSX.Element {
           gap: '10px'
         }}>
         <img
-          src="https://images.ctfassets.net/clixtyxoaeas/1ezuBGezqfIeifWdVtwU4c/d970d4cdf13b163efddddd5709164d2e/MetaMask-icon-Fox.svg"
+          src="/img/metamask.svg"
           alt="MetaMask Fox"
           style={{ height: '18px' }}
         />
-        Add 0G Testnet
+        {label}
       </button>
     </div>
   );

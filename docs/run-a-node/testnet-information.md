@@ -2,6 +2,7 @@
 sidebar_position: 3
 ---
 
+import OKXButton from '@site/src/components/OKXButton';
 import MetaMaskButton from '@site/src/components/MetaMaskButton';
 
 # Testnet Information
@@ -9,7 +10,29 @@ import MetaMaskButton from '@site/src/components/MetaMaskButton';
 
 Welcome to Testnet-V2, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
 
-<MetaMaskButton />
+### Add Testnet to Your Wallet
+Choose your preferred wallet provider:
+
+<div className="wallet-buttons">
+  <MetaMaskButton label="Add to MetaMask" />
+  <OKXButton label="Add to OKX Wallet" />
+</div>
+
+<style>
+  {`
+    .wallet-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .wallet-buttons {
+        flex-direction: column;
+      }
+    }
+  `}
+</style>
 
 ## 0G Testnet Configuration
 

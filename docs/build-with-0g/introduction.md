@@ -11,7 +11,7 @@ sidebar_position: 1
 - [Utilize precompiled contracts](./contracts-on-0g/precompiles/precompiles-wrappeda0gibase)
 
 ### 0G Compute
-- [Set up as a Service Provider](./compute-network/provider.md)
+- [Set up as a Service Provider](./compute-network/inference-provider.md)
 - [Use the Compute SDK](./compute-network/sdk.md)
 
 ### 0G Storage
