@@ -62,6 +62,7 @@ const sidebars: SidebarsConfig = {
                 'build-with-0g/contracts-on-0g/precompiles/precompiles-dasigners',
               ],
             },
+            'build-with-0g/inft',
           ],
         },
         {
