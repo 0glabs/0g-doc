@@ -116,12 +116,15 @@ Once you’ve chosen a pretrained model and prepared your dataset and configurat
 0g-compute-cli  create-task  --provider <PROVIDER_ADDRESS> --model <MODEL_NAME> --dataset <DATASET_ROOT_HASH> --config <CONFIG_FILE_PATH> --data-size <DATA_SIZE> --gas-price <GAS_PRICE>
 ```
 
-- **--provider:** Address of the service provider; see [List Providers](#List-Providers)
-- **--model:** Name of the pretrained model; see [List Preset Models](#List-Preset-Models)
-- **--dataset:** Root hash of the dataset; see [Prepare Dataset](#Prepare-Dataset)
-- **--config:** Path to the parameter file; see [Prepare Configuration File](#Prepare-Configuration-File)
-- **--data-size:** Byte size of the dataset; see [Prepare Dataset](#Prepare-Dataset)
-- **--gas-price:** Gas price. If not specified, a default value calculated by the client will be used.
+| Option        | Description                                              | Reference                          |
+|---------------|----------------------------------------------------------|------------------------------------|
+| `--provider`  | Address of the service provider                          | [List Providers](#list-providers) |
+| `--model`     | Name of the pretrained model                             | [List Preset Models](#list-preset-models) |
+| `--dataset`   | Root hash of the dataset                                 | [Prepare Dataset](#prepare-dataset) |
+| `--config`    | Path to the parameter file                               | [Prepare Configuration File](#prepare-configuration-file) |
+| `--data-size` | Byte size of the dataset                                 | [Prepare Dataset](#prepare-dataset) |
+| `--gas-price` | Gas price. If not specified, a default value is used     | — |
+
 
 The output will be like:
 
