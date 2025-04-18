@@ -42,6 +42,5 @@ We've made it easy to get started. The table below outlines the hardware require
 #### Next Steps
 Ready to set up your node? Check out our detailed guides:
 
-- [Validator Node Setup Guide](validator-node.md)
 - [Storage Node Setup Guide](storage-node.md)
 - [Data Availability Service Setup Guide](da-node.md)

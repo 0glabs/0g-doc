@@ -34,7 +34,6 @@ const sidebars: SidebarsConfig = {
         'run-a-node/testnet-information',
         'run-a-node/storage-node',
         'run-a-node/da-node',
-        'run-a-node/validator-node',
         'run-a-node/community-docker-repo',
       ],
     },

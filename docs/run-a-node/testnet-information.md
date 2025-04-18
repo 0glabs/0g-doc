@@ -108,26 +108,3 @@ See [here](https://docs.0g.ai/build-with-0g/faucet) for more info.
 - [Nodes Guru](https://testnet.0g.explorers.guru/): Nodes Guru provides key information and monitoring tools for validators and node operators to track the health and performance of the network.
   
 See [here](https://docs.0g.ai/build-with-0g/explorer) for more info.
-
-## Node FAQ (Frequently Asked Questions)
-
-In Testnet-V2, we've implemented a fair and transparent process for selecting validators and managing various node types. Here's a summary of the key features:
-
-**How do I become a validator?**
-- You can apply to be a validator [here](https://shorturl.at/fgkoR). We receive numerous validator applications, and there are limited slots, meaning not all applicants can be accommodated. However, we have implemented a fair and transparent process for selecting validators and rotate the validators every few weeks. If you are not chosen for one rotation, that does not mean you will not be chosen for the next one. We appreciate your patience and continued interest in contributing to our network. 
-
-**Why are there limited validator slots?** 
-- Since we are currently using Cosmos/Tendermint consensus and they are limited to ~125 validators, we can only select 125 validators at this time. However, we anticipate this number will increase in the future when we transition to our own custom consensus. 
-
-**What happens if I'm not selected to be a validator?**
-- Validators are rotated every ~two weeks, so even if you're not selected for this round, you may be selected in the next rotation. Furthermore, validators are just one of the node types -- you can also run any of the other node types, like storage and DA. For detailed instructions on how to apply and operate each node type, please refer to our comprehensive setup guides:
-  - [Run a Storage Node](./storage-node.md)
-  - [Run a DA Node](./da-node.md)
-  - [Run a Validator Node](./validator-node.md)
-
-:::important note
-The validator selection process described here applies **only to the testnet**. Mainnet will have a different selection mechanism.
-While it's possible to run nodes (ex: DA node vs Validator Node) independently, your chances of being selected as a _validator_ increases if you run multiple node types. 
-If your validator is selected, it will be manually delegated by our team within a few days.
-If you have any questions, reach out to us on [Discord](https://discord.com/invite/0glabs)
-:::
