@@ -55,7 +55,7 @@ The output will be like:
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ Available                                        │ ✓                                                │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
-│ Price Per Byte in Dataset (A0GI)                 │ 0.000000000000000001                             │
+│ Price Per Byte in Dataset (OG)                 │ 0.000000000000000001                             │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ Provider 2                                       │ ......                                           │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
@@ -65,7 +65,7 @@ The output will be like:
 
 - **Provider x:** The address of the provider. The address of the official provider is `0xf07240Efa67755B5311bc75784a061eDB47165Dd`.
 - **Available:** Indicates if the provider is available. If `✓`, the provider is available. If `✗`, the provider is occupied.
-- **Price Per Byte in Dataset (A0GI):** The service fee charged by the provider. The fee is currently based on the byte count of the dataset. Future versions may charge more accurately based on the token count of the dataset.
+- **Price Per Byte in Dataset (OG):** The service fee charged by the provider. The fee is currently based on the byte count of the dataset. Future versions may charge more accurately based on the token count of the dataset.
 
 ### List Preset Models
 
@@ -228,7 +228,7 @@ Possible output:
 ```
   Overview
 ┌──────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┐
-│ Balance                                          │ Value (A0GI)                                                                    │
+│ Balance                                          │ Value (OG)                                                                    │
 ├──────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────┤
 │ Total                                            │ 0.999999999820331942                                                            │
 ├──────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────┤
@@ -237,7 +237,7 @@ Possible output:
 
   Fine-tuning sub-accounts (Dynamically Created per Used Provider)
 ┌──────────────────────────────────────────────────┬──────────────────────────────┬──────────────────────────────────────────────────┐
-│ Provider                                         │ Balance (A0GI)               │ Requested Return to Main Account (A0GI)          │
+│ Provider                                         │ Balance (OG)               │ Requested Return to Main Account (OG)          │
 ├──────────────────────────────────────────────────┼──────────────────────────────┼──────────────────────────────────────────────────┤
 │ 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC       │ 0.000000000179668154         │ 0.000000000000000000                             │
 ├──────────────────────────────────────────────────┼──────────────────────────────┼──────────────────────────────────────────────────┤
@@ -293,14 +293,14 @@ Possible output:
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ Provider                                         │ 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC       │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
-│ Balance (A0GI)                                   │ 0.000000000179668154                             │
+│ Balance (OG)                                   │ 0.000000000179668154                             │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
-│ Funds Applied for Return to Main Account (A0GI)  │ 0.000000000179668154                             │
+│ Funds Applied for Return to Main Account (OG)  │ 0.000000000179668154                             │
 └──────────────────────────────────────────────────┴──────────────────────────────────────────────────┘
 
   Details of Each Amount Applied for Return to Main Account
 ┌──────────────────────────────────────────────────┬──────────────────────────────────────────────────┐
-│ Amount (A0GI)                                    │ Remaining Locked Time                            │
+│ Amount (OG)                                    │ Remaining Locked Time                            │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ 0.000000000179668154                             │ 23h 58min 34s                                    │
 └──────────────────────────────────────────────────┴──────────────────────────────────────────────────┘

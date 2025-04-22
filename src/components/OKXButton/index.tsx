@@ -21,7 +21,7 @@ export default function OKXButton({ label = "Add 0G Testnet" }: OKXButtonProps):
       return;
     }
 
-    const chainId = getChainID('16600');
+    const chainId = getChainID('80087');
     
     const currentChainId = await window.okxwallet.request({ method: 'eth_chainId' });
     if (currentChainId === chainId) {
@@ -44,14 +44,14 @@ export default function OKXButton({ label = "Add 0G Testnet" }: OKXButtonProps):
             method: 'wallet_addEthereumChain',
             params: [{
               chainId,
-              chainName: '0G-Newton-Testnet',
+              chainName: '0G-Galileo-Testnet',
               nativeCurrency: {
-                name: 'A0GI',
-                symbol: 'A0GI',
+                name: 'OG',
+                symbol: 'OG',
                 decimals: 18
               },
               rpcUrls: ['https://evmrpc-testnet.0g.ai'],
-              blockExplorerUrls: ['https://chainscan-newton.0g.ai/']
+              blockExplorerUrls: ['https://chainscan-galileo.0g.ai/']
             }]
           });
         } catch (addError) {

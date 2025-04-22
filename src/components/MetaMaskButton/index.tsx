@@ -28,15 +28,15 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
     }
 
     const params = [{
-      chainId: getChainID('16600'),
-      chainName: '0G-Newton-Testnet',
+      chainId: getChainID('80087'),
+      chainName: '0G-Galileo-Testnet',
       nativeCurrency: {
-        name: 'A0GI',
-        symbol: 'A0GI',
+        name: 'OG',
+        symbol: 'OG',
         decimals: 18
       },
       rpcUrls: ['https://evmrpc-testnet.0g.ai'],
-      blockExplorerUrls: ['https://chainscan-newton.0g.ai/']
+      blockExplorerUrls: ['https://chainscan-galileo.0g.ai/']
     }];
 
     try {

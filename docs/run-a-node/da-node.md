@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 ---
 While there are various approaches to running a DA (Data Availability) node, this guide outlines our recommended method and the necessary hardware specifications. DA Nodes perform the core functions of verifying, signing, and storing encoded blob data. 
 
-To operate effectively, your DA signer needs to run a DA node to verify encoded blob data, sign it, and store it for future farming and rewards. Currently, to run a DA Node on Testnet, users must stake 10 A0GI tokens. These can be obtained through our [faucet](https://faucet.0g.ai/) or via rewards from running Storage Nodes or Validator Nodes. You can also reach out to our technical moderators on [Discord](https://discord.com/invite/0glabs).
+To operate effectively, your DA signer needs to run a DA node to verify encoded blob data, sign it, and store it for future farming and rewards. Currently, to run a DA Node on Testnet, users must stake 10 OG tokens. These can be obtained through our [faucet](https://faucet.0g.ai/) or via rewards from running Storage Nodes or Validator Nodes. You can also reach out to our technical moderators on [Discord](https://discord.com/invite/0glabs).
 
 ## Hardware Requirements
 
@@ -241,7 +241,7 @@ The DASigners contract is an interface through which Solidity contracts can inte
 
 To become a DA signer, you must meet the following requirements:
 
-1. Delegation Requirement: To become a signer, an address must receive enough delegations, equivalent to at least the TokensPerVote amount of A0GI tokens (30 tokens per vote in the testnet), registered in the DASigners module.
+1. Delegation Requirement: To become a signer, an address must receive enough delegations, equivalent to at least the TokensPerVote amount of OG tokens (30 tokens per vote in the testnet), registered in the DASigners module.
 
 2. Node Operation: Each signer needs to run a DA (Data Availability) node that verifies blob encoding and generates BLS signatures for signed blobs.
 
@@ -279,7 +279,7 @@ EncodedSlices = 3072
 
 ### Signer
 
-A Signer is an address with sufficient delegations (at least `TokensPerVote` A0GI) registered in the DASigners module. Each signer should run a DA node to verify DA blob encoding and generate BLS signatures for signed blobs. The BLS curve used is BN254, and the public keys of signers are registered in the contract.
+A Signer is an address with sufficient delegations (at least `TokensPerVote` OG) registered in the DASigners module. Each signer should run a DA node to verify DA blob encoding and generate BLS signatures for signed blobs. The BLS curve used is BN254, and the public keys of signers are registered in the contract.
 
 **Note**: For accounts with delegations to more than 10 validators, only 10 of these delegations are counted and accumulated.
 
@@ -293,7 +293,7 @@ In an epoch, there can be up to `MaxQuorums` quorums. Each quorum is a list of s
 
 ### Vote
 
-Signers can submit their signatures on a registration message to request joining the quorums in the next epoch. At the start of each epoch, the DASigners module calculates the voting power for registered signers based on their delegated token amounts. Each delegated `TokensPerVote` A0GI counts as one vote, and each signer can have up to `MaxVotesPerSigner` votes. All votes are then randomly ordered and distributed into quorums.
+Signers can submit their signatures on a registration message to request joining the quorums in the next epoch. At the start of each epoch, the DASigners module calculates the voting power for registered signers based on their delegated token amounts. Each delegated `TokensPerVote` OG counts as one vote, and each signer can have up to `MaxVotesPerSigner` votes. All votes are then randomly ordered and distributed into quorums.
 
 ## Interface
 
