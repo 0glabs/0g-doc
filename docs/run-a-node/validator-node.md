@@ -95,7 +95,7 @@ For the testnet, due to stress testing with a large number of transactions, a fu
 
    ```bash
    0gchaind tx staking create-validator \
-   --amount=<staking_amount>ua0gi \
+   --amount=<staking_amount>uOG \
    --pubkey=$(0gchaind tendermint show-validator) \
    --moniker="<your_validator_name>" \
    --chain-id=zgtendermint_16600-2 \
@@ -120,7 +120,7 @@ For the testnet, due to stress testing with a large number of transactions, a fu
 **12. Delegate to Another account:**
 
    ```bash
-   0gchaind tx staking delegate <0gvaloper> <amount>ua0gi --gas auto --gas-adjustment 1.4 --from ga-testnet --node <tendermint_rpc> --chain-id <chain-id>
+   0gchaind tx staking delegate <0gvaloper> <amount>uOG --gas auto --gas-adjustment 1.4 --from ga-testnet --node <tendermint_rpc> --chain-id <chain-id>
    ```
 ***Note: Only the top 125 staked validators will be active.***
 
@@ -183,7 +183,7 @@ Thank you for contributing to the security and decentralization of the 0g networ
 
    ```bash
    0gchaind tx staking create-validator \
-   --amount=<staking_amount>ua0gi \
+   --amount=<staking_amount>uOG \
    --pubkey=$(0gchaind tendermint show-validator) \
    --moniker="<your_validator_name>" \
    --chain-id=zgtendermint_16600-2 \

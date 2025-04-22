@@ -25,7 +25,7 @@ title: Deploy Contracts on 0G Chain
    - Follow the same deployment steps as you would on Ethereum, using your 0G Chain node or RPC endpoint.
 
 4. **Verify Deployment Results on 0g chain scan**:
-   - After deployment, you can view the transaction results and verify the contract on [0g chain scan](https://chainscan-newton.0g.ai/), 0G Chain's block explorer.
+   - After deployment, you can view the transaction results and verify the contract on [0g chain scan](https://chainscan-galileo.0g.ai/), 0G Chain's block explorer.
    - This explorer will show details about the contract deployment, such as the transaction status, contract address, and interaction history. You can also verify the contract’s code and ABI for public transparency.
 
 By following these steps, you’ll be able to deploy and verify your contracts effectively on 0G Chain, leveraging its EVM compatibility for a seamless development experience.

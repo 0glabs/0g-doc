@@ -93,7 +93,7 @@ nano config.toml
 
 
 Below is just an example configuration for illustration purposes.
-For official default values, copy over the `config-testnet-turbo.toml` file or `config-testnet-standard.toml` file to your `config.toml` file.
+For official default values, copy over the `config-testnet-turbo.toml` file to your `config.toml` file.
 
 
 ```

@@ -121,7 +121,7 @@ The 0G Compute Network uses a prepaid account system for each provider. Before u
 await broker.ledger.addLedger(initialBalance);
 ```
 
-The `initialBalance` needs to be specified in A0GI units.
+The `initialBalance` needs to be specified in OG units.
 
 #### Add Funds
 
@@ -129,7 +129,7 @@ The `initialBalance` needs to be specified in A0GI units.
 await broker.ledger.depositFund(amount);
 ```
 
-The `amount` needs to be specified in A0GI units.
+The `amount` needs to be specified in OG units.
 
 ### Making Service Requests
 

@@ -202,7 +202,7 @@ import { ethers } from 'ethers';
 ```javascript
 // Network Constants
 const RPC_URL = 'https://evmrpc-testnet.0g.ai/';
-const INDEXER_RPC = 'https://indexer-storage-testnet-standard.0g.ai';
+const INDEXER_RPC = 'https://indexer-storage-testnet-turbo.0g.ai';
 
 // Initialize provider and signer
 // Make sure to use a private key with sufficient balance for transactions

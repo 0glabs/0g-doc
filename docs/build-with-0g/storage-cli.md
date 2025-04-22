@@ -15,7 +15,7 @@ If you want more control over the data location and versioning, you can use 0G S
 
 ### 0G Storage Web Tool
 
-If you want a sample web based tool to upload and download your files and directories, the first simple and straightforward way is to use the [Web Tool](https://storagescan-newton.0g.ai/tool). 
+If you want a sample web based tool to upload and download your files and directories, the first simple and straightforward way is to use the Web Tool(coming soon). 
 
 
 ## Installation
@@ -120,7 +120,7 @@ The command-line help listing is reproduced below for your convenience. The same
 **Important Considerations**
 
 *   **Contract Addresses:** You need the accurate contract addresses for the 0G log contract on the specific blockchain you are using. You can find these on the 0G Storage explorer or in the official documentation.
-*   **File Root Hash:** To download a file, you must have its root hash. This is provided when you upload a file or can be found by looking up your transaction on the [0G Storage explorer](https://storagescan-newton.0g.ai/).
+*   **File Root Hash:** To download a file, you must have its root hash. This is provided when you upload a file or can be found by looking up your transaction on the 0G Storage explorer(coming soon).
 *   **Storage Node RPC Endpoint:** You can use the team-deployed storage node or run your own node for more control and the potential to earn rewards.
 
 

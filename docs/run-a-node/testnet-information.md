@@ -8,7 +8,7 @@ import MetaMaskButton from '@site/src/components/MetaMaskButton';
 # Testnet Information
 ---
 
-Welcome to Testnet-V2, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
+Welcome to Testnet-V3, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
 
 ### Add Testnet to Your Wallet
 Choose your preferred wallet provider:
@@ -39,16 +39,13 @@ Choose your preferred wallet provider:
 Summary Table
 | Detail | Value |
 |-------|-------|
-| Chain Name | 0G-Newton-Testnet |
-| Chain ID | 16600 (`zgtendermint_16600-2`) |
-| Token Symbol | A0GI |
+| Chain Name | 0G-Galileo-Testnet |
+| Chain ID | 80087 |
+| Token Symbol | OG |
 | RPC | https://evmrpc-testnet.0g.ai |
-| Thirdweb | https://16600.rpc.thirdweb.com/ |
-| Ankr | https://rpc.ankr.com/0g_newton |
-| Storage Indexer Standard RPC | https://indexer-storage-testnet-standard.0g.ai |
 | Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
-| Chain Explorer | https://chainscan-newton.0g.ai/ |
-| Storage Explorer | https://storagescan-newton.0g.ai/ |
+| Chain Explorer | https://chainscan-galileo.0g.ai/ |
+| Storage Explorer | Coming Soon |
 | Faucet | https://faucet.0g.ai/ |
 
 ## RPCs
@@ -57,24 +54,13 @@ Summary Table
 
 ### ✅ Highly Recommended Third-party RPCs
 
+> **Note:** With the ongoing upgrade to V3, third-party RPC providers are currently updating their infrastructure. The list below reflects providers for the previous version. V3 compatible endpoints will be updated here soon.
+
 > **For optimal performance and reliability, we strongly recommend using these trusted providers:**
 
-- [**QuickNode**](https://www.quicknode.com/chains/0g)
-- [**Thirdweb**](https://thirdweb.com/0g-newton-testnet)
-- [**Ankr**](https://www.ankr.com/rpc/0g/)
-
-### Community RPCs and Resources
-
-| Provider | RPC Endpoint |
-|----------|--------------|
-| Originstake | https://0g-json-rpc-public.originstake.com |
-| Validatorvn | https://0g-rpc-evm01.validatorvn.com |
-| Itrocket | https://og-testnet-jsonrpc.itrocket.net |
-| Zstake | https://0g-evmrpc.zstake.xyz/ |
-
-:::caution
-Do not rely on the free community endpoints listed above for production deployments. Production deployments should rely on service providers with SLAs or your own node.
-:::
+- **QuickNode**
+- **Thirdweb**
+- **Ankr**
 
 ## Contract Addresses
 
@@ -84,18 +70,13 @@ The contract address might change during the public testnet phase, so please che
 
 | Component | Contract | Address |
 |-----------|----------|---------|
-| **0G Storage Turbo** | Flow Contract | `0xbD2C3F0E65eDF5582141C35969d66e34629cC768` |
-| | Mine Contract | `0x6815F41019255e00D6F34aAB8397a6Af5b6D806f` |
-| | Market Contract | `0xBa697dB4e9293e6d7674045373508823A85d0798` |
-| | Reward Contract | `0x51998C4d486F406a788B766d93510980ae1f9360` |
-| **0G Storage Standard** | Flow Contract | `0x0460aA47b41a66694c0a73f667a1b795A5ED3556` |
-| | Mine Contract | `0x1785c8683b3c527618eFfF78d876d9dCB4b70285` |
-| | Market Contract | `0x20f7e27cD0FaBD87F96afC4E83A88a47E9Ce4689` |
-| | Reward Contract | `0x0496D0817BD8519e0de4894Dc379D35c35275609` |
-| **0G DA** | DAEntrance Contract | `0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9` |
+| **0G Storage Turbo** | Flow Contract | `0x56A565685C9992BF5ACafb940ff68922980DBBC5` |
+| | Mine Contract | `0xB87E0e5657C25b4e132CB6c34134C0cB8A962AD6` |
+| | Market Contract | `0xf091C0e74a68Ff33d8327B2733F6e78F7BB9C827` |
+| | Reward Contract | `0x233B2768332e4Bae542824c93cc5c8ad5d44517E` |
+| **0G DA** | DAEntrance Contract | `0xE75A073dA5bb7b0eC622170Fd268f35E675a957B` |
 
-Deployed Block Number: `595059`
-
+Deployed Block Number: `1`
 
 ### Faucet
 [Faucet](https://faucet.0g.ai/) 
@@ -103,8 +84,9 @@ Deployed Block Number: `595059`
 See [here](https://docs.0g.ai/build-with-0g/faucet) for more info.
 
 ### Explorers
-- [Chain Scan](https://chainscan-newton.0g.ai/): Chain Scan provides a comprehensive view of 0G chain activity and transactions.
-- [Storage Scan](https://storagescan-newton.0g.ai/): Storage Scan is your go-to tool for exploring storage-related activities within the network.
+
+- [Chain Scan](https://chainscan-galileo.0g.ai/): Chain Scan provides a comprehensive view of 0G chain activity and transactions.
+- **Storage Scan (coming soon)**: Storage Scan is your go-to tool for exploring storage-related activities within the network.
 - [Nodes Guru](https://testnet.0g.explorers.guru/): Nodes Guru provides key information and monitoring tools for validators and node operators to track the health and performance of the network.
   
 See [here](https://docs.0g.ai/build-with-0g/explorer) for more info.
