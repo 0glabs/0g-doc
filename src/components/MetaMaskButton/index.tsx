@@ -22,7 +22,7 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
     }
 
     const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
-    if (currentChainId === getChainID('16600')) {
+    if (currentChainId === getChainID('80087')) {
       alert('0G Testnet is already added!');
       return;
     }
