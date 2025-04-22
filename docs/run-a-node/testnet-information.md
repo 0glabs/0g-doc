@@ -76,7 +76,7 @@ The contract address might change during the public testnet phase, so please che
 | | Reward Contract | `0x233B2768332e4Bae542824c93cc5c8ad5d44517E` |
 | **0G DA** | DAEntrance Contract | `0xE75A073dA5bb7b0eC622170Fd268f35E675a957B` |
 
-Block Number: `1`
+Deployed Block Number: `1`
 
 ### Faucet
 [Faucet](https://faucet.0g.ai/) 
