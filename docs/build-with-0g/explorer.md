@@ -9,7 +9,7 @@ Our explorers provide a user-friendly window into the 0G ecosystem. By offering 
 
 These explorers provide detailed insights into storage and chain activities, helping you understand and analyze the network effectively.
 
-### [Storage Scan (coming soon)](#)
+### [Storage Scan](https://storagescan-galileo.0g.ai/)
 
 Storage Scan is your go-to tool for exploring storage-related activities within the network. Use Storage Scan to:
 - Track data storage and retrieval activities
