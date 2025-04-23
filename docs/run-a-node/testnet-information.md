@@ -45,7 +45,7 @@ Summary Table
 | RPC | https://evmrpc-testnet.0g.ai |
 | Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
 | Chain Explorer | https://chainscan-galileo.0g.ai/ |
-| Storage Explorer | Coming Soon |
+| Storage Explorer | https://storagescan-galileo.0g.ai/ |
 | Faucet | https://faucet.0g.ai/ |
 
 ## RPCs
@@ -86,7 +86,7 @@ See [here](https://docs.0g.ai/build-with-0g/faucet) for more info.
 ### Explorers
 
 - [Chain Scan](https://chainscan-galileo.0g.ai/): Chain Scan provides a comprehensive view of 0G chain activity and transactions.
-- **Storage Scan (coming soon)**: Storage Scan is your go-to tool for exploring storage-related activities within the network.
+- **[Storage Scan](https://storagescan-galileo.0g.ai/)**: Storage Scan is your go-to tool for exploring storage-related activities within the network.
 - [Nodes Guru](https://testnet.0g.explorers.guru/): Nodes Guru provides key information and monitoring tools for validators and node operators to track the health and performance of the network.
   
 See [here](https://docs.0g.ai/build-with-0g/explorer) for more info.
