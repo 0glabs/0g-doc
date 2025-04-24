@@ -177,7 +177,7 @@ Thank you for contributing to the security and decentralization of the 0g networ
    0gchaind keys add <key_name> --recover --eth
    ```
 
-**4. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disord/0glabs). These tokens are necessary for staking and becoming a validator. 
+**4. Acquire Testnet Tokens:** Obtain testnet tokens from the 0G faucet by entering your public key on our [website](https://faucet.0g.ai) or by requesting on [Discord](disсord/0glabs). These tokens are necessary for staking and becoming a validator. 
 
 **5. Become a Validator:** Register your node as a validator on the 0G network, specifying your stake amount, commission rates, and other important parameters.
 
