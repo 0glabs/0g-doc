@@ -48,19 +48,9 @@ Summary Table
 | Storage Explorer | https://storagescan-galileo.0g.ai/ |
 | Faucet | https://faucet.0g.ai/ |
 
-## RPCs
+<!-- ## RPCs
 
-**Comprehensive RPC Dashboard:** https://0g.originstake.com/rpc-api
-
-### ✅ Highly Recommended Third-party RPCs
-
-> **Note:** With the ongoing upgrade to V3, third-party RPC providers are currently updating their infrastructure. The list below reflects providers for the previous version. V3 compatible endpoints will be updated here soon.
-
-> **For optimal performance and reliability, we strongly recommend using these trusted providers:**
-
-- **QuickNode**
-- **Thirdweb**
-- **Ankr**
+**Comprehensive RPC Dashboard:** https://0g.originstake.com/rpc-api -->
 
 ## Contract Addresses
 
@@ -86,7 +76,7 @@ See [here](https://docs.0g.ai/build-with-0g/faucet) for more info.
 ### Explorers
 
 - [Chain Scan](https://chainscan-galileo.0g.ai/): Chain Scan provides a comprehensive view of 0G chain activity and transactions.
-- **[Storage Scan](https://storagescan-galileo.0g.ai/)**: Storage Scan is your go-to tool for exploring storage-related activities within the network.
+- [Storage Scan](https://storagescan-galileo.0g.ai/): Storage Scan is your go-to tool for exploring storage-related activities within the network.
 - [Nodes Guru](https://testnet.0g.explorers.guru/): Nodes Guru provides key information and monitoring tools for validators and node operators to track the health and performance of the network.
   
 See [here](https://docs.0g.ai/build-with-0g/explorer) for more info.
