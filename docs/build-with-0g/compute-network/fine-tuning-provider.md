@@ -24,7 +24,7 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
 
   To enable support for customized models provided by the service provider, you need to add the following configuration to your `config.local.yaml` file:
 
-    ```
+    ```bash
       service:
         customizedModels:
           - name: "deepseek-r1-distill-qwen-1.5b"
@@ -44,13 +44,13 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
     ```
     Configuration Fields:
 
-      - **name:** The name of the customized model.
-      - **hash:** The root hash of the model.
-      - **image:** The name of the Docker image that contains the model and its environment.
-      - **dataType:** The type of dataset the model is designed to train on. Possible values are `text` or `image`.
-      - **trainingScript:** The path to the training script inside the Docker container.
-      - **description:** A short description of the model, including key features or training methodology.
-      - **tokenizer:** The root hash of the tokenizer files used to calculate dataset's size.
+    - **name:** The name of the customized model.
+    - **hash:** The root hash of the model.
+    - **image:** The name of the Docker image that contains the model and its environment.
+    - **dataType:** The type of dataset the model is designed to train on. Possible values are `text` or `image`.
+    - **trainingScript:** The path to the training script inside the Docker container.
+    - **description:** A short description of the model, including key features or training methodology.
+    - **tokenizer:** The root hash of the tokenizer files used to calculate dataset's size.
 
 ## Build the TDX Guest Image
 

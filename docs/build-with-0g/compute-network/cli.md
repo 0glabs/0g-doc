@@ -147,11 +147,11 @@ Once you’ve chosen a pretrained model and prepared your dataset and configurat
 0g-compute-cli  create-task  --provider <PROVIDER_ADDRESS> --model <MODEL_NAME> --dataset <DATASET_ROOT_HASH> --config <CONFIG_FILE_PATH> --data-size <DATA_SIZE> --gas-price <GAS_PRICE>
 ```
 
-- **--provider:** Address of the service provider; see [List Providers](#List-Providers)
-- **--model:** Name of the pretrained model; see [List Preset Models](#List-Preset-Models)
-- **--dataset:** Root hash of the dataset; see [Prepare Dataset](#Prepare-Dataset)
-- **--config:** Path to the parameter file; see [Prepare Configuration File](#Prepare-Configuration-File)
-- **--data-size:** Size of the dataset; see [Prepare Dataset](#Prepare-Dataset)
+- **--provider:** Address of the service provider; see [List Providers](#list-providers)
+- **--model:** Name of the pretrained model; see [List Preset Models](#list-preset-models)
+- **--dataset:** Root hash of the dataset; see [Prepare Dataset](#prepare-dataset)
+- **--config:** Path to the parameter file; see [Prepare Configuration File](#prepare-configuration-file)
+- **--data-size:** Size of the dataset; see [Calculate Dataset Size](#calculate-dataset-size)
 - **--gas-price:** Gas price. If not specified, a default value calculated by the client will be used.
 
 The output will be like:
@@ -225,7 +225,7 @@ Training model for task beb6f0d8-4660-4c62-988d-00246ce913d2 completed successfu
 
 ### Confirm Task Result
 
-Use the [Check Task](#Check-Task) command to view task status. When the status changes to `Delivered`, it indicates that the provider has completed the fine-tuning task and uploaded the result to storage. The corresponding root hash has also been saved to the contract. You can download the model with the following command; CLI will download the model based on the root hash submitted by the provider. If the download is successful, CLI updates the contract information to confirm the model is downloaded.
+Use the [Check Task](#check-task) command to view task status. When the status changes to `Delivered`, it indicates that the provider has completed the fine-tuning task and uploaded the result to storage. The corresponding root hash has also been saved to the contract. You can download the model with the following command; CLI will download the model based on the root hash submitted by the provider. If the download is successful, CLI updates the contract information to confirm the model is downloaded.
 
 ```bash
 0g-compute-cli acknowledge-model --provider <PROVIDER_ADDRESS>  --data-path <PATH_TO_SAVE_MODEL>
@@ -286,9 +286,9 @@ Possible output:
 
 - **Provider:** Address of the provider corresponding to the sub-account
 - **Balance:** Balance of the sub-account, which is an amount transferred from the main account to the sub-account based on the task fee whenever a task is created.
-- **Requested Return to Main Account:** Amount requested to be returned from sub-accounts to the main account. If the amount in the sub-account goes unspent for any reason, such as a task failure, you can use the `return-funds` command to return the balance to the main account. However, it won't return immediately and will only be available after a lock-in period. For details, refer to [Retrieving Funds](#Retrieve-Funds).
+- **Requested Return to Main Account:** Amount requested to be returned from sub-accounts to the main account. If the amount in the sub-account goes unspent for any reason, such as a task failure, you can use the `return-funds` command to return the balance to the main account. However, it won't return immediately and will only be available after a lock-in period. For details, refer to [Retrieving Funds](#retrieve-funds).
 
-_Note:_ For more information about sub-accounts, refer to [View Sub-Account](#View-Sub-Account).
+_Note:_ For more information about sub-accounts, refer to [View Sub-Account](#view-sub-account).
 
 ### Deposit
 
@@ -373,7 +373,7 @@ The retrieve funds operation returns the balance from sub-accounts to the main a
 0g-compute-cli retrieve-fund
 ```
 
-The above command requests the balance from all sub-accounts to be returned to the main account. After the lock-in period elapses, execute the `retrieve-fund` command again to refund all the amounts whose locking period has concluded to the main account. Check the refund status using the [View Sub-Account](#View-Sub-Account) command.
+The above command requests the balance from all sub-accounts to be returned to the main account. After the lock-in period elapses, execute the `retrieve-fund` command again to refund all the amounts whose locking period has concluded to the main account. Check the refund status using the [View Sub-Account](#view-sub-account) command.
 
 ## Other Commands
 
