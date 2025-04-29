@@ -20,6 +20,37 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
   - Set `servingUrl` to your publicly accessible URL.
   - Set `privateKeys` using your wallet's private key for the 0G blockchain.
 - **Edit `docker-compose.yml`:** Replace `#PORT#` with the desired port, matching the port in `config.local.yaml`.
+- **Supporting Customized Models from Providers**
+
+  To enable support for customized models provided by the service provider, you need to add the following configuration to your `config.local.yaml` file:
+
+    ```
+      service:
+        customizedModels:
+          - name: "deepseek-r1-distill-qwen-1.5b"
+            hash: "0x1d98b2088bd094f879315ac29edd471638204cd45e7c8d066ee88fbc7c174ce7"
+            image: "deepseek:latest"
+            dataType: "text"
+            trainingScript: "/app/finetune.py"
+            description: "DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning."
+            tokenizer: "0x919d382d5192a7d22006ff5063f1b9064a5b6dd23e03998937f03024f1e2cd36"
+          - name: "mobilenet_v2"
+            hash: "0x7f2244b25cd2219dfd9d14c052982ecce409356e0f08e839b79796e270d110a0"
+            image: "mobilenetV2:latest"
+            dataType: "image"
+            trainingScript: "/app/finetune.py"
+            description: "MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224."
+            tokenizer: "0x7cf8fdfc8ca961a882c6ba20db158f0620fb640339e929ae38b5256f6e25f629"
+    ```
+    Configuration Fields:
+
+      - **name:** The name of the customized model.
+      - **hash:** The root hash of the model.
+      - **image:** The name of the Docker image that contains the model and its environment.
+      - **dataType:** The type of dataset the model is designed to train on. Possible values are `text` or `image`.
+      - **trainingScript:** The path to the training script inside the Docker container.
+      - **description:** A short description of the model, including key features or training methodology.
+      - **tokenizer:** The root hash of the tokenizer files used to calculate dataset's size.
 
 ## Build the TDX Guest Image
 

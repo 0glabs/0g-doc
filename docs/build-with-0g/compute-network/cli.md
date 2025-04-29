@@ -76,6 +76,7 @@ The output will be like:
 The output will be like:
 
 ```
+Predefined Model:
 ┌──────────────────────────────┬───────────────────────────────────────────────────────────────────────────┐
 │ Name                         │ Description                                                               │
 ├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┤
@@ -88,9 +89,28 @@ The output will be like:
 │                              │ GD, which is a novel distributed finetuning framework. More details can b │
 │                              │ e found at: https://github.com/DS3Lab/CocktailSGD                         │
 └──────────────────────────────┴───────────────────────────────────────────────────────────────────────────┘
+Provider's Model:
+┌──────────────────────────────┬───────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────┐
+│ Name                         │ Description                                                               │ Provider                                    │
+├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────┤
+│ deepseek-r1-distill-qwen-1.5 │ DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning  │ 0xf07240Efa67755B5311bc75784a061eDB47165Dd  │
+│ b                            │ (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstr │                                             │
+│                              │ ated remarkable performance on reasoning.                                 │                                             │
+├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────┤
+│ mobilenet_v2                 │ MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224.      │ 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC  │
+└──────────────────────────────┴───────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────┘
 ```
 
-_Note_: We currently offer the models listed above as presets. You can choose one of these models for fine-tuning. More models will be provided in future versions. Later versions will also support users fine-tuning with their own pretrained models.
+The output consists of two main sections:
+- **Predefined Models**
+
+These are models that are provided by the system as predefined options. They are typically built-in, curated, and maintained to ensure quality, reliability, and broad applicability across common use cases.
+
+- **Provider's Model**
+
+These models are offered by external service providers. Providers may customize or fine-tune models to address specific needs, industries, or advanced use cases. The availability and quality of these models may vary depending on the provider.
+
+_Note_: We currently offer the models listed above as presets. You can choose one of these models for fine-tuning. More models will be provided in future versions.
 
 ### Prepare Configuration File
 
@@ -106,7 +126,18 @@ After preparing the dataset, upload it to 0G Storage using the following command
 0g-compute-cli upload --data-path <PATH_TO_DATASET>
 ```
 
-_Note_: Record the root hash and byte size of the dataset; they will be needed in later steps.
+_Note_: Record the root hash of the dataset; they will be needed in later steps.
+
+### Calculate Dataset Size
+After uploading the dataset to storage, you can calculate its size by running the following command:
+
+```bash
+0g-compute-cli calculate-token --model <MODEL_NAME> --dataset-path <PATH_TO_DATASET> --provider <PROVIDER_ADDRESS> 
+```
+
+- **--model:** The name of the model you intend to use; see [List Preset Models](#list-preset-models)
+- **--dataset-path:** The local path to the dataset that you want to evaluate.
+- **--provider (option):** Address of the service provider. This is only required when you are using a **Provider's Model** instead of a **Predefined Model**.
 
 ### Create Fine-Tuning Task
 
@@ -120,7 +151,7 @@ Once you’ve chosen a pretrained model and prepared your dataset and configurat
 - **--model:** Name of the pretrained model; see [List Preset Models](#List-Preset-Models)
 - **--dataset:** Root hash of the dataset; see [Prepare Dataset](#Prepare-Dataset)
 - **--config:** Path to the parameter file; see [Prepare Configuration File](#Prepare-Configuration-File)
-- **--data-size:** Byte size of the dataset; see [Prepare Dataset](#Prepare-Dataset)
+- **--data-size:** Size of the dataset; see [Prepare Dataset](#Prepare-Dataset)
 - **--gas-price:** Gas price. If not specified, a default value calculated by the client will be used.
 
 The output will be like:
@@ -133,6 +164,7 @@ Created Task ID: 6b607314-88b0-4fef-91e7-43227a54de57
 ```
 
 _Note_: When creating a task for the same provider, you must wait for the previous task to be completed (status `Finished`) before creating a new task.
+if the provider is currently running other tasks, you will be prompted to  choose between adding your task to the waiting queue or canceling the request.
 
 ### Check Task
 
