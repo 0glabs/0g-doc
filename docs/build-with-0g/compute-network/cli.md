@@ -93,11 +93,11 @@ Provider's Model:
 ┌──────────────────────────────┬───────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────┐
 │ Name                         │ Description                                                               │ Provider                                    │
 ├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ deepseek-r1-distill-qwen-1.5 │ DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning  │ 0xf07240Efa67755B5311bc75784a061eDB47165Dd  │
+│ deepseek-r1-distill-qwen-1.5 │ DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning  │ <PROVIDER_ADDRESS>                          │
 │ b                            │ (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstr │                                             │
 │                              │ ated remarkable performance on reasoning.                                 │                                             │
 ├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────┤
-│ mobilenet_v2                 │ MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224.      │ 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC  │
+│ mobilenet_v2                 │ MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224.      │ <PROVIDER_ADDRESS>                          │
 └──────────────────────────────┴───────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────┘
 ```
 

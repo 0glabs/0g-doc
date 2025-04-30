@@ -28,19 +28,19 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
       service:
         customizedModels:
           - name: "deepseek-r1-distill-qwen-1.5b"
-            hash: "0x1d98b2088bd094f879315ac29edd471638204cd45e7c8d066ee88fbc7c174ce7"
+            hash: "<MODEL_ROOT_HASH>"
             image: "deepseek:latest"
             dataType: "text"
             trainingScript: "/app/finetune.py"
             description: "DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning."
-            tokenizer: "0x919d382d5192a7d22006ff5063f1b9064a5b6dd23e03998937f03024f1e2cd36"
+            tokenizer: "<TOKENIZER_ROOT_HASH>"
           - name: "mobilenet_v2"
-            hash: "0x7f2244b25cd2219dfd9d14c052982ecce409356e0f08e839b79796e270d110a0"
+            hash: "<MODEL_ROOT_HASH>"
             image: "mobilenetV2:latest"
             dataType: "image"
             trainingScript: "/app/finetune.py"
             description: "MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224."
-            tokenizer: "0x7cf8fdfc8ca961a882c6ba20db158f0620fb640339e929ae38b5256f6e25f629"
+            tokenizer: "<TOKENIZER_ROOT_HASH>"
     ```
     Configuration Fields:
 
