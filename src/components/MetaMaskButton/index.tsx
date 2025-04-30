@@ -39,16 +39,11 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
       blockExplorerUrls: ['https://chainscan-galileo.0g.ai/']
     }];
 
-    try {
       await window.ethereum.request({
         method: 'wallet_addEthereumChain',
         params
       });
-      alert('Network added successfully');
-    } catch (error) {
-      alert('Failed to add network');
-      console.error(error);
-    }
+    
   };
 
   return (
