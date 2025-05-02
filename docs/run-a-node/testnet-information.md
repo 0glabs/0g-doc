@@ -4,6 +4,8 @@ sidebar_position: 3
 
 import OKXButton from '@site/src/components/OKXButton';
 import MetaMaskButton from '@site/src/components/MetaMaskButton';
+import RemoveNewtonModal from '@site/src/components/RemoveNewtonModal';
+import React, { useState } from 'react';
 
 # Testnet Information
 ---
@@ -11,12 +13,41 @@ import MetaMaskButton from '@site/src/components/MetaMaskButton';
 Welcome to Testnet-V3, where you can contribute to our network by operating various node types, including Validator, Storage, and DA (Data Availability) nodes. This page provides an overview of the testnet process and important information for participants.
 
 ### Add Testnet to Your Wallet
-Choose your preferred wallet provider:
 
-<div className="wallet-buttons">
-  <MetaMaskButton label="Add to MetaMask" />
-  <OKXButton label="Add to OKX Wallet" />
-</div>
+export const AddNetworkSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <div className="admonition admonition-note alert alert--info">
+        <div className="admonition-heading">
+          <h5>
+            Note
+          </h5>
+        </div>
+        <div className="admonition-content">
+          <p>
+            Before adding the 0G-Galileo testnet, please ensure you remove any old newton testnet configurations from your wallet to avoid conflicts. -
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} style={{marginLeft: '5px'}}>
+              Need help?
+            </a>
+          </p>
+        </div>
+      </div>
+
+      Choose your preferred wallet provider:
+
+      <div className="wallet-buttons">
+        <MetaMaskButton label="Add to MetaMask" />
+        <OKXButton label="Add to OKX Wallet" />
+      </div>
+
+      <RemoveNewtonModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
+  );
+};
+
+<AddNetworkSection />
 
 <style>
   {`

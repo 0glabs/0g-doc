@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import RemoveNewtonModal from '../RemoveNewtonModal';
 
 declare global {
   interface Window {
@@ -11,6 +12,8 @@ interface MetaMaskButtonProps {
 }
 
 export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskButtonProps): JSX.Element {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const getChainID = (networkId: string): string => {
     return '0x' + parseInt(networkId).toString(16);
   };
@@ -21,28 +24,51 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
       return;
     }
 
+    const changedToGalileo = await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: getChainID('80087') }] }).catch(async (error: any) => {
+      // check if newton is still on the network list by try change to newton
+      const changedToNewton = await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: getChainID('16600') }] }).catch(async (error: any) => {        
+      // if newton is not on the network list, add galileo to the network list
+      const params = [{
+        chainId: getChainID('80087'),
+        chainName: '0G-Galileo-Testnet',
+        nativeCurrency: {
+          name: 'OG',
+          symbol: 'OG',
+          decimals: 18
+        },
+        rpcUrls: ['https://evmrpc-testnet.0g.ai'],
+        blockExplorerUrls: ['https://chainscan-galileo.0g.ai/']
+      }];
+  
+        await window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params
+        }).catch((error: any) => {
+          console.log(error);
+        });
+        return true;
+      });
+
+      if (changedToNewton) {
+        return false;
+      }
+
+
+      setIsModalOpen(true);
+      
+      return true;
+    });
+
+    if (changedToGalileo) {
+      return false;
+    }
+
     const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
     if (currentChainId === getChainID('80087')) {
-      alert('0G Testnet is already added!');
+      alert('0G Testnet added');
       return;
     }
 
-    const params = [{
-      chainId: getChainID('80087'),
-      chainName: '0G-Galileo-Testnet',
-      nativeCurrency: {
-        name: 'OG',
-        symbol: 'OG',
-        decimals: 18
-      },
-      rpcUrls: ['https://evmrpc-testnet.0g.ai'],
-      blockExplorerUrls: ['https://chainscan-galileo.0g.ai/']
-    }];
-
-      await window.ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params
-      });
     
   };
 
@@ -70,6 +96,10 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
         />
         {label}
       </button>
+      <RemoveNewtonModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 } 
