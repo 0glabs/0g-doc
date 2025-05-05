@@ -43,6 +43,10 @@ const config: Config = {
           routeBasePath: '/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          // Update paths to include new directory structure
+          include: ['**/*.md', '**/*.mdx'],
+          // Don't include the restructuring directory in the docs
+          exclude: ['restructuring/**'],
         },
         blog: false,
         theme: {
@@ -73,6 +77,46 @@ const config: Config = {
     ],
     // Add security headers plugin
     require.resolve('./src/plugins/security-headers-plugin'),
+    // Add redirects for restructured content
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          // Introduction redirects
+          {
+            from: '/intro',
+            to: '/introduction/what-is-0g',
+          },
+          // Component redirects
+          {
+            from: '/0g-chain',
+            to: '/concepts/chain',
+          },
+          {
+            from: '/0g-storage',
+            to: '/concepts/storage',
+          },
+          {
+            from: '/0g-compute',
+            to: '/concepts/compute',
+          },
+          {
+            from: '/da/0g-da',
+            to: '/concepts/da',
+          },
+          // INFT redirect
+          {
+            from: '/build-with-0g/inft',
+            to: '/developer-hub/building-on-0g/inft/overview',
+          },
+          // Resource redirects
+          {
+            from: '/learn-more/whitepaper',
+            to: '/resources/whitepaper',
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig: {
@@ -114,7 +158,8 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Introduction', to: '/intro' },
+            { label: 'Introduction', to: '/introduction/what-is-0g' },
+            { label: 'Developer Hub', to: '/developer-hub/getting-started' },
             { label: 'Run a Node', to: '/run-a-node/overview' },
           ],
         },
