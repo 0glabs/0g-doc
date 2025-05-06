@@ -392,3 +392,13 @@ You can download previously uploaded datasets using the command below:
 ```bash
 0g-compute-cli download --data-path <PATH_TO_SAVE_DATASET> --data-root <DATASET_ROOT_HASH>
 ```
+
+### Cancel a Task
+
+You can cancel a task before it starts running using the following command:
+
+```bash
+0g-compute-cli cancel-task --provider <PROVIDER_ADDRESS> --task <TASK_ID>
+```
+
+_Note_: Tasks that are already in progress or completed cannot be canceled.
