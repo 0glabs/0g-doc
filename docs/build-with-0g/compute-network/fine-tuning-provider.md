@@ -20,9 +20,9 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
   - Set `servingUrl` to your publicly accessible URL.
   - Set `privateKeys` using your wallet's private key for the 0G blockchain.
 - **Edit `docker-compose.yml`:** Replace `#PORT#` with the desired port, matching the port in `config.local.yaml`.
-- **Supporting Customized Models from Providers**
+- **Supporting Custom Models from Providers**
 
-  To enable support for customized models provided by the service provider, you need to add the following configuration to your `config.local.yaml` file:
+  To include custom models, refer to the example configuration below and update your `config.local.yaml` file accordingly. Ensure that all required fields are properly defined to match your specific model setup.
 
     ```bash
       service:
@@ -44,13 +44,13 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
     ```
     Configuration Fields:
 
-    - **name:** The name of the customized model.
-    - **hash:** The root hash of the model.
-    - **image:** The name of the Docker image that contains the model and its environment.
-    - **dataType:** The type of dataset the model is designed to train on. Possible values are `text` or `image`.
-    - **trainingScript:** The path to the training script inside the Docker container.
-    - **description:** A short description of the model, including key features or training methodology.
-    - **tokenizer:** The root hash of the tokenizer files used to calculate dataset's size.
+  - **name:** Model identifier
+  - **hash:** The root hash of the pre-trained model, obtained after uploading the model to 0G storage.
+  - **image:** The Docker image that encapsulates the fine-tuning execution environment.
+  - **dataType:** Specifies the type of dataset the model is intended to train on. Valid options include `text` or `image`.
+  - **trainingScript:** Specifies the path to the training script within the container. Fine-tuning will be executed using the command `python <trainingScript>`.
+  - **description:** A concise overview of the model, highlighting its key features and capabilities.
+  - **tokenizer:** The root hash of the tokenizer files used for dataset processing. This value is obtained after uploading the tokenizer files to 0G storage.
 
 ## Build the TDX Guest Image
 
