@@ -164,7 +164,7 @@ Created Task ID: 6b607314-88b0-4fef-91e7-43227a54de57
 ```
 
 _Note_: When creating a task for the same provider, you must wait for the previous task to be completed (status `Finished`) before creating a new task.
-if the provider is currently running other tasks, you will be prompted to  choose between adding your task to the waiting queue or canceling the request.
+If the provider is currently running other tasks, you will be prompted to choose between adding your task to the waiting queue or canceling the request.
 
 ### Check Task
 

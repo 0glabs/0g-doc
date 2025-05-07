@@ -34,6 +34,7 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
             trainingScript: "/app/finetune.py"
             description: "DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning."
             tokenizer: "<TOKENIZER_ROOT_HASH>"
+            usageFile: "<ZIP_FILE>"
           - name: "mobilenet_v2"
             hash: "<MODEL_ROOT_HASH>"
             image: "mobilenetV2:latest"
@@ -41,6 +42,7 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
             trainingScript: "/app/finetune.py"
             description: "MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224."
             tokenizer: "<TOKENIZER_ROOT_HASH>"
+            usageFile: "<ZIP_FILE>"
     ```
     Configuration Fields:
 
@@ -51,6 +53,7 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
   - **trainingScript:** Specifies the path to the training script within the container. Fine-tuning will be executed using the command `python <trainingScript>`.
   - **description:** A concise overview of the model, highlighting its key features and capabilities.
   - **tokenizer:** The root hash of the tokenizer files used for dataset processing. This value is obtained after uploading the tokenizer files to 0G storage.
+  - **usageFile:** The ZIP file contains detailed usage information for this model, including training configuration examples, build specifications, or sample datasets.
 
 ## Build the TDX Guest Image
 
