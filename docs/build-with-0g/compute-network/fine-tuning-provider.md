@@ -53,7 +53,7 @@ This guide provides a comprehensive walkthrough for setting up and offering comp
   - **trainingScript:** Specifies the path to the training script within the container. Fine-tuning will be executed using the command `python <trainingScript>`.
   - **description:** A concise overview of the model, highlighting its key features and capabilities.
   - **tokenizer:** The root hash of the tokenizer files used for dataset processing. This value is obtained after uploading the tokenizer files to 0G storage.
-  - **usageFile:** The ZIP file (referenced by its name, not the full path) contains detailed usage information for this model, including training configuration examples, build specifications, or sample datasets. Make sure the file is located under the `fine-tuning/execution/models` directory.
+  - **usageFile:** The ZIP file (referenced by its name, not the full path) contains detailed usage information for this model, including training configuration examples, build specifications, or sample datasets. Make sure the file is located under the `fine-tuning/execution/models` directory, or the corresponding mount path if using a Docker container.
 
 ## Build the TDX Guest Image
 

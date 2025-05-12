@@ -117,7 +117,7 @@ _Note_: We currently offer the models listed above as presets. You can choose on
 Please download the parameter file template for the model you wish to fine-tune from the [releases page](https://github.com/0glabs/0g-serving-broker/releases) and modify it according to your needs.
 
 _Note_: 
-For custom models provided by third-party Providers, you can download the usage template using the following command:
+For custom models provided by third-party Providers, you can download the usage template `including instructions on how to construct the dataset and training configuration` using the following command:
 
 ```bash
 0g-compute-cli model-usage --provider <PROVIDER_ADDRESS>  --model <MODEL_NAME>   --output <PATH_TO_SAVE_MODEL_USAGE>
