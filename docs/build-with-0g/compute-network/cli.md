@@ -55,7 +55,7 @@ The output will be like:
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ Available                                        │ ✓                                                │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
-│ Price Per Byte in Dataset (OG)                 │ 0.000000000000000001                             │
+│ Price Per Byte in Dataset (OG)                   │ 0.000000000000000001                             │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ Provider 2                                       │ ......                                           │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
@@ -76,6 +76,7 @@ The output will be like:
 The output will be like:
 
 ```
+Predefined Model:
 ┌──────────────────────────────┬───────────────────────────────────────────────────────────────────────────┐
 │ Name                         │ Description                                                               │
 ├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┤
@@ -88,13 +89,39 @@ The output will be like:
 │                              │ GD, which is a novel distributed finetuning framework. More details can b │
 │                              │ e found at: https://github.com/DS3Lab/CocktailSGD                         │
 └──────────────────────────────┴───────────────────────────────────────────────────────────────────────────┘
+Provider's Model:
+┌──────────────────────────────┬───────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────┐
+│ Name                         │ Description                                                               │ Provider                                    │
+├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────┤
+│ deepseek-r1-distill-qwen-1.5 │ DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning  │ <PROVIDER_ADDRESS>                          │
+│ b                            │ (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstr │                                             │
+│                              │ ated remarkable performance on reasoning.                                 │                                             │
+├──────────────────────────────┼───────────────────────────────────────────────────────────────────────────┼─────────────────────────────────────────────┤
+│ mobilenet_v2                 │ MobileNet V2 model pre-trained on ImageNet-1k at resolution 224x224.      │ <PROVIDER_ADDRESS>                          │
+└──────────────────────────────┴───────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────┘
 ```
 
-_Note_: We currently offer the models listed above as presets. You can choose one of these models for fine-tuning. More models will be provided in future versions. Later versions will also support users fine-tuning with their own pretrained models.
+The output consists of two main sections:
+- **Predefined Models**
+
+These are models that are provided by the system as predefined options. They are typically built-in, curated, and maintained to ensure quality, reliability, and broad applicability across common use cases.
+
+- **Provider's Model**
+
+These models are offered by external service providers. Providers may customize or fine-tune models to address specific needs, industries, or advanced use cases. The availability and quality of these models may vary depending on the provider.
+
+_Note_: We currently offer the models listed above as presets. You can choose one of these models for fine-tuning. More models will be provided in future versions.
 
 ### Prepare Configuration File
 
 Please download the parameter file template for the model you wish to fine-tune from the [releases page](https://github.com/0glabs/0g-serving-broker/releases) and modify it according to your needs.
+
+_Note_: 
+For custom models provided by third-party Providers, you can download the usage template `including instructions on how to construct the dataset and training configuration` using the following command:
+
+```bash
+0g-compute-cli model-usage --provider <PROVIDER_ADDRESS>  --model <MODEL_NAME>   --output <PATH_TO_SAVE_MODEL_USAGE>
+```
 
 ### Prepare Dataset
 
@@ -106,7 +133,18 @@ After preparing the dataset, upload it to 0G Storage using the following command
 0g-compute-cli upload --data-path <PATH_TO_DATASET>
 ```
 
-_Note_: Record the root hash and byte size of the dataset; they will be needed in later steps.
+_Note_: Record the root hash of the dataset; they will be needed in later steps.
+
+### Calculate Dataset Size
+After uploading the dataset to storage, you can calculate its size by running the following command:
+
+```bash
+0g-compute-cli calculate-token --model <MODEL_NAME> --dataset-path <PATH_TO_DATASET> --provider <PROVIDER_ADDRESS> 
+```
+
+- **--model:** The name of the model you intend to use; see [List Preset Models](#list-preset-models)
+- **--dataset-path:** The local path to the dataset that you want to evaluate.
+- **--provider (option):** Address of the service provider. This is only required when you are using a **Provider's Model** instead of a **Predefined Model**.
 
 ### Create Fine-Tuning Task
 
@@ -116,11 +154,11 @@ Once you’ve chosen a pretrained model and prepared your dataset and configurat
 0g-compute-cli  create-task  --provider <PROVIDER_ADDRESS> --model <MODEL_NAME> --dataset <DATASET_ROOT_HASH> --config <CONFIG_FILE_PATH> --data-size <DATA_SIZE> --gas-price <GAS_PRICE>
 ```
 
-- **--provider:** Address of the service provider; see [List Providers](#List-Providers)
-- **--model:** Name of the pretrained model; see [List Preset Models](#List-Preset-Models)
-- **--dataset:** Root hash of the dataset; see [Prepare Dataset](#Prepare-Dataset)
-- **--config:** Path to the parameter file; see [Prepare Configuration File](#Prepare-Configuration-File)
-- **--data-size:** Byte size of the dataset; see [Prepare Dataset](#Prepare-Dataset)
+- **--provider:** Address of the service provider; see [List Providers](#list-providers)
+- **--model:** Name of the pretrained model; see [List Preset Models](#list-preset-models)
+- **--dataset:** Root hash of the dataset; see [Prepare Dataset](#prepare-dataset)
+- **--config:** Path to the parameter file; see [Prepare Configuration File](#prepare-configuration-file)
+- **--data-size:** Size of the dataset; see [Calculate Dataset Size](#calculate-dataset-size)
 - **--gas-price:** Gas price. If not specified, a default value calculated by the client will be used.
 
 The output will be like:
@@ -133,6 +171,7 @@ Created Task ID: 6b607314-88b0-4fef-91e7-43227a54de57
 ```
 
 _Note_: When creating a task for the same provider, you must wait for the previous task to be completed (status `Finished`) before creating a new task.
+If the provider is currently running other tasks, you will be prompted to choose between adding your task to the waiting queue or canceling the request.
 
 ### Check Task
 
@@ -193,7 +232,7 @@ Training model for task beb6f0d8-4660-4c62-988d-00246ce913d2 completed successfu
 
 ### Confirm Task Result
 
-Use the [Check Task](#Check-Task) command to view task status. When the status changes to `Delivered`, it indicates that the provider has completed the fine-tuning task and uploaded the result to storage. The corresponding root hash has also been saved to the contract. You can download the model with the following command; CLI will download the model based on the root hash submitted by the provider. If the download is successful, CLI updates the contract information to confirm the model is downloaded.
+Use the [Check Task](#check-task) command to view task status. When the status changes to `Delivered`, it indicates that the provider has completed the fine-tuning task and uploaded the result to storage. The corresponding root hash has also been saved to the contract. You can download the model with the following command; CLI will download the model based on the root hash submitted by the provider. If the download is successful, CLI updates the contract information to confirm the model is downloaded.
 
 ```bash
 0g-compute-cli acknowledge-model --provider <PROVIDER_ADDRESS>  --data-path <PATH_TO_SAVE_MODEL>
@@ -254,9 +293,9 @@ Possible output:
 
 - **Provider:** Address of the provider corresponding to the sub-account
 - **Balance:** Balance of the sub-account, which is an amount transferred from the main account to the sub-account based on the task fee whenever a task is created.
-- **Requested Return to Main Account:** Amount requested to be returned from sub-accounts to the main account. If the amount in the sub-account goes unspent for any reason, such as a task failure, you can use the `return-funds` command to return the balance to the main account. However, it won't return immediately and will only be available after a lock-in period. For details, refer to [Retrieving Funds](#Retrieve-Funds).
+- **Requested Return to Main Account:** Amount requested to be returned from sub-accounts to the main account. If the amount in the sub-account goes unspent for any reason, such as a task failure, you can use the `return-funds` command to return the balance to the main account. However, it won't return immediately and will only be available after a lock-in period. For details, refer to [Retrieving Funds](#retrieve-funds).
 
-_Note:_ For more information about sub-accounts, refer to [View Sub-Account](#View-Sub-Account).
+_Note:_ For more information about sub-accounts, refer to [View Sub-Account](#view-sub-account).
 
 ### Deposit
 
@@ -341,7 +380,7 @@ The retrieve funds operation returns the balance from sub-accounts to the main a
 0g-compute-cli retrieve-fund
 ```
 
-The above command requests the balance from all sub-accounts to be returned to the main account. After the lock-in period elapses, execute the `retrieve-fund` command again to refund all the amounts whose locking period has concluded to the main account. Check the refund status using the [View Sub-Account](#View-Sub-Account) command.
+The above command requests the balance from all sub-accounts to be returned to the main account. After the lock-in period elapses, execute the `retrieve-fund` command again to refund all the amounts whose locking period has concluded to the main account. Check the refund status using the [View Sub-Account](#view-sub-account) command.
 
 ## Other Commands
 
@@ -360,3 +399,13 @@ You can download previously uploaded datasets using the command below:
 ```bash
 0g-compute-cli download --data-path <PATH_TO_SAVE_DATASET> --data-root <DATASET_ROOT_HASH>
 ```
+
+### Cancel a Task
+
+You can cancel a task before it starts running using the following command:
+
+```bash
+0g-compute-cli cancel-task --provider <PROVIDER_ADDRESS> --task <TASK_ID>
+```
+
+_Note_: Tasks that are already in progress or completed cannot be canceled.
