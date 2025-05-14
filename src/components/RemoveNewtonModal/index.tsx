@@ -36,20 +36,20 @@ const RemoveNewtonModal: React.FC<RemoveNewtonModalProps> = ({ isOpen, onClose }
         {/* Modal Body */}
         <div style={styles.modalBody}>
           <p>
-            The old <strong>0G-Newton-Testnet</strong> is no longer active. 
+            The old Testnet versions are no longer active. 
             Please remove it from your MetaMask network list before adding the current <strong>0G-Galileo-Testnet</strong> to avoid potential conflicts.
           </p>
           <ol>
             <li>Open MetaMask and click the network dropdown menu at the top.</li>
             {/* TODO: Add image showing network dropdown */}
             
-            <li>Select any network <em>other</em> than <strong>0G-Newton-Testnet</strong>.</li>
+            <li>Select any network <em>other</em> than <strong>0G-Testnet</strong>.</li>
             {/* TODO: Add image showing switching network */}
             <img src="/img/step 1.png" alt="MetaMask network dropdown" style={styles.image} />
 
             <li>Open the network dropdown menu again.</li>
             
-            <li>Find <strong>0G-Newton-Testnet</strong> in the list and click the three vertical dots icon next to it.</li>
+            <li>Find <strong>0G-Testnet</strong> in the list and click the three vertical dots icon next to it.</li>
              {/* TODO: Add image showing the three dots menu */}
              <img src="/img/step 2.png" alt="Switching network" style={styles.image} />
 

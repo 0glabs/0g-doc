@@ -27,7 +27,7 @@ export const AddNetworkSection = () => {
         </div>
         <div className="admonition-content">
           <p>
-            Before adding the 0G-Galileo testnet, please ensure you remove any old newton testnet configurations from your wallet to avoid conflicts. -
+            Before adding the 0G-Galileo testnet, please ensure you remove any old testnet configurations from your wallet to avoid conflicts. -
             <a href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} style={{marginLeft: '5px'}}>
               Need help?
             </a>
@@ -71,7 +71,7 @@ Summary Table
 | Detail | Value |
 |-------|-------|
 | Chain Name | 0G-Galileo-Testnet |
-| Chain ID | 80087 |
+| Chain ID | 16601 |
 | Token Symbol | OG |
 | RPC | https://evmrpc-testnet.0g.ai |
 | Storage Indexer Turbo RPC | https://indexer-storage-testnet-turbo.0g.ai |
@@ -91,10 +91,10 @@ The contract address might change during the public testnet phase, so please che
 
 | Component | Contract | Address |
 |-----------|----------|---------|
-| **0G Storage Turbo** | Flow Contract | `0x56A565685C9992BF5ACafb940ff68922980DBBC5` |
-| | Mine Contract | `0xB87E0e5657C25b4e132CB6c34134C0cB8A962AD6` |
-| | Market Contract | `0xf091C0e74a68Ff33d8327B2733F6e78F7BB9C827` |
-| | Reward Contract | `0x233B2768332e4Bae542824c93cc5c8ad5d44517E` |
+| **0G Storage Turbo** | Flow Contract | `0x5f1D96895e442FC0168FA2F9fb1EBeF93Cb5035e` |
+| | Mine Contract | `0xB0F6c3E2E7Ada3b9a95a1582bF6562e24A62D334` |
+| | Market Contract | `0x7644A43d43664f1Af951eC88d53ceF96bd0cFbf1` |
+| | Reward Contract | `0xdf758Bd14306482DeCbeF186eC6f18e4e79aaaE6` |
 | **0G DA** | DAEntrance Contract | `0xE75A073dA5bb7b0eC622170Fd268f35E675a957B` |
 
 Deployed Block Number: `1`
