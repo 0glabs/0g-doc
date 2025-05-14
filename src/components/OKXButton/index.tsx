@@ -21,7 +21,7 @@ export default function OKXButton({ label = "Add 0G Testnet" }: OKXButtonProps):
       return;
     }
 
-    const chainId = getChainID('80087');
+    const chainId = getChainID('16601');
     
     const currentChainId = await window.okxwallet.request({ method: 'eth_chainId' });
     if (currentChainId === chainId) {

@@ -32,7 +32,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'run-a-node/overview',
         'run-a-node/testnet-information',
-        'run-a-node/validator-node',
+        // 'run-a-node/validator-node',
         'run-a-node/storage-node',
         'run-a-node/da-node',
         'run-a-node/community-docker-repo',
@@ -94,7 +94,7 @@ const sidebars: SidebarsConfig = {
               type: 'category',
               label: 'Rollups and Appchains',
               items: [
-                'build-with-0g/rollups-and-appchains/op-stack-on-0g-da',
+                // 'build-with-0g/rollups-and-appchains/op-stack-on-0g-da',
                 'build-with-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
                 {
                   type: 'category',

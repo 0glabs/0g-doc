@@ -24,12 +24,12 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
       return;
     }
 
-    const changedToGalileo = await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: getChainID('80087') }] }).catch(async (error: any) => {
-      // check if newton is still on the network list by try change to newton
-      const changedToNewton = await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: getChainID('16600') }] }).catch(async (error: any) => {        
-      // if newton is not on the network list, add galileo to the network list
+    const changedToGalileo = await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: getChainID('16601') }] }).catch(async (error: any) => {
+      // check if old galileo is still on the network list by try change to old galileo
+      const changedToOldGalileo = await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: getChainID('80087') }] }).catch(async (error: any) => {        
+      // if old galileo is not on the network list, add new galileo to the network list
       const params = [{
-        chainId: getChainID('80087'),
+        chainId: getChainID('16601'),
         chainName: '0G-Galileo-Testnet',
         nativeCurrency: {
           name: 'OG',
@@ -49,7 +49,7 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
         return true;
       });
 
-      if (changedToNewton) {
+      if (changedToOldGalileo) {
         return false;
       }
 
@@ -64,7 +64,7 @@ export default function MetaMaskButton({ label = "Add 0G Testnet" }: MetaMaskBut
     }
 
     const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
-    if (currentChainId === getChainID('80087')) {
+    if (currentChainId === getChainID('16601')) {
       alert('0G Testnet added');
       return;
     }
