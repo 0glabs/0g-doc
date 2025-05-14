@@ -5,7 +5,7 @@ sidebar_position: 4
 # RPC Node
 ---
 
-Running a RPC node for the **0G-Galileo-Testnet** in the 0G ecosystem means actively participating in the network's security and consensus through the Proof-of-Stake (PoS) mechanism. As a validator, you'll validate transactions, propose new blocks, and earn rewards for your contribution to the network's integrity and decentralization.
+Running a RPC node for the **0G-Galileo-Testnet** in the 0G ecosystem means to provide a public or private RPC service for the community.
 
 ## Hardware Requirements
 
