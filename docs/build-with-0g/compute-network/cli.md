@@ -102,6 +102,7 @@ Provider's Model:
 ```
 
 The output consists of two main sections:
+
 - **Predefined Models**
 
 These are models that are provided by the system as predefined options. They are typically built-in, curated, and maintained to ensure quality, reliability, and broad applicability across common use cases.
@@ -116,7 +117,7 @@ _Note_: We currently offer the models listed above as presets. You can choose on
 
 Please download the parameter file template for the model you wish to fine-tune from the [releases page](https://github.com/0glabs/0g-serving-broker/releases) and modify it according to your needs.
 
-_Note_: 
+_Note_:
 For custom models provided by third-party Providers, you can download the usage template `including instructions on how to construct the dataset and training configuration` using the following command:
 
 ```bash
@@ -136,10 +137,11 @@ After preparing the dataset, upload it to 0G Storage using the following command
 _Note_: Record the root hash of the dataset; they will be needed in later steps.
 
 ### Calculate Dataset Size
+
 After uploading the dataset to storage, you can calculate its size by running the following command:
 
 ```bash
-0g-compute-cli calculate-token --model <MODEL_NAME> --dataset-path <PATH_TO_DATASET> --provider <PROVIDER_ADDRESS> 
+0g-compute-cli calculate-token --model <MODEL_NAME> --dataset-path <PATH_TO_DATASET> --provider <PROVIDER_ADDRESS>
 ```
 
 - **--model:** The name of the model you intend to use; see [List Preset Models](#list-preset-models)
@@ -148,16 +150,16 @@ After uploading the dataset to storage, you can calculate its size by running th
 
 ### Create Fine-Tuning Task
 
-Once you’ve chosen a pretrained model and prepared your dataset and configuration file, you can create a fine-tuning task with the following command:
+Once you've chosen a pretrained model and prepared your dataset and configuration file, you can create a fine-tuning task with the following command:
 
 ```bash
-0g-compute-cli  create-task  --provider <PROVIDER_ADDRESS> --model <MODEL_NAME> --dataset <DATASET_ROOT_HASH> --config <CONFIG_FILE_PATH> --data-size <DATA_SIZE> --gas-price <GAS_PRICE>
+0g-compute-cli  create-task  --provider <PROVIDER_ADDRESS> --model <MODEL_NAME> --dataset <DATASET_ROOT_HASH> --config-path <CONFIG_FILE_PATH> --data-size <DATA_SIZE> --gas-price <GAS_PRICE>
 ```
 
 - **--provider:** Address of the service provider; see [List Providers](#list-providers)
 - **--model:** Name of the pretrained model; see [List Preset Models](#list-preset-models)
 - **--dataset:** Root hash of the dataset; see [Prepare Dataset](#prepare-dataset)
-- **--config:** Path to the parameter file; see [Prepare Configuration File](#prepare-configuration-file)
+- **--config-path:** Path to the parameter file; see [Prepare Configuration File](#prepare-configuration-file)
 - **--data-size:** Size of the dataset; see [Calculate Dataset Size](#calculate-dataset-size)
 - **--gas-price:** Gas price. If not specified, a default value calculated by the client will be used.
 
@@ -218,7 +220,7 @@ The output will be like:
 You can view task logs with the following command:
 
 ```bash
-0g-compute-cli get-task-log --provider <PROVIDER_ADDRESS> --task <TASK_ID>
+0g-compute-cli get-log --provider <PROVIDER_ADDRESS> --task <TASK_ID>
 ```
 
 Possible output:
@@ -253,6 +255,8 @@ The above command performs the following operations:
 1. Gets the encrypted key from the contract uploaded by the provider
 2. Decrypts the key using the user's private key
 3. Decrypts the model with the decrypted key
+
+_Note:_ The decrypted result will be saved as a zip file. Ensure that the `<PATH_TO_SAVE_DECRYPTED_MODEL>` ends with `.zip` (e.g., `model_output.zip`). After downloading, unzip the file to access the decrypted model.
 
 ## Account Management
 
