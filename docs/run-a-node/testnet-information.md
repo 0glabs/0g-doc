@@ -91,13 +91,13 @@ The contract address might change during the public testnet phase, so please che
 
 | Component | Contract | Address |
 |-----------|----------|---------|
-| **0G Storage Turbo** | Flow Contract | `0x5f1D96895e442FC0168FA2F9fb1EBeF93Cb5035e` |
-| | Mine Contract | `0xB0F6c3E2E7Ada3b9a95a1582bF6562e24A62D334` |
-| | Market Contract | `0x7644A43d43664f1Af951eC88d53ceF96bd0cFbf1` |
-| | Reward Contract | `0xdf758Bd14306482DeCbeF186eC6f18e4e79aaaE6` |
+| **0G Storage Turbo** | Flow Contract | `0xbD75117F80b4E22698D0Cd7612d92BDb8eaff628` |
+| | Mine Contract | `0x3A0d1d67497Ad770d6f72e7f4B8F0BAbaa2A649C` |
+| | Market Contract | `0x53191725d260221bBa307D8EeD6e2Be8DD265e19` |
+| | Reward Contract | `0xd3D4D91125D76112AE256327410Dd0414Ee08Cb4` |
 | **0G DA** | DAEntrance Contract | `0xE75A073dA5bb7b0eC622170Fd268f35E675a957B` |
 
-Deployed Block Number: `1`
+Deployed Block Number: `326165`
 
 ### Faucet
 [Faucet](https://faucet.0g.ai/) 
