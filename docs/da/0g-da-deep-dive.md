@@ -37,7 +37,7 @@ DA takes an input of data up to 32,505,852 bytes in length and processes it as f
 
 After matrix formation, each element is processed into a 32-byte data unit, which can be viewed interchangeably as either 32 bytes of data or a 256-bit little-endian integer. Denote the element in the $i$-th row and $j$-th column as $c_{i,j}$.
 
-Let the finite field $\mathbb{F}$ be the scalar field of the [BN254 curve](https://docs.rs/ark-bn254/latest/ark\_bn254/). Each element $c_{i,j}$ is also considered an integer within the finite field $\mathbb{F}$. Let $p$ be the order of $\mathbb{F}$, a known large number that can be expressed as $2^{28} \times A + 1$, where $A$ is an odd number. The number 3 is a generator of the multiplicative group of the $\mathbb{F}$. Define $u = 3^{2^6 \times A}$ and $w=3^{2^8\times A}$, so $w^{2^{20}} = 1$ and $u^4=w$.
+Let the finite field $\mathbb{F}$ be the scalar field of the [BN254 curve](https://docs.rs/ark-bn254/latest/ark_bn254/). Each element $c_{i,j}$ is also considered an integer within the finite field $\mathbb{F}$. Let $p$ be the order of $\mathbb{F}$, a known large number that can be expressed as $2^{28} \times A + 1$, where $A$ is an odd number. The number 3 is a generator of the multiplicative group of the $\mathbb{F}$. Define $u = 3^{2^6 \times A}$ and $w=3^{2^8\times A}$, so $w^{2^{20}} = 1$ and $u^4=w$.
 
 Now we define a polynomial $f$ over $\mathbb{F}\rightarrow\mathbb{F}$ with degree $d=2^{20}-1$ satisfying
 
