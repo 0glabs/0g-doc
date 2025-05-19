@@ -5,7 +5,7 @@ title: Staking
 
 # Overview
 
-DAsigners is a wrapper for the `x/staking` module in the 0g chain.
+Staking is a wrapper for the `x/staking` module in the 0g chain.
 
 # Address
 

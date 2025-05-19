@@ -10,11 +10,11 @@ The current version of 0g chain supports the Istanbul version of the EVM and all
 
 * [DASigners precompile](dasigners.md)
 * [Staking Precompile](staking.md)
-* [WrappedA0GIBase Precompile](wrappeda0gibase.md)
+* [WrappedOGBase Precompile](wrappedogbase.md)
 
 # Interact with 0G Precompiles in Smart Contracts
 
-Calling 0g precompiles in a contract can be a bit tricky. Since some of the newly added precompiles are stateful, interacting with their non-read-only functions in a contract requires using a low-level call. The `mint` function of [WA0GI](https://github.com/0glabs/A0GI-contracts/blob/main/contracts/WrappedA0GI.sol) can be used as a reference for implementation.
+Calling 0g precompiles in a contract can be a bit tricky. Since some of the newly added precompiles are stateful, interacting with their non-read-only functions in a contract requires using a low-level call. The `mint` function of [WrappedOG](https://github.com/0glabs/OG-contracts/blob/main/contracts/WrappedOG.sol) can be used as a reference for implementation.
 
 
 

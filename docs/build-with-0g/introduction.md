@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ### 0G Chain
 - [Deploy Smart Contracts](./contracts-on-0g/deploy-contracts.md)
-- [Utilize precompiled contracts](./contracts-on-0g/precompiles/precompiles-wrappeda0gibase)
+- [Utilize precompiled contracts](./contracts-on-0g/precompiles/precompiles-wrappedogbase)
 
 ### 0G Compute
 - [Set up as a Service Provider](./compute-network/inference-provider.md)
