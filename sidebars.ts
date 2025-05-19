@@ -57,7 +57,7 @@ const sidebars: SidebarsConfig = {
               label: 'Precompiles',
               items: [
                 'build-with-0g/contracts-on-0g/precompiles/precompiles-overview',
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-wrappeda0gibase',
+                'build-with-0g/contracts-on-0g/precompiles/precompiles-wrappedogbase',
                 'build-with-0g/contracts-on-0g/precompiles/precompiles-staking',
                 'build-with-0g/contracts-on-0g/precompiles/precompiles-dasigners',
               ],
