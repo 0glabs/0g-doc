@@ -5,9 +5,9 @@ title: Wrapped OG Base
 
 # Overview
 
-WrappedOGBase is a wrapper for the `x/wrapped-og-base` module in the 0g chain. Wrapped OG is a wrapped ERC20 token for native OG. It supports quota-based mint/burn functions based on native OG transfers, on top of traditional wrapped token implementation. The minting/burning quota for each address will be determined through governance voting. `x/wrapped-og-base` is the module that supports and maintains the minting/burning quota.
+WrappedOGBase is a wrapper for the `x/wrapped-og-base` module in the 0g chain. WA0GI is a wrapped ERC20 token for native OG. It supports quota-based mint/burn functions based on native OG transfers, on top of traditional wrapped token implementation. The minting/burning quota for each address will be determined through governance voting. `x/wrapped-og-base` is the module that supports and maintains the minting/burning quota.
 
-In most cases this precompile should be only called by WrappedOG contract.
+In most cases this precompile should be only called by WA0GI contract.
 
 # Address
 
@@ -15,7 +15,7 @@ In most cases this precompile should be only called by WrappedOG contract.
 
 # Interface
 
-[https://github.com/0glabs/0g-chain/blob/dev/precompiles/interfaces/contracts/IWrappedOGBase.sol](https://github.com/0glabs/0g-chain/blob/dev/precompiles/interfaces/contracts/IWrappedOGBase.sol)
+[https://github.com/0glabs/0g-chain/blob/dev/precompiles/interfaces/contracts/IWrappedA0GIBase.sol](https://github.com/0glabs/0g-chain/blob/dev/precompiles/interfaces/contracts/IWrappedA0GIBase.sol)
 
 ## Structs
 
@@ -38,11 +38,11 @@ struct Supply {
 
 ## Functions
 
-### `getWOG()`
+### `getWA0GI()`
 ```solidity
-function getWOG() external view returns (address);
+function getWA0GI() external view returns (address);
 ```
-- **Description**: Retrieves the address of the wrapped OG (WOG) contract.
+- **Description**: Retrieves the address of the wrapped OG (WA0GI) contract.
 - **Returns**: `address` of the WOG contract.
 
 ---
@@ -62,11 +62,11 @@ function minterSupply(address minter) external view returns (Supply memory);
 ```solidity
 function mint(address minter, uint256 amount) external;
 ```
-- **Description**: Mints OG to WOG contract and adds the corresponding amount to the minter's mint supply. If the minter's final mint supply exceeds their mint cap, the transaction will revert.
+- **Description**: Mints OG to WA0GI contract and adds the corresponding amount to the minter's mint supply. If the minter's final mint supply exceeds their mint cap, the transaction will revert.
 - **Parameters**: 
   - `minter`: The address of the minter.
   - `amount`: The amount of OG to mint.
-- **Restrictions**: Can only be called by the WOG contract.
+- **Restrictions**: Can only be called by the WA0GI contract.
 
 ---
 
@@ -74,7 +74,7 @@ function mint(address minter, uint256 amount) external;
 ```solidity
 function burn(address minter, uint256 amount) external;
 ```
-- **Description**: Burns the specified amount of OG in WOG contract on behalf of the minter and reduces the corresponding amount from the minter's mint supply.
+- **Description**: Burns the specified amount of OG in WA0GI contract on behalf of the minter and reduces the corresponding amount from the minter's mint supply.
 - **Parameters**: 
   - `minter`: The address of the minter.
   - `amount`: The amount of OG to burn.
