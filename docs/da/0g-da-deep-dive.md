@@ -53,7 +53,7 @@ $$\forall\, 2048\le i< 3072,\, 0\le j< 1024,\,c_{i,j}=f\left(u\cdot w^{1024j+(i-
 
 The **erasure commitment** is the KZG commitment of $f$, defined as $f(\tau)\cdot G$, where $G$ is the starting point of BN254 G1 curve, and $\tau$ is a latent parameter from the [perpetual powers of tau trusted setup ceremony](https://github.com/privacy-scaling-explorations/perpetualpowersoftau).
 
-The **data root** is defined as the input root by treating the 1024\*3072 32-byte elements as a continuous storage submission input. Specifically, according to the storage submission requirements, these data does not need to pad any zeros, and will be divided into a 16384-element sector array and an 8192-element sector array.
+The **data root** is defined as the input root by treating the 1024\*3072 32-byte elements as a continuous storage submission input. Specifically, according to the storage submission requirements, this data does not need to pad any zeros, and will be divided into a 16384-element sector array and an 8192-element sector array.
 
 DA nodes need to verify two parts:
 
