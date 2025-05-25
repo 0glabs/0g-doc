@@ -1,13 +1,13 @@
-import { LottieProps } from "@lottielab/lottie-player/react";
+import { LottieProps, ILottie } from "@lottielab/lottie-player/react";
 import React, { useEffect, useState } from "react";
 import BrowserOnly from "@docusaurus/BrowserOnly";
-import { ILottie } from "@lottielab/lottie-player";
+
+type LottieComponentType = React.ForwardRefExoticComponent<
+  LottieProps & React.RefAttributes<ILottie>
+>;
 
 const LottieAnimation = () => {
-  const [LottieComponent, setLottieComponent] =
-    useState<React.ForwardRefExoticComponent<
-      LottieProps & React.RefAttributes<ILottie>
-    > | null>(null);
+  const [LottieComponent, setLottieComponent] = useState<LottieComponentType | null>(null);
 
   useEffect(() => {
     import("@lottielab/lottie-player/react").then((module) => {
