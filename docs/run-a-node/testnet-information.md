@@ -79,9 +79,14 @@ Summary Table
 | Storage Explorer | https://storagescan-galileo.0g.ai/ |
 | Faucet | https://faucet.0g.ai/ |
 
-<!-- ## RPCs
 
-**Comprehensive RPC Dashboard:** https://0g.originstake.com/rpc-api -->
+## RPCs
+
+### ✅ 3rd Party RPCs (Recommended)
+
+- [QuikNode](https://www.quicknode.com/chains/0g) 
+- [ThirdWeb](https://thirdweb.com/0g-galileo-testnet-16601)
+
 
 ## Contract Addresses
 
