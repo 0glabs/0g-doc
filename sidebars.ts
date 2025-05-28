@@ -3,137 +3,218 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   docs: [
     'preface',
+    
+    // SECTION 1: For beginners and non-technical users
     {
       type: 'category',
-      label: '0G Overview',
+      label: 'Introduction',
       className: 'sidebar-category intro',
       link: {
         type: 'doc',
-        id: 'intro',
+        id: 'introduction/understanding-0g',
       },
       items: [
-        '0g-chain',
-        '0g-storage',
-        '0g-compute',
-        {
-          type: 'category',
-          label: '0G DA',
-          items: [
-            'da/0g-da',
-            'da/0g-da-deep-dive',
-          ],
-        },
+        'introduction/understanding-0g',
+        'introduction/vision-mission',
       ],
     },
+    
+    // SECTION 2: Technical concepts explained simply
     {
       type: 'category',
-      label: 'Run a Node',
-      className: 'sidebar-category run-node',
-      items: [
-        'run-a-node/overview',
-        'run-a-node/testnet-information',
-        'run-a-node/validator-node',
-        'run-a-node/storage-node',
-        'run-a-node/da-node',
-        'run-a-node/community-docker-repo',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Build with 0G',
-      className: 'sidebar-category build-with-0g',
+      label: 'Concepts',
+      className: 'sidebar-category concepts',
       link: {
         type: 'doc',
-        id: 'build-with-0g/introduction',
+        id: 'concepts/overview',
       },
       items: [
+        'concepts/overview',
+        'concepts/chain',
+        'concepts/compute',
+        'concepts/storage',
+        'concepts/da',
+      ],
+    },
+    
+    // SECTION 3: For developers and builders
+    {
+      type: 'category',
+      label: 'Developer Hub',
+      className: 'sidebar-category developer-hub',
+      link: {
+        type: 'doc',
+        id: 'developer-hub/getting-started',
+      },
+      items: [
+        'developer-hub/getting-started',
+        {
+          type: 'doc',
+          id: 'developer-hub/testnet/testnet-overview',
+          label: 'Testnet',
+        },
         {
           type: 'category',
-          label: '0G Chain',
+          label: 'Building on 0G',
+          link: {
+            type: 'doc',
+            id: 'developer-hub/building-on-0g/introduction',
+          },
           items: [
-            'build-with-0g/contracts-on-0g/deploy-contracts',
             {
               type: 'category',
-              label: 'Precompiles',
+              label: '⛓️ 0G Chain',
+              link: {
+                type: 'doc',
+                id: 'developer-hub/building-on-0g/contracts-on-0g/deploy-contracts',
+              },
               items: [
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-overview',
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-wrappedogbase',
-                // 'build-with-0g/contracts-on-0g/precompiles/precompiles-staking',
-                'build-with-0g/contracts-on-0g/precompiles/precompiles-dasigners',
-              ],
-            },
-            'build-with-0g/inft',
-          ],
-        },
-        {
-          type: 'category',
-          label: '0G Compute',
-          items: [
-            'build-with-0g/compute-network/overview',
-            'build-with-0g/compute-network/provider',
-            'build-with-0g/compute-network/sdk',
-            'build-with-0g/compute-network/fine-tuning-provider',
-            'build-with-0g/compute-network/cli',
-            'build-with-0g/marketplace',
-          ],
-        },
-        {
-          type: 'category',
-          label: '0G Storage',
-          items: [
-            'build-with-0g/storage-sdk',
-            'build-with-0g/storage-cli',
-          ],
-        },
-        {
-          type: 'category',
-          label: '0G DA',
-          items: [
-            'build-with-0g/da-integration',
-            {
-              type: 'category',
-              label: 'Rollups and Appchains',
-              items: [
-                'build-with-0g/rollups-and-appchains/op-stack-on-0g-da',
-                'build-with-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
+                'developer-hub/building-on-0g/contracts-on-0g/deploy-contracts',
                 {
                   type: 'category',
-                  label: 'Rollup-as-a-Service (coming soon)',
+                  label: 'Precompiles',
+                  link: {
+                    type: 'doc',
+                    id: 'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-overview',
+                  },
                   items: [
-                    'build-with-0g/rollup-as-a-service/caldera-on-0g-da',
+                    'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-overview',
+                    'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-dasigners',
+                    // 'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-staking',
+                    'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-wrappedogbase',
                   ],
                 },
               ],
             },
+            {
+              type: 'category',
+              label: '🤖 0G Compute',
+              items: [
+                'developer-hub/building-on-0g/compute-network/overview',
+                {
+                  type: 'category',
+                  label: 'For Developers',
+                  items: [
+                    'developer-hub/building-on-0g/compute-network/sdk',
+                    'developer-hub/building-on-0g/compute-network/cli',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'For Providers',
+                  items: [
+                    'developer-hub/building-on-0g/compute-network/inference-provider',
+                    'developer-hub/building-on-0g/compute-network/fine-tuning-provider',
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: '💾 0G Storage',
+              items: [
+                'developer-hub/building-on-0g/storage/sdk',
+                'developer-hub/building-on-0g/storage/storage-cli',
+              ],
+            },
+            {
+              type: 'category',
+              label: '📊 0G DA',
+              items: [
+                'developer-hub/building-on-0g/da-integration',
+                'developer-hub/building-on-0g/da-deep-dive',
+                {
+                  type: 'category',
+                  label: 'Rollups and Appchains',
+                  items: [
+                    'developer-hub/building-on-0g/rollups-and-appchains/op-stack-on-0g-da',
+                    'developer-hub/building-on-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Rollup as a Service',
+                  items: [
+                    'developer-hub/building-on-0g/rollup-as-a-service/caldera-on-0g-da',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'AVSs',
+                  items: [
+                    'developer-hub/building-on-0g/avs/babylon-avs-on-0g-da',
+                    'developer-hub/building-on-0g/avs/eigenlayer-avs-on-0g-da',
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: '🎨 INFTs (Intelligent NFTs)',
+              items: [
+                'developer-hub/building-on-0g/inft/inft-overview',
+                'developer-hub/building-on-0g/inft/integration',
+                'developer-hub/building-on-0g/inft/erc7857',
+              ],
+            },
           ],
         },
-        'build-with-0g/faucet',
-        'build-with-0g/explorer',
       ],
     },
+    
+    // SECTION 4: For node operators
     {
       type: 'category',
-      label: 'Learn More About 0G',
-      className: 'sidebar-category learn-more',
+      label: 'Run a Node',
+      className: 'sidebar-category run-node',
+      link: {
+        type: 'doc',
+        id: 'run-a-node/overview',
+      },
       items: [
-        'learn-more/security',
-        'learn-more/whitepaper',
-        'learn-more/how-to-contribute',
+        'run-a-node/overview',
+        'run-a-node/validator-node',
+        'run-a-node/storage-node',
+        'run-a-node/da-node',
+        'run-a-node/community-docker-repo',
+        {
+          type: 'link',
+          label: 'Testnet Information',
+          href: '/developer-hub/testnet/testnet-configuration',
+        },
+      ],
+    },
+    
+    // SECTION 5: Resources
+    {
+      type: 'category',
+      label: 'Resources',
+      className: 'sidebar-category resources',
+      link: {
+        type: 'doc',
+        id: 'resources/whitepaper',
+      },
+      items: [
+        'resources/whitepaper',
+        'resources/security',
+        'resources/how-to-contribute',
+        'resources/glossary',
         {
           type: 'link',
           label: 'Blog',
           href: 'https://0g.ai/blog',
-          className: 'external-link',
         },
       ],
     },
+    
+    // SECTION 6: Node Sale (kept separate as it's temporary)
     {
       type: 'category',
       label: 'Node Sale',
       className: 'sidebar-category node-sale',
       link: {
         type: 'doc',
-        id: 'node-sale/node-sale-landing',
+        id: 'node-sale/node-sale-index',
       },
       items: [
         {
@@ -155,13 +236,7 @@ const sidebars: SidebarsConfig = {
             'node-sale/details/compliance-and-regulatory',
           ],
         },
-        {
-          type: 'category',
-          label: 'Frequently Asked Questions',
-          items: [
-            'node-sale/faq/faq',
-          ],
-        },
+        'node-sale/faq/faq',
         'node-sale/disclaimer',
       ],
     },
