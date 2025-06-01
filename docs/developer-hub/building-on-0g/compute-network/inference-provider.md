@@ -15,95 +15,36 @@ Transform your AI services into verifiable, revenue-generating endpoints on the 
 
 - **Monetize Your Infrastructure**: Turn idle GPU resources into revenue
 - **Automated Settlements**: The broker handles billing and payments automatically
-- **Flexible Pricing**: Set your own rates based on market demand
 - **Trust Through Verification**: Offer verifiable services for premium rates
 
 ## Prerequisites
-
-### Hardware Requirements
-- **GPU**: NVIDIA GPU with sufficient VRAM for your model
-- **Network**: Stable internet connection with public IP
-- **OS**: Linux server (Ubuntu 20.04+ recommended)
-
-### Software Requirements
 - Docker Compose 1.27+
 - OpenAI-compatible model service
-- Wallet with OG tokens for gas fees
+- Wallet with OG tokens for gas fees (see [Testnet Details](/docs/developer-hub/testnet/testnet-overview.md))
 
 ## Setup Process
 
-### Step 1: Prepare Your Model Service
+### Prepare Your Model Service
 
-Your AI service must implement the [OpenAI API Interface](https://platform.openai.com/docs/api-reference/chat) for compatibility:
+#### Service Interface Requirements
+Your AI service must implement the [OpenAI API Interface](https://platform.openai.com/docs/api-reference/chat) for compatibility. This ensures consistent user experience across all providers.
 
-```
-POST /chat/completions
-```
-
-This ensures consistent user experience across all providers.
-
-### Step 2: Download and Configure Provider Broker
-
-```bash
-# Download from releases page
-wget https://github.com/0glabs/0g-serving-broker/releases/latest/download/provider-broker.tar.gz
-tar -xzf provider-broker.tar.gz
-cd provider-broker
-
-# Copy configuration template
-cp config.example.yaml config.local.yaml
-```
-
-Edit `config.local.yaml`:
-```yaml
-servingUrl: "https://your-public-ip:8080"    # Public endpoint
-privateKeys: "YOUR_WALLET_PRIVATE_KEY"       # For settlements
-targetUrl: "http://localhost:8000"           # Your model service
-model: "llama-3.3-70b-instruct"              # Model identifier
-```
-
-### Step 3: Configure Docker Port
-
-```bash
-# Replace #PORT# with your service port (must match servingUrl)
-sed -i 's/#PORT#/8080/g' docker-compose.yml
-```
-
-### Step 4: Launch Provider Broker
-
-```bash
-# Start the broker service
-docker compose -f docker-compose.yml up -d
-
-# Monitor logs
-docker compose logs -f
-```
-
-The broker will:
-- Register your service on the network
-- Handle user authentication and request routing
-- Manage automatic settlement of payments
-- Minimize gas costs through intelligent batching
-
-## Verification Services
-
-Make your service verifiable to build trust and potentially earn higher rates:
+#### Verification Interfaces
+To ensure the integrity and trustworthiness of services, different verification mechanisms are employed. Each mechanism comes with its own specific set of protocols and requirements to ensure service verification and security.
 
 <Tabs>
 <TabItem value="teeml" label="TEE Verification (TeeML)" default>
-
-### Overview
-
 TEE (Trusted Execution Environment) verification ensures your computations are tamper-proof. Services running in TEE:
 - Generate signing keys within the secure environment
 - Provide CPU and GPU attestations
 - Sign all inference results
 
-### Requirements
+These attestations should include the public key of the signing key, verifying its creation within the TEE. All inference results must be signed with this signing key.
+
+### Hardware Requirements
 
 - **CPU**: Intel TDX (Trusted Domain Extensions) enabled
 - **GPU**: NVIDIA H100 or H200 with TEE support
-- **Attestation**: Both CPU and GPU attestations including the public key
 
 ### Implementation
 
@@ -122,7 +63,7 @@ Return format:
 }
 ```
 
-*Note: The nvidia_payload must be verifiable via NVIDIA's GPU Attestation API*
+> *Note*: The nvidia_payload must be verifiable via NVIDIA's GPU Attestation API. Support for decentralized TEE attestation is planned for the future, and relevant interfaces will be provided. Stay tuned.
 
 #### 2. Signature Download Interface
 
@@ -138,32 +79,71 @@ Requirements:
 
 </TabItem>
 <TabItem value="future" label="OPML, ZKML (Coming Soon)">
-
 Support for additional verification methods including:
 - **OPML**: Optimistic Machine Learning proofs
 - **ZKML**: Zero-knowledge ML verification
 
 Stay tuned for updates.
-
 </TabItem>
 </Tabs>
 
-## Best Practices
 
-### Service Reliability
-- Ensure stable internet connection and power supply
-- Implement proper error handling in your model service
-- Monitor service health and uptime
 
-### Security
-- Keep your private keys secure
-- Use HTTPS for all public endpoints
-- Regularly update your software dependencies
+### Download and Configure Inference Broker
+To register and manage services, handle user request proxies, and perform settlements, you need to use the Inference Broker.
 
-### Performance
-- Optimize model loading and inference times
-- Consider batching requests when possible
-- Monitor resource utilization
+Please visit the [releases page](https://github.com/0glabs/0g-serving-broker/releases) to download and extract the latest version of the installation package.
+
+```bash
+# Download from releases page
+wget https://github.com/0glabs/0g-serving-broker/releases/download/v0.2.0/inference-broker.tar.gz
+tar -xzf inference-broker.tar.gz
+cd inference-broker
+
+# Copy configuration template
+cp config.example.yaml config.local.yaml
+```
+
+Edit `config.local.yaml`:
+```yaml
+servingUrl: "https://your-public-ip:8080"    # Public endpoint
+privateKeys: "YOUR_WALLET_PRIVATE_KEY"       # For settlements
+targetUrl: "http://localhost:8000"           # Your model service
+model: "llama-3.3-70b-instruct"              # Model identifier
+```
+:::info Serving URL
+Serving URL must be publically accessible from the internet.
+:::
+
+### Configure Docker Port
+
+Configure the Docker port to match your `servingUrl` port from `config.local.yaml`. Replace `#PORT#` in the `docker-compose.yml` file with the same port you specified in your `servingUrl`.
+
+For example, if your `servingUrl` is `"https://your-public-ip:8080"`, use port `8080`:
+
+```bash
+# Replace #PORT# with your service port (must match servingUrl)
+sed -i 's/#PORT#/8080/g' docker-compose.yml
+```
+
+:::warning Port Consistency
+Ensure the port in `docker-compose.yml` matches the port in your `servingUrl` from `config.local.yaml`. Mismatched ports will prevent the service from being accessible.
+:::
+
+### Launch Provider Broker
+
+```bash
+# Start the broker service
+docker compose -f docker-compose.yml up -d
+
+# Monitor logs
+docker compose logs -f
+```
+
+The broker will:
+- Register your service on the network
+- Handle user authentication and request routing
+- Manage automatic settlement of payments
 
 ## Troubleshooting
 
@@ -193,27 +173,6 @@ The automatic settlement engine handles payments. If issues occur:
 - Monitor settlement logs in broker output
 </details>
 
-## Advanced Features
-
-### Settlement Engine
-
-The provider broker includes an intelligent settlement system that:
-- Automatically collects fees before customer balance depletion
-- Batches transactions to minimize gas costs
-- Provides real-time settlement status
-- Handles failed transactions gracefully
-
-### Service Discovery
-
-Your service is automatically registered and discoverable by:
-- Model type and capabilities
-- Pricing structure
-- Verification status
-- Availability and performance metrics
-
 ## Next Steps
-
-- **Test Your Service** → Verify everything works before going live
-- **Monitor Performance** → Track requests and earnings
 - **Join Community** → [Discord](https://discord.gg/0glabs) for support
 - **Explore SDK** → [SDK Documentation](./sdk) for integration details
