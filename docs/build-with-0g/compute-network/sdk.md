@@ -98,6 +98,7 @@ type ServiceStructOutput = {
   updatedAt: bigint; // Last update timestamp
   model: string; // Model identifier
   verifiability: string; // Indicates how the service's outputs can be verified. 'TeeML' means it runs with verification in a Trusted Execution Environment. An empty value means no verification.
+  additionalInfo: string // Provider-defined metadata, currently used to store the provider's encrypted key, but can be extended to include other custom information in future.
 };
 ```
 
@@ -130,6 +131,15 @@ await broker.ledger.depositFund(amount);
 ```
 
 The `amount` needs to be specified in OG units.
+
+### Acknowledge Provider
+Before using a service provided by a provider, you must first acknowledge the provider on-chain by following API:
+
+```typescript
+await broker.inference.acknowledgeProviderSigner(providerAddress)
+```
+
+The `providerAddress` can be obtained from from service metadata. For details on how to retrieve it, see [Discover Available Services](#discover-available-services)
 
 ### Making Service Requests
 
@@ -196,7 +206,7 @@ const completion = await openai.chat.completions.create(
 
 ### Response Processing
 
-This function is used to verify the response and settle the fee. If it is a verifiable service, it will return whether the response is valid.
+This function is used to verify the response. If it is a verifiable service, it will return whether the response is valid.
 
 For streaming services, `content` should be the total content received from the service. And chatID can be any chat ID of the chunk.
 
@@ -208,13 +218,9 @@ const valid = await broker.inference.processResponse(
 );
 ```
 
-### Manual Fee Settlement
+### Fee Settlement
 
-If `processResponse` fails, you can settle fees manually by calling `settleFee` function.
-
-```typescript
-await broker.inference.settleFee(providerAddress, fee);
-```
+Fee settlement by the broker service occurs at scheduled intervals.
 
 ### Helper Functions
 
