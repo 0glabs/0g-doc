@@ -2,6 +2,7 @@
 id: understanding-0g
 title: Understanding 0G
 sidebar_position: 1
+slug: /
 ---
 
 # Understanding 0G
@@ -10,18 +11,22 @@ import LottieAnimation from '@site/src/components/lottieAnimation';
 
 ## Why 0G Exists
 
-Imagine trying to run ChatGPT on a blockchain today. It would be:
-- **Impossibly expensive** - Millions in gas fees just to store a model
-- **Extremely slow** - Minutes or hours for a single AI response
-- **Technically unfeasible** - Current blockchains can't handle AI's massive data needs
+AI (Artificial Intelligence) is rapidly advancing, but its powerful capabilities are largely confined to centralized systems & limited to a few large companies. Bringing AI onto the blockchain unlocks transformative potential: truly verifiable AI, user-owned data powering AI applications, and open, censorship-resistant AI development.
 
-**That's the problem 0G solves.**
+However, a fundamental challenge has held back this vision:
+- **AI's Data Hunger:** AI models and datasets are massive. Existing blockchains make storing and accessing this data impossibly expensive and slow.
+- **Intense Compute Demands:** AI requires significant processing power, far beyond what traditional blockchains can offer efficiently.
+- **Need for Speed:** Real-time AI applications demand high throughput and low latency
+
+Without overcoming these hurdles, the dream of decentralized AI remains out of reach.
+
+**0G is built to break these barriers.** We provide the foundational infrastructure like high-performance storage, scalable compute, and a fast, modular blockchain—designed from the ground up to power the future of on-chain AI.
 
 ## What is 0G?
 
 0G (Zero Gravity) is the first decentralized AI L1 chain that orchestrates hardware resources (storage, compute) and software assets (data, models) to handle AI workloads at scale. It bridges the gap between Web2 AI capabilities and Web3 decentralization.
 
-:::info 0G makes AI applications possible on blockchain - affordably and at scale.
+:::info 0G is building the global foundation for a better, fairer, and more open AI ecosystem, where power is distributed and innovation thrives
 :::
 
 **How it works**: 0G provides four independent services that solve different pieces of the AI + blockchain puzzle:
@@ -41,41 +46,22 @@ Imagine trying to run ChatGPT on a blockchain today. It would be:
 
 :::tip Key Benefit of Modular Architecture: You DON'T need to use all of 0G!
 **Pick only what you need:**
-- Just need storage? ✅ Use only 0G Storage  
-- Want AI compute? ✅ Use only 0G Compute
-- Happy with Ethereum? ✅ Stay there and use our services
-- Building fresh? ✅ Use everything for maximum performance
-:::
-
-
-### Integration Flexibility
-- **Already on Ethereum, Polygon, or any EVM chain?** Use 0G Storage and Compute directly from your existing smart contracts
+- **Already on Ethereum, Polygon, or any EVM chain?** Use 0G Storage and Compute directly from your existing smart contracts, no need to migrate.
 - **Building on Solana or other non-EVM chains?** Our SDKs support cross-chain integration
-- **Need only storage?** Use 0G Storage without touching blockchain components
-- **Want AI compute?** Access our Compute Network from any application
+- **Just need one service?** Use only 0G Storage or only 0G Compute
+:::
 
 
 ## The 4 Components of 0G
 
-### ⛓️ 0G Chain
-The fastest, most modular blockchain, making on-chain gaming and AI a reality. 
-- *Optional - not required to use other services*
-- *EVM-compatible for easy integration*
+| Component             | Works Independently?                                   | Key Features & Use Cases                                                          | Cost Highlight                        |
+|-----------------------|--------------------------------------------------------|-----------------------------------------------------------------------------------|---------------------------------------|
+| **0G Chain**        | ✅ Yes (Optional for other services)             | Fastest modular EVM L1 for AI agents, DeFi with AI logic        | Low gas fees in 0G token              |
+| **0G Storage**     | ✅ Yes (Any app/chain can access)                       | Store AI models (GBs-TBs), training datasets, user files, game assets            | 10-100x cheaper than alternatives     |
+| **0G Compute**     | ✅ Yes (Any app/chain can access)                     | Run AI inference, model training, verifiable compute, ML pipelines               | Pay-only-for-what-you-use             |
+| **0G DA**          | ✅ Yes (Works with any rollup/L1/L2)                  | Power gaming chains, AI rollups, high-frequency trading chains                   | Economical for high-volume DA         |
 
-### 💾 0G Storage Network
-A decentralized storage network optimized for massive data loads. 
-- *Works with any blockchain or standalone*
-- *10-100x cheaper than alternatives*
-
-### 🤖 0G Compute Network
-A versatile framework for AI compute, including fast data retrieval, model inference/training, etc. 
-- *Accessible from any platform*
-- *Pay only for what you use*
-
-### 📊 0G DA (Data Availability)
-An infinitely scalable and programmable data availability layer designed for high-performance chains. 
-- *Can be integrated with any rollup or chain*
-- *Ensures data is always accessible*
+*\*0G Storage can be used completely standalone without any blockchain integration - perfect for traditional apps needing decentralized storage.*
 
 ## Key Concepts Explained Simply
 

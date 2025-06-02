@@ -24,16 +24,12 @@ Your existing Ethereum code works without changes 🤝
 ## How 0G Chain Works
 
 ### 🧩 Modular Architecture
-**Traditional blockchains**: Monolithic design makes upgrades difficult  
-**0G Chain**: Modular design allows independent component upgrades
+Modular design allows independent component upgrades. This enables 0G to quickly incorporate future EVM upgrades (like Pectra), ensuring the chain stays aligned with the latest Ethereum developments without requiring hard forks or complex migrations.
 
-This enables 0G to quickly incorporate future EVM upgrades (like Pectra), ensuring the chain stays aligned with the latest Ethereum developments without requiring hard forks or complex migrations.
-
-### ⚡ Optimized Consensus
+### ⚡ Optimized Consensus (CometBFT)
 Uses CometBFT (formerly Tendermint) consensus optimized for:
 - High throughput (2,500 TPS currently)
 - Fast finality for real-time AI applications
-- Byzantine fault tolerance
 
 ### 🔮 Scaling Roadmap
 **Current**: Optimized CometBFT consensus network  

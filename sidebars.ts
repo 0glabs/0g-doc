@@ -2,7 +2,7 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docs: [
-    'preface',
+    // 'preface',
     
     // SECTION 1: For beginners and non-technical users
     {
@@ -24,12 +24,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Concepts',
       className: 'sidebar-category concepts',
-      link: {
-        type: 'doc',
-        id: 'concepts/overview',
-      },
       items: [
-        'concepts/overview',
+        // 'concepts/overview',
         'concepts/chain',
         'concepts/compute',
         'concepts/storage',
@@ -63,7 +59,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'category',
-              label: '⛓️ 0G Chain',
+              label: '0G Chain',
               link: {
                 type: 'doc',
                 id: 'developer-hub/building-on-0g/contracts-on-0g/deploy-contracts',
@@ -88,7 +84,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: '🤖 0G Compute',
+              label: '0G Compute',
               items: [
                 'developer-hub/building-on-0g/compute-network/overview',
                 {
@@ -111,7 +107,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: '💾 0G Storage',
+              label: '0G Storage',
               items: [
                 'developer-hub/building-on-0g/storage/sdk',
                 'developer-hub/building-on-0g/storage/storage-cli',
@@ -119,7 +115,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: '📊 0G DA',
+              label: '0G DA',
               items: [
                 'developer-hub/building-on-0g/da-integration',
                 'developer-hub/building-on-0g/da-deep-dive',
@@ -150,7 +146,7 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
-              label: '🎨 INFTs (Intelligent NFTs)',
+              label: 'INFTs (Intelligent NFTs)',
               items: [
                 'developer-hub/building-on-0g/inft/inft-overview',
                 'developer-hub/building-on-0g/inft/integration',
