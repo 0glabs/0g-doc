@@ -118,6 +118,14 @@ type ServiceStructOutput = {
   verifiability: string; // Indicates how the service's outputs can be verified. 'TeeML' means it runs with verification in a Trusted Execution Environment. An empty value means no verification.
 };
 ```
+### Acknowledge Provider
+Before using a service provided by a provider, you must first acknowledge the provider on-chain by following API:
+
+```typescript
+await broker.inference.acknowledgeProviderSigner(providerAddress)
+```
+
+The providerAddress can be obtained from from service metadata. For details on how to retrieve it, see [Discover Available Services](/developer-hub/building-on-0g/compute-network/sdk#discover-available-services)
 
 
 
@@ -178,7 +186,7 @@ const answer = completion.choices[0].message.content!;
 </Tabs>
 
 ### Response Processing
-This function is used to verify the response and settle the fee. If it is a verifiable service, it will return whether the response is valid.
+This function is used to verify the response. If it is a verifiable service, it will return whether the response is valid.
 
 ```typescript
 const valid = await broker.inference.processResponse(
@@ -188,12 +196,8 @@ const valid = await broker.inference.processResponse(
 );
 ```
 
-### Manual Fee Settlement
-If ```processResponse``` fails, you can settle fees manually by calling ```settleFee``` function.
-
-```typescript
-await broker.inference.settleFee(providerAddress, fee);
-```
+### Fee Settlement
+Fee settlement by the broker service occurs at scheduled intervals.
 
 ## Account Management
 

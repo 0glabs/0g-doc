@@ -3,419 +3,283 @@ id: da-integration
 title: DA Client Nodes
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 0G Data Availability Integration Guide
+# 0G Data Availability (DA): Integration
+
+To submit data to the 0G DA, you must run a DA Client node and the Encoder node. The DA client interfaces with the Encoder for data encoding and the Retriever for data access.
 
 ## Overview
 
-This guide walks you through setting up the infrastructure needed to integrate 0G DA into your application. You'll learn how to run the required nodes and configure them for your use case.
+### Maximum Blob Size
+Users can submit data blobs up to 32,505,852 bytes in length, which are then processed, encoded, and distributed across a network of DA nodes. The system employs a sophisticated data processing flow that includes padding, matrix formation, redundant encoding, and signature aggregation.
 
-### Integration Architecture
+### Fee Market
+As the DA user, you pay a fee which is the (BLOB_PRICE) when submitting DA blob data.
 
-:::tip
-**TODO**: Add architecture diagram showing:
-- Your application connecting to DA Client
-- DA Client communicating with Encoder for data processing
-- DA Client interacting with Retriever for data access
-- Connection to 0G DA network and on-chain contracts
-:::
-
-### Required Components
-
-| Component | Purpose | Required For |
-|-----------|---------|-------------|
-| **DA Client** | Main interface to 0G DA network | All integrations |
-| **Encoder** | Handles erasure coding and data processing | Submitting data |
-| **Retriever** | Enables data retrieval from network | Reading data |
-
-## When to Use 0G DA
-
-<details>
-<summary><b>Common Integration Patterns</b></summary>
-
-**1. Rollup Data Availability**
-- Store transaction batches
-- Post state roots
-- Archive execution proofs
-
-**2. Cross-Chain Messaging**
-- Bridge state synchronization
-- Message passing between chains
-- Proof storage for verification
-
-**3. Decentralized Storage**
-- Large file storage
-- AI model distribution
-- Gaming assets and state
-
-</details>
-
-## Quick Start
-
-### System Limits & Fees
-
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| **Maximum Blob Size** | 32,505,852 bytes (~32 MB) | Per submission |
-| **Submission Fee** | `BLOB_PRICE` (dynamic) | Paid in native token |
-| **Processing Time** | ~30 seconds | From submission to finalization |
-| **Data Retention** | Permanent* | *Subject to node incentives |
-
-### Example Integration
-
-```bash
-# Quick test submission
-curl -X POST http://localhost:51001/submit \
-  -H "Content-Type: application/json" \
-  -d '{"data": "your_base64_encoded_data"}'  
-```
-
-For production examples, see the [Rust integration example](https://github.com/0glabs/0g-da-example-rust).
+### Submitting Data
+See example here: https://github.com/0glabs/0g-da-example-rust/blob/main/src/disperser.proto
 
 ## Hardware Requirements
 
-### Minimum Specifications
+The following table outlines the hardware requirements for different types of DA Client nodes:
 
-| Node Type | Memory | CPU | Disk | Network | GPU |
-|-----------|--------|-----|------|---------|-----|
-| **DA Client** | 8 GB | 2 cores | 50 GB SSD | 100 Mbps | Not required |
-| **Encoder** | 16 GB | 4 cores | 100 GB SSD | 100 Mbps | NVIDIA RTX 4090* |
-| **Retriever** | 8 GB | 2 cores | 50 GB SSD | 100 Mbps | Not required |
+| Node Type | Memory | CPU | Disk | Bandwidth | Additional Notes |
+|-----------|--------|-----|------|-----------|------------------|
+| DA Client | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
+| DA Encoder | - | - | - | - | NVIDIA Drivers: 12.04 on the RTX 4090* |
+| DA Retriever | 8 GB | 2 cores | - | 100 MBps | For Download / Upload |
 
-*GPU acceleration optional but recommended for high-throughput encoding
-
-### Network Requirements
-- **Stable connection**: 99%+ uptime recommended
-- **Low latency**: &lt;100ms to 0G RPC endpoints
-- **Public IP**: Required for Retriever service
-
-## Installation Guide
-
+## Standing up DA Client, Encoder, Retriever
 
 <Tabs>
 <TabItem value="binary" label="DA Client" default>
 
-### Prerequisites
+## DA Client Node Installation
 
-<details>
-<summary><b>Before You Begin</b></summary>
-
-✅ **Required**:
-- Docker & Docker Compose installed
-- 0G testnet wallet with funds
-- Access to 0G RPC endpoint
-
-📍 **Testnet Resources**:
-- RPC: `https://evmrpc-testnet.0g.ai`
-- Faucet: [Get testnet tokens](https://faucet.0g.ai)
-- Explorer: [View transactions](https://explorer-testnet.0g.ai)
-
-</details>
-
-### Step 1: Set Up DA Client
-
-The DA Client is your main interface to the 0G DA network.
+**1. Clone the DA Client Node Repo**
 
 ```bash
-# Clone repository
 git clone https://github.com/0glabs/0g-da-client.git
-cd 0g-da-client
+```
 
-# Build Docker image
+**2. Build the Docker Image**
+
+```bash
+cd 0g-da-client
 docker build -t 0g-da-client -f combined.Dockerfile .
 ```
-### Step 2: Configure Environment
 
-Create `envfile.env` with your settings:
+**3. Set Environment Variables**
+
+Create a file named `envfile.env` with the following content. Be sure you paste in your private key.
 
 ```bash
-# Network Configuration
+# envfile.env
 COMBINED_SERVER_CHAIN_RPC=https://evmrpc-testnet.0g.ai
-COMBINED_SERVER_PRIVATE_KEY=YOUR_PRIVATE_KEY_HERE  # ⚠️ Keep this secure!
+COMBINED_SERVER_PRIVATE_KEY=YOUR_PRIVATE_KEY
 ENTRANCE_CONTRACT_ADDR=0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9
 
-# Performance Settings (Recommended defaults)
 COMBINED_SERVER_RECEIPT_POLLING_ROUNDS=180
 COMBINED_SERVER_RECEIPT_POLLING_INTERVAL=1s
 COMBINED_SERVER_TX_GAS_LIMIT=2000000
-
-# Storage Configuration  
-COMBINED_SERVER_USE_MEMORY_DB=true  # Set false for persistent storage
+COMBINED_SERVER_USE_MEMORY_DB=true
 COMBINED_SERVER_KV_DB_PATH=/runtime/
-COMBINED_SERVER_TimeToExpire=2592000  # 30 days
-
-# Service Ports
+COMBINED_SERVER_TimeToExpire=2592000
 DISPERSER_SERVER_GRPC_PORT=51001
-
-# Batcher Configuration
 BATCHER_DASIGNERS_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001000
 BATCHER_FINALIZER_INTERVAL=20s
 BATCHER_CONFIRMER_NUM=3
 BATCHER_MAX_NUM_RETRIES_PER_BLOB=3
 BATCHER_FINALIZED_BLOCK_COUNT=50
-BATCHER_BATCH_SIZE_LIMIT=500  # MB
-
-# Encoding Settings
+BATCHER_BATCH_SIZE_LIMIT=500
 BATCHER_ENCODING_INTERVAL=3s
 BATCHER_ENCODING_REQUEST_QUEUE_SIZE=1
-BATCHER_ENCODER_ADDRESS=DA_ENCODER_SERVER  # Update if using external encoder
-BATCHER_ENCODING_TIMEOUT=300s
-
-# Signing Configuration
+BATCHER_PULL_INTERVAL=10s
 BATCHER_SIGNING_INTERVAL=3s
 BATCHER_SIGNED_PULL_INTERVAL=20s
+BATCHER_EXPIRATION_POLL_INTERVAL=3600
+BATCHER_ENCODER_ADDRESS=DA_ENCODER_SERVER
+BATCHER_ENCODING_TIMEOUT=300s
 BATCHER_SIGNING_TIMEOUT=60s
-
-# Timeouts
 BATCHER_CHAIN_READ_TIMEOUT=12s
 BATCHER_CHAIN_WRITE_TIMEOUT=13s
-BATCHER_EXPIRATION_POLL_INTERVAL=3600
 ```
 
-:::warning Security Note
-Never commit `envfile.env` to version control. Add it to `.gitignore`.
-:::   
-
-
-
-### Step 3: Launch DA Client
+**4. Run the Docker Node**
 
 ```bash
-# Run the container
-docker run -d \
-  --env-file envfile.env \
-  --name 0g-da-client \
-  -v ./run:/runtime \
-  -p 51001:51001 \
-  0g-da-client combined
-
-# Verify it's running
-docker logs -f 0g-da-client
-
-# Expected output:
-# [INFO] DA Client started on port 51001
-# [INFO] Connected to RPC endpoint
-# [INFO] Ready to accept submissions
+docker run -d --env-file envfile.env --name 0g-da-client -v ./run:/runtime -p 51001:51001 0g-da-client combined
 ```
 
-### Step 4: Test Your Setup
+## Configuration
 
-```bash
-# Submit test data
-curl -X POST http://localhost:51001/v1/test \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Hello 0G DA!"}'
+| Field | Description |
+|-------|-------------|
+| `--chain.rpc` | JSON RPC node endpoint for the blockchain network. |
+| `--chain.private-key` | Hex-encoded signer private key. |
+| `--chain.receipt-wait-rounds` | Maximum retries to wait for transaction receipt. |
+| `--chain.receipt-wait-interval` | Interval between retries when waiting for transaction receipt. |
+| `--chain.gas-limit` | Transaction gas limit. |
+| `--combined-server.use-memory-db` | Whether to use mem-db for blob storage. |
+| `--combined-server.storage.kv-db-path` | Path for level db. |
+| `--combined-server.storage.time-to-expire` | Expiration duration for blobs in level db. |
+| `--combined-server.log.level-file` | File log level. |
+| `--combined-server.log.level-std` | Standard output log level. |
+| `--combined-server.log.path` | Log file path. |
+| `--disperser-server.grpc-port` | Server listening port. |
+| `--disperser-server.retriever-address` | GRPC host for retriever. |
+| `--batcher.da-entrance-contract` | Hex-encoded da-entrance contract address. |
+| `--batcher.da-signers-contract` | Hex-encoded da-signers contract address. |
+| `--batcher.finalizer-interval` | Interval for finalizing operations. |
+| `--batcher.finalized-block-count` | Default number of blocks between finalized block and latest block. |
+| `--batcher.confirmer-num` | Number of Confirmer threads. |
+| `--batcher.max-num-retries-for-sign` | Number of retries before signing fails. |
+| `--batcher.batch-size-limit` | Maximum batch size in MiB. |
+| `--batcher.encoding-request-queue-size` | Size of the encoding request queue. |
+| `--batcher.encoding-interval` | Interval between blob encoding requests. |
+| `--batcher.pull-interval` | Interval for pulling from the encoded queue. |
+| `--batcher.signing-interval` | Interval between slice signing requests. |
+| `--batcher.signed-pull-interval` | Interval for pulling from the signed queue. |
+| `--encoder-socket` | GRPC host of the encoder. |
+| `--encoding-timeout` | Total time to wait for a response from encoder. |
+| `--signing-timeout` | Total time to wait for a response from signer. |
 
-# Check node health
-curl http://localhost:51001/health
-```
+</TabItem>
+<TabItem value="source" label="DA Encoder">
 
-<details>
-<summary><b>Advanced Configuration Reference</b></summary>
+## Features
 
-### Chain Configuration
-| Parameter | Description | Default |
-|-----------|-------------|--------|
-| `chain.rpc` | 0G network RPC endpoint | Required |
-| `chain.private-key` | Wallet private key for gas payments | Required |
-| `chain.receipt-wait-rounds` | Max receipt polling attempts | 180 |
-| `chain.gas-limit` | Transaction gas limit | 2000000 |
+- `parallel`: Uses parallel algorithms for computations, maximizing CPU resource utilization.
+- `cuda`: Uses GPU for computations, applicable only on platforms with NVIDIA GPUs.
 
-### Storage Configuration  
-| Parameter | Description | Default |
-|-----------|-------------|--------|
-| `use-memory-db` | Use RAM vs disk storage | true |
-| `kv-db-path` | Persistent storage location | /runtime/ |
-| `time-to-expire` | Data retention period (seconds) | 2592000 |
-
-### Performance Tuning
-| Parameter | Description | Recommended |
-|-----------|-------------|------------|
-| `batch-size-limit` | Max batch size (MB) | 500 |
-| `encoding-interval` | Encoding frequency | 3s |
-| `confirmer-num` | Parallel confirmers | 3 |
-
-</details>
-
-  </TabItem>
-  <TabItem value="source" label="DA Encoder">
-
-## Setting Up DA Encoder
-
-The Encoder handles erasure coding and data processing. It can run on CPU or GPU.
-
-### Encoder Features
-
-| Feature | Description | Performance Impact |
-|---------|-------------|-----------------|
-| **Parallel** | Multi-core CPU processing | 5-10x faster than serial |
-| **CUDA** | GPU acceleration (NVIDIA) | 20-50x faster than CPU |
-
-:::note GPU Compatibility
-Currently optimized for NVIDIA RTX 4090 with driver 12.04. Other GPUs may work but require tuning.
+:::note
+GPU support is currently tested with NVIDIA 12.04 drivers on the RTX 4090. Other NVIDIA GPUs may require parameter adjustments and have not been tuned yet.
 :::
 
-### Prerequisites
+## Preparation
 
-#### 1. Install Rust
+### Install Rust
+
+Ensure you have curl installed.
+
+Run the following command to install Rust:
 
 ```bash
-# Install Rust toolchain
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Add to PATH
-source $HOME/.cargo/env
-
-# Verify installation
-rustc --version
-# Expected: rustc 1.7x.x or higher
 ```
 
-#### 2. Install Dependencies
+After installation, add the cargo bin directory to your PATH environment variable:
 
 ```bash
-# System dependencies
-sudo apt-get update
-sudo apt-get install -y \
-  protobuf-compiler \
-  build-essential \
-  pkg-config
+source $HOME/.cargo/env
+```
 
-# Rust toolchain
+Verify the installation:
+
+```bash
+rustc --version
+```
+
+### Install other dependencies
+
+```bash
+# Install Protocol Buffers Compiler
+sudo apt-get install -y protobuf-compiler
+
+# Install a specific nightly Rust toolchain and rustfmt
 rustup toolchain install nightly-2024-02-04-x86_64-unknown-linux-gnu
 rustup component add --toolchain nightly-2024-02-04-x86_64-unknown-linux-gnu rustfmt
+
+# Add the necessary Rust target
 rustup target add x86_64-unknown-linux-gnu
 ```
 
-#### 3. GPU Setup (Optional)
+### Install CUDA (for GPU feature)
 
-<details>
-<summary><b>NVIDIA CUDA Installation</b></summary>
+Ensure you have an NVIDIA GPU with the required drivers. Then follow the instructions from [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit).
 
-1. Check GPU compatibility:
+Verify the installation:
+
 ```bash
-lspci | grep -i nvidia
+nvidia-smi
+nvcc --version
 ```
 
-2. Install CUDA Toolkit:
+## Building Public Parameters
+
+The public parameters for the cryptographic protocol are built in two steps:
+
+### 1. Download and process the perpetual power of tau
+
+We use the challenge_0084 file from the nearly most recent submission.
+
 ```bash
-# Follow official guide at:
-# https://developer.nvidia.com/cuda-toolkit
+curl https://pse-trusted-setup-ppot.s3.eu-central-1.amazonaws.com/challenge_0084 -o challenge_0084
 ```
 
-3. Verify installation:
+### 2. Build the AMT parameters
+
+You can either construct these parameters yourself or download pre-built files.
+
+#### Choice 1: Download the pre-built files
+
 ```bash
-nvidia-smi  # Should show GPU info
-nvcc --version  # Should show CUDA version
-```
-
-</details>
-
-### Build Cryptographic Parameters
-
-:::tip
-**TODO**: Add diagram explaining the role of public parameters in the erasure coding process
-:::
-
-The encoder requires cryptographic parameters for erasure coding:
-
-#### Option 1: Download Pre-built (Recommended)
-```bash
-# Quick setup - downloads verified parameters
 ./dev-support/download_params.sh
 ```
 
-#### Option 2: Build from Scratch
-```bash
-# Download powers of tau ceremony result
-curl https://pse-trusted-setup-ppot.s3.eu-central-1.amazonaws.com/challenge_0084 \
-  -o challenge_0084
+#### Choice 2: Construct the parameters yourself
 
-# Generate AMT parameters
+```bash
 ./dev_support/build_params.sh challenge_0084
-# Note: This takes 30-60 minutes
 ```
 
-### Run Encoder Service
+## Running the Server
+
+Run the server with the following command:
 
 ```bash
-# Clone repository
-git clone https://github.com/0glabs/0g-da-encoder.git
-cd 0g-da-encoder
-
-# With GPU acceleration
 cargo run -r -p server --features grpc/parallel,grpc/cuda -- --config run/config.toml
-
-# CPU only
-cargo run -r -p server --features grpc/parallel -- --config run/config.toml
 ```
 
-The encoder will start on port **34000**.
+:::note
+If you do not have a CUDA environment, remove the cuda feature.
+:::
 
-### Verify Encoder Status
+DA Encoder will serve on port 34000 with specified gRPC interface.
 
-```bash
-# Check if encoder is running
-grpcurl -plaintext localhost:34000 list
+## Using the Verification Logic
 
-# Test encoding capability
-grpcurl -plaintext -d '{"data": "dGVzdA=="}' \
-  localhost:34000 encoder.Encoder/Encode
-```
-
-### Integration with Your Code
+Add the following to `Cargo.toml` of your crate:
 
 ```toml
-# Cargo.toml
-[dependencies]
 zg-encoder = { git = "https://github.com/0glabs/0g-da-encoder.git" }
 ```
 
-```rust
-// Verify encoded data
-use zg_encoder::EncodedSlice;
+Use the `zg_encoder::EncodedSlice::verify` function for verifying.
 
-let is_valid = EncodedSlice::verify(&encoded_data, &commitment);
-```
+## Benchmark the Performance
 
-### Performance Benchmarking
+Run the following task:
 
 ```bash
-# Benchmark your setup
-cargo bench -p grpc \
-  --features grpc/parallel,grpc/cuda \
-  --bench process_data \
-  --features zg-encoder/production_mode
-
-# Expected throughput:
-# CPU (parallel): 100-500 MB/s
-# GPU (RTX 4090): 2-5 GB/s
+cargo bench -p grpc --features grpc/parallel,grpc/cuda --bench process_data --features zg-encoder/production_mode -- --nocapture
 ```
+
+## Development and Testing
+
+Run the following script for complete testing:
+
+```bash
+./dev_support/test.sh
+```
+
 </TabItem>
 <TabItem value="docker" label="DA Retriever">
-  
-## Setting Up DA Retriever
 
-The Retriever enables data access from the 0G DA network.
+## DA Retriever Node Installation
 
-### Step 1: Clone Repository
+**1. Clone the DA Retriever Node Repo**
 
 ```bash
 git clone https://github.com/0glabs/0g-da-retriever.git
 cd 0g-da-retriever
 ```
 
-### Step 2: Prepare Docker Build
+**2. Edit Files**
+
+Add the following line to Dockerfile.dockerignore file:
 
 ```bash
-# Update .dockerignore
-echo '!/run/config.toml' >> Dockerfile.dockerignore
+!/run/config.toml
+```
 
-# Create optimized Dockerfile
-cat > Dockerfile << 'EOF'
-# Build stage
+Replace Dockerfile with the following:
+
+```dockerfile
+# Dockerfile
 FROM rust:alpine3.20 as builder
 
 WORKDIR /0g-da-retriever
@@ -424,22 +288,21 @@ COPY . .
 RUN apk update && apk add --no-cache make protobuf-dev musl-dev
 RUN cargo build --release
 
-# Runtime stage
 FROM alpine:3.20
 
 WORKDIR /0g-da-retriever
 
 COPY --from=builder /0g-da-retriever/target/release/retriever /usr/local/bin/retriever
+# Copy the config file into the container
 COPY --from=builder /0g-da-retriever/run/config.toml ./run/config.toml
 
+# Set the entrypoint to run the retriever binary
 CMD ["/usr/local/bin/retriever"]
-EOF
 ```
 
-### Step 3: Update Configuration Handler
+Replace the Config impl in `/retriever/src/config.rs` with the following:
 
 ```rust
-// Edit retriever/src/config.rs
 impl Config {
     pub fn from_cli_file() -> Result<Self> {
         let matches = cli::cli_app().get_matches();
@@ -464,82 +327,61 @@ impl Config {
 }
 ```
 
-### Step 4: Configure and Launch
+**3. Update Configuration**
 
-```toml
-# Edit run/config.toml
-log_level = "info"
-grpc_listen_address = "0.0.0.0:34005"
-eth_rpc_endpoint = "https://evmrpc-testnet.0g.ai"
-max_ongoing_retrieve_request = 100
-```
+Update configuration file `run/config.toml` as needed with context below.
+
+| Field | Description |
+|-------|-------------|
+| log_level | Set log level. |
+| grpc_listen_address | Server listening address. |
+| eth_rpc_endpoint | JSON RPC node endpoint for the blockchain network. |
+
+**4. Build and Run the Docker Node**
 
 ```bash
-# Build and run
-docker build -t 0g-da-retriever .
-docker run -d \
-  --name 0g-da-retriever \
-  -p 34005:34005 \
-  0g-da-retriever
-
-# Verify it's running
-docker logs 0g-da-retriever
+docker build -t 0g-da-retriever . 
+docker run -d --name 0g-da-retriever -p 34005:34005 0g-da-retriever
 ```
+
+</TabItem>
+</Tabs>
 
 ## Troubleshooting
 
 <details>
-<summary><b>Common Issues and Solutions</b></summary>
+<summary><b>DA Client connection issues</b></summary>
 
-### DA Client Issues
+- Verify the RPC endpoint is accessible
+- Check that your private key has sufficient funds for gas
+- Ensure the contract addresses are correct for your network
+- Review logs: `docker logs 0g-da-client`
+</details>
 
-**Problem**: "Failed to connect to RPC"
-- Check RPC endpoint is accessible
-- Verify network connectivity
-- Ensure correct chain ID
+<details>
+<summary><b>Encoder GPU not detected</b></summary>
 
-**Problem**: "Insufficient funds"
-- Check wallet balance
-- Request testnet tokens from faucet
-- Verify gas price settings
+- Verify NVIDIA drivers are installed: `nvidia-smi`
+- Check CUDA installation: `nvcc --version`
+- Ensure Docker has GPU access if using containers
+- Try running without cuda feature if GPU is not available
+</details>
 
-### Encoder Issues
+<details>
+<summary><b>Retriever fails to start</b></summary>
 
-**Problem**: "CUDA out of memory"
-- Reduce batch size
-- Use CPU-only mode
-- Check GPU memory usage
-
-**Problem**: "Parameters not found"
-- Run `./dev-support/download_params.sh`
-- Check file permissions
-- Verify download completed
-
-### Retriever Issues
-
-**Problem**: "Port already in use"
-- Change port in config.toml
-- Stop conflicting service
-- Use different port mapping
-
+- Check that port 34005 is not already in use
+- Verify the Ethereum RPC endpoint is accessible
+- Ensure config.toml is properly formatted
+- Review container logs for specific errors
 </details>
 
 ## Next Steps
 
-### Integration Examples
-- 🧪 **[Rust Example](https://github.com/0glabs/0g-da-example-rust)** - Complete integration guide
-- 🔧 **[SDK Documentation](../storage/sdk)** - Client libraries
-- 📡 **[API Reference](https://docs.0g.ai/api)** - Full API documentation
+- **Integration Examples** → [DA Examples Repository](https://github.com/0glabs/0g-da-example-rust)
+- **Join Community** → [Discord](https://discord.gg/0glabs) for support
+- **Run a DA Node** → [DA Node Guide](/run-a-node/da-node)
 
-### Performance Optimization
-- 🚀 **[Tuning Guide](./performance)** - Optimize throughput
-- 📊 **[Monitoring Setup](./monitoring)** - Track node metrics
-- 🔒 **[Security Best Practices](./security)** - Secure your deployment
+---
 
-### Get Support
-- 💬 **[Discord Community](https://discord.gg/0glabs)** - Ask questions
-- 🐛 **[GitHub Issues](https://github.com/0glabs/0g-da-client/issues)** - Report bugs
-- 📖 **[Knowledge Base](https://kb.0g.ai)** - Common solutions
-
-</TabItem>
-</Tabs>
+*Ready to integrate 0G DA into your application? Start with the DA Client and connect to the network.*

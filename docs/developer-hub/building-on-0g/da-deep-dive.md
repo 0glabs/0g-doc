@@ -1,340 +1,154 @@
 ---
 id: da-deep-dive
 title: Technical Deep Dive
-sidebar_position: 2
+sidebar_position: 3
 ---
+
 # 0G DA Technical Deep Dive
 
-## Prerequisites & Audience
+The Data Availability (DA) module allows users to submit a piece of data, referred to as a **DA blob**. This data is redundantly encoded by the client's proxy and divided into several slices, which are then sent to DA nodes. **DA nodes** gain eligibility to verify the correctness of DA slices by staking. Each DA node verifies the integrity and correctness of its slice and signs it. Once more than 2/3 of the aggregated signatures are on-chain, the data behind the related hash is considered to be published decentrally.
 
-**Who should read this:**
-- Developers integrating 0G DA into their applications
-- Node operators running DA infrastructure
-- Researchers interested in DA design patterns
+To incentivize DA nodes to store the signed data for a period, the signing process itself does not provide any rewards. Instead, rewards are distributed through a process called **DA Sampling**. During each DA Sample round, any DA slice within a certain timeframe can generate a lottery chance for a reward. DA nodes must store the corresponding slice to redeem the lottery chance and claim the reward.
 
-**Required knowledge:**
-- Basic understanding of data availability concepts
-- Familiarity with erasure coding principles
-- Knowledge of blockchain consensus mechanisms
-
-## Overview
-
-The 0G Data Availability module enables decentralized data storage and verification through a network of staked nodes. This document covers the technical implementation details, from data submission to node rewards.
-
-### Key Components
-
-| Component | Purpose | Key Features |
-|-----------|---------|-------------|
-| **DA Blob** | User-submitted data | Up to 32,505,852 bytes |
-| **DA Nodes** | Verify and store data slices | Stake-based eligibility |
-| **DA Sampling** | Incentivize long-term storage | Lottery-based rewards |
-| **Quorums** | Node organization | 3072 nodes per quorum |
-
-:::tip
-**TODO**: Add architecture diagram showing the flow from user submission to data finalization, including:
-- Client submitting DA blob
-- Erasure encoding process
-- Distribution to DA nodes across quorums
-- Signature aggregation
-- On-chain finalization
-:::
+The process of generating DA nodes is the same as the underlying chain's PoS process, both achieved through staking. During each DA epoch (approximately 8 hours), DA nodes are assigned to several quorums. Within each quorum, nodes are assigned numbers 0 through 3071. Each number is assigned to exactly one node, but a node may be assigned to multiple quorums, depending on its staking weight.
 
 ## DA Processing Flow
 
-:::tip
-**TODO**: Add visual flow diagram showing the 6-step data processing pipeline from input to on-chain finalization
-:::
+DA takes an input of data up to 32,505,852 bytes in length and processes it as follows:
 
-### Step-by-Step Process
+1. **Padding and Size Encoding:**
+   - Pad the data with zeros until it reaches 32,505,852 bytes
+   - Add a little-endian format 4-byte integer at the end to indicate the original input size
 
-DA processes user data through a sophisticated pipeline ensuring redundancy and verifiability:
+2. **Matrix Formation:**
+   - Slice the padded data into a 1024-row by 1024-column matrix, filling each row consecutively, with each element being 31 bytes
+   - Pad each 31-byte element with an additional 1-byte zero, making it 32 bytes per element
 
-#### 1. Data Preparation
-```
-Input: Raw data (up to 32,505,852 bytes)
-Output: Padded data with size encoding
-```
-- Pad data with zeros to reach exactly 32,505,852 bytes
-- Append 4-byte little-endian integer indicating original size
+3. **Redundant Encoding:**
+   - Expand the data to a 3072-row by 1024-column matrix using redundancy coding
+   - Calculate the **erasure commitment** and **data root** of the expanded matrix
 
-#### 2. Matrix Formation
-```
-Input: Padded data
-Output: 1024 × 1024 matrix
-```
-- Slice data into 1024 rows × 1024 columns
-- Each element: 31 bytes + 1 zero byte = 32 bytes total
-- Fill matrix row by row consecutively
+4. **Submission to DA Contract:**
+   - Submit the erasure commitment and data root to **the DA contract** and pay the fee
+   - The DA contract will determine the epoch to which the data belongs and assign a quorum
 
-#### 3. Redundant Encoding
-```
-Input: 1024 × 1024 matrix
-Output: 3072 × 1024 encoded matrix
-```
-- Apply erasure coding to expand matrix 3x
-- Generate **erasure commitment** (KZG commitment)
-- Calculate **data root** (Merkle root)
+5. **Data Distribution:**
+   - Send the erasure commitment, data root, each row of the matrix, and necessary proofs of correctness to the corresponding DA nodes
 
-#### 4. On-Chain Submission
-```javascript
-// Example submission
-const tx = await daContract.submitBlob({
-  erasureCommitment: commitment,
-  dataRoot: root,
-  fee: BLOB_PRICE
-});
-// Returns: epoch number and quorum assignment
-```
+6. **Signature Aggregation:**
+   - More than 2/3 of the DA nodes sign the erasure commitment and data root
+   - Aggregate the signatures using the BLS signature algorithm and submit the aggregated signature to the DA contract
 
-#### 5. Distribution to Nodes
-Each DA node receives:
-- Their assigned row from the matrix
-- Erasure commitment and data root
-- Merkle proofs for verification
-- KZG proofs for polynomial verification
+### Details of Erasure Encoding
 
-#### 6. Signature Aggregation
-- Nodes verify their slice and sign attestation
-- Once 2/3+ signatures collected: aggregate using BLS
-- Submit aggregated signature to DA contract
-- Data is now considered **finalized**
+After matrix formation, each element is processed into a 32-byte data unit, which can be viewed interchangeably as either 32 bytes of data or a 256-bit little-endian integer. Denote the element in the $i$-th row and $j$-th column as $c_{i,j}$.
 
-### Erasure Encoding Details
+Let the finite field $\mathbb{F}$ be the scalar field of the [BN254 curve](https://docs.rs/ark-bn254/latest/ark_bn254/). Each element $c_{i,j}$ is also considered an integer within the finite field $\mathbb{F}$. Let $p$ be the order of $\mathbb{F}$, a known large number that can be expressed as $2^{28} \times A + 1$, where $A$ is an odd number. The number 3 is a generator of the multiplicative group of the $\mathbb{F}$. Define $u = 3^{2^6 \times A}$ and $w=3^{2^8\times A}$, so $w^{2^{20}} = 1$ and $u^4=w$.
 
-<details>
-<summary><b>Mathematical Foundation</b></summary>
+Now we define a polynomial $f$ over $\mathbb{F}\rightarrow\mathbb{F}$ with degree $d=2^{20}-1$ satisfying
 
-#### Field Setup
-- **Finite field**: $\mathbb{F}$ = scalar field of BN254 curve
-- **Field order**: $p = 2^{28} \times A + 1$ (where $A$ is odd)
-- **Generator**: 3 generates the multiplicative group
-- **Roots of unity**: 
-  - $u = 3^{2^6 \times A}$
-  - $w = 3^{2^8 \times A}$
-  - Properties: $w^{2^{20}} = 1$ and $u^4 = w$
+$\forall\, 0\le i< 1024,\, 0\le j< 1024,\,f\left(w^{1024j+i}\right)=c_{i,j}$
 
-#### Polynomial Construction
-Each matrix element $c_{i,j}$ (32 bytes) is treated as an element in $\mathbb{F}$.
+Then we extend the $1024\times1024$ matrix into $1024\times 3072$ matrix, where
 
-Define polynomial $f: \mathbb{F} \rightarrow \mathbb{F}$ of degree $d = 2^{20} - 1$:
+$\forall\, 1024\le i< 2048,\, 0\le j< 1024,\,c_{i,j}=f\left(u^2\cdot w^{1024j+(i-1024)}\right)$
 
-$$\forall\, 0 \le i < 1024,\, 0 \le j < 1024: f(w^{1024j+i}) = c_{i,j}$$
+$\forall\, 2048\le i< 3072,\, 0\le j< 1024,\,c_{i,j}=f\left(u\cdot w^{1024j+(i-2048)}\right)$
 
-#### Matrix Extension
-Expand from 1024×1024 to 3072×1024 using polynomial evaluation:
+The **erasure commitment** is the KZG commitment of $f$, defined as $f(\tau)\cdot G$, where $G$ is the starting point of BN254 G1 curve, and $\tau$ is a latent parameter from the [perpetual powers of tau trusted setup ceremony](https://github.com/privacy-scaling-explorations/perpetualpowersoftau).
 
-**Rows 1024-2047:**
-$$c_{i,j} = f(u^2 \cdot w^{1024j+(i-1024)})$$
+The **data root** is defined as the input root by treating the 1024\*3072 32-byte elements as a continuous storage submission input. Specifically, according to the storage submission requirements, these data does not need to pad any zeros, and will be divided into a 16384-element sector array and an 8192-element sector array.
 
-**Rows 2048-3071:**
-$$c_{i,j} = f(u \cdot w^{1024j+(i-2048)})$$
+DA nodes need to verify two parts:
 
-</details>
-
-
-
-### Commitments and Verification
-
-#### Erasure Commitment
-- **Type**: KZG commitment
-- **Formula**: $f(\tau) \cdot G$
-  - $G$: BN254 G1 curve generator point
-  - $\tau$: Secret from [powers of tau ceremony](https://github.com/privacy-scaling-explorations/perpetualpowersoftau)
-- **Purpose**: Cryptographic commitment to the polynomial
-
-#### Data Root
-- **Type**: Merkle root
-- **Construction**: Treat 3072×1024 matrix as continuous data
-- **Sectors**: Split into 16384-element and 8192-element arrays
-- **Purpose**: Efficient data availability proofs
-
-#### Node Verification Process
-
-:::tip
-**TODO**: Add diagram showing dual verification process with Merkle and KZG proofs
-:::
-
-DA nodes perform two verification steps:
-
-1. **Merkle Verification**
-   - Verify slice consistency with data root
-   - Use standard Merkle proof verification
-   - Ensures data integrity
-
-2. **KZG Verification**
-   - Verify slice consistency with erasure commitment
-   - Uses AMT optimization from [LVMT paper](https://www.usenix.org/system/files/osdi23-li-chenxing.pdf)
-   - Reduces computational overhead significantly
+1. The consistency between the received slice and the data root, mainly achieved through Merkle proofs
+2. The consistency between the received slice and the erasure commitment, verified using KZG proofs. Here, we use the AMT protocol optimization introduced in [LVMT](https://www.usenix.org/system/files/osdi23-li-chenxing.pdf) to reduce the proving overhead
 
 ## DA Sampling
 
-DA Sampling incentivizes long-term data storage through a lottery mechanism triggered every `SAMPLE_PERIOD` blocks.
-
-### How It Works
-
-:::tip
-**TODO**: Add visual timeline showing sampling periods, lottery selection, and reward distribution
-:::
-
-1. **Trigger**: Every 30 blocks (~1.5 minutes)
-2. **Seed**: Parent block hash provides randomness
-3. **Selection**: Sub-lines eligible based on quality score
-4. **Reward**: Nodes storing selected data claim rewards
+The blockchain will periodically release DA Sampling tasks at preset height every `SAMPLE_PERIOD` blocks, with the parent block hash of these heights used as the `sampleSeed` for DA Sampling.
 
 ### List of Parameters
 
-Constant parameters
+**Constant parameters**
 
-| Parameter          | Requirement | Default value   |
-| ------------------ | ----------- | --------------- |
-| MAX\_PODAS\_TARGET |             | 2^256 / 128 - 1 |
+| Parameter | Requirement | Default value |
+|-----------|-------------|---------------|
+| MAX_PODAS_TARGET | | 2^256 / 128 - 1 |
 
-Admin adjustable parameters
+**Admin adjustable parameters**
 
-| Parameter           | Requirement | Default value          | Code                                                                                                                                                                                                                                         |
-| ------------------- | ----------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| TARGET\_SUBMITS     |             | 20                     | [https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L296](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L296) |
-| EPOCH\_WINDOW\_SIZE |             | 300 (about 3 months)   | [https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L306](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L306) |
-| SAMPLE\_PERIOD      |             | 30 (about 1.5 minutes) | [https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L323](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L323) |
+| Parameter | Requirement | Default value | Code |
+|-----------|-------------|---------------|------|
+| TARGET_SUBMITS | | 20 | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L296) |
+| EPOCH_WINDOW_SIZE | | 300 (about 3 months) | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L306) |
+| SAMPLE_PERIOD | | 30 (about 1.5 minutes) | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L323) |
 
-### Response Generation
+### Responses
 
-#### Sub-line Division
-- Each DA slice (row) divides into **32 sub-lines**
-- Each sub-line evaluated independently for rewards
-- Quality score determines eligibility
+During each period, each DA slice (one row) can be divided into 32 sub-lines. For each sub-line, the `podasQuality` will be computed using the `dataRoot` and assigned `epoch` and `quorumId` of its corresponding DA blob.
 
-#### Quality Calculation
+:::note
+By default, all integers are in 256-bit big-endian format when computing hash values. `lineIndex` is the only exception, which is in 64-bit big-endian format.
+:::
+
+The hash value can be viewed interchangeably as either 32 bytes of data or a 256-bit big-endian integer.
 
 ```python
-# Step 1: Calculate line quality
-lineQuality = keccak256(
-    sampleSeed,      # Block hash randomness
-    epoch,           # DA epoch number
-    quorumId,        # Quorum assignment
-    dataRoot,        # Merkle root
-    lineIndex        # Row number (64-bit big-endian)
-)
-
-# Step 2: Calculate data quality
-dataQuality = keccak256(
-    lineQuality,     # From step 1
-    sublineIndex,    # 0-31
-    data             # Actual sub-line data
-)
-
-# Step 3: Combined quality score
+lineQuality = keccak256(sampleSeed, epoch, quorumId, dataRoot, lineIndex);
+dataQuality = keccak256(lineQuality, sublineIndex, data);
 podasQuality = lineQuality + dataQuality
 ```
 
-:::note Encoding Format
-- Default: 256-bit big-endian integers
-- Exception: `lineIndex` uses 64-bit big-endian
-:::
-
-#### Validity Criteria
-
-A sub-line is a **valid DAS response** if:
-1. `podasQuality < podasTarget` (current difficulty)
-2. `epoch` within `[currentEpoch - EPOCH_WINDOW_SIZE, currentEpoch)`
-3. Node has stored the data and can provide proof
+If the `podasQuality` is less than the current `podasTarget` in the DA contract and the `epoch` falls within `[currentEpoch - EPOCH_WINDOW_SIZE, currentEpoch)`, then this sub-line is regarded as a **valid DAS response** and is eligible for the reward. The DA node assigned to this row can claim the reward.
 
 During a sample period, at most `TARGET_SUBMITS × 2` DAS responses can be submitted and rewarded; any submissions exceeding this limit will be rejected.
 
 ### Difficulty Adjustment
 
-The system automatically adjusts difficulty to maintain consistent submission rates:
+`TARGET_SUBMITS` valid responses are expected in a sample period. If more or fewer responses are submitted during a sample period, the `podasTarget` will be adjusted as follows:
 
 ```python
-# Target: 20 submissions per period
-# Adjustment formula:
-adjustment = (actualSubmits - TARGET_SUBMITS) / TARGET_SUBMITS / 8
-podasTarget = podasTarget * (1 - adjustment)
-
-# Example:
-# If 30 submissions (too many): difficulty increases
-# If 10 submissions (too few): difficulty decreases
+podasTarget -= podasTarget * (actualSubmits - TARGET_SUBMITS) / TARGET_SUBMITS / 8
 ```
-
-**Key Points:**
-- Targets `TARGET_SUBMITS` (20) responses per period
-- Gradual adjustment (1/8 factor) prevents volatility
-- Self-balancing mechanism ensures consistent rewards
 
 ## Economic Model
 
-### System Parameters
+### List of Parameters
 
-| Parameter | Purpose | Default | Notes |
-|-----------|---------|---------|-------|
-| **BASE_REWARD** | Foundation subsidy per valid response | 0 | Manually funded |
-| **BLOB_PRICE** | Fee users pay to submit data | 0 | Market-based pricing |
-| **SERVICE_FEE_RATE_BP** | Protocol fee (basis points) | 0 | % of user fees |
-| **REWARD_RATIO** | Controls reward distribution rate | 1,200,000 | See formula[¹] |
+**Admin adjustable parameters**
 
-[¹] Formula ensures sustainable rewards: `TARGET_SUBMITS × EPOCH_TIME / SAMPLE_TIME / REWARD_RATIO ≈ 0.5-2`
+| Parameter | Requirement | Default value | Code |
+|-----------|-------------|---------------|------|
+| BASE_REWARD | | 0 | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L318) |
+| BLOB_PRICE | | 0 | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L331) |
+| SERVICE_FEE_RATE_BP | | 0 | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L336) |
+| REWARD_RATIO | [1] | 1,200,000 | [Link](https://github.com/0glabs/0g-da-contract/blob/3951565fb6ad3096634da6493e9e863bb2846611/contracts/DAEntrance.sol#L312) |
 
-<details>
-<summary><b>Contract References</b></summary>
+[1] `TARGET_SUBMITS` × Time elapsed for `EPOCH_WINDOW_SIZE` epochs / Time elapsed in `SAMPLE_PERIOD` / `REWARD_RATIO` should be approximately 0.5 to 2.
 
-- [BASE_REWARD](https://github.com/0glabs/0g-da-contract/blob/main/contracts/DAEntrance.sol#L318)
-- [BLOB_PRICE](https://github.com/0glabs/0g-da-contract/blob/main/contracts/DAEntrance.sol#L331)
-- [SERVICE_FEE_RATE_BP](https://github.com/0glabs/0g-da-contract/blob/main/contracts/DAEntrance.sol#L336)
-- [REWARD_RATIO](https://github.com/0glabs/0g-da-contract/blob/main/contracts/DAEntrance.sol#L312)
+### Pricing
 
-</details>
+When users submit the metadata for a DA blob, they need to pay a fee in amount of `BLOB_PRICE`.
 
-### Fee Structure
+### Reward
 
-#### User Fees
-- **Amount**: `BLOB_PRICE` per submission
-- **Purpose**: Funds node rewards and protocol operations
-- **Payment**: Required at submission time
+When a DA epoch ends, all the rewards from that DA epoch will be stored in the DA reward pool. Each time a valid response is submitted, `1 / REWARD_RATIO` of the reward pool will be distributed to the corresponding DA node.
 
-#### Reward Distribution
+### System Rewards
 
-:::tip
-**TODO**: Add diagram showing fee flow from users → reward pool → nodes
-:::
+In the early stages of the ecosystem, the foundation can reserve a portion of tokens for system rewards. When the DA node submits a valid response, an additional reward of `BASE_REWARD` will be issued.
 
-1. **Epoch-based pooling**: Fees accumulate during each ~8 hour epoch
-2. **Distribution rate**: `1 / REWARD_RATIO` of pool per valid response
-3. **Fair allocation**: Prevents early submitters from draining pool
+The funds for the base reward will be manually deposited into the reward contract and tracked separately. If the balance for the base reward is insufficient to cover a single base reward, miners will not be able to receive the full base reward.
 
-#### Additional Incentives
+### Service Fee
 
-**Foundation Rewards** (Early Stage)
-- Fixed `BASE_REWARD` per valid response
-- Funded separately by foundation
-- Fallback to partial rewards if fund depleted
+A system service fee is charged as a proportion of the DA fees paid by the user, according to the parameter `SERVICE_FEE_RATE_BP`.
 
-**Protocol Fee**
-- Rate: `SERVICE_FEE_RATE_BP` basis points
-- Taken from user fees
-- Funds protocol development and operations
+## Run a Node
 
-## Next Steps
+See [here](/run-a-node/da-node) for instructions to become DA signer and run your own node.
 
-### For Node Operators
-🖥️ **[Run a DA Node](/run-a-node/da-node)** - Become a DA signer and earn rewards
+---
 
-### For Developers
-🔧 **[Integration Guide](./da-integration)** - Connect your application to 0G DA
-
-### For Researchers
-📚 **[Whitepaper](/whitepaper.pdf)** - Detailed protocol specifications
-
-## Glossary
-
-<details>
-<summary><b>Key Terms Reference</b></summary>
-
-- **DA Blob**: User-submitted data package (max 32.5 MB)
-- **DA Node**: Staked validator storing and verifying data slices
-- **Quorum**: Group of 3072 nodes processing data together
-- **Erasure Coding**: Redundancy technique allowing data recovery
-- **KZG Commitment**: Cryptographic commitment to polynomial
-- **DA Sampling**: Lottery mechanism for storage incentives
-- **PoRA**: Proof of Random Access for storage verification
-
-</details>
+*Ready to dive deeper into 0G DA? Join our [Discord](https://discord.gg/0glabs) for technical discussions.*

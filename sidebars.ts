@@ -154,15 +154,11 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'run-a-node/overview',
+        'developer-hub/testnet/testnet-overview',
         'run-a-node/validator-node',
         'run-a-node/storage-node',
         'run-a-node/da-node',
         'run-a-node/community-docker-repo',
-        {
-          type: 'link',
-          label: 'Testnet Information',
-          href: '/developer-hub/testnet/testnet-configuration',
-        },
       ],
     },
     
