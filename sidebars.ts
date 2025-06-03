@@ -126,22 +126,7 @@ const sidebars: SidebarsConfig = {
                     'developer-hub/building-on-0g/rollups-and-appchains/op-stack-on-0g-da',
                     'developer-hub/building-on-0g/rollups-and-appchains/arbitrum-nitro-on-0g-da',
                   ],
-                },
-                {
-                  type: 'category',
-                  label: 'Rollup as a Service',
-                  items: [
-                    'developer-hub/building-on-0g/rollup-as-a-service/caldera-on-0g-da',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'AVSs',
-                  items: [
-                    'developer-hub/building-on-0g/avs/babylon-avs-on-0g-da',
-                    'developer-hub/building-on-0g/avs/eigenlayer-avs-on-0g-da',
-                  ],
-                },
+                }
               ],
             },
             {
