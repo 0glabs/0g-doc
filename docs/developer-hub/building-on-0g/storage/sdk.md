@@ -7,45 +7,47 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # 0G Storage SDKs
----
 
-0G offers two Software Development Kits (SDKs) to seamlessly integrate decentralized storage into your applications:
+Build decentralized storage into your applications with our powerful SDKs designed for modern development workflows.
 
-* **Go SDK:** Ideal for backend systems and applications built with the Go programming language.
-* **TypeScript SDK:** Perfect for frontend development and JavaScript-based projects.
+## Available SDKs
 
-## SDK Features
+- **Go SDK**: Ideal for backend systems and applications built with Go
+- **TypeScript SDK**: Perfect for frontend development and JavaScript-based projects
 
-Both SDKs provide a streamlined interface to interact with the 0G Storage network, enabling you to:
+## Core Features
 
-* **Upload and Download Files:** Securely store and retrieve data of various sizes and formats. Note: you can also use the explorers to do so.
-* **Manage Data:** List uploaded files, check their status, and control access permissions.
-* **Leverage Decentralization:** Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance.
+Both SDKs provide a streamlined interface to interact with the 0G Storage network:
 
-## Quick Start
+- **Upload and Download Files**: Securely store and retrieve data of various sizes and formats
+- **Manage Data**: List uploaded files, check their status, and control access permissions
+- **Leverage Decentralization**: Benefit from the 0G network's distributed architecture for enhanced data availability, immutability, and censorship resistance
 
-To get started quickly, check out our starter kits:
+## Quick Start Resources
 
-* [**TypeScript Starter Kit**](https://github.com/0glabs/0g-storage-ts-starter-kit) - Complete examples with Express.js server and CLI tool
-* [**Go Starter Kit**](https://github.com/0glabs/0g-storage-go-starter-kit) - Ready-to-use examples with Gin server and CLI tool
+:::tip Starter Kits Available
+Get up and running quickly with our comprehensive starter kits:
 
-Both repositories include working examples, API documentation, and everything you need to start building with 0G Storage.
+- **[TypeScript Starter Kit](https://github.com/0glabs/0g-storage-ts-starter-kit)** - Complete examples with Express.js server and CLI tool
+- **[Go Starter Kit](https://github.com/0glabs/0g-storage-go-starter-kit)** - Ready-to-use examples with Gin server and CLI tool
+
+Both repositories include working examples, API documentation, and everything you need to start building.
+:::
 
 <Tabs>
-<TabItem value="binary" label="GO SDK Integration" default>
-## Overview
-
-The 0G Go SDK enables seamless interaction with the 0G decentralized storage network. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
+<TabItem value="go" label="Go SDK" default>
 
 ## Installation
 
-To install the 0G Storage Client library:
+Install the 0G Storage Client library:
 
 ```bash
 go get github.com/0glabs/0g-storage-client
 ```
 
-**First, import the necessary packages:**
+## Setup
+
+### Import Required Packages
 
 ```go
 import (
@@ -53,11 +55,11 @@ import (
     "github.com/0glabs/0g-storage-client/common/blockchain"
     "github.com/0glabs/0g-storage-client/indexer"
     "github.com/0glabs/0g-storage-client/transfer"
+    "github.com/0glabs/0g-storage-client/core"
 )
 ```
 
-## Key Functionalities
-### Initialization
+### Initialize Clients
 
 Create the necessary clients to interact with the network:
 
@@ -74,9 +76,11 @@ if err != nil {
 ```
 
 **Parameters:**
-- `evmRpc`: Ethereum RPC URL
+- `evmRpc`: 0G Chain RPC endpoint (e.g., `https://evmrpc-testnet.0g.ai/`)
 - `privateKey`: Your Ethereum private key for signing transactions
-- `indRpc`: Indexer RPC endpoint
+- `indRpc`: Indexer RPC endpoint (e.g., `https://indexer-storage-testnet-turbo.0g.ai`)
+
+## Core Operations
 
 ### Node Selection
 
@@ -100,11 +104,13 @@ if err != nil {
 Upload files to the network:
 
 ```go
+// Create uploader
 uploader, err := transfer.NewUploader(ctx, w3client, nodes)
 if err != nil {
     // Handle error
 }
 
+// Upload file
 txHash, err := uploader.UploadFile(ctx, filePath)
 if err != nil {
     // Handle error
@@ -119,7 +125,7 @@ if err != nil {
 
 ### File Hash Calculation
 
-Calculate a file's Merkle root hash before upload, this will be used for identify file from 0G storage:
+Calculate a file's Merkle root hash for identification:
 
 ```go
 rootHash, err := core.MerkleRoot(filePath)
@@ -129,24 +135,22 @@ if err != nil {
 fmt.Printf("File hash: %s\n", rootHash.String())
 ```
 
-**Parameters:**
-- `filePath`: Path to the file you want to hash
-
-**Returns:**
-- `rootHash`: A unique identifier for the file based on its content
-  - Used for file verification
-  - Required for downloading files
+:::info Important
+Save the root hash - you'll need it to download the file later!
+:::
 
 ### File Download
 
 Download files from the network:
 
 ```go
+// Create downloader
 downloader, err := transfer.NewDownloader(nodes)
 if err != nil {
     // Handle error
 }
 
+// Download with optional verification
 err = downloader.Download(ctx, rootHash, outputPath, withProof)
 if err != nil {
     // Handle error
@@ -157,9 +161,7 @@ if err != nil {
 - `ctx`: Context for download operation
 - `rootHash`: File's unique identifier (Merkle root hash)
 - `outputPath`: Where to save the downloaded file
-- `withProof`: Enable/disable Merkle proof verification
-  - `true`: Performs verification
-  - `false`: Skips verification
+- `withProof`: Enable/disable Merkle proof verification (true/false)
 
 ## Best Practices
 
@@ -169,35 +171,36 @@ if err != nil {
 4. **Verification**: Enable proof verification for sensitive files
 5. **Monitoring**: Track transaction status for important uploads
 
-## Conclusion
+## Additional Resources
 
-The 0G Go SDK provides a robust way to interact with the 0G Storage network, enabling decentralized file storage, data integrity verification, and efficient transaction management. For more detailed information, refer to the [official GitHub repository](https://github.com/0glabs/0g-storage-client).
+- [Go SDK Repository](https://github.com/0glabs/0g-storage-client)
+- [Go Starter Kit](https://github.com/0glabs/0g-storage-go-starter-kit)
 
 </TabItem>
-<TabItem value="tab2" label="TypeScript SDK Integration">
-
-## Overview
-
-The 0g-ts-sdk is a JavaScript SDK for 0g-storage, a decentralized storage platform. This guide will walk you through the installation, setup, and usage of the SDK, including examples of key functionalities.
+<TabItem value="typescript" label="TypeScript SDK">
 
 ## Installation
 
-To install the 0g-ts-sdk and its peer dependency, use npm:
+Install the SDK and its peer dependency:
 
 ```bash
 npm install @0glabs/0g-ts-sdk ethers
 ```
 
-Note: `ethers` is a peer dependency of this project.
+:::note
+`ethers` is a required peer dependency for blockchain interactions
+:::
 
-**First, import the necessary components from the SDK:**
+## Setup
+
+### Import Required Modules
 
 ```javascript
-import { ZgFile, Indexer } from '@0glabs/0g-ts-sdk';
+import { ZgFile, Indexer, Batcher, KvClient } from '@0glabs/0g-ts-sdk';
 import { ethers } from 'ethers';
 ```
 
-**Then, set up the necessary configurations:**
+### Initialize Configuration
 
 ```javascript
 // Network Constants
@@ -205,7 +208,6 @@ const RPC_URL = 'https://evmrpc-testnet.0g.ai/';
 const INDEXER_RPC = 'https://indexer-storage-testnet-turbo.0g.ai';
 
 // Initialize provider and signer
-// Make sure to use a private key with sufficient balance for transactions
 const privateKey = 'YOUR_PRIVATE_KEY'; // Replace with your private key
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const signer = new ethers.Wallet(privateKey, provider);
@@ -214,155 +216,152 @@ const signer = new ethers.Wallet(privateKey, provider);
 const indexer = new Indexer(INDEXER_RPC);
 ```
 
-## Key Functionalities
+## Core Operations
 
-### 1. Creating a File Object and Getting Merkle Tree
+### File Upload
 
-The first step in uploading a file is creating a `ZgFile` object and generating its Merkle tree. This is required for file verification:
-
-```javascript
-// Create file object from file path
-const file = await ZgFile.fromFilePath('<file_path>');
-
-// Generate Merkle tree for verification
-const [tree, treeErr] = await file.merkleTree();
-if (treeErr !== null) {
-  throw new Error(`Error generating Merkle tree: ${treeErr}`);
-}
-
-// Get root hash for future reference
-console.log("File Root Hash:", tree?.rootHash() ?? '');
-
-// Always close the file when done
-await file.close();
-```
-
-### 2. Uploading Files
-
-When uploading files, proper error handling is essential. The upload process returns both a transaction hash and potential error:
+Complete upload workflow:
 
 ```javascript
-try {
-  const [tx, uploadErr] = await indexer.upload(zgFile, RPC_URL, signer);
+async function uploadFile(filePath) {
+  // Create file object from file path
+  const file = await ZgFile.fromFilePath(filePath);
+  
+  // Generate Merkle tree for verification
+  const [tree, treeErr] = await file.merkleTree();
+  if (treeErr !== null) {
+    throw new Error(`Error generating Merkle tree: ${treeErr}`);
+  }
+  
+  // Get root hash for future reference
+  console.log("File Root Hash:", tree?.rootHash());
+  
+  // Upload to network
+  const [tx, uploadErr] = await indexer.upload(file, RPC_URL, signer);
   if (uploadErr !== null) {
     throw new Error(`Upload error: ${uploadErr}`);
   }
-  console.log("Upload successful!");
-  console.log("Transaction Hash:", tx);
-} catch (error) {
-  console.error("Upload error:", error instanceof Error ? error.message : error);
+  
+  console.log("Upload successful! Transaction:", tx);
+  
+  // Always close the file when done
+  await file.close();
+  
+  return { rootHash: tree?.rootHash(), txHash: tx };
 }
 ```
 
-### 3. Downloading Files
+### File Download
 
-For downloading, you need the root hash of the file. The download process supports optional proof verification:
+Download with optional verification:
 
 ```javascript
-try {
+async function downloadFile(rootHash, outputPath) {
   // withProof = true enables Merkle proof verification
   const err = await indexer.download(rootHash, outputPath, true);
   if (err !== null) {
     throw new Error(`Download error: ${err}`);
   }
   console.log("Download successful!");
-} catch (error) {
-  console.error("Download error:", error instanceof Error ? error.message : error);
 }
 ```
 
-### 4. Uploading Data to 0g-kv
+### Key-Value Storage
 
-**To upload data to 0g-kv:**
+Store and retrieve key-value data:
 
 ```javascript
-const [nodes, err] = await indexer.selectNodes(1);
-if (err !== null) {
-    console.log("Error selecting nodes: ", err);
-    return;
+// Upload data to 0G-KV
+async function uploadToKV(streamId, key, value) {
+  const [nodes, err] = await indexer.selectNodes(1);
+  if (err !== null) {
+    throw new Error(`Error selecting nodes: ${err}`);
+  }
+  
+  const batcher = new Batcher(1, nodes, flowContract, RPC_URL);
+  
+  const keyBytes = Uint8Array.from(Buffer.from(key, 'utf-8'));
+  const valueBytes = Uint8Array.from(Buffer.from(value, 'utf-8'));
+  batcher.streamDataBuilder.set(streamId, keyBytes, valueBytes);
+  
+  const [tx, batchErr] = await batcher.exec();
+  if (batchErr !== null) {
+    throw new Error(`Batch execution error: ${batchErr}`);
+  }
+  
+  console.log("KV upload successful! TX:", tx);
 }
 
-const batcher = new Batcher(1, nodes, flowContract, evmRpc);
-
-const key1 = Uint8Array.from(Buffer.from("TESTKEY0", 'utf-8'));
-const val1 = Uint8Array.from(Buffer.from("TESTVALUE0", 'utf-8'));
-batcher.streamDataBuilder.set("0x...", key1, val1);
-
-const [tx, batchErr] = await batcher.exec();
-if (batchErr === null) {
-    console.log("Batcher executed successfully, tx: ", tx);
-} else {
-    console.log("Error executing batcher: ", batchErr);
+// Download data from 0G-KV
+async function downloadFromKV(streamId, key) {
+  const kvClient = new KvClient("http://3.101.147.150:6789");
+  const keyBytes = Uint8Array.from(Buffer.from(key, 'utf-8'));
+  const value = await kvClient.getValue(streamId, ethers.encodeBase64(keyBytes));
+  return value;
 }
 ```
 
-### 5. Downloading Data from 0g-kv
+### Browser Support
 
-**To download data from 0g-kv:**
-
-```javascript
-const KvClientAddr = "http://3.101.147.150:6789"
-const streamId = "0x..."
-const kvClient = new KvClient(KvClientAddr)
-
-let val = await kvClient.getValue(streamId, ethers.encodeBase64(key1));
-console.log(val)
-```
-
-### 6. Working with Browser Environment
-
-**For browser environments, import the SDK in your HTML file:**
+For browser environments, use the ESM build:
 
 ```html
 <script type="module">
   import { Blob, Indexer } from "./dist/zgstorage.esm.js";
-  // Your code here...
+  
+  // Create file object from blob
+  const file = new Blob(blob);
+  const [tree, err] = await file.merkleTree();
+  if (err === null) {
+    console.log("File Root Hash:", tree.rootHash());
+  }
 </script>
 ```
 
-**Create a file object from a blob:**
+### Stream Support
 
-```javascript
-const file = new Blob(blob);
-const [tree, err] = await file.merkleTree();
-if (err === null) {
-  console.log("File Root Hash: ", tree.rootHash());
-}
-```
-### Working with Streams
-
-**The SDK also supports working with streams for efficient data 
-handling:**
+Work with streams for efficient data handling:
 
 ```typescript
 import { Readable } from 'stream';
 
-// Create a readable stream
-const readableStream = new Readable();
-readableStream.push('Hello, 0G Storage!');
-readableStream.push(null);
+// Upload from stream
+async function uploadStream() {
+  const stream = new Readable();
+  stream.push('Hello, 0G Storage!');
+  stream.push(null);
+  
+  const file = await ZgFile.fromStream(stream, 'hello.txt');
+  const [tx, err] = await indexer.upload(file, RPC_URL, signer);
+  
+  if (err === null) {
+    console.log("Stream uploaded!");
+  }
+}
 
-// Upload using a stream
-const streamRoot = await client.uploadStream(readableStream, 'example.
-txt');
-console.log("Stream uploaded with root hash:", streamRoot);
-
-// Download as a stream
-const downloadStream = await client.downloadFileAsStream(streamRoot);
-downloadStream.pipe(process.stdout);
+// Download as stream
+async function downloadStream(rootHash) {
+  const stream = await indexer.downloadFileAsStream(rootHash);
+  stream.pipe(fs.createWriteStream('output.txt'));
+}
 ```
 
 ## Best Practices
 
-1. **Initialize Once**: Create the indexer once and reuse it for multiple operations.
-2. **Handle Errors**: Always implement proper error handling to manage network issues or other potential problems.
-3. **Use Appropriate Methods**: Use `ZgFile.fromFilePath` for Node.js environments and `Blob` for browser environments.
-4. **Secure Keys**: Never expose your private key in client-side code. Use secure methods to manage and store keys.
-5. **Close Files**: Remember to call `file.close()` after operations to free up resources.
+1. **Initialize Once**: Create the indexer once and reuse it for multiple operations
+2. **Handle Errors**: Always implement proper error handling for network issues
+3. **Use Appropriate Methods**: Use `ZgFile.fromFilePath` for Node.js and `Blob` for browsers
+4. **Secure Keys**: Never expose private keys in client-side code
+5. **Close Resources**: Remember to call `file.close()` after operations
 
-## Conclusion
+## Additional Resources
 
-The 0g-ts-sdk provides a powerful and flexible way to interact with the 0G Storage network. By following this guide, you should now be able to perform basic and advanced operations using the SDK. For more detailed information and updates, always refer to the [official GitHub repository](https://github.com/0glabs/0g-ts-sdk).
+- [TypeScript SDK Repository](https://github.com/0glabs/0g-ts-sdk)
+- [TypeScript Starter Kit](https://github.com/0glabs/0g-storage-ts-starter-kit)
 
 </TabItem>
 </Tabs>
+
+---
+
+*Need more control? Consider running your own [storage node](/run-a-node/storage-node) to participate in the network and earn rewards.*

@@ -24,16 +24,36 @@ Your existing Ethereum code works without changes 🤝
 ## How 0G Chain Works
 
 ### 🧩 Modular Architecture
-Modular design allows independent component upgrades. This enables 0G to quickly incorporate future EVM upgrades (like Pectra), ensuring the chain stays aligned with the latest Ethereum developments without requiring hard forks or complex migrations.
+0G Chain features an advanced modular design that distinctly separates consensus from execution. This separation into independent, yet interconnected, layers is a cornerstone of 0G Chain's architecture, delivering enhanced flexibility, scalability, and a faster pace of innovation.
 
-### ⚡ Optimized Consensus (CometBFT)
-Uses CometBFT (formerly Tendermint) consensus optimized for:
-- High throughput (2,500 TPS currently)
-- Fast finality for real-time AI applications
+**Architecture Overview**:
+- **Consensus Layer**: Dedicated to achieving network agreement. It manages validator coordination, block production, and ensures the overall security and finality of the chain.
+- **Execution Layer**: Focused on state management. It handles smart contract execution, processes transactions, and maintains compatibility with the EVM (Ethereum Virtual Machine).
+
+**Key Technical Advantages**:
+- **Independent Upgradability**: The execution layer can rapidly incorporate new EVM features (such as EIP-4844, account abstraction, or novel opcodes) without requiring changes to the underlying consensus mechanism.
+- **Focused Optimization**: Conversely, the consensus layer can be upgraded with critical performance or security enhancements without impacting the EVM or ongoing execution processes.
+- **Accelerated Development**: This decoupling allows for parallel development and faster iteration cycles for both layers, leading to quicker adoption of new technologies and improvements in both performance and features.
+
+This design makes 0G Chain flexible and fast. When new blockchain features come out, we can add them quickly without breaking anything. This keeps 0G optimized for AI while staying up-to-date with the latest technology.
+
+### ⚡ Optimized Consensus
+0G Chain employs a highly optimized version of CometBFT (formerly Tendermint) as its consensus mechanism, with meticulously tuned parameters that achieve maximum performance while maintaining security. The system features carefully calibrated block production intervals and timeout configurations that work together to deliver high throughput, ensure network stability, and enable faster consensus rounds—all without compromising the fundamental safety guarantees.
+
+
+These optimizations enable 0G Chain to achieve maximum performance:
+- **2,500+ TPS**: Current throughput significantly exceeds traditional blockchain networks
+- **Sub-second Finality**: Near-instant transaction confirmation for AI applications
+- **Consistent Performance**: Maintains high throughput even under heavy network load
 
 ### 🔮 Scaling Roadmap
-**Current**: Optimized CometBFT consensus network  
-**Future**: Horizontal scaling through multiple consensus networks for exponential growth
+- **DAG-Based Consensus**: Transitioning to Directed Acyclic Graph (DAG) based consensus for exponentially higher efficiency
+  - Parallel transaction processing capabilities
+  - Elimination of sequential block limitations
+  
+- **Shared Security Model**: Implementing shared staking mechanisms to enhance network security
+  - Validators can secure multiple services simultaneously
+  - Increased capital efficiency for stakers
 
 ## Technical Deep Dive
 
