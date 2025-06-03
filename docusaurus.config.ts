@@ -35,7 +35,7 @@ const config: Config = {
   ],
   scripts: [
     {
-      src: 'https://udhaykumarbala.github.io/docs-feedback-widget/dist/widget.iife.js',
+      src: 'https://cdn.jsdelivr.net/gh/udhaykumarbala/docs-feedback-widget@main/dist/widget.iife.js',
       async: true,
     },
   ],
