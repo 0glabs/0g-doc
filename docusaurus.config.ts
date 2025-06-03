@@ -33,6 +33,12 @@ const config: Config = {
       crossorigin: 'anonymous',
     },
   ],
+  scripts: [
+    {
+      src: 'https://udhaykumarbala.github.io/docs-feedback-widget/dist/widget.iife.js',
+      async: true,
+    },
+  ],
 
   presets: [
     [
