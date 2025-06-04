@@ -213,7 +213,18 @@ The output will be like:
 - **Dataset Hash:** Root hash corresponding to the dataset stored on storage
 - **Training Params:** Parameters used for fine-tuning
 - **Fee (neuron):** Task fee.
-- **Progress:** Task status. Possible values are `InProgress`, `Delivered`, `UserAckDelivered`, `Finished`, `Failed`. These represent "task in progress", "provider has uploaded the fine-tuning result", "user has confirmed the result is downloadable", "task completed", "task failed" respectively.
+- **Progress:** Task status. Possible values are `Init`, `SettingUp`, `SetUp`, `Training`, `Trained`, `Delivering`, `Delivered`, `UserAcknowledged`, `Finished`, `Failed`. These represent the following states, respectively:
+  - `Init`: Task submitted
+  - `SettingUp`: Provider is preparing the environment to run the task
+  - `SetUp`: Provider is ready to start training the model
+  - `Training`: Provider is training the model
+  - `Trained`: provider has finished the training
+  - `Delivering`: Provider is uploading the fine-tuning result to storage
+  - `Delivered`: provider has uploaded the fine-tuning result
+  - `UserAcknowledged`: User has confirmed the result is downloadable
+  - `Finished`: Task is completed
+  - `Failed`: Task failed
+
 
 ### View Task Logs
 
