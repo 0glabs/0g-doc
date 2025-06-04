@@ -79,7 +79,6 @@ Currently achieves 2,500 TPS through:
 **Staking & Consensus**:
 - Validators stake 0G tokens to participate
 - CometBFT ensures Byzantine fault tolerance
-- Slashing for misbehavior or excessive downtime
 
 **Rewards**:
 - Block production rewards
@@ -115,11 +114,6 @@ Validators earn rewards through:
 - **Block rewards**: For producing valid blocks
 - **Transaction fees**: From network usage
 - **Staking rewards**: Based on stake size and uptime
-
-Penalties include slashing for:
-- Double signing
-- Extended downtime
-- Malicious behavior
 
 <div style={{textAlign: 'center'}}>
   <img src="/img/0G Consensus.png" alt="0G Validator Economics" style={{maxWidth: '100%'}} />
