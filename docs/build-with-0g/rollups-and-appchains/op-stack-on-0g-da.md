@@ -68,7 +68,7 @@ The Optimism codebase has been extended to integrate with the 0G DA `da-server`.
   </TabItem>
 </Tabs>
 
-0G DA DA-server accepts the following flags for 0G DA storage using 0G DA Open API
+0G DA `da-server` accepts the following flags for 0G DA storage using 0G DA Open API
 
 ````
     --zg.server    (default: "localhost:51001") 
@@ -576,7 +576,7 @@ cat deployments/artifact.json | jq -r .L1StandardBridgeProxy
 
 ## Conduct Test Transactions
 
-You now have a fully operational 0gDA-Powered Optimism-based EVM Rollup. Experiment with it as you would with any other test blockchain.
+You now have a fully operational 0G DA-Powered Optimism-based EVM Rollup. Experiment with it as you would with any other test blockchain.
 
 **Congratulations on setting up your chain!**
 
