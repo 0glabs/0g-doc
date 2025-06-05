@@ -199,12 +199,17 @@ The output will be like:
 - **Dataset Hash**: Storage reference for your training dataset
 - **Training Params**: Configuration parameters used during fine-tuning
 - **Fee (neuron)**: Total cost for the fine-tuning task
-- **Progress**: Current task status:
-  - `InProgress` - Task is currently being processed
-  - `Delivered` - Provider has completed fine-tuning and uploaded results
-  - `UserAckDelivered` - You've confirmed the results are downloadable
-  - `Finished` - Task completed successfully
-  - `Failed` - Task encountered an error
+- **Progress**: Task status. Possible values are Init, SettingUp, SetUp, Training, Trained, Delivering, Delivered, UserAcknowledged, Finished, Failed. These represent the following states, respectively:
+  - `Init`: Task submitted
+  - `SettingUp`: Provider is preparing the environment to run the task
+  - `SetUp`: Provider is ready to start training the model
+  - `Training`: Provider is training the model
+  - `Trained`: provider has finished the training
+  - `Delivering`: Provider is uploading the fine-tuning result to storage
+  - `Delivered`: provider has uploaded the fine-tuning result
+  - `UserAcknowledged`: User has confirmed the result is downloadable
+  - `Finished`: Task is completed
+  - `Failed`: Task failed
 
 ### View Task Logs
 
@@ -327,21 +332,21 @@ Possible output:
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ Provider                                         │ 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC       │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
-│ Balance (OG)                                   │ 0.000000000179668154                             │
+│ Balance (OG)                                     │ 0.000000000179668154                             │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
-│ Funds Applied for Return to Main Account (OG)  │ 0.000000000179668154                             │
+│ Funds Applied for Return to Main Account (OG)    │ 0.000000000179668154                             │
 └──────────────────────────────────────────────────┴──────────────────────────────────────────────────┘
 
   Details of Each Amount Applied for Return to Main Account
 ┌──────────────────────────────────────────────────┬──────────────────────────────────────────────────┐
-│ Amount (OG)                                    │ Remaining Locked Time                            │
+│ Amount (OG)                                      │ Remaining Locked Time                            │
 ├──────────────────────────────────────────────────┼──────────────────────────────────────────────────┤
 │ 0.000000000179668154                             │ 23h 58min 34s                                    │
 └──────────────────────────────────────────────────┴──────────────────────────────────────────────────┘
 
   Deliverables
 ┌───────────────────────────────────────────────────────────────────────────┬─────────────────────────┐
-│ Root Hash                                                                 │ Access Confirmed        │
+│ Root Hash                                                                 │ Access Confirmed         │
 ├───────────────────────────────────────────────────────────────────────────┼─────────────────────────┤
 │ 0x24951e897b1203e8aa1692736837f089a95b70390cc02723505e41ebf9              │ ✓                       │
 │ cac70c                                                                    │                         │
@@ -424,24 +429,3 @@ Add more funds:
 0g-compute-cli deposit --amount 0.1
 ```
 </details>
-
-<details>
-<summary><b>Task stuck in "InProgress"</b></summary>
-
-Fine-tuning can take 30-120 minutes depending on dataset size. Check logs:
-```bash
-0g-compute-cli get-log --provider 0xf07240... --task TASK_ID
-```
-</details>
-
-<details>
-<summary><b>Can't decrypt model</b></summary>
-
-Ensure task status is "Finished" (not just "Delivered"):
-```bash
-0g-compute-cli get-task --provider 0xf07240...
-```
-</details>
----
-
-*Need help? Join our [Discord](https://discord.gg/0glabs) for support.*

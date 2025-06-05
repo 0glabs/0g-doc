@@ -9,7 +9,7 @@ sidebar_position: 1
 Build AI-powered applications using 0G's modular infrastructure - with or without migrating your existing code.
 
 **Keep your current blockchain and add 0G services as needed.** Our infrastructure works with:
-- ✅ Any EVM chain (Ethereum, Polygon, BSC, Arbitrum)
+- ✅ Any EVM chain (Ethereum, Polygon, BNB, Arbitrum)
 - ✅ Non-EVM chains (Solana, Near, Cosmos)
 - ✅ Traditional Web2 applications
 
