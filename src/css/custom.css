@@ -528,7 +528,7 @@ html[data-theme='dark'] .header-hubs-link:hover {
   content: "•";
   position: absolute;
   left: 0.5rem;
-  color: var(--ifm-color-primary);
+  /* color: var(--ifm-color-primary); */
 }
 
 /* Site title in Geist Mono */
