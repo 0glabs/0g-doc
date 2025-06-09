@@ -154,7 +154,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'run-a-node/overview',
-        'developer-hub/testnet/testnet-overview',
+        // 'developer-hub/testnet/testnet-overview',
         'run-a-node/validator-node',
         'run-a-node/storage-node',
         'run-a-node/da-node',

@@ -15,7 +15,7 @@ Test your applications on 0G's infrastructure without real costs or risks.
 
 ## Network Details
 
-| Network Details | |
+| Parameters | Network Details |
 |----------------|---|
 | **Network Name** | 0G-Galileo-Testnet |
 | **Chain ID** | 16601 |

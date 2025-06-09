@@ -36,24 +36,6 @@ The network consists of:
 3. **Client SDKs**: Easy integration for developers
 4. **Verification Layer**: Ensures computation integrity
 
-## How It Works
-
-### For AI Users (Developers)
-
-:::info TODO: Add diagram showing user flow
-Image should show: Step 1: Deposit funds → Step 2: Request AI service → Step 3: Get results → Step 4: Pay only for usage
-:::
-
-**Example**: Run Llama 70B inference for \$0.001 per request vs $0.03 on centralized services.
-
-### For GPU Owners (Providers)
-
-:::info TODO: Add diagram showing provider flow  
-Image should show: Step 1: Register GPU → Step 2: Set pricing → Step 3: Process requests → Step 4: Earn instantly
-:::
-
-**Example**: Earn monthly with your idle GPUs.
-
 ## Key Components
 
 ### 🤖 Supported Services

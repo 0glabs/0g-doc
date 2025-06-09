@@ -21,20 +21,12 @@ In today's world, AI models are transforming industries, driving innovation, and
 
 ### For AI Users
 
-:::info TODO: Add diagram showing user flow
-Image should show: Step 1: Deposit funds → Step 2: Request AI service → Step 3: Get results → Step 4: Pay only for usage
-:::
-
 1. **Deposit Funds**: Pre-fund your account with pay-as-you-go credits
 2. **Request Service**: Send your AI request (inference, training, etc.)
 3. **Get Results**: Receive output from the best available GPU
 4. **Automatic Payment**: Pay only for actual compute used
 
 ### For GPU Owners
-
-:::info TODO: Add diagram showing provider flow  
-Image should show: Step 1: Register GPU → Step 2: Set pricing → Step 3: Process requests → Step 4: Earn instantly
-:::
 
 1. **Register Hardware**: List your GPU specs and availability
 2. **Set Your Price**: Competitive marketplace pricing
