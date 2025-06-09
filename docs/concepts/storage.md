@@ -78,6 +78,7 @@ Decentralized storage (like 0G):
 - ML datasets
 - Video/image archives  
 - Blockchain history
+- General Large file storage
 
 ### 🔑 Key-Value Layer (Mutable Storage)
 **Perfect for**: Databases, dynamic content, state storage
@@ -158,14 +159,14 @@ Yes! The erasure coding system ensures your data survives node failures. The net
 
 - Parallel retrieval from multiple nodes
 - Bandwidth limited only by your connection
-- 500 MBPS retrieval speed even at network congestion
+- 200 MBPS retrieval speed even at network congestion
 - CDN-like performance through geographic distribution
 </details>
 
 <details>
 <summary><b>What happens to pricing as the network grows?</b></summary>
 
-Market competition between storage providers naturally drives prices down. All pricing is transparent and on-chain, preventing hidden fees or sudden changes.
+The network fee is fixed. All pricing is transparent and on-chain, preventing hidden fees or sudden changes.
 </details>
 
 <details>
