@@ -2,7 +2,6 @@
 id: preface
 title: Preface
 sidebar_position: 1
-slug: /
 ---
 # Preface
 

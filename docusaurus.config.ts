@@ -33,7 +33,6 @@ const config: Config = {
       crossorigin: 'anonymous',
     },
   ],
-
   presets: [
     [
       'classic',
@@ -77,10 +76,11 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: '0G Documentation',
+      title: 'Documentation',
       logo: {
         alt: '0G Logo',
-        src: 'img/logo.svg',
+        src: 'img/0G-Logo-Light.svg',
+        srcDark: 'img/0G-Logo-Dark.svg',
       },
       items: [
         {
@@ -136,7 +136,7 @@ const config: Config = {
       ],
       logo: {
         alt: '0G Labs Logo',
-        src: 'img/logo.svg',
+        src: 'img/0G-Logo-Dark.svg',
         href: 'https://0g.ai',
       },
       copyright: `Copyright © ${new Date().getFullYear()} 0G Labs, Built with Docusaurus.`,
