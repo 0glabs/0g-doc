@@ -217,6 +217,14 @@ const sidebars: SidebarsConfig = {
         'node-sale/disclaimer',
       ],
     },
+    
+    // 0G Hub link - visible only on mobile
+    {
+      type: 'link',
+      label: '🌐 0G Hub',
+      href: 'https://hub.0g.ai',
+      className: 'sidebar-0g-hub-link',
+    },
   ],
 };
 

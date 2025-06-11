@@ -30,7 +30,7 @@ For detailed instructions on setting up and operating your Storage Node or Stora
 Before setting up your storage node:
 
 - Understand that 0G Storage interacts with on-chain contracts for blob root confirmation and PoRA mining.
-- Check [here](run-a-node/testnet-information.md) for deployed contract addresses.
+- Check [here](../developer-hub/testnet/testnet-overview.md) for deployed contract addresses.
 
 
 ## Install Dependencies
@@ -159,7 +159,7 @@ Make sure to only include `flow_db` and delete `data_db` under `db` folder when 
 Before setting up your 0G Storage KV node:
 
 - Understand that 0G KV interacts with on-chain contracts and storage nodes to simulate KV data streams.
-- For official deployed contract addresses, visit the [testnet information page](./testnet-information.md).
+- For official deployed contract addresses, visit the [testnet information page](../developer-hub/testnet/testnet-overview.md).
 
 ## Install Dependencies
 
