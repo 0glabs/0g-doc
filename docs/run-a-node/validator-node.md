@@ -21,7 +21,7 @@ Running a RPC node for the **0G-Galileo-Testnet** in the 0G ecosystem means to p
 Download the latest package for node binaries (named "[galileo.tar.gz](https://github.com/0glabs/0gchain-NG/releases)")
 
 ```bash
-wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v1.1.1/galileo-v1.1.1.tar.gz
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v1.2.0/galileo-v1.2.0.tar.gz
 ```
 
 ## 2. Extract Package
