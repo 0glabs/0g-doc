@@ -23,7 +23,7 @@ Your existing Ethereum code works without changes 🤝
 
 ## How 0G Chain Works
 
-### 🧩 Modular Architecture
+### Modular Architecture
 0G Chain features an advanced modular design that distinctly separates consensus from execution. This separation into independent, yet interconnected, layers is a cornerstone of 0G Chain's architecture, delivering enhanced flexibility, scalability, and a faster pace of innovation.
 
 **Architecture Overview**:
@@ -37,7 +37,7 @@ Your existing Ethereum code works without changes 🤝
 
 This design makes 0G Chain flexible and fast. When new blockchain features come out, we can add them quickly without breaking anything. This keeps 0G optimized for AI while staying up-to-date with the latest technology.
 
-### ⚡ Optimized Consensus
+### Optimized Consensus
 0G Chain employs a highly optimized version of CometBFT (formerly Tendermint) as its consensus mechanism, with meticulously tuned parameters that achieve maximum performance while maintaining security. The system features carefully calibrated block production intervals and timeout configurations that work together to deliver high throughput, ensure network stability, and enable faster consensus rounds—all without compromising the fundamental safety guarantees.
 
 
@@ -46,7 +46,7 @@ These optimizations enable 0G Chain to achieve maximum performance:
 - **Sub-second Finality**: Near-instant transaction confirmation for AI applications
 - **Consistent Performance**: Maintains high throughput even under heavy network load
 
-### 🔮 Scaling Roadmap
+### Scaling Roadmap
 - **DAG-Based Consensus**: Transitioning to Directed Acyclic Graph (DAG) based consensus for exponentially higher efficiency
   - Parallel transaction processing capabilities
   - Elimination of sequential block limitations

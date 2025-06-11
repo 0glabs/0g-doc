@@ -402,7 +402,7 @@ pre[class*="language-"] {
 }
 
 /* Social Icons */
-.footer__link-item[href*="telegram.org"]::before,
+.footer__link-item[href*="t.me"]::before,
 .footer__link-item[href*="discord.gg"]::before,
 .footer__link-item[href*="twitter.com"]::before,
 .footer__link-item[href*="github.com"]::before {
@@ -410,7 +410,14 @@ pre[class*="language-"] {
   margin-right: 0.5rem;
 }
 
-.footer__link-item[href*="telegram.org"]::before { content: "\f2c6"; }
+.footer__link-item[href*="0g.ai/blog"]::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+
+.footer__link-item[href*="t.me"]::before { content: "\f2c6"; }
+.footer__link-item[href*="0g.ai/blog"]::before { content: "\f15c"; }
 .footer__link-item[href*="discord.gg"]::before { content: "\f392"; }
 .footer__link-item[href*="twitter.com"]::before { content: "\f099"; }
 .footer__link-item[href*="github.com"]::before { content: "\f09b"; }
@@ -485,6 +492,48 @@ html[data-theme='dark'] .header-hubs-link:hover {
 .header-hubs-link-text {
   font-size: 16px;
   font-weight: 800;
+}
+
+/* Hide 0G Hub button on mobile */
+@media screen and (max-width: 996px) {
+  .header-hubs-link {
+    display: none;
+  }
+}
+
+/* 0G Hub link in sidebar */
+.sidebar-0g-hub-link {
+  display: none;
+  justify-content: center;
+}
+
+
+/* Style 0G Hub link in sidebar */
+.sidebar-0g-hub-link a {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  background-color: var(--ifm-color-primary);
+  color: white !important;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  justify-content: center;
+  width: max-content;
+  font-size: medium;
+}
+
+.sidebar-0g-hub-link a:hover {
+  background-color: var(--ifm-color-primary-darker);
+  text-decoration: none;
+  color: white !important;
+}
+
+/* Show 0G Hub link in sidebar only on mobile */
+@media screen and (max-width: 996px) {
+  .sidebar-0g-hub-link {
+    display: flex;
+  }
 }
 
 /* Move search bar to center */

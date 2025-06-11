@@ -42,7 +42,7 @@ Without overcoming these hurdles, the dream of decentralized AI remains out of r
 </div>
 <br />
 
-## 🎯 Modular Architecture
+## Modular Architecture
 
 :::tip Key Benefit of Modular Architecture: You DON'T need to use all of 0G!
 **Pick only what you need:**
@@ -66,7 +66,7 @@ Without overcoming these hurdles, the dream of decentralized AI remains out of r
 ## Key Concepts Explained Simply
 
 <details>
-<summary>**What is decentralized storage? 🗄️**</summary>
+<summary>**What is decentralized storage?**</summary>
 
 Instead of storing your files on one company's computer (like Google Drive), they're split and stored across hundreds of computers worldwide.
 
@@ -74,7 +74,7 @@ Instead of storing your files on one company's computer (like Google Drive), the
 </details>
 
 <details>
-<summary>**What is data availability?** 📡</summary>
+<summary>**What is data availability?**</summary>
 
 It's a guarantee that your data can always be accessed when needed, like having multiple backup generators for your house.
 
@@ -82,7 +82,7 @@ It's a guarantee that your data can always be accessed when needed, like having 
 </details>
 
 <details>
-<summary>**What is an AI compute network?** 🧠</summary>
+<summary>**What is an AI compute network?**</summary>
 
 It's like Uber for computing power - connect to available GPUs when you need to run AI models, pay only for what you use.
 
@@ -90,7 +90,7 @@ It's like Uber for computing power - connect to available GPUs when you need to 
 </details>
 
 <details>
-<summary>**What is a modular blockchain?** 🧩</summary>
+<summary>**What is a modular blockchain?**</summary>
 
 Like LEGO blocks, each part of the blockchain (storing data, processing transactions, reaching agreement) is separate and can be upgraded independently.
 
