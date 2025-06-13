@@ -73,6 +73,10 @@ const config: Config = {
     // Add security headers plugin
     require.resolve('./src/plugins/security-headers-plugin'),
   ],
+  // key for mendable.ai
+  customFields:{
+    mendableAnonKey: MENDABLE_AI_KEY,
+  },
 
   themeConfig: {
     navbar: {
