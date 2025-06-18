@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask a Question
+    url: https://github.com/0glabs/0g-doc-new/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 🔐 Security Issue
+    url: https://github.com/0glabs/0g-doc-new/security/advisories/new
+    about: Report security vulnerabilities privately
+  - name: 📧 General Inquiries
+    url: mailto:udhaykumar@0g.ai
+    about: For general questions about 0G documentation
