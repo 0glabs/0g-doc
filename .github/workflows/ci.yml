@@ -94,21 +94,6 @@ jobs:
         # Kill server
         kill $SERVER_PID
 
-  markdown-lint:
-    name: Markdown Lint
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    
-    - name: Lint Markdown files
-      uses: articulate/actions-markdownlint@v1
-      with:
-        config: .markdownlint.json
-        files: '**/*.md'
-        ignore: 'node_modules'
-      continue-on-error: true
 
   spell-check:
     name: Spell Check
