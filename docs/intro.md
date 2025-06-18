@@ -11,7 +11,7 @@ Welcome to the official documentation for 0G - the first decentralized AI operat
 ## Quick Navigation
 
 ### 🎯 New to 0G?
-Start with [Understanding 0G](/introduction/understanding-0g) to learn about our vision and technology.
+Start with [Understanding 0G](/) to learn about our vision and technology.
 
 ### 👨‍💻 Ready to Build?
 Jump to the [Developer Hub](/developer-hub/getting-started) for SDKs, APIs, and integration guides.

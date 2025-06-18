@@ -182,7 +182,7 @@ Yes, easily:
 
 ### 🧑‍💻 For Developers
 Integrate 0G Storage in minutes
-→ [SDK Documentation](/developer-hub/building-on-0g/storage-sdk)
+→ [SDK Documentation](/developer-hub/building-on-0g/storage/sdk)
 
 ### ⛏️ For Storage Providers  
 Earn by providing storage capacity

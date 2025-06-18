@@ -22,7 +22,7 @@ Your AI application needs:
 ### ⛓️ 0G Chain
 EVM-compatible blockchain optimized for AI
 - [Deploy Contracts](/developer-hub/building-on-0g/contracts-on-0g/deploy-contracts)
-- [Precompiles Reference](/developer-hub/building-on-0g/contracts-on-0g/precompiles/overview)
+- [Precompiles Reference](/developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-overview)
 - [Chain Architecture](/concepts/chain)
 
 ### 0G Compute
@@ -30,7 +30,7 @@ Decentralized GPU marketplace for AI workloads
 - [Overview & Architecture](/developer-hub/building-on-0g/compute-network/overview)
 - [SDK Reference](/developer-hub/building-on-0g/compute-network/sdk)
 - [CLI Usage](/developer-hub/building-on-0g/compute-network/cli)
-- [Become a Provider](/developer-hub/building-on-0g/compute-network/provider)
+- [Become a Provider](/developer-hub/building-on-0g/compute-network/inference-provider)
 
 ### 💾 0G Storage
 High-performance storage for massive datasets
