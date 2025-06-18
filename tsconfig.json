@@ -7,4 +7,12 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
+  "exclude": [
+    "node_modules",
+    "build",
+    "docs/**/data/*.ts",
+    "docs/**/data/*.tsx",
+    "**/*.example.ts",
+    "**/*.example.tsx"
+  ]
 }
