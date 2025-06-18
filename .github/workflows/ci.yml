@@ -1,0 +1,115 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'yarn'
+    
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    
+    - name: Lint code
+      run: |
+        if [ -f "package.json" ] && grep -q '"lint"' package.json; then
+          yarn lint
+        else
+          echo "No lint script found, skipping..."
+        fi
+    
+    - name: Type check
+      run: |
+        if [ -f "tsconfig.json" ]; then
+          npx tsc --noEmit
+        else
+          echo "No TypeScript config found, skipping type check..."
+        fi
+    
+    - name: Build documentation
+      run: yarn build
+    
+    - name: Test build output
+      run: |
+        if [ ! -d "build" ]; then
+          echo "Build directory not found!"
+          exit 1
+        fi
+        if [ ! -f "build/index.html" ]; then
+          echo "Index.html not found in build directory!"
+          exit 1
+        fi
+        echo "Build successful ✅"
+
+  link-checker:
+    name: Check Links
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'yarn'
+    
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    
+    - name: Build site
+      run: yarn build
+    
+    - name: Serve site and check links
+      run: |
+        # Install link checker
+        npm install -g broken-link-checker
+        
+        # Start server in background
+        npx http-server build -p 3000 &
+        SERVER_PID=$!
+        
+        # Wait for server to start
+        sleep 10
+        
+        # Check internal links only
+        blc http://localhost:3000 --recursive --exclude-external || echo "Some links may be broken, please review"
+        
+        # Kill server
+        kill $SERVER_PID
+
+
+  spell-check:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Spell check
+      uses: streetsidesoftware/cspell-action@v6
+      with:
+        files: |
+          **/*.md
+          **/*.mdx
+          docs/**/*.md
+        config: .cspell.json
+      continue-on-error: true
+

@@ -200,7 +200,7 @@ Try alternative endpoints:
 
 ## What's Next?
 
-- **Learn Precompiles**: [Precompiles Overview](./precompiles/overview)
+- **Learn Precompiles**: [Precompiles Overview](./precompiles/precompiles-overview)
 - **Storage Integration**: [0G Storage SDK](/developer-hub/building-on-0g/storage/sdk)
 - **Compute Integration**: [0G Compute Guide](/developer-hub/building-on-0g/compute-network/overview)
 

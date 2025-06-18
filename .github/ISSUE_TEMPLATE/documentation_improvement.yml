@@ -1,0 +1,62 @@
+name: 📝 Documentation Improvement
+description: Suggest improvements, report issues, or propose changes
+title: "[Improvement]: "
+labels: ["documentation", "needs-triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation!
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type
+      description: What would you like to report?
+      options:
+        - Content improvement
+        - Style/formatting issue
+        - Mobile/responsive issue
+        - Broken link or error
+        - Missing information
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Which page needs improvement?
+      placeholder: https://docs.0g.ai/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the issue or improvement
+      placeholder: What needs to be improved?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Solution
+      description: How would you fix this?
+      placeholder: Optional - your suggested improvement
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I've checked existing issues
+          required: true
+        - label: This would help other users
+          required: true

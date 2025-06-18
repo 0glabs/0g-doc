@@ -1,0 +1,53 @@
+# Global owners - these users will be requested for review on all PRs
+* @0glabs/docs-maintainers
+
+# Documentation content
+/docs/ @0glabs/docs-team @0glabs/technical-writers
+
+# Website source code and components
+/src/ @0glabs/frontend-team @0glabs/docs-maintainers
+
+# Configuration files
+*.json @0glabs/devops-team @0glabs/docs-maintainers
+*.yml @0glabs/devops-team @0glabs/docs-maintainers
+*.yaml @0glabs/devops-team @0glabs/docs-maintainers
+*.toml @0glabs/devops-team @0glabs/docs-maintainers
+docusaurus.config.ts @0glabs/frontend-team @0glabs/docs-maintainers
+sidebars.ts @0glabs/docs-team @0glabs/docs-maintainers
+
+# Package management
+package.json @0glabs/devops-team @0glabs/frontend-team
+yarn.lock @0glabs/devops-team @0glabs/frontend-team
+pnpm-lock.yaml @0glabs/devops-team @0glabs/frontend-team
+
+# GitHub configuration
+/.github/ @0glabs/devops-team @0glabs/docs-maintainers
+
+# Static assets
+/static/ @0glabs/design-team @0glabs/docs-team
+
+# Styling and theming
+/src/css/ @0glabs/design-team @0glabs/frontend-team
+
+# Developer hub documentation (requires technical review)
+/docs/developer-hub/ @0glabs/core-team @0glabs/technical-writers
+
+# Node operation documentation (requires infrastructure expertise)
+/docs/run-a-node/ @0glabs/infrastructure-team @0glabs/technical-writers
+
+# Concepts documentation (requires deep technical knowledge)
+/docs/concepts/ @0glabs/core-team @0glabs/technical-writers
+
+# Security-related documentation
+/docs/resources/security/ @0glabs/security-team @0glabs/core-team
+
+# Smart contract documentation
+/docs/developer-hub/contracts/ @0glabs/smart-contract-team @0glabs/technical-writers
+
+# SDK documentation
+/docs/developer-hub/sdk/ @0glabs/sdk-team @0glabs/technical-writers
+
+# Root configuration files
+README.md @0glabs/docs-maintainers
+CONTRIBUTING.md @0glabs/docs-maintainers
+LICENSE @0glabs/legal-team @0glabs/docs-maintainers

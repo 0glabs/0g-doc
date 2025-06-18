@@ -1,9 +1,7 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  docs: [
-    // 'preface',
-    
+  docs: [    
     // SECTION 1: For beginners and non-technical users
     {
       type: 'category',
@@ -25,7 +23,6 @@ const sidebars: SidebarsConfig = {
       label: 'Concepts',
       className: 'sidebar-category concepts',
       items: [
-        // 'concepts/overview',
         'concepts/chain',
         'concepts/compute',
         'concepts/storage',

@@ -13,7 +13,7 @@ const config: Config = {
   organizationName: '0G Labs',
   projectName: '0g-docs',
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -114,7 +114,7 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Introduction', to: '/intro' },
+            { label: 'Introduction', to: '/' },
             { label: 'Run a Node', to: '/run-a-node/overview' },
           ],
         },

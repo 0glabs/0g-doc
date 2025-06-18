@@ -106,7 +106,7 @@ Start using AI compute in 5 minutes
 
 ### 💎 For GPU Owners  
 Turn idle hardware into income  
-→ [Become a Provider](/developer-hub/building-on-0g/compute-network/provider)
+→ [Become a Provider](/developer-hub/building-on-0g/compute-network/inference-provider)
 
 
 ---
