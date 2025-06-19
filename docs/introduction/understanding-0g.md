@@ -129,7 +129,7 @@ Now that you understand what 0G is and why it exists, here's how to dive deeper:
 
 - [Discord](https://discord.gg/0gLabs) - Get help and chat with builders
 - [Twitter](https://twitter.com/0g_Labs) - Latest updates and announcements
-- [GitHub](https://github.com/0G-Labs/0g-docs) - Contribute to the project
+- [GitHub](https://github.com/0glabs/0g-doc) - Contribute to the project
 
 We're excited to have you on board as we build the future of Web3 × AI together!
 
