@@ -40,4 +40,4 @@ Together, we're not just building technology – we're shaping the future of AI 
 
 - [Discord](https://discord.gg/0gLabs)
 - [Twitter](https://twitter.com/0g_Labs)
-- [GitHub](https://github.com/0G-Labs/0g-docs)
+- [GitHub](https://github.com/0glabs/0g-doc)
