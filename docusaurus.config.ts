@@ -23,7 +23,7 @@ const config: Config = {
 
   stylesheets: [
     {
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
       type: 'text/css',
     },
     {
@@ -101,7 +101,7 @@ const config: Config = {
           'aria-label': 'GitHub repository',
         },
         {
-          href: 'https://twitter.com/0g_labs',
+          href: 'https://x.com/0g_labs',
           position: 'right',
           className: 'header-twitter-link',
           'aria-label': 'Twitter profile',
@@ -123,7 +123,7 @@ const config: Config = {
           items: [
             { label: 'Discord', href: 'https://discord.gg/0glabs' },
             { label: 'Telegram', href: 'https://t.me/zgcommunity' },
-            { label: 'Twitter', href: 'https://twitter.com/0g_labs' },
+            { label: 'X(Twitter)', href: 'https://x.com/0g_labs' },
           ],
         },
         {

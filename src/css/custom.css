@@ -413,7 +413,7 @@ pre[class*="language-"] {
 /* Social Icons */
 .footer__link-item[href*="t.me"]::before,
 .footer__link-item[href*="discord.gg"]::before,
-.footer__link-item[href*="twitter.com"]::before,
+.footer__link-item[href*="x.com"]::before,
 .footer__link-item[href*="github.com"]::before {
   font-family: 'Font Awesome 5 Brands';
   margin-right: 0.5rem;
@@ -428,7 +428,7 @@ pre[class*="language-"] {
 .footer__link-item[href*="t.me"]::before { content: "\f2c6"; }
 .footer__link-item[href*="0g.ai/blog"]::before { content: "\f15c"; }
 .footer__link-item[href*="discord.gg"]::before { content: "\f392"; }
-.footer__link-item[href*="twitter.com"]::before { content: "\f099"; }
+.footer__link-item[href*="x.com"]::before { content: "\e61b"; }
 .footer__link-item[href*="github.com"]::before { content: "\f09b"; }
 
 /* Responsive Footer */
