@@ -149,9 +149,9 @@ No! Full EVM compatibility means your Solidity code deploys without changes. The
 ## Next Steps
 
 Ready to build? Start here:
-- [Quick Start Guide](/developer-hub/getting-started) - Deploy in 5 minutes
-- [Migration from Ethereum](/developer-hub/building-on-0g/contracts-on-0g/deploy-contracts) - Move existing dApps
-- [Technical Whitepaper](/resources/whitepaper) - Deep architecture details
+- [Quick Start Guide](/docs/developer-hub/getting-started.md) - Deploy in 5 minutes
+- [Migration from Ethereum](/docs/developer-hub/building-on-0g/contracts-on-0g/deploy-contracts.md) - Move existing dApps
+- [Technical Whitepaper](/docs/resources/whitepaper.md) - Deep architecture details
 
 ---
 
