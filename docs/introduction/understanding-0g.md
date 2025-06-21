@@ -121,7 +121,7 @@ And this is just the beginning.
 
 Now that you understand what 0G is and why it exists, here's how to dive deeper:
 
-**For Learners** → Read more about [Concepts](/concepts/overview) to understand how each component works  
+**For Learners** → Read more about [Concepts](/concepts/chain) to understand how each component works  
 **For Builders** → Jump into the [Developer Hub](/developer-hub/getting-started) to start building  
 **For Operators** → Learn how to [Run a Node](/run-a-node/overview) and earn rewards
 
