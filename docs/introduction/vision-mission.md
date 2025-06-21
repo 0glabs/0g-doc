@@ -39,5 +39,5 @@ Together, we're not just building technology – we're shaping the future of AI 
 ## Join the 0G Community
 
 - [Discord](https://discord.gg/0gLabs)
-- [Twitter](https://twitter.com/0g_Labs)
+- [X(Twitter)](https://x.com/0g_Labs)
 - [GitHub](https://github.com/0glabs/0g-doc)

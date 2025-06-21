@@ -89,8 +89,12 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231da1f2' d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z'/%3E%3C/svg%3E")
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGQ9Ik0xNC4wOTU0NzksMTAuMzE2NDgyTDIyLjI4NjM1NCwxaC0xLjk0MDcxOGwtNy4xMTUzNTIsOC4wODc2ODJMNy41NTE0MTQsMUgxbDguNTg5NDg4LDEyLjIzMTA5M0wxLDIzaDEuOTQwNzE3ICBsNy41MDkzNzItOC41NDI4NjFMMTYuNDQ4NTg3LDIzSDIzTDE0LjA5NTQ3OSwxMC4zMTY0ODJ6IE0xMS40MzY1MjIsMTMuMzM4NDY1bC0wLjg3MTYyNC0xLjIxODcwNGwtNi45MjQzMTEtOS42ODgxNWgyLjk4MTMzOSAgbDUuNTg5NzgsNy44MjE1NWwwLjg2Nzk0OSwxLjIxODcwNGw3LjI2NTA2LDEwLjE2NjI3MWgtMi45ODEzMzlMMTEuNDM2NTIyLDEzLjMzODQ2NXoiLz48L3N2Zz4=")
     no-repeat;
+}
+
+html[data-theme='dark'] .header-twitter-link::before{
+  filter: brightness(0) invert(1);
 }
 
 /* Dark mode adjustments */
@@ -128,6 +132,11 @@ h4 { font-size: 1.25rem; }
 
 .markdown p {
   margin-bottom: 1.5rem;
+}
+
+.whitepaper-container iframe{
+  width: 100%;
+  min-height: 80vh;
 }
 
 /* Code Styling */
@@ -404,7 +413,7 @@ pre[class*="language-"] {
 /* Social Icons */
 .footer__link-item[href*="t.me"]::before,
 .footer__link-item[href*="discord.gg"]::before,
-.footer__link-item[href*="twitter.com"]::before,
+.footer__link-item[href*="x.com"]::before,
 .footer__link-item[href*="github.com"]::before {
   font-family: 'Font Awesome 5 Brands';
   margin-right: 0.5rem;
@@ -419,7 +428,7 @@ pre[class*="language-"] {
 .footer__link-item[href*="t.me"]::before { content: "\f2c6"; }
 .footer__link-item[href*="0g.ai/blog"]::before { content: "\f15c"; }
 .footer__link-item[href*="discord.gg"]::before { content: "\f392"; }
-.footer__link-item[href*="twitter.com"]::before { content: "\f099"; }
+.footer__link-item[href*="x.com"]::before { content: "\e61b"; }
 .footer__link-item[href*="github.com"]::before { content: "\f09b"; }
 
 /* Responsive Footer */
