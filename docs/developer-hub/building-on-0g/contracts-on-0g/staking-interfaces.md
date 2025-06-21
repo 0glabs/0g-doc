@@ -5,7 +5,26 @@ title: Staking Interfaces
 
 # Staking Interfaces
 
-Smart contract interfaces for interacting with 0G Chain's staking system programmatically.
+Welcome to the 0G Chain Staking Interfaces documentation. This guide provides comprehensive information about interacting with the 0G Chain staking system through smart contracts, enabling you to build applications that leverage validator operations and delegations.
+
+## Overview
+
+The 0G Chain staking system enables OG token holders to participate in network consensus and earn rewards through two primary mechanisms:
+
+1. **Becoming a Validator**: Run infrastructure to validate transactions and produce blocks
+2. **Delegating to Validators**: Stake tokens with existing validators to earn rewards without running infrastructure
+
+The staking system is built on two core smart contract interfaces:
+
+- **`IStakingContract`**: Central registry managing validators and global staking parameters
+- **`IValidatorContract`**: Individual validator operations including delegations and reward distribution
+
+## Prerequisites
+
+Before working with the staking interfaces:
+
+- Familiarity with Solidity and smart contract development
+- Basic knowledge of consensus mechanisms and staking concepts
 
 ## Quick Start
 
@@ -322,8 +341,8 @@ validator.undelegate{value: fee * 1 gwei}(recipient, shares);
 
 ## Resources
 
-- **GitHub Repository**: [0G Chain Contracts](https://github.com/0glabs/0g-chain-v2/blob/dev-v2.1/contracts/src/staking/)
 - **Run Validator Node**: [Validator Setup Guide](../../../run-a-node/validator-node)
+- **GitHub Repository**: [0G Chain Contracts](https://github.com/0glabs/0g-chain-v2/blob/dev-v2.1/contracts/src/staking/)
 - **Deploy Contracts**: [Contract Deployment](./deploy-contracts)
 
 ---
