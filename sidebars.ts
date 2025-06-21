@@ -73,7 +73,6 @@ const sidebars: SidebarsConfig = {
                   items: [
                     'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-overview',
                     'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-dasigners',
-                    // 'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-staking',
                     'developer-hub/building-on-0g/contracts-on-0g/precompiles/precompiles-wrappedogbase',
                   ],
                 },
@@ -151,7 +150,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'run-a-node/overview',
-        // 'developer-hub/testnet/testnet-overview',
         'run-a-node/validator-node',
         'run-a-node/storage-node',
         'run-a-node/da-node',
