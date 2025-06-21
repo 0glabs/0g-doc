@@ -2,10 +2,15 @@
 sidebar_position: 4
 ---
 
-# RPC Node
+# Validator Node
 ---
 
-Running a RPC node for the **0G-Galileo-Testnet** in the 0G ecosystem means to provide a public or private RPC service for the community.
+Running a Validator node for the **0G-Galileo-Testnet** means providing validator services for the network, processing transactions and maintaining consensus.
+
+:::info **What You'll Need**
+- Linux/macOS system with adequate hardware
+- Stable internet connection
+:::
 
 ## Hardware Requirements
 
@@ -16,23 +21,27 @@ Running a RPC node for the **0G-Galileo-Testnet** in the 0G ecosystem means to p
 | Disk       | 1 TB NVME SSD | 4 TB NVME SSD |
 | Bandwidth  | 100 MBps for Download / Upload | 100 MBps for Download / Upload |
 
-## 1. Download Package
+## Setup Guide
 
-Download the latest package for node binaries (named "[galileo.tar.gz](https://github.com/0glabs/0gchain-NG/releases)")
+### 1. Download Package
+
+Download the latest package for node binaries:
 
 ```bash
 wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v1.2.0/galileo-v1.2.0.tar.gz
 ```
 
-## 2. Extract Package
+### 2. Extract Package
 
-Unzip this file to your home path
+Extract the package to your home directory:
 
 ```bash
 tar -xzvf galileo.tar.gz -C ~
 ```
 
-## 3. Copy Files and Set Permissions
+### 3. Copy Files and Set Permissions
+
+Copy the configuration files and set proper permissions:
 
 ```bash
 cd galileo
@@ -41,19 +50,25 @@ sudo chmod 777 ./bin/geth
 sudo chmod 777 ./bin/0gchaind
 ```
 
-## 4. Initialize Geth
+### 4. Initialize Geth
+
+Initialize the Geth client with the genesis file:
 
 ```bash
 ./bin/geth init --datadir /{your data path}/0g-home/geth-home ./genesis.json
 ```
 
-## 5. Initialize 0gchaind with Temporary Directory
+### 5. Initialize 0gchaind
+
+Create a temporary directory for initial configuration:
 
 ```bash
 ./bin/0gchaind init {node name} --home /{your data path}/tmp
 ```
 
-## 6. Copy Node Files to 0gchaind Home
+### 6. Copy Node Files
+
+Move the generated keys to the proper location:
 
 ```bash
 cp /{your data path}/tmp/data/priv_validator_state.json /{your data path}/0g-home/0gchaind-home/data/
@@ -63,7 +78,9 @@ cp /{your data path}/tmp/config/priv_validator_key.json /{your data path}/0g-hom
 
 > Note: The temporary directory can be deleted after this step.
 
-## 7. Start 0gchaind
+### 7. Start 0gchaind
+
+Start the consensus client:
 
 ```bash
 cd ~/galileo
@@ -83,7 +100,9 @@ nohup ./bin/0gchaind start \
     --p2p.external_address {your node ip}:26656 > /{your data path}/0g-home/log/0gchaind.log 2>&1 &
 ```
 
-## 8. Start Geth
+### 8. Start Geth
+
+Start the execution client:
 
 ```bash
 cd ~/galileo
@@ -94,16 +113,29 @@ nohup ./bin/geth --config geth-config.toml \
 	 --networkid 16601 > /{your data path}/0g-home/log/geth.log 2>&1 &
 ```
 
-## 9. Check Chain Status
+### 9. Verify Setup
+
+Check the logs to confirm your node is running properly:
 
 ```bash
+# Check Geth logs
 tail -f /{your data path}/0g-home/log/geth.log
+
+# Check 0gchaind logs
 tail -f /{your data path}/0g-home/log/0gchaind.log
 ```
 
-Check logs to confirm your node is running properly.
+:::success **Success Indicators**
+- 0gchaind should show "Committed state" messages
+- No error messages in either log
+:::
 
-## Important Reminders
-- Stay updated with the latest network information and announcements on our socials and blog posts
-- Reach out to us on Discord or to the community for support if you encounter any issues
+## Next Steps
+
+### Staking Integration
+
+Once your validator node is running, you can interact with the staking system programmatically using smart contracts:
+
+- **[Staking Interfaces Guide](../developer-hub/building-on-0g/contracts-on-0g/staking-interfaces)** - Complete documentation for integrating with 0G Chain staking smart contracts
+
 

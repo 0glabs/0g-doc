@@ -392,7 +392,9 @@
     "reencrypted",
     "reentrancy",
     "keccak",
-    "ainft"
+    "ainft",
+    "tokenomics",
+    "rollups"
   ],
   "ignorePaths": [
     "node_modules/**",
