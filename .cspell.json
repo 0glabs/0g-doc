@@ -400,7 +400,15 @@
     "devnet",
     "keybase",
     "undelegate",
-    "undelegation"
+    "undelegation",
+    "undelegating",
+    "nohup",
+    "laddr",
+    "xzvf",
+    "nvme",
+    "extip",
+    "bootnodes",
+    "withdrawability"
   ],
   "ignorePaths": [
     "node_modules/**",
