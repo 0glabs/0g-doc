@@ -80,20 +80,18 @@ cp /{your data path}/tmp/config/priv_validator_key.json /{your data path}/0g-hom
 
 ### 7. Start 0gchaind
 
-Start the consensus client:
-
 ```bash
 cd ~/galileo
 nohup ./bin/0gchaind start \
     --rpc.laddr tcp://0.0.0.0:26657 \
-    --chain-spec devnet \
-    --kzg.trusted-setup-path=kzg-trusted-setup.json \
-    --engine.jwt-secret-path=jwt-secret.hex \
-    --kzg.implementation=crate-crypto/go-kzg-4844 \
-    --block-store-service.enabled \
-    --node-api.enabled \
-    --node-api.logging \
-    --node-api.address 0.0.0.0:3500 \
+    --chaincfg.chain-spec devnet \
+    --chaincfg.kzg.trusted-setup-path=kzg-trusted-setup.json \
+    --chaincfg.engine.jwt-secret-path=jwt-secret.hex \
+    --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
+    --chaincfg.block-store-service.enabled \
+    --chaincfg.node-api.enabled \
+    --chaincfg.node-api.logging \
+    --chaincfg.node-api.address 0.0.0.0:3500 \
     --pruning=nothing \
     --home /{your data path}/0g-home/0gchaind-home \
     --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
@@ -102,15 +100,13 @@ nohup ./bin/0gchaind start \
 
 ### 8. Start Geth
 
-Start the execution client:
-
 ```bash
 cd ~/galileo
 nohup ./bin/geth --config geth-config.toml \
-	 --nat extip:{your node ip} \
-	 --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
-	 --datadir /{your data path}/0g-home/geth-home \
-	 --networkid 16601 > /{your data path}/0g-home/log/geth.log 2>&1 &
+     --nat extip:{your node ip} \
+     --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
+     --datadir /{your data path}/0g-home/geth-home \
+     --networkid 16601 > /{your data path}/0g-home/log/geth.log 2>&1 &
 ```
 
 ### 9. Verify Setup
@@ -124,6 +120,8 @@ tail -f /{your data path}/0g-home/log/geth.log
 # Check 0gchaind logs
 tail -f /{your data path}/0g-home/log/0gchaind.log
 ```
+
+Check logs to confirm your node is running properly.
 
 :::success **Success Indicators**
 - 0gchaind should show "Committed state" messages
