@@ -110,18 +110,26 @@ function delegate(address delegatorAddress) external payable returns (uint);
 // Undelegate shares (msg.value = withdrawal fee)
 function undelegate(address withdrawalAddress, uint shares) external payable returns (uint);
 
-// Withdraw validator commission
+// Withdraw validator commission (only validator operator)
 function withdrawCommission(address withdrawalAddress) external returns (uint);
 ```
 
+:::info **Access Control**
+The `withdrawCommission` function is restricted to the validator operator only - the address that originally created and manages the validator.
+:::
+
 #### Information Queries
 ```solidity
-function tokens() external view returns (uint);           // Total delegated tokens
+function tokens() external view returns (uint);           // Total tokens (delegated + rewards)
 function delegatorShares() external view returns (uint);  // Total shares issued
 function getDelegation(address delegator) external view returns (address, uint);
 function commissionRate() external view returns (uint32);
 function withdrawalFeeInGwei() external view returns (uint96);
 ```
+
+:::tip **Understanding tokens()**
+The `tokens()` function returns the complete validator balance, including both the original delegated amounts and any accumulated rewards that haven't been distributed yet.
+:::
 
 ## Examples
 
@@ -221,8 +229,31 @@ Eth/Beacon Pubkey (Compressed 48-byte Hex):
 ```
 
 ### Step 2: Compute Validator Address
+
+Use the public key from Step 1 to compute the validator's contract address. Choose your preferred method:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="cast" label="Foundry Cast" default>
+
+**Recommended method** - simpler syntax and better error handling.
+
 ```bash
-# Using eth_call to compute address
+cast call \
+    0xea224dBB52F57752044c0C86aD50930091F561B9 \
+    "computeValidatorAddress(bytes)(address)" \
+    "0xaa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc56" \
+    --rpc-url https://evmrpc-testnet.0g.ai
+```
+
+</TabItem>
+<TabItem value="curl" label="curl/RPC">
+
+Alternative method using direct RPC calls - works without additional tooling.
+
+```bash
 curl -X POST https://evmrpc-testnet.0g.ai \
 -H "Content-Type: application/json" \
 -d '{
@@ -235,6 +266,9 @@ curl -X POST https://evmrpc-testnet.0g.ai \
     "id":1
 }'
 ```
+
+</TabItem>
+</Tabs>
 
 ### Step 3: Generate Signature
 
