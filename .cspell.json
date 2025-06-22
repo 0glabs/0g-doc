@@ -394,7 +394,13 @@
     "keccak",
     "ainft",
     "tokenomics",
-    "rollups"
+    "rollups",
+    "gchaind",
+    "chaincfg",
+    "devnet",
+    "keybase",
+    "undelegate",
+    "undelegation"
   ],
   "ignorePaths": [
     "node_modules/**",
