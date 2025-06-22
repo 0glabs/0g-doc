@@ -408,7 +408,9 @@
     "nvme",
     "extip",
     "bootnodes",
-    "withdrawability"
+    "withdrawability",
+    "networkid",
+    "enode"
   ],
   "ignorePaths": [
     "node_modules/**",
