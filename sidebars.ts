@@ -63,6 +63,7 @@ const sidebars: SidebarsConfig = {
               },
               items: [
                 'developer-hub/building-on-0g/contracts-on-0g/deploy-contracts',
+                'developer-hub/building-on-0g/contracts-on-0g/staking-interfaces',
                 {
                   type: 'category',
                   label: 'Precompiles',
