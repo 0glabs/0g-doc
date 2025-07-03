@@ -112,11 +112,14 @@ Please download the dataset format specification and verification script from th
 
 ```bash
 # Upload to 0G Storage
-0g-compute-cli upload --data-path <PATH_TO_DATASET>
+0g-compute-cli upload --data-path <PATH_TO_DATASET> --max-gas-price <MAX_GAS_PRICE>
 
 # Output: Root hash: 0xabc123... (save this!)
 ```
-> Record the root hash of the dataset; they will be needed in later steps.
+> Max-gas-price is **optional**, and it is best to set this parameter to a larger value such as **100000000000**(default) to increase the probability of successful execution, prioritize scheduling by the system, and reduce queuing time.
+>**Record the root hash** of the dataset; they will be needed in later steps.
+
+
 
 ### Calculate Dataset Size
 
@@ -162,7 +165,9 @@ Creating task...
 Created Task ID: 6b607314-88b0-4fef-91e7-43227a54de57
 ```
 
-*Note:* When creating a task for the same provider, you must wait for the previous task to be completed (status `Finished`) before creating a new task. If the provider is currently running other tasks, you will be prompted to choose between adding your task to the waiting queue or canceling the request.
+*Note:* 
+Gas-price is **optional**, and it is best to set this parameter to a larger value such as **100000000000**(default) to increase the probability of successful execution, prioritize scheduling by the system, and reduce queuing time.
+When creating a task for the same provider, you must wait for the previous task to be completed (status `Finished`) before creating a new task. If the provider is currently running other tasks, you will be prompted to choose between adding your task to the waiting queue or canceling the request.
 
 ### Monitor Progress
 You can monitor the progress of your task by running the following command:
