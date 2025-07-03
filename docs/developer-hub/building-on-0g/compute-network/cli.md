@@ -154,7 +154,7 @@ After calculating the dataset size, you can create a task by running the followi
 | `--dataset` | Root hash of the dataset on 0G Storage |
 | `--config-path` | Path to the parameter file |
 | `--data-size` | Size of the dataset |
-| `--gas-price` | Gas price (optional) |
+| `--gas-price` | Gas price (optional and default value is set) |
 
 The output will be like:
 
@@ -167,6 +167,7 @@ Created Task ID: 6b607314-88b0-4fef-91e7-43227a54de57
 
 *Note:* 
 Gas-price is **optional**, and it is best to set this parameter to a larger value such as **100000000000**(default) to increase the probability of successful execution, prioritize scheduling by the system, and reduce queuing time.
+
 When creating a task for the same provider, you must wait for the previous task to be completed (status `Finished`) before creating a new task. If the provider is currently running other tasks, you will be prompted to choose between adding your task to the waiting queue or canceling the request.
 
 ### Monitor Progress
