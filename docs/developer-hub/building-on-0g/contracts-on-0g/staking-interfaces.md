@@ -219,7 +219,7 @@ HOMEDIR=/.tmp/0gchaind
 CHAIN_SPEC=devnet
 
 # Generate validator keys
-./0gchaind deposit validator-keys --home $HOMEDIR --chaincfg.chain-spec=$CHAIN_SPEC
+./bin/0gchaind deposit validator-keys --home $HOMEDIR --chaincfg.chain-spec=$CHAIN_SPEC
 ```
 
 **Output:**
@@ -241,11 +241,20 @@ import TabItem from '@theme/TabItem';
 **Recommended method** - simpler syntax and better error handling.
 
 ```bash
+# Set your params
+STAKING_CONTRACT_ADDRESS=0xea224dBB52F57752044c0C86aD50930091F561B9
+PUBLIC_KEY=0xaa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc56
+
+# cast call
 cast call \
-    0xea224dBB52F57752044c0C86aD50930091F561B9 \
+    $STAKING_CONTRACT_ADDRESS \
     "computeValidatorAddress(bytes)(address)" \
-    "0xaa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc56" \
+    $PUBLIC_KEY \
     --rpc-url https://evmrpc-testnet.0g.ai
+```
+**Output:**
+```
+0x1e776a6b65892ec60537a885c17b820301e054b9
 ```
 
 </TabItem>
@@ -254,17 +263,26 @@ cast call \
 Alternative method using direct RPC calls - works without additional tooling.
 
 ```bash
+# Set your params
+STAKING_CONTRACT_ADDRESS=0xea224dBB52F57752044c0C86aD50930091F561B9
+PUBLIC_KEY=0xaa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc56
+
+# rpc call
 curl -X POST https://evmrpc-testnet.0g.ai \
 -H "Content-Type: application/json" \
 -d '{
     "jsonrpc":"2.0",
     "method":"eth_call", 
     "params":[{
-        "to": "0xea224dBB52F57752044c0C86aD50930091F561B9",
-        "data": "0x1ab06aa7000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000aa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc0000000000000000000000000000000000"
+        "to": "'${STAKING_CONTRACT_ADDRESS}'",
+        "data": "0x1ab06aa700000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000030'${PUBLIC_KEY:2:96}'00000000000000000000000000000000"
     }, "latest"],
     "id":1
 }'
+```
+**Output:**
+```
+{"jsonrpc":"2.0","id":1,"result":"0x0000000000000000000000001e776a6b65892ec60537a885c17b820301e054b9"}
 ```
 
 </TabItem>
@@ -272,11 +290,19 @@ curl -X POST https://evmrpc-testnet.0g.ai \
 
 ### Step 3: Generate Signature
 
+Use the validator's contract address from Step 2 to generate signature.
+
 ```bash
+# Set your home directory
+HOMEDIR=/.tmp/0gchaind
+CHAIN_SPEC=devnet
+VALIDATOR_CONTRACT_ADDRESS=0x1e776a6b65892ec60537a885c17b820301e054b9
+VALIDATOR_INITIAL_DELEGATION_IN_GWEI=32000000000 # 32 ethers
+
 # Generate signature for validator initialization
-./0gchaind deposit create-validator \
-    0x1E776a6b65892EC60537a885c17B820301E05400 \
-    32000000000 \
+.bin/0gchaind deposit create-validator \
+    $VALIDATOR_CONTRACT_ADDRESS \
+    $VALIDATOR_INITIAL_DELEGATION_IN_GWEI \
     $HOMEDIR/config/genesis.json \
     --home $HOMEDIR \
     --chaincfg.chain-spec=$CHAIN_SPEC
