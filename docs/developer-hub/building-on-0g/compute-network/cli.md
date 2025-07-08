@@ -143,7 +143,6 @@ After calculating the dataset size, you can create a task by running the followi
   --dataset <DATASET_ROOT_HASH> \
   --config-path <PATH_TO_CONFIG_FILE> \
   --data-size <DATASET_SIZE>
-  --gas-price <GAS_PRICE>
 ```
 
 **Parameters:**
