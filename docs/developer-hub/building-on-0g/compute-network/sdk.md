@@ -13,48 +13,28 @@ The 0G Compute Network provides multiple ways to interact with inference service
 
 ## Quick Start (CLI)
 
-The 0G Compute CLI (`0g-compute-cli`) provides a command-line interface for quickly setting up and using inference services. This is the fastest way to get started with 0G Compute Network.
-
-### Prerequisites
-
-- Node.js 18+ and pnpm installed
-- A wallet with some ETH for gas fees
-- Access to an Ethereum RPC endpoint
+The 0G Compute CLI provides a simple way to get started with inference services in just a few steps.
 
 ### Installation
 
 ```bash
-# Install the CLI globally
 pnpm install -g @0glabs/0g-serving-broker
-
-# Note: If you encounter chalk@5 compatibility issues, run:
-pnpm add -g chalk@4
 ```
 
-### Create Account and Add Funds
+### Step 1: Add Funds
 
-1. **Set up environment variables:**
-```bash
-export LEDGER_CA=0x8A791620dd6260079BF849Dc5567aDC3F2FdC318
-export FINE_TUNING_CA=0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
-export INFERENCE_CA=0x0165878A594ca255338adfa4d48449f69242Eb8F
-export RPC_ENDPOINT=http://localhost:8545
-export ZG_PRIVATE_KEY=your_private_key_here
-```
+> **Note:** For normal use on the 0G testnet, you only need to set your private key as an environment variable. All other parameters are pre-configured for the testnet.
 
-2. **Create an account:**
 ```bash
-0g-compute-cli add-account --amount 1
-```
+export ZG_PRIVATE_KEY=your_private_key
 
-3. **Add funds to your account:**
-```bash
+# Add funds to your account
 0g-compute-cli deposit --amount 0.5
 ```
 
 ### Start Local Inference Service
 
-Use the CLI to start a local inference service that connects to the 0G Compute Network:
+### Step 2: Start Service
 
 ```bash
 0g-compute-cli serve \
@@ -65,19 +45,15 @@ Use the CLI to start a local inference service that connects to the 0G Compute N
   --key=your_private_key_here
 ```
 
-### Available CLI Commands
+That's it! Your inference service is now running and ready to accept requests.
 
-- `add-account`: Create a new account
-- `deposit`: Add funds to your account
+### Available Commands
+
+- `deposit --amount <amount>`: Add funds to your account
 - `serve`: Start local inference service
 - `list-models`: List available models
-- `get-account`: Retrieve account information
-- `list-providers`: List available providers
-
-For a complete list of commands:
-```bash
-0g-compute-cli --help
-```
+- `get-account`: Check account balance
+- `--help`: Show all available commands
 
 ## Programmatic Usage (SDK)
 
