@@ -213,9 +213,21 @@ galileo/
 ```
 
 ### Step 1: Extract Public Key
+
+ `0gchaind-home/config` directory will look like this:
+```
+0gchaind-home/
+├── config/
+    ├── genesis.json
+    ├── priv_validator_key.json
+    └── ...
+```
+
+Make sure to use data path that is used for validator node setup.
+
 ```bash
 # Set your home directory
-HOMEDIR=/.tmp/0gchaind
+HOMEDIR={your data path}/0g-home/0gchaind-home
 CHAIN_SPEC=devnet
 
 # Generate validator keys
@@ -284,6 +296,10 @@ curl -X POST https://evmrpc-testnet.0g.ai \
 ```
 {"jsonrpc":"2.0","id":1,"result":"0x0000000000000000000000001e776a6b65892ec60537a885c17b820301e054b9"}
 ```
+Remove the zero paddings to get the validator address.
+```
+0x1e776a6b65892ec60537a885c17b820301e054b9
+```
 
 </TabItem>
 </Tabs>
@@ -293,9 +309,7 @@ curl -X POST https://evmrpc-testnet.0g.ai \
 Use the validator's contract address from Step 2 to generate signature.
 
 ```bash
-# Set your home directory
-HOMEDIR=/.tmp/0gchaind
-CHAIN_SPEC=devnet
+# set your params
 VALIDATOR_CONTRACT_ADDRESS=0x1e776a6b65892ec60537a885c17b820301e054b9
 VALIDATOR_INITIAL_DELEGATION_IN_GWEI=32000000000 # 32 ethers
 
@@ -315,6 +329,44 @@ VALIDATOR_INITIAL_DELEGATION_IN_GWEI=32000000000 # 32 ethers
 pubkey: 0xaa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc56
 signature: 0x123456789000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 ```
+
+## Initialize Validator
+To initialize the validator, you need to call the `createAndInitializeValidatorIfNecessary` function with the public key and signature from the previous step. The value should be set to minimum 32 OG tokens as the minimum initial delegation.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface IStaking {
+    struct Description {
+        string moniker;
+        string identity;
+        string website;
+        string securityContact;
+        string details;
+    }
+    
+    function createAndInitializeValidatorIfNecessary(
+        Description calldata description,
+        uint32 commissionRate,
+        uint96 withdrawalFeeInGwei,
+        bytes calldata pubkey,
+        bytes calldata signature
+    ) external payable returns (address);
+    
+    function getValidator(bytes memory pubkey) external view returns (address);
+    
+    function computeValidatorAddress(bytes calldata pubkey) external view returns (address);
+}
+
+```
+
+- `description`: The validator's description struct
+- `commissionRate`: The validator's commission rate
+- `withdrawalFeeInGwei`: The validator's withdrawal fee
+- `pubkey`: The validator's public key
+- `signature`: The validator's signature
+
 
 ## Data Structures
 
