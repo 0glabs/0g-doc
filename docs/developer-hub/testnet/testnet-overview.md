@@ -20,7 +20,6 @@ Test your applications on 0G's infrastructure without real costs or risks.
 | **Network Name** | 0G-Galileo-Testnet |
 | **Chain ID** | 16601 |
 | **Token Symbol** | OG |
-| **RPC Endpoint** | ```https://evmrpc-testnet.0g.ai``` |
 | **Block Explorer** | ```https://chainscan-galileo.0g.ai``` |
 | **Faucet** | https://faucet.0g.ai |
 
@@ -118,6 +117,16 @@ Addresses may change during testnet.
 - **[Storage Explorer](https://storagescan-galileo.0g.ai)**: Track storage operations and metrics
 - **[Validator Dashboard](https://testnet.0g.explorers.guru)**: Monitor network validators
 
+<details>
+<summary>Development RPC</summary>
+
+:::warning Development Only
+This endpoint is for development purposes and should not be used in production applications.
+:::
+
+`https://evmrpc-testnet.0g.ai`
+
+</details>
 
 ## Faucet
 - Use the [official Faucet](https://faucet.0g.ai) to request tokens. Each user can receive up to 0.1 OG token per day, which is sufficient for most testing needs.
