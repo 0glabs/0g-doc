@@ -6,6 +6,7 @@ className: landing-page-custom
 ---
 
 import Link from '@docusaurus/Link';
+import SocialProofSection from '@site/src/components/SocialProofSection';
 
 <div className="hide-title-wrapper">
 <div className="landing-hero">
@@ -13,7 +14,7 @@ import Link from '@docusaurus/Link';
     <h1 className="hero-title">Build the Future of <span className="gradient-text">Decentralized AI</span></h1>
     <div className="hero-buttons">
       <Link className="button button--primary button--lg hero-primary-btn" to="/developer-hub/getting-started">
-        Start Building
+        Quick Start
       </Link>
       <Link className="button button--outline button--primary button--lg hero-secondary-btn" to="/concepts/chain">
         Learn Concepts
@@ -28,11 +29,11 @@ import Link from '@docusaurus/Link';
       <div className="card-glow"></div>
       <div className="card-content">
         <div className="card-header">
-          <h3>Core Concepts</h3>
+          <h3>New to 0G? Start Here</h3>
         </div>
-        <p>Understand the fundamentals of 0G's modular AI infrastructure</p>
+        <p>Learn the basics of 0G's AI infrastructure and get oriented quickly</p>
         <div className="card-footer">
-          <span className="card-link">Learn More →</span>
+          <span className="card-link">Get Started →</span>
         </div>
       </div>
     </Link>
@@ -45,7 +46,7 @@ import Link from '@docusaurus/Link';
         </div>
         <p>Connect to Galileo testnet and start building your first dApp on 0G</p>
         <div className="card-footer">
-          <span className="card-link">Get Started →</span>
+          <span className="card-link">Connect to Testnet →</span>
         </div>
       </div>
     </Link>
@@ -56,7 +57,7 @@ import Link from '@docusaurus/Link';
         <div className="card-header">
           <h3>Inference SDK</h3>
         </div>
-        <p>Integrate AI inference into your applications with TypeScript and Python SDKs</p>
+        <p>Integrate AI inference into your applications with SDKs</p>
         <div className="card-footer">
           <span className="card-link">View Docs →</span>
         </div>
@@ -84,7 +85,7 @@ import Link from '@docusaurus/Link';
         </div>
         <p>Customize AI models for your specific use case with our command-line tools</p>
         <div className="card-footer">
-          <span className="card-link">View Guide →</span>
+          <span className="card-link">View Docs →</span>
         </div>
       </div>
     </Link>
@@ -104,34 +105,20 @@ import Link from '@docusaurus/Link';
   </div>
 </div>
 
+<SocialProofSection />
+
 <div className="landing-cta">
   <div className="cta-glow"></div>
   <h2>Ready to Build?</h2>
   <p>Join thousands of developers building the future of decentralized AI</p>
   <div className="cta-buttons">
     <Link className="button button--primary button--lg cta-primary-btn" to="/developer-hub/getting-started">
-      Start Building
-    </Link>
-    <Link className="button button--secondary button--lg cta-secondary-btn" to="https://discord.gg/0gLabs">
-      Join Discord
+      View Full Documentation
     </Link>
   </div>
 </div>
 </div>
 
-<script>{`
-  // Remove the auto-generated title
-  if (typeof window !== 'undefined') {
-    window.addEventListener('load', () => {
-      const titles = document.querySelectorAll('h1');
-      titles.forEach(title => {
-        if (title.textContent === 'new-landing' && !title.classList.contains('hero-title')) {
-          title.style.display = 'none';
-        }
-      });
-    });
-  }
-`}</script>
 
 <style>{`
   /* Hide sidebar on landing page */
@@ -450,6 +437,134 @@ import Link from '@docusaurus/Link';
     gap: 0.5rem;
   }
   
+  /* Social Proof Section */
+  .social-proof-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .social-proof-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(183, 95, 255, 0.3) 50%, 
+      transparent 100%);
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .stat-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 50%, #CB8AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Fade in animation for stats */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Initial state - hidden */
+  .stat-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  /* Visible state - animated in */
+  .stat-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stagger the animations */
+  .stat-item:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  
+  .stat-item:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  
+  .stat-item:nth-child(5) {
+    transition-delay: 0.6s;
+  }
+  
+  .stat-label {
+    font-size: 1.125rem;
+    color: var(--ifm-color-secondary-darkest);
+    opacity: 0.8;
+    font-weight: 500;
+  }
+  
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(180deg, 
+      transparent 0%, 
+      rgba(183, 95, 255, 0.3) 50%, 
+      transparent 100%);
+  }
+  
+  /* Light mode adjustments */
+  [data-theme='light'] .stat-label {
+    color: #5A5A6E;
+  }
+  
+  /* Dark mode adjustments */
+  [data-theme='dark'] .stat-label {
+    color: #C0B8D0;
+  }
+  
+  /* Responsive stats */
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .stat-divider {
+      width: 60px;
+      height: 1px;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+    }
+  }
+  
   /* CTA Section */
   .landing-cta {
     text-align: center;
@@ -719,11 +834,19 @@ import Link from '@docusaurus/Link';
     
     .hero-buttons {
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
     }
     
     .hero-buttons .button {
-      width: 200px;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
     }
   }
   
