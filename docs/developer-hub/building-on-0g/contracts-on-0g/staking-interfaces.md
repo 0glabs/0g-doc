@@ -201,6 +201,42 @@ contract DelegationHelper {
 
 ## Getting Validator Signature
 
+### Option 1: Automated Script (Recommended)
+
+For quick setup, we provide an automated bash script that handles all signature generation steps:
+
+#### Download and Execute
+```bash
+# Download the script
+curl -O https://raw.githubusercontent.com/0glabs/0g-doc/main/scripts/generate-validator-signature.sh
+
+# Make it executable
+chmod +x generate-validator-signature.sh
+
+# Run the script
+./generate-validator-signature.sh
+```
+
+The script will prompt you for:
+- `HOMEDIR` (default: `./0g-home/0gchaind-home`)
+- `CHAIN_SPEC` (default: `testnet`)  
+- `VALIDATOR_INITIAL_DELEGATION_IN_ETHER` (default: `32`)
+
+**Output:**
+```
+✅ Staking message created successfully!
+
+pubkey: 0xaa0f99735a6436d6b7ed763c2eaa8452d753c5152a4fb1e4dc0bd7e33bcfc8cd4fac0e2d6cbab941f423c17728fecc56
+validator_address: 0x1e776a6b65892ec60537a885c17b820301e054b9
+signature: 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+
+To initialize the validator, you need to call the createAndInitializeValidatorIfNecessary function with the pubkey and signature.
+```
+
+### Option 2: Manual Steps
+
+For those who want to understand the process or customize the workflow, follow these manual steps:
+
 ### Prerequisites
 Your directory structure should look like:
 ```
