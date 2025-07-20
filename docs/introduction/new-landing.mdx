@@ -1,0 +1,734 @@
+---
+id: new-landing
+sidebar_position: 10
+hide_table_of_contents: true
+className: landing-page-custom
+---
+
+import Link from '@docusaurus/Link';
+
+<div className="hide-title-wrapper">
+<div className="landing-hero">
+  <div className="hero-content">
+    <h1 className="hero-title">Build the Future of <span className="gradient-text">Decentralized AI</span></h1>
+    <div className="hero-buttons">
+      <Link className="button button--primary button--lg hero-primary-btn" to="/developer-hub/getting-started">
+        Start Building
+      </Link>
+      <Link className="button button--outline button--primary button--lg hero-secondary-btn" to="/concepts/chain">
+        Learn Concepts
+      </Link>
+    </div>
+  </div>
+</div>
+
+<div className="landing-section developer-section">
+  <div className="resource-grid">
+    <Link to="/concepts/chain" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Core Concepts</h3>
+        </div>
+        <p>Understand the fundamentals of 0G's modular AI infrastructure</p>
+        <div className="card-footer">
+          <span className="card-link">Learn More →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/testnet/testnet-overview" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Join Testnet</h3>
+        </div>
+        <p>Connect to Galileo testnet and start building your first dApp on 0G</p>
+        <div className="card-footer">
+          <span className="card-link">Get Started →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/building-on-0g/compute-network/sdk" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Inference SDK</h3>
+        </div>
+        <p>Integrate AI inference into your applications with TypeScript and Python SDKs</p>
+        <div className="card-footer">
+          <span className="card-link">View Docs →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/building-on-0g/storage/sdk" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Storage SDK</h3>
+        </div>
+        <p>Store and retrieve massive datasets with Go and TypeScript client libraries</p>
+        <div className="card-footer">
+          <span className="card-link">View Docs →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/building-on-0g/compute-network/fine-tuning-provider" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Fine-tuning CLI</h3>
+        </div>
+        <p>Customize AI models for your specific use case with our command-line tools</p>
+        <div className="card-footer">
+          <span className="card-link">View Guide →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/run-a-node/validator-node" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Run a Validator</h3>
+        </div>
+        <p>Secure the network and earn rewards by running a validator node</p>
+        <div className="card-footer">
+          <span className="card-link">Setup Guide →</span>
+        </div>
+      </div>
+    </Link>
+  </div>
+</div>
+
+<div className="landing-cta">
+  <div className="cta-glow"></div>
+  <h2>Ready to Build?</h2>
+  <p>Join thousands of developers building the future of decentralized AI</p>
+  <div className="cta-buttons">
+    <Link className="button button--primary button--lg cta-primary-btn" to="/developer-hub/getting-started">
+      Start Building
+    </Link>
+    <Link className="button button--secondary button--lg cta-secondary-btn" to="https://discord.gg/0gLabs">
+      Join Discord
+    </Link>
+  </div>
+</div>
+</div>
+
+<script>{`
+  // Remove the auto-generated title
+  if (typeof window !== 'undefined') {
+    window.addEventListener('load', () => {
+      const titles = document.querySelectorAll('h1');
+      titles.forEach(title => {
+        if (title.textContent === 'new-landing' && !title.classList.contains('hero-title')) {
+          title.style.display = 'none';
+        }
+      });
+    });
+  }
+`}</script>
+
+<style>{`
+  /* Hide sidebar on landing page */
+  .new-landing {
+    --doc-sidebar-width: 0 !important;
+  }
+  
+  /* Hide page title */
+  .landing-page-custom h1:first-child,
+  .landing-page-custom .theme-doc-markdown > h1:first-child,
+  .landing-page-custom header h1,
+  article > h1:first-child,
+  main h1:first-child:not(.hero-title),
+  .hide-title-wrapper ~ h1,
+  h1:has(+ .hide-title-wrapper),
+  .markdown > h1:first-child {
+    display: none !important;
+  }
+  
+  /* More aggressive title hiding */
+  .landing-page-custom .markdown > *:first-child:is(h1) {
+    display: none !important;
+  }
+  
+  /* Hero Section */
+  .landing-hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, 
+      rgba(146, 0, 225, 0.08) 0%, 
+      rgba(183, 95, 255, 0.05) 50%, 
+      transparent 100%);
+  }
+  
+  .landing-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(146, 0, 225, 0.25) 0%, transparent 40%),
+                radial-gradient(ellipse at 80% 50%, rgba(227, 193, 255, 0.2) 0%, transparent 40%);
+    animation: float 20s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  /* Light mode hero title */
+  [data-theme='light'] .hero-title {
+    color: #1A1A1F;
+  }
+  
+  /* Dark mode hero title */
+  [data-theme='dark'] .hero-title {
+    color: #F5F5F7;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 50%, #CB8AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--ifm-color-secondary-darkest);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero-primary-btn,
+  .hero-secondary-btn,
+  .cta-primary-btn,
+  .cta-secondary-btn {
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .hero-primary-btn p,
+  .hero-secondary-btn p,
+  .cta-primary-btn p,
+  .cta-secondary-btn p,
+  .button p {
+    margin: 0 !important;
+  }
+  
+  /* Primary Button - Consistent across both themes */
+  .hero-primary-btn {
+    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 100%);
+    border: none;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s ease;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(146, 0, 225, 0.25);
+  }
+  
+  .hero-primary-btn:hover {
+    background: linear-gradient(135deg, #7A00C0 0%, #9200E1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(146, 0, 225, 0.35);
+    text-decoration: none;
+    color: #FFFFFF !important;
+  }
+  
+  /* Secondary Button Base */
+  .hero-secondary-btn {
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .hero-secondary-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  
+  /* Light mode secondary button */
+  [data-theme='light'] .hero-secondary-btn {
+    color: #7A00C0 !important;
+    border: 2px solid #9200E1;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  [data-theme='light'] .hero-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #9200E1 !important;
+    border-color: #7A00C0;
+    box-shadow: 0 4px 14px rgba(146, 0, 225, 0.25);
+  }
+  
+  /* Dark mode secondary button */
+  [data-theme='dark'] .hero-secondary-btn {
+    color: #E3C1FF !important;
+    border: 2px solid rgba(183, 95, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  [data-theme='dark'] .hero-secondary-btn:hover {
+    background: rgba(183, 95, 255, 0.2);
+    color: #FFFFFF !important;
+    border-color: #B75FFF;
+    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.3);
+  }
+  
+  /* Container adjustments */
+  .landing-page-custom .theme-doc-markdown {
+    max-width: 100%;
+  }
+  
+  .landing-page-custom .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .landing-page-custom article {
+    padding: 0;
+  }
+  
+  /* Developer Section */
+  .landing-section {
+    margin: 2rem auto 4rem;
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: var(--ifm-color-secondary-darkest);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .resource-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    will-change: transform;
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden; /* Prevent flickering */
+  }
+  
+  .card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(183, 95, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    will-change: opacity;
+  }
+  
+  .resource-card:hover .card-glow {
+    opacity: 1;
+  }
+  
+  .resource-card:hover {
+    transform: translate3d(0, -4px, 0); /* Use 3D transform for GPU */
+    text-decoration: none;
+  }
+  
+  .resource-card * {
+    text-decoration: none !important;
+  }
+  
+  .card-content {
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
+  }
+  
+  .card-header {
+    margin-bottom: 1rem;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ifm-heading-color);
+  }
+  
+  .resource-card p {
+    color: var(--ifm-color-secondary-darkest);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    min-height: 3.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .card-footer {
+    margin-top: auto;
+  }
+  
+  .card-link {
+    color: #B75FFF;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: gap 0.3s ease;
+  }
+  
+  .resource-card:hover .card-link {
+    gap: 0.5rem;
+  }
+  
+  /* CTA Section */
+  .landing-cta {
+    text-align: center;
+    padding: 4rem 3rem;
+    margin: 6rem auto 2rem;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(146, 0, 225, 0.08) 0%, rgba(183, 95, 255, 0.12) 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(146, 0, 225, 0.2);
+  }
+  
+  .cta-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(183, 95, 255, 0.1) 0%, transparent 60%);
+    animation: rotate 30s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .landing-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    color: var(--ifm-heading-color);
+  }
+  
+  .landing-cta > p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Light mode CTA text - only direct p children */
+  [data-theme='light'] .landing-cta > p {
+    color: #5A5A6E;
+    opacity: 0.95;
+  }
+  
+  /* Dark mode CTA text - only direct p children */
+  [data-theme='dark'] .landing-cta > p {
+    color: #C0B8D0;
+    opacity: 0.9;
+  }
+  
+  /* Ensure button text is not affected */
+  .landing-cta .button p {
+    color: inherit !important;
+    opacity: 1 !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* CTA Primary Button */
+  .cta-primary-btn {
+    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 100%);
+    border: none;
+    font-weight: 600;
+    padding: 0.875rem 2.5rem;
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(146, 0, 225, 0.3);
+  }
+  
+  .cta-primary-btn:hover {
+    background: linear-gradient(135deg, #7A00C0 0%, #9200E1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(146, 0, 225, 0.4);
+    text-decoration: none;
+    color: #FFFFFF !important;
+  }
+  
+  /* CTA Secondary Button Base */
+  .cta-secondary-btn {
+    font-weight: 600;
+    padding: 0.875rem 2.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* CTA Secondary Button - Light Mode */
+  [data-theme='light'] .cta-secondary-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #9200E1;
+    color: #7A00C0 !important;
+  }
+  
+  [data-theme='light'] .cta-secondary-btn:hover {
+    background: #FFFFFF;
+    border-color: #7A00C0;
+    color: #7A00C0 !important;
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* CTA Secondary Button - Dark Mode */
+  [data-theme='dark'] .cta-secondary-btn {
+    background: rgba(20, 20, 25, 0.6);
+    border: 2px solid rgba(183, 95, 255, 0.6);
+    color: #E3C1FF !important;
+  }
+  
+  [data-theme='dark'] .cta-secondary-btn:hover {
+    background: rgba(183, 95, 255, 0.15);
+    border-color: #CB8AFF;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.3);
+  }
+  
+  /* Override any inherited styles - Force text colors */
+  .landing-cta .button {
+    --ifm-link-color: currentColor !important;
+    --ifm-link-hover-color: currentColor !important;
+  }
+  
+  .landing-cta .cta-primary-btn,
+  .landing-cta .cta-primary-btn:visited,
+  .landing-cta .cta-primary-btn:hover,
+  .landing-cta .cta-primary-btn:active,
+  .landing-cta .cta-primary-btn:focus {
+    color: #FFFFFF !important;
+  }
+  
+  [data-theme='light'] .landing-cta .cta-secondary-btn,
+  [data-theme='light'] .landing-cta .cta-secondary-btn:visited,
+  [data-theme='light'] .landing-cta .cta-secondary-btn:active,
+  [data-theme='light'] .landing-cta .cta-secondary-btn:focus {
+    color: #7A00C0 !important;
+  }
+  
+  [data-theme='light'] .landing-cta .cta-secondary-btn:hover {
+    color: #7A00C0 !important;
+  }
+  
+  [data-theme='dark'] .landing-cta .cta-secondary-btn,
+  [data-theme='dark'] .landing-cta .cta-secondary-btn:visited,
+  [data-theme='dark'] .landing-cta .cta-secondary-btn:active,
+  [data-theme='dark'] .landing-cta .cta-secondary-btn:focus {
+    color: #E3C1FF !important;
+  }
+  
+  [data-theme='dark'] .landing-cta .cta-secondary-btn:hover {
+    color: #FFFFFF !important;
+  }
+  
+  /* Light mode card styles - optimized without glassmorphism */
+  [data-theme='light'] .resource-card {
+    background: #FFFFFF;
+    border: 1px solid #E8E8F0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  [data-theme='light'] .resource-card:hover {
+    border-color: #B75FFF;
+    box-shadow: 0 8px 24px rgba(146, 0, 225, 0.12);
+  }
+  
+  [data-theme='light'] .card-glow {
+    display: none; /* Disable glow in light mode for performance */
+  }
+  
+  /* Dark mode - optimized without backdrop-filter */
+  [data-theme='dark'] .resource-card {
+    background: rgba(30, 30, 35, 0.6);
+    border: 1px solid rgba(183, 95, 255, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.15s ease,
+                border-color 0.15s ease;
+  }
+  
+  [data-theme='dark'] .resource-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(183, 95, 255, 0.08) 0%, 
+      transparent 60%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+  }
+  
+  [data-theme='dark'] .resource-card:hover {
+    background: rgba(40, 40, 45, 0.7);
+    border-color: rgba(183, 95, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(146, 0, 225, 0.2);
+  }
+  
+  [data-theme='dark'] .resource-card:hover::before {
+    opacity: 1;
+  }
+  
+  [data-theme='dark'] .landing-cta {
+    background: linear-gradient(135deg, rgba(146, 0, 225, 0.1) 0%, rgba(183, 95, 255, 0.15) 100%);
+    border-color: rgba(183, 95, 255, 0.3);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 996px) {
+    .landing-hero {
+      padding: 4rem 1.5rem;
+      margin: -1.5rem -1.5rem 3rem -1.5rem;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+    }
+    
+    .resource-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .resource-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+    }
+    
+    .landing-cta {
+      margin: 4rem 0 2rem;
+      padding: 3rem 1.5rem;
+      border-radius: 0;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero-buttons .button {
+      width: 200px;
+    }
+  }
+  
+  /* Monospace for technical elements */
+  .resource-card code {
+    font-family: 'Geist Mono', 'Consolas', monospace;
+  }
+`}</style>
