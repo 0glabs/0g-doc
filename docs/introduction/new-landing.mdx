@@ -11,7 +11,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
 <div className="hide-title-wrapper">
 <div className="landing-hero">
   <div className="hero-content">
-    <h1 className="hero-title">Build the Future of <span className="gradient-text">Decentralized AI</span></h1>
+    <h1 className="hero-title">Build the Future of <span className="text-purple">Decentralized AI</span></h1>
     <div className="hero-buttons">
       <Link className="button button--primary button--lg hero-primary-btn" to="/developer-hub/getting-started">
         Quick Start
@@ -25,18 +25,6 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
 
 <div className="landing-section developer-section">
   <div className="resource-grid">
-    <Link to="/concepts/chain" className="resource-card">
-      <div className="card-glow"></div>
-      <div className="card-content">
-        <div className="card-header">
-          <h3>New to 0G? Start Here</h3>
-        </div>
-        <p>Learn the basics of 0G's AI infrastructure and get oriented quickly</p>
-        <div className="card-footer">
-          <span className="card-link">Get Started →</span>
-        </div>
-      </div>
-    </Link>
     
     <Link to="/developer-hub/testnet/testnet-overview" className="resource-card">
       <div className="card-glow"></div>
@@ -47,6 +35,19 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
         <p>Connect to Galileo testnet and start building your first dApp on 0G</p>
         <div className="card-footer">
           <span className="card-link">Connect to Testnet →</span>
+        </div>
+      </div>
+    </Link>
+
+    <Link to="/concepts/chain" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>New to 0G? Start Here</h3>
+        </div>
+        <p>Learn the basics of 0G's AI infrastructure and get oriented quickly</p>
+        <div className="card-footer">
+          <span className="card-link">Get Started →</span>
         </div>
       </div>
     </Link>
@@ -121,6 +122,18 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
 
 
 <style>{`
+  /* Global font family for landing page */
+  .landing-page-custom,
+  .landing-page-custom * {
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Global button styling for consistency */
+  .landing-page-custom .button {
+    border-radius: 12px;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
   /* Hide sidebar on landing page */
   .new-landing {
     --doc-sidebar-width: 0 !important;
@@ -185,7 +198,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
   
   .hero-title {
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 400; /* Book weight */
     margin-bottom: 1.5rem;
     font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
     letter-spacing: -0.02em;
@@ -208,6 +221,10 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .text-purple{
+    color: #B75FFF;
+  }
   
   .hero-subtitle {
     font-size: 1.25rem;
@@ -216,6 +233,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     margin: 0 auto 2.5rem;
     line-height: 1.6;
     opacity: 0.9;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .hero-buttons {
@@ -242,32 +260,33 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     margin: 0 !important;
   }
   
-  /* Primary Button - Consistent across both themes */
+  /* Primary Button - Black with rounded corners */
   .hero-primary-btn {
-    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 100%);
+    background: #1A1A1F;
     border: none;
-    font-weight: 600;
+    font-weight: 400; /* Book weight */
     padding: 0.875rem 2rem;
+    border-radius: 12px;
     transition: all 0.3s ease;
     color: #FFFFFF !important;
-    box-shadow: 0 4px 14px rgba(146, 0, 225, 0.25);
+    box-shadow: 0 4px 14px rgba(26, 26, 31, 0.25);
   }
   
   .hero-primary-btn:hover {
-    background: linear-gradient(135deg, #7A00C0 0%, #9200E1 100%);
+    background: #2A2A2F;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(146, 0, 225, 0.35);
+    box-shadow: 0 6px 20px rgba(26, 26, 31, 0.35);
     text-decoration: none;
     color: #FFFFFF !important;
   }
   
-  /* Secondary Button Base */
+  /* Secondary Button Base - Soft purple/gray with rounded corners */
   .hero-secondary-btn {
-    font-weight: 600;
+    font-weight: 400; /* Book weight */
     padding: 0.875rem 2rem;
+    border-radius: 12px;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
   }
   
   .hero-secondary-btn:hover {
@@ -275,32 +294,32 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     text-decoration: none;
   }
   
-  /* Light mode secondary button */
+  /* Light mode secondary button - Gray */
   [data-theme='light'] .hero-secondary-btn {
-    color: #7A00C0 !important;
-    border: 2px solid #9200E1;
-    background: rgba(255, 255, 255, 0.8);
+    background: #F5F5F7;
+    color: #5A5A6E !important;
+    border-color: #E8E8F0;
   }
   
   [data-theme='light'] .hero-secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.95);
-    color: #9200E1 !important;
-    border-color: #7A00C0;
-    box-shadow: 0 4px 14px rgba(146, 0, 225, 0.25);
+    background: #EAEAEC;
+    color: #3A3A4A !important;
+    border-color: #D0D0D5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   }
   
-  /* Dark mode secondary button */
+  /* Dark mode secondary button - Soft purple */
   [data-theme='dark'] .hero-secondary-btn {
+    background: rgba(183, 95, 255, 0.12);
     color: #E3C1FF !important;
-    border: 2px solid rgba(183, 95, 255, 0.5);
-    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(183, 95, 255, 0.3);
   }
   
   [data-theme='dark'] .hero-secondary-btn:hover {
     background: rgba(183, 95, 255, 0.2);
     color: #FFFFFF !important;
-    border-color: #B75FFF;
-    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.3);
+    border-color: rgba(183, 95, 255, 0.5);
+    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.25);
   }
   
   /* Container adjustments */
@@ -328,7 +347,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 400; /* Book weight */
     font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
@@ -338,6 +357,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     margin-bottom: 3rem;
     font-size: 1.1rem;
     opacity: 0.9;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .resource-grid {
@@ -401,8 +421,9 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
   .card-header h3 {
     margin: 0;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400; /* Book weight */
     color: var(--ifm-heading-color);
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .resource-card p {
@@ -415,6 +436,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .card-footer {
@@ -431,6 +453,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     align-items: center;
     gap: 0.25rem;
     transition: gap 0.3s ease;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .resource-card:hover .card-link {
@@ -474,7 +497,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
   
   .stat-number {
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 400; /* Book weight */
     background: linear-gradient(135deg, #9200E1 0%, #B75FFF 50%, #CB8AFF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -526,7 +549,8 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     font-size: 1.125rem;
     color: var(--ifm-color-secondary-darkest);
     opacity: 0.8;
-    font-weight: 500;
+    font-weight: 400; /* Book weight */
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .stat-divider {
@@ -572,52 +596,61 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     margin: 6rem auto 2rem;
     max-width: 1200px;
     position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, rgba(146, 0, 225, 0.08) 0%, rgba(183, 95, 255, 0.12) 100%);
-    border-radius: 24px;
-    border: 1px solid rgba(146, 0, 225, 0.2);
+    border-radius: 16px;
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .cta-glow {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(183, 95, 255, 0.1) 0%, transparent 60%);
-    animation: rotate 30s linear infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(183, 95, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: 16px;
   }
   
-  @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  .landing-cta:hover .cta-glow {
+    opacity: 1;
+  }
+  
+  .landing-cta:hover {
+    transform: translate3d(0, -4px, 0);
   }
   
   .landing-cta h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     color: var(--ifm-heading-color);
+    font-weight: 400; /* Book weight */
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
   .landing-cta > p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
   }
   
-  /* Light mode CTA text - only direct p children */
-  [data-theme='light'] .landing-cta > p {
-    color: #5A5A6E;
+  /* CTA text colors for purple background */
+  [data-theme='light'] .landing-cta > p,
+  [data-theme='dark'] .landing-cta > p {
+    color: #4A4A5A;
     opacity: 0.95;
   }
   
-  /* Dark mode CTA text - only direct p children */
-  [data-theme='dark'] .landing-cta > p {
-    color: #C0B8D0;
-    opacity: 0.9;
+  /* CTA heading colors for purple background */
+  [data-theme='light'] .landing-cta h2,
+  [data-theme='dark'] .landing-cta h2 {
+    color: #2A2A3A;
   }
   
   /* Ensure button text is not affected */
@@ -632,100 +665,126 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   
-  /* CTA Primary Button */
+  /* CTA Primary Button - Black with rounded corners */
   .cta-primary-btn {
-    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 100%);
+    background: #1A1A1F;
     border: none;
-    font-weight: 600;
+    font-weight: 400; /* Book weight */
     padding: 0.875rem 2.5rem;
+    border-radius: 12px;
     color: #FFFFFF !important;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(146, 0, 225, 0.3);
+    box-shadow: 0 4px 14px rgba(26, 26, 31, 0.25);
   }
   
   .cta-primary-btn:hover {
-    background: linear-gradient(135deg, #7A00C0 0%, #9200E1 100%);
+    background: #2A2A2F;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(146, 0, 225, 0.4);
+    box-shadow: 0 6px 20px rgba(26, 26, 31, 0.35);
     text-decoration: none;
     color: #FFFFFF !important;
   }
   
-  /* CTA Secondary Button Base */
+  /* CTA Secondary Button Base - Matching hero secondary */
   .cta-secondary-btn {
-    font-weight: 600;
+    font-weight: 400; /* Book weight */
     padding: 0.875rem 2.5rem;
+    border-radius: 12px;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
   }
   
-  /* CTA Secondary Button - Light Mode */
+  .cta-secondary-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  
+  /* CTA Secondary Button - Light Mode (Gray) */
   [data-theme='light'] .cta-secondary-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #9200E1;
-    color: #7A00C0 !important;
+    background: #F5F5F7;
+    color: #5A5A6E !important;
+    border-color: #E8E8F0;
   }
   
   [data-theme='light'] .cta-secondary-btn:hover {
-    background: #FFFFFF;
-    border-color: #7A00C0;
-    color: #7A00C0 !important;
-    transform: translateY(-2px);
-    text-decoration: none;
+    background: #EAEAEC;
+    color: #3A3A4A !important;
+    border-color: #D0D0D5;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   }
   
-  /* CTA Secondary Button - Dark Mode */
+  /* CTA Secondary Button - Dark Mode (Soft purple) */
   [data-theme='dark'] .cta-secondary-btn {
-    background: rgba(20, 20, 25, 0.6);
-    border: 2px solid rgba(183, 95, 255, 0.6);
+    background: rgba(183, 95, 255, 0.12);
     color: #E3C1FF !important;
+    border-color: rgba(183, 95, 255, 0.3);
   }
   
   [data-theme='dark'] .cta-secondary-btn:hover {
-    background: rgba(183, 95, 255, 0.15);
-    border-color: #CB8AFF;
+    background: rgba(183, 95, 255, 0.2);
     color: #FFFFFF !important;
-    transform: translateY(-2px);
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.3);
+    border-color: rgba(183, 95, 255, 0.5);
+    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.25);
   }
   
-  /* Override any inherited styles - Force text colors */
-  .landing-cta .button {
+  /* Override any inherited styles - Force button colors */
+  .landing-page-custom .button {
     --ifm-link-color: currentColor !important;
     --ifm-link-hover-color: currentColor !important;
   }
   
-  .landing-cta .cta-primary-btn,
-  .landing-cta .cta-primary-btn:visited,
-  .landing-cta .cta-primary-btn:hover,
-  .landing-cta .cta-primary-btn:active,
-  .landing-cta .cta-primary-btn:focus {
+  /* Force primary button colors (black) */
+  .hero-primary-btn,
+  .hero-primary-btn:visited,
+  .hero-primary-btn:active,
+  .hero-primary-btn:focus,
+  .cta-primary-btn,
+  .cta-primary-btn:visited,
+  .cta-primary-btn:active,
+  .cta-primary-btn:focus {
     color: #FFFFFF !important;
+    background: #1A1A1F !important;
   }
   
-  [data-theme='light'] .landing-cta .cta-secondary-btn,
-  [data-theme='light'] .landing-cta .cta-secondary-btn:visited,
-  [data-theme='light'] .landing-cta .cta-secondary-btn:active,
-  [data-theme='light'] .landing-cta .cta-secondary-btn:focus {
-    color: #7A00C0 !important;
+  .hero-primary-btn:hover,
+  .cta-primary-btn:hover {
+    color: #FFFFFF !important;
+    background: #2A2A2F !important;
   }
   
-  [data-theme='light'] .landing-cta .cta-secondary-btn:hover {
-    color: #7A00C0 !important;
+  /* Force secondary button colors */
+  [data-theme='light'] .hero-secondary-btn,
+  [data-theme='light'] .hero-secondary-btn:visited,
+  [data-theme='light'] .hero-secondary-btn:active,
+  [data-theme='light'] .hero-secondary-btn:focus,
+  [data-theme='light'] .cta-secondary-btn,
+  [data-theme='light'] .cta-secondary-btn:visited,
+  [data-theme='light'] .cta-secondary-btn:active,
+  [data-theme='light'] .cta-secondary-btn:focus {
+    color: #5A5A6E !important;
   }
   
-  [data-theme='dark'] .landing-cta .cta-secondary-btn,
-  [data-theme='dark'] .landing-cta .cta-secondary-btn:visited,
-  [data-theme='dark'] .landing-cta .cta-secondary-btn:active,
-  [data-theme='dark'] .landing-cta .cta-secondary-btn:focus {
+  [data-theme='light'] .hero-secondary-btn:hover,
+  [data-theme='light'] .cta-secondary-btn:hover {
+    color: #3A3A4A !important;
+  }
+  
+  [data-theme='dark'] .hero-secondary-btn,
+  [data-theme='dark'] .hero-secondary-btn:visited,
+  [data-theme='dark'] .hero-secondary-btn:active,
+  [data-theme='dark'] .hero-secondary-btn:focus,
+  [data-theme='dark'] .cta-secondary-btn,
+  [data-theme='dark'] .cta-secondary-btn:visited,
+  [data-theme='dark'] .cta-secondary-btn:active,
+  [data-theme='dark'] .cta-secondary-btn:focus {
     color: #E3C1FF !important;
   }
   
-  [data-theme='dark'] .landing-cta .cta-secondary-btn:hover {
+  [data-theme='dark'] .hero-secondary-btn:hover,
+  [data-theme='dark'] .cta-secondary-btn:hover {
     color: #FFFFFF !important;
   }
   
@@ -781,9 +840,32 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     opacity: 1;
   }
   
+  /* Light mode CTA styling with solid purple background */
+  [data-theme='light'] .landing-cta {
+    background: #DDC2FB;
+    border: 1px solid rgba(183, 95, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+
+  
+  [data-theme='light'] .landing-cta .cta-glow {
+    display: none; /* Disable glow in light mode for consistency */
+  }
+  
+  /* Dark mode CTA styling with solid purple background */
   [data-theme='dark'] .landing-cta {
-    background: linear-gradient(135deg, rgba(146, 0, 225, 0.1) 0%, rgba(183, 95, 255, 0.15) 100%);
-    border-color: rgba(183, 95, 255, 0.3);
+    background: #DDC2FB;
+    border: 1px solid rgba(183, 95, 255, 0.3);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover effects for both themes with purple background */
+  [data-theme='light'] .landing-cta:hover,
+  [data-theme='dark'] .landing-cta:hover {
+    background: #D4B8F8; /* Slightly darker purple on hover */
+    border-color: rgba(183, 95, 255, 0.5);
+    box-shadow: 0 8px 24px rgba(146, 0, 225, 0.15);
   }
   
   /* Responsive design */
@@ -814,6 +896,7 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     
     .section-title {
       font-size: 2rem;
+      font-weight: 400; /* Book weight */
     }
     
     .resource-grid {
@@ -827,9 +910,9 @@ import SocialProofSection from '@site/src/components/SocialProofSection';
     }
     
     .landing-cta {
-      margin: 4rem 0 2rem;
+      margin: 4rem 1rem 2rem;
       padding: 3rem 1.5rem;
-      border-radius: 0;
+      border-radius: 16px;
     }
     
     .hero-buttons {
