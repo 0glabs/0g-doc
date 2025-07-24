@@ -62,57 +62,60 @@ The CLI provides a comprehensive set of commands for storage operations:
 Available Commands:
   upload      Upload file to 0G Storage network
   download    Download file from 0G Storage network
+  gen         Generate test files
   kv-write    Write to KV streams
   kv-read     Read KV streams
-  gen         Generate test files
   gateway     Start gateway service
   indexer     Start indexer service
   completion  Generate shell completion scripts
   help        Get help for any command
 
 Global Flags:
-  --gas-limit uint       Custom gas limit for transactions
-  --gas-price uint       Custom gas price for transactions
-  --log-level string     Set log level (default "info")
-  --log-color-disabled   Disable colorful log output
-  --web3-log-enabled     Enable Web3 RPC logging
+  --gas-limit uint                Custom gas limit for transactions
+  --gas-price uint                Custom gas price for transactions
+  --log-level string              Set log level (default "info")
+  --log-color-disabled            Disable colorful log output
+  --rpc-retry-count int           Retry count for rpc request (default 5)
+  --rpc-retry-interval duration   Retry interval for rpc request (default 5s)
+  --rpc-timeout duration          Timeout for single rpc request (default 30s)
+  --web3-log-enabled              Enable Web3 RPC logging
 ```
 
 ## Core Operations
 
 ### File Upload
 
-Upload files to the 0G Storage network:
+Upload files to the 0G Storage network using the indexer service:
 
 ```bash
 0g-storage-client upload \
   --url <blockchain_rpc_endpoint> \
-  --contract <log_contract_address> \
   --key <private_key> \
-  --node <storage_node_rpc_endpoint> \
+  --indexer <storage_indexer_endpoint> \
   --file <file_path>
 ```
 
 **Parameters:**
-- `--url`: 0G Chain RPC endpoint (e.g., `https://evmrpc-testnet.0g.ai`)
-- `--contract`: 0G log contract address on the blockchain
+- `--url`: 0G Chain RPC endpoint (see [testnet overview](/docs/developer-hub/testnet/testnet-overview) for endpoints)
 - `--key`: Your private key for signing transactions
-- `--node`: Storage node RPC endpoint (e.g., `https://rpc-storage-testnet.0g.ai`)
+- `--indexer`: Storage indexer endpoint (e.g., `https://indexer-storage-testnet-turbo.0g.ai/`)
 - `--file`: Path to the file you want to upload
+
+The indexer automatically determines the optimal storage nodes based on their shard configurations.
 
 ### File Download
 
-Download files from the network:
+Download files from the network using the indexer:
 
 ```bash
 0g-storage-client download \
-  --node <storage_node_rpc_endpoint> \
+  --indexer <storage_indexer_endpoint> \
   --root <file_root_hash> \
   --file <output_file_path>
 ```
 
 **Parameters:**
-- `--node`: Storage node RPC endpoint
+- `--indexer`: Storage indexer endpoint
 - `--root`: File's Merkle root hash (obtained during upload)
 - `--file`: Where to save the downloaded file
 
@@ -122,7 +125,7 @@ Enable proof verification for enhanced security:
 
 ```bash
 0g-storage-client download \
-  --node <storage_node_rpc_endpoint> \
+  --indexer <storage_indexer_endpoint> \
   --root <file_root_hash> \
   --file <output_file_path> \
   --proof
@@ -138,9 +141,8 @@ The `--proof` flag requests cryptographic proof of data integrity from the stora
 # Upload a document to 0G Storage
 0g-storage-client upload \
   --url https://evmrpc-testnet.0g.ai \
-  --contract 0x8873cc79c5b3b5666535C825205C9a128B1D75F1 \
   --key YOUR_PRIVATE_KEY \
-  --node https://rpc-storage-testnet.0g.ai \
+  --indexer https://indexer-storage-testnet-turbo.0g.ai/ \
   --file ./documents/report.pdf
 
 # Output:
@@ -154,13 +156,13 @@ The `--proof` flag requests cryptographic proof of data integrity from the stora
 ```bash
 # Download file using root hash
 0g-storage-client download \
-  --node https://rpc-storage-testnet.0g.ai \
+  --indexer https://indexer-storage-testnet-turbo.0g.ai/ \
   --root 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 \
   --file ./downloads/report.pdf
 
 # With verification
 0g-storage-client download \
-  --node https://rpc-storage-testnet.0g.ai \
+  --indexer https://indexer-storage-testnet-turbo.0g.ai/ \
   --root 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 \
   --file ./downloads/report.pdf \
   --proof
@@ -168,25 +170,79 @@ The `--proof` flag requests cryptographic proof of data integrity from the stora
 
 ## Key-Value Operations
 
-### Write to KV Store
+### Write to KV Store (Batch Operations)
+
+Write multiple key-value pairs in a single operation:
 
 ```bash
 0g-storage-client kv-write \
   --url <blockchain_rpc_endpoint> \
-  --contract <kv_contract_address> \
   --key <private_key> \
+  --indexer <storage_indexer_endpoint> \
   --stream-id <stream_id> \
-  --stream-key <key> \
-  --stream-value <value>
+  --stream-keys <comma_separated_keys> \
+  --stream-values <comma_separated_values>
+```
+
+**Important:** `--stream-keys` and `--stream-values` are comma-separated string lists and their length must be equal.
+
+**Example:**
+```bash
+0g-storage-client kv-write \
+  --url https://evmrpc-testnet.0g.ai \
+  --key YOUR_PRIVATE_KEY \
+  --indexer https://indexer-storage-testnet-turbo.0g.ai/ \
+  --stream-id 1 \
+  --stream-keys "key1,key2,key3" \
+  --stream-values "value1,value2,value3"
 ```
 
 ### Read from KV Store
 
 ```bash
 0g-storage-client kv-read \
-  --node <kv_node_endpoint> \
+  --node <kv_node_rpc_endpoint> \
   --stream-id <stream_id> \
-  --stream-key <key>
+  --stream-keys <comma_separated_keys>
+```
+
+:::info KV Read Endpoint
+Note that for KV read operations, you need to specify `--node` as the URL of a KV node, not the indexer endpoint.
+:::
+
+## RESTful API Gateway
+
+The indexer service provides a RESTful API gateway for easy HTTP-based file access:
+
+### File Downloads via HTTP
+
+**By Transaction Sequence Number:**
+```
+GET /file?txSeq=7
+```
+
+**By File Merkle Root:**
+```
+GET /file?root=0x0376e0d95e483b62d5100968ed17fe1b1d84f0bc5d9bda8000cdfd3f39a59927
+```
+
+**With Custom Filename:**
+```
+GET /file?txSeq=7&name=foo.log
+```
+
+### Folder Support
+
+Download specific files from within structured folders:
+
+**By Transaction Sequence:**
+```
+GET /file/{txSeq}/path/to/file
+```
+
+**By Merkle Root:**
+```
+GET /file/{merkleRoot}/path/to/file
 ```
 
 ## Advanced Features
@@ -199,6 +255,18 @@ Control transaction costs with custom gas parameters:
 0g-storage-client upload \
   --gas-limit 3000000 \
   --gas-price 10000000000 \
+  # ... other parameters
+```
+
+### RPC Configuration
+
+Configure RPC retry behavior and timeouts:
+
+```bash
+0g-storage-client upload \
+  --rpc-retry-count 10 \
+  --rpc-retry-interval 3s \
+  --rpc-timeout 60s \
   # ... other parameters
 ```
 
@@ -235,13 +303,25 @@ Enable tab completion for easier command entry:
 0g-storage-client completion fish > ~/.config/fish/completions/0g-storage-client.fish
 ```
 
+## Indexer Service
+
+The indexer service provides two types of storage node discovery:
+
+### Trusted Nodes
+Well-maintained nodes that provide stable and reliable service.
+
+### Discovered Nodes  
+Nodes discovered automatically through the P2P network.
+
+The indexer intelligently routes data to appropriate storage nodes based on their shard configurations, eliminating the need to manually specify storage nodes or contract addresses.
+
 ## Important Considerations
 
 ### Network Configuration
 
 :::info Required Information
-- **Contract Addresses**: Find the latest contract addresses in the [0G documentation](https://docs.0g.ai) or on the [Storage Explorer](https://storagescan-galileo.0g.ai/)
-- **Node Endpoints**: Use team-provided endpoints or run your own storage node
+- **RPC Endpoints**: Find the latest RPC endpoints in the [testnet overview](/docs/developer-hub/testnet/testnet-overview)
+- **Indexer Endpoint**: Use `https://indexer-storage-testnet-turbo.0g.ai/` for testnet operations
 - **Private Keys**: Keep your private keys secure and never share them
 :::
 
@@ -249,7 +329,7 @@ Enable tab completion for easier command entry:
 
 - **Root Hash Storage**: Save file root hashes after upload - they're required for downloads
 - **Transaction Monitoring**: Track upload transactions on the blockchain explorer
-- **Node Selection**: Choose reliable storage nodes or run your own for better control
+- **Indexer Benefits**: The indexer automatically selects optimal storage nodes for better reliability
 
 ## Running Services
 
@@ -292,9 +372,8 @@ tar -czf $BACKUP_FILE /important/data
 # Upload to 0G
 ROOT_HASH=$(0g-storage-client upload \
   --url $RPC_URL \
-  --contract $CONTRACT \
   --key $PRIVATE_KEY \
-  --node $NODE_URL \
+  --indexer $INDEXER_URL \
   --file $BACKUP_FILE | grep "Root hash" | cut -d' ' -f3)
 
 # Save root hash
@@ -327,14 +406,23 @@ Check balance: Use a blockchain explorer or wallet to verify funds.
 </details>
 
 <details>
-<summary>**"Node not found" error during download**</summary>
+<summary>**"Indexer not found" error during upload/download**</summary>
 
 This can happen if:
-- The storage node is offline
-- The file hasn't propagated to the specified node
-- The root hash is incorrect
+- The indexer service is offline
+- The indexer endpoint URL is incorrect
+- Network connectivity issues
 
-Try using a different node endpoint or verify the root hash.
+Verify the indexer endpoint and try again.
+</details>
+
+<details>
+<summary>**RPC timeout errors**</summary>
+
+If you experience RPC timeouts, try adjusting the timeout settings:
+```bash
+--rpc-timeout 60s --rpc-retry-count 10 --rpc-retry-interval 3s
+```
 </details>
 
 ## Best Practices
@@ -343,7 +431,9 @@ Try using a different node endpoint or verify the root hash.
 2. **Backup Root Hashes**: Always save file root hashes after uploads
 3. **Use Verification**: Enable `--proof` for important downloads
 4. **Monitor Transactions**: Track uploads on the blockchain explorer
-5. **Test First**: Use testnet before mainnet operations
+5. **Test with Gen**: Use the `gen` command to create test files for development
+6. **HTTP Access**: Leverage the RESTful API for web applications and integrations
+7. **Batch KV Operations**: Use comma-separated lists for efficient key-value operations
 
 ---
 
