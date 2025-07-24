@@ -96,7 +96,7 @@ Upload files to the 0G Storage network using the indexer service:
 ```
 
 **Parameters:**
-- `--url`: 0G Chain RPC endpoint (see [testnet overview](/docs/developer-hub/testnet/testnet-overview) for endpoints)
+- `--url`: 0G Chain RPC endpoint (see [testnet overview](../../testnet/testnet-overview) for endpoints)
 - `--key`: Your private key for signing transactions
 - `--indexer`: Storage indexer endpoint (e.g., `https://indexer-storage-testnet-turbo.0g.ai/`)
 - `--file`: Path to the file you want to upload
@@ -320,7 +320,7 @@ The indexer intelligently routes data to appropriate storage nodes based on thei
 ### Network Configuration
 
 :::info Required Information
-- **RPC Endpoints**: Find the latest RPC endpoints in the [testnet overview](/docs/developer-hub/testnet/testnet-overview)
+- **RPC Endpoints**: Find the latest RPC endpoints in the [testnet overview](../../testnet/testnet-overview)
 - **Indexer Endpoint**: Use `https://indexer-storage-testnet-turbo.0g.ai/` for testnet operations
 - **Private Keys**: Keep your private keys secure and never share them
 :::
