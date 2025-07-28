@@ -128,6 +128,42 @@ Check logs to confirm your node is running properly.
 - No error messages in either log
 :::
 
+<details>
+<summary>Backup & Recovery</summary>
+
+These files are essential for validator recovery and must be backed up securely:
+
+```bash
+# Essential validator keys
+/{your data path}/0g-home/0gchaind-home/config/
+```
+#### Recovery Process
+
+To restore your validator from backup:
+
+1. **Stop running services**:
+   ```bash
+   pkill 0gchaind
+   pkill geth
+   ```
+
+2. **Restore key files**:
+   ```bash
+   cp ~/validator-backup/node_key.json /{your data path}/0g-home/0gchaind-home/config/
+   cp ~/validator-backup/priv_validator_key.json /{your data path}/0g-home/0gchaind-home/config/
+   ```
+
+3. **Restart services** following steps 7-8 from the setup guide.
+
+:::warning **Important Notes**
+- **Never share or expose** your `priv_validator_key.json` file
+- Store backups in multiple secure locations
+- Test recovery process in a non-production environment first
+- Default configuration users only need the two key files mentioned above
+:::
+
+</details>
+
 ## Next Steps
 
 ### Staking Integration
@@ -135,5 +171,4 @@ Check logs to confirm your node is running properly.
 Once your validator node is running, you can interact with the staking system programmatically using smart contracts:
 
 - **[Staking Interfaces Guide](../developer-hub/building-on-0g/contracts-on-0g/staking-interfaces)** - Complete documentation for integrating with 0G Chain staking smart contracts
-
 

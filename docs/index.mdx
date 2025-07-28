@@ -1,0 +1,941 @@
+---
+id: index
+title: 0G Documentation
+hide_title: true
+hide_table_of_contents: true
+className: landing-page-custom
+---
+
+import Link from '@docusaurus/Link';
+import SocialProofSection from '@site/src/components/SocialProofSection';
+
+<div className="hide-title-wrapper">
+<div className="landing-hero">
+  <div className="hero-content">
+    <h1 className="hero-title">Build the Future of <span className="text-purple">Decentralized AI</span></h1>
+    <div className="hero-buttons">
+      <Link className="button button--primary button--lg hero-primary-btn" to="/developer-hub/getting-started">
+        Quick Start
+      </Link>
+      <Link className="button button--outline button--primary button--lg hero-secondary-btn" to="/concepts/chain">
+        Learn Concepts
+      </Link>
+    </div>
+  </div>
+</div>
+
+<div className="landing-section developer-section">
+  <div className="resource-grid">
+    
+    <Link to="/developer-hub/testnet/testnet-overview" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Join Testnet</h3>
+        </div>
+        <p>Connect to Galileo testnet and start building your first dApp on 0G</p>
+        <div className="card-footer">
+          <span className="card-link">Connect to Testnet →</span>
+        </div>
+      </div>
+    </Link>
+
+    <Link to="/introduction/understanding-0g" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>New to 0G? Start Here</h3>
+        </div>
+        <p>Learn the basics of 0G's AI infrastructure and get oriented quickly</p>
+        <div className="card-footer">
+          <span className="card-link">Get Started →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/building-on-0g/compute-network/sdk" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Inference SDK</h3>
+        </div>
+        <p>Integrate AI inference into your applications with SDKs</p>
+        <div className="card-footer">
+          <span className="card-link">View Docs →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/building-on-0g/storage/sdk" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Storage SDK</h3>
+        </div>
+        <p>Store and retrieve massive datasets with Go and TypeScript client libraries</p>
+        <div className="card-footer">
+          <span className="card-link">View Docs →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/developer-hub/building-on-0g/compute-network/cli" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Fine-tuning CLI</h3>
+        </div>
+        <p>Customize AI models for your specific use case with our command-line tools</p>
+        <div className="card-footer">
+          <span className="card-link">View Docs →</span>
+        </div>
+      </div>
+    </Link>
+    
+    <Link to="/run-a-node/validator-node" className="resource-card">
+      <div className="card-glow"></div>
+      <div className="card-content">
+        <div className="card-header">
+          <h3>Run a Validator</h3>
+        </div>
+        <p>Secure the network and earn rewards by running a validator node</p>
+        <div className="card-footer">
+          <span className="card-link">Setup Guide →</span>
+        </div>
+      </div>
+    </Link>
+  </div>
+</div>
+
+<SocialProofSection />
+
+<div className="landing-cta">
+  <div className="cta-glow"></div>
+  <h2>Ready to Build?</h2>
+  <p>Join thousands of developers building the future of decentralized AI</p>
+  <div className="cta-buttons">
+    <Link className="button button--primary button--lg cta-primary-btn" to="/developer-hub/getting-started">
+      View Full Documentation
+    </Link>
+  </div>
+</div>
+</div>
+
+
+<style>{`
+  /* Global font family for landing page */
+  .landing-page-custom,
+  .landing-page-custom * {
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Global button styling for consistency */
+  .landing-page-custom .button {
+    border-radius: 12px;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Hide sidebar on landing page */
+  .new-landing {
+    --doc-sidebar-width: 0 !important;
+  }
+  
+  /* Hide page title */
+  .landing-page-custom h1:first-child,
+  .landing-page-custom .theme-doc-markdown > h1:first-child,
+  .landing-page-custom header h1,
+  article > h1:first-child,
+  main h1:first-child:not(.hero-title),
+  .hide-title-wrapper ~ h1,
+  h1:has(+ .hide-title-wrapper),
+  .markdown > h1:first-child {
+    display: none !important;
+  }
+  
+  /* More aggressive title hiding */
+  .landing-page-custom .markdown > *:first-child:is(h1) {
+    display: none !important;
+  }
+  
+  /* Hero Section */
+  .landing-hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, 
+      rgba(146, 0, 225, 0.08) 0%, 
+      rgba(183, 95, 255, 0.05) 50%, 
+      transparent 100%);
+  }
+  
+  .landing-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(146, 0, 225, 0.25) 0%, transparent 40%),
+                radial-gradient(ellipse at 80% 50%, rgba(227, 193, 255, 0.2) 0%, transparent 40%);
+    animation: float 20s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 400; /* Book weight */
+    margin-bottom: 1.5rem;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  /* Light mode hero title */
+  [data-theme='light'] .hero-title {
+    color: #1A1A1F;
+  }
+  
+  /* Dark mode hero title */
+  [data-theme='dark'] .hero-title {
+    color: #F5F5F7;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 50%, #CB8AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-purple{
+    color: #B75FFF;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--ifm-color-secondary-darkest);
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero-primary-btn,
+  .hero-secondary-btn,
+  .cta-primary-btn,
+  .cta-secondary-btn {
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .hero-primary-btn p,
+  .hero-secondary-btn p,
+  .cta-primary-btn p,
+  .cta-secondary-btn p,
+  .button p {
+    margin: 0 !important;
+  }
+  
+  /* Primary Button - Black with rounded corners */
+  .hero-primary-btn {
+    background: #1A1A1F;
+    border: none;
+    font-weight: 400; /* Book weight */
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(26, 26, 31, 0.25);
+  }
+  
+  .hero-primary-btn:hover {
+    background: #2A2A2F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 26, 31, 0.35);
+    text-decoration: none;
+    color: #FFFFFF !important;
+  }
+  
+  /* Secondary Button Base - Soft purple/gray with rounded corners */
+  .hero-secondary-btn {
+    font-weight: 400; /* Book weight */
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .hero-secondary-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  
+  /* Light mode secondary button - Gray */
+  [data-theme='light'] .hero-secondary-btn {
+    background: #F5F5F7;
+    color: #5A5A6E !important;
+    border-color: #E8E8F0;
+  }
+  
+  [data-theme='light'] .hero-secondary-btn:hover {
+    background: #EAEAEC;
+    color: #3A3A4A !important;
+    border-color: #D0D0D5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dark mode secondary button - Soft purple */
+  [data-theme='dark'] .hero-secondary-btn {
+    background: rgba(183, 95, 255, 0.12);
+    color: #E3C1FF !important;
+    border-color: rgba(183, 95, 255, 0.3);
+  }
+  
+  [data-theme='dark'] .hero-secondary-btn:hover {
+    background: rgba(183, 95, 255, 0.2);
+    color: #FFFFFF !important;
+    border-color: rgba(183, 95, 255, 0.5);
+    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.25);
+  }
+  
+  /* Container adjustments */
+  .landing-page-custom .theme-doc-markdown {
+    max-width: 100%;
+  }
+  
+  .landing-page-custom .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .landing-page-custom article {
+    padding: 0;
+  }
+  
+  /* Developer Section */
+  .landing-section {
+    margin: 2rem auto 4rem;
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400; /* Book weight */
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: var(--ifm-color-secondary-darkest);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .resource-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    will-change: transform;
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden; /* Prevent flickering */
+  }
+  
+  .card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(183, 95, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    will-change: opacity;
+  }
+  
+  .resource-card:hover .card-glow {
+    opacity: 1;
+  }
+  
+  .resource-card:hover {
+    transform: translate3d(0, -4px, 0); /* Use 3D transform for GPU */
+    text-decoration: none;
+  }
+  
+  .resource-card * {
+    text-decoration: none !important;
+  }
+  
+  .card-content {
+    position: relative;
+    padding: 2rem;
+    z-index: 1;
+  }
+  
+  .card-header {
+    margin-bottom: 1rem;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400; /* Book weight */
+    color: var(--ifm-heading-color);
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .resource-card p {
+    color: var(--ifm-color-secondary-darkest);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    min-height: 3.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .card-footer {
+    margin-top: auto;
+  }
+  
+  .card-link {
+    color: #B75FFF;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: gap 0.3s ease;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .resource-card:hover .card-link {
+    gap: 0.5rem;
+  }
+  
+  /* Social Proof Section */
+  .social-proof-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .social-proof-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(183, 95, 255, 0.3) 50%, 
+      transparent 100%);
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .stat-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 3.5rem;
+    font-weight: 400; /* Book weight */
+    background: linear-gradient(135deg, #9200E1 0%, #B75FFF 50%, #CB8AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Fade in animation for stats */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Initial state - hidden */
+  .stat-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  /* Visible state - animated in */
+  .stat-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stagger the animations */
+  .stat-item:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  
+  .stat-item:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  
+  .stat-item:nth-child(5) {
+    transition-delay: 0.6s;
+  }
+  
+  .stat-label {
+    font-size: 1.125rem;
+    color: var(--ifm-color-secondary-darkest);
+    opacity: 0.8;
+    font-weight: 400; /* Book weight */
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(180deg, 
+      transparent 0%, 
+      rgba(183, 95, 255, 0.3) 50%, 
+      transparent 100%);
+  }
+  
+  /* Light mode adjustments */
+  [data-theme='light'] .stat-label {
+    color: #5A5A6E;
+  }
+  
+  /* Dark mode adjustments */
+  [data-theme='dark'] .stat-label {
+    color: #C0B8D0;
+  }
+  
+  /* Responsive stats */
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .stat-divider {
+      width: 60px;
+      height: 1px;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* CTA Section */
+  .landing-cta {
+    text-align: center;
+    padding: 4rem 3rem;
+    margin: 6rem auto 2rem;
+    max-width: 1200px;
+    position: relative;
+    border-radius: 16px;
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .cta-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(183, 95, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: 16px;
+  }
+  
+  .landing-cta:hover .cta-glow {
+    opacity: 1;
+  }
+  
+  .landing-cta:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+  
+  .landing-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    color: var(--ifm-heading-color);
+    font-weight: 400; /* Book weight */
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  .landing-cta > p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    font-family: 'Regola Pro', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* CTA text colors for purple background */
+  [data-theme='light'] .landing-cta > p,
+  [data-theme='dark'] .landing-cta > p {
+    color: #4A4A5A;
+    opacity: 0.95;
+  }
+  
+  /* CTA heading colors for purple background */
+  [data-theme='light'] .landing-cta h2,
+  [data-theme='dark'] .landing-cta h2 {
+    color: #2A2A3A;
+  }
+  
+  /* Ensure button text is not affected */
+  .landing-cta .button p {
+    color: inherit !important;
+    opacity: 1 !important;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* CTA Primary Button - Black with rounded corners */
+  .cta-primary-btn {
+    background: #1A1A1F;
+    border: none;
+    font-weight: 400; /* Book weight */
+    padding: 0.875rem 2.5rem;
+    border-radius: 12px;
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(26, 26, 31, 0.25);
+  }
+  
+  .cta-primary-btn:hover {
+    background: #2A2A2F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 26, 31, 0.35);
+    text-decoration: none;
+    color: #FFFFFF !important;
+  }
+  
+  /* CTA Secondary Button Base - Matching hero secondary */
+  .cta-secondary-btn {
+    font-weight: 400; /* Book weight */
+    padding: 0.875rem 2.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .cta-secondary-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  
+  /* CTA Secondary Button - Light Mode (Gray) */
+  [data-theme='light'] .cta-secondary-btn {
+    background: #F5F5F7;
+    color: #5A5A6E !important;
+    border-color: #E8E8F0;
+  }
+  
+  [data-theme='light'] .cta-secondary-btn:hover {
+    background: #EAEAEC;
+    color: #3A3A4A !important;
+    border-color: #D0D0D5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* CTA Secondary Button - Dark Mode (Soft purple) */
+  [data-theme='dark'] .cta-secondary-btn {
+    background: rgba(183, 95, 255, 0.12);
+    color: #E3C1FF !important;
+    border-color: rgba(183, 95, 255, 0.3);
+  }
+  
+  [data-theme='dark'] .cta-secondary-btn:hover {
+    background: rgba(183, 95, 255, 0.2);
+    color: #FFFFFF !important;
+    border-color: rgba(183, 95, 255, 0.5);
+    box-shadow: 0 4px 14px rgba(183, 95, 255, 0.25);
+  }
+  
+  /* Override any inherited styles - Force button colors */
+  .landing-page-custom .button {
+    --ifm-link-color: currentColor !important;
+    --ifm-link-hover-color: currentColor !important;
+  }
+  
+  /* Force primary button colors (black) */
+  .hero-primary-btn,
+  .hero-primary-btn:visited,
+  .hero-primary-btn:active,
+  .hero-primary-btn:focus,
+  .cta-primary-btn,
+  .cta-primary-btn:visited,
+  .cta-primary-btn:active,
+  .cta-primary-btn:focus {
+    color: #FFFFFF !important;
+    background:rgb(46, 46, 47) !important;
+  }
+  
+  .hero-primary-btn:hover,
+  .cta-primary-btn:hover {
+    color: #FFFFFF !important;
+    background: #2A2A2F !important;
+  }
+  
+  /* Force secondary button colors */
+  [data-theme='light'] .hero-secondary-btn,
+  [data-theme='light'] .hero-secondary-btn:visited,
+  [data-theme='light'] .hero-secondary-btn:active,
+  [data-theme='light'] .hero-secondary-btn:focus,
+  [data-theme='light'] .cta-secondary-btn,
+  [data-theme='light'] .cta-secondary-btn:visited,
+  [data-theme='light'] .cta-secondary-btn:active,
+  [data-theme='light'] .cta-secondary-btn:focus {
+    color: #5A5A6E !important;
+  }
+  
+  [data-theme='light'] .hero-secondary-btn:hover,
+  [data-theme='light'] .cta-secondary-btn:hover {
+    color: #3A3A4A !important;
+  }
+  
+  [data-theme='dark'] .hero-secondary-btn,
+  [data-theme='dark'] .hero-secondary-btn:visited,
+  [data-theme='dark'] .hero-secondary-btn:active,
+  [data-theme='dark'] .hero-secondary-btn:focus,
+  [data-theme='dark'] .cta-secondary-btn,
+  [data-theme='dark'] .cta-secondary-btn:visited,
+  [data-theme='dark'] .cta-secondary-btn:active,
+  [data-theme='dark'] .cta-secondary-btn:focus {
+    color: #E3C1FF !important;
+  }
+  
+  [data-theme='dark'] .hero-secondary-btn:hover,
+  [data-theme='dark'] .cta-secondary-btn:hover {
+    color: #FFFFFF !important;
+  }
+  
+  /* Light mode card styles - optimized without glassmorphism */
+  [data-theme='light'] .resource-card {
+    background: #FFFFFF;
+    border: 1px solid #E8E8F0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  [data-theme='light'] .resource-card:hover {
+    border-color: #B75FFF;
+    box-shadow: 0 8px 24px rgba(146, 0, 225, 0.12);
+  }
+  
+  [data-theme='light'] .card-glow {
+    display: none; /* Disable glow in light mode for performance */
+  }
+  
+  /* Dark mode - optimized without backdrop-filter */
+  [data-theme='dark'] .resource-card {
+    background: rgba(30, 30, 35, 0.6);
+    border: 1px solid rgba(183, 95, 255, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.15s ease,
+                border-color 0.15s ease;
+  }
+  
+  [data-theme='dark'] .resource-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(183, 95, 255, 0.08) 0%, 
+      transparent 60%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+  }
+  
+  [data-theme='dark'] .resource-card:hover {
+    background: rgba(40, 40, 45, 0.7);
+    border-color: rgba(183, 95, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(146, 0, 225, 0.2);
+  }
+  
+  [data-theme='dark'] .resource-card:hover::before {
+    opacity: 1;
+  }
+  
+  /* Light mode CTA styling with solid purple background */
+  [data-theme='light'] .landing-cta {
+    background: #DDC2FB;
+    border: 1px solid rgba(183, 95, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+
+  
+  [data-theme='light'] .landing-cta .cta-glow {
+    display: none; /* Disable glow in light mode for consistency */
+  }
+  
+  /* Dark mode CTA styling with solid purple background */
+  [data-theme='dark'] .landing-cta {
+    background: #DDC2FB;
+    border: 1px solid rgba(183, 95, 255, 0.3);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover effects for both themes with purple background */
+  [data-theme='light'] .landing-cta:hover,
+  [data-theme='dark'] .landing-cta:hover {
+    background: #D4B8F8; /* Slightly darker purple on hover */
+    border-color: rgba(183, 95, 255, 0.5);
+    box-shadow: 0 8px 24px rgba(146, 0, 225, 0.15);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 996px) {
+    .landing-hero {
+      padding: 4rem 1.5rem;
+      margin: -1.5rem -1.5rem 3rem -1.5rem;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+    }
+    
+    .resource-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      font-weight: 400; /* Book weight */
+    }
+    
+    .resource-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+    }
+    
+    .landing-cta {
+      margin: 4rem 1rem 2rem;
+      padding: 3rem 1.5rem;
+      border-radius: 16px;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    
+    .hero-buttons .button {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  /* Monospace for technical elements */
+  .resource-card code {
+    font-family: 'Geist Mono', 'Consolas', monospace;
+  }
+`}</style> 

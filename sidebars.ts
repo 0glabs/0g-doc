@@ -7,10 +7,6 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Introduction',
       className: 'sidebar-category intro',
-      link: {
-        type: 'doc',
-        id: 'introduction/understanding-0g',
-      },
       items: [
         'introduction/understanding-0g',
         'introduction/vision-mission',
