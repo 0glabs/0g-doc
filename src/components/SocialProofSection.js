@@ -42,7 +42,7 @@ const SocialProofSection = () => {
     const targets = {
       partners: 350,
       accounts: 20,
-      transactions: 220
+      transactions: 250
     };
 
     let currentStep = 0;

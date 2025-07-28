@@ -314,7 +314,7 @@ VALIDATOR_CONTRACT_ADDRESS=0x1e776a6b65892ec60537a885c17b820301e054b9
 VALIDATOR_INITIAL_DELEGATION_IN_GWEI=32000000000 # 32 ethers
 
 # Generate signature for validator initialization
-.bin/0gchaind deposit create-validator \
+./bin/0gchaind deposit create-validator \
     $VALIDATOR_CONTRACT_ADDRESS \
     $VALIDATOR_INITIAL_DELEGATION_IN_GWEI \
     $HOMEDIR/config/genesis.json \

@@ -2,7 +2,6 @@
 id: understanding-0g
 title: Understanding 0G
 sidebar_position: 1
-slug: /
 ---
 
 # Understanding 0G
