@@ -19,6 +19,9 @@ Unlike Validator Nodes that focus on securing the blockchain itself, Storage Nod
 ##### **Data Availability Services**
 DA Nodes are similar to Storage Nodes but focus on immediacy and short-term accessibility to support real-time operations. This data is typically used by Layer 2 and rollup solutions for data availability and is not typically stored long-term. Think of these nodes as the network's librarians, ensuring that data can be quickly retrieved when needed.
 
+##### **Archival Nodes**
+Archival Nodes maintain complete historical blockchain data and state, providing comprehensive access to the network's entire history. These nodes are essential for applications requiring historical data analysis, compliance, and serving as reliable backups for the network's complete transaction history.
+
 ### Why Run a Node?
 
 Running a node isn't just about supporting the network; it's also a way to earn rewards for your contribution. By actively participating in the 0G ecosystem, you'll be eligible to receive rewards that incentivize your efforts.
@@ -42,5 +45,7 @@ We've made it easy to get started. The table below outlines the hardware require
 #### Next Steps
 Ready to set up your node? Check out our detailed guides:
 
+- [Validator Node Setup Guide](validator-node.md)
 - [Storage Node Setup Guide](storage-node.md)
 - [Data Availability Service Setup Guide](da-node.md)
+- [Archival Node Setup Guide](archival-node.md)
