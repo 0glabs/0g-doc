@@ -1,6 +1,6 @@
 ---
 id: node-sale-index
-title: Node Sale
+title: AI Alignment node
 sidebar_position: 1
 ---
 
