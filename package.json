@@ -1,6 +1,6 @@
 {
   "name": "docs-0-g",
-  "version": ">=18.0.0",
+  "version": ">=20.11.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -51,6 +51,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.11.0"
   }
 }
