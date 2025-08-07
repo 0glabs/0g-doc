@@ -92,7 +92,7 @@ The integration of 0G with DePIN infrastructure creates a comprehensive Web3 com
 Ready to build with decentralized infrastructure? Explore these resources:
 - [0G Compute Network](/developer-hub/building-on-0g/compute-network/overview) - Learn about 0G's compute layer
 - [Developer SDK](/developer-hub/building-on-0g/compute-network/sdk) - Start building with 0G Compute
-- [Partner Ecosystem](/resources/ecosystem) - Discover more DePIN providers
+- [Developer Hub](/developer-hub/getting-started) - Get started building on 0G
 
 ---
 
