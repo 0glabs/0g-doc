@@ -197,6 +197,7 @@ const sidebars: SidebarsConfig = {
             'node-sale/intro/eligibility',
           ],
         },
+        'node-sale/details/kyc-verification',
         {
           type: 'category',
           label: 'AI Alignment node Details',

@@ -30,16 +30,16 @@ INFT approach:
 
 ## Why INFTs Matter
 
-### 🧠 True AI Ownership
+### True AI Ownership
 Unlike regular NFTs that just point to metadata, INFTs contain the actual AI agent. When you own an INFT, you own the complete intelligence, not just a certificate.
 
-### 🔒 Privacy-First Design
+### Privacy-First Design
 AI agents often contain sensitive data or proprietary algorithms. INFTs keep this data encrypted throughout the entire lifecycle - only the owner can access it.
 
-### 🔄 Secure Transfers
+### Secure Transfers
 When an INFT changes hands, both the ownership AND the encrypted AI intelligence transfer together. The new owner gets a fully functional AI agent.
 
-### 🌐 Decentralized Storage
+### Decentralized Storage
 INFTs leverage 0G Storage to keep AI agents permanently available without relying on centralized servers that could go offline.
 
 ## Real-World Use Cases
@@ -54,13 +54,6 @@ INFTs leverage 0G Storage to keep AI agents permanently available without relyin
 
 ## How It Works
 
-```
-1. 🤖 Create AI Agent    →  2. 🔐 Encrypt Intelligence
-          ↓                           ↓
-4. ✅ Full Ownership     ←  3. 🏷️ Mint as INFT
-```
-
-**The Process:**
 1. **Create**: Build and train your AI agent
 2. **Encrypt**: Secure the AI's intelligence with encryption
 3. **Mint**: Create an INFT containing the encrypted AI
@@ -91,17 +84,7 @@ INFTs leverage the complete 0G ecosystem:
 ### For AI Developers
 Transform your AI agents into tradeable assets while maintaining privacy and control.
 
-👉 **[Build INFTs](../developer-hub/building-on-0g/inft/inft-overview)** - Complete development guide
-
-### For Users
-Own AI agents that actually work when you buy them, not just certificates pointing to nothing.
-
-👉 **[AI Marketplace](#)** - Browse available AI agents (coming soon)
-
-### For Investors
-Invest in AI capabilities, not just promises. INFTs let you own actual intelligence.
-
-👉 **[INFT Economics](#)** - Understanding value and rewards (coming soon)
+**[Build INFTs](../developer-hub/building-on-0g/inft/inft-overview)** - Complete development guide
 
 ---
 
