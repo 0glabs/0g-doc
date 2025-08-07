@@ -250,9 +250,13 @@ The wallet signing step is mandatory. Submissions without proper signing will NO
 3. Click **"Register"** to submit for KYC verification
 4. You'll see a confirmation screen, You can set password on this screen for future changes
 
-![kyc-flow-11](/img/kyc-flow-11.png)
+<div style={{textAlign: 'center'}}>
+  <img src="/img/kyc-flow-11.png" alt="kyc-flow-11" style={{width: '300px', maxWidth: '100%'}} />
+</div>
 
-![kyc-flow-12](/img/kyc-flow-12.png)
+<div style={{textAlign: 'center'}}>
+  <img src="/img/kyc-flow-12.png" alt="kyc-flow-12" style={{width: '300px', maxWidth: '100%'}} />
+</div>
 
 ---
 
