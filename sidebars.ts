@@ -23,7 +23,9 @@ const sidebars: SidebarsConfig = {
         'concepts/compute',
         'concepts/storage',
         'concepts/da',
+        'concepts/ai-alignment',
         'concepts/inft',
+        'concepts/depin',
       ],
     },
     
