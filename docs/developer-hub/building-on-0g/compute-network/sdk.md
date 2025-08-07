@@ -83,7 +83,7 @@ await broker.ledger.addLedger(ethers.parseEther("0.1"));
 
 // Check balance
 const account = await broker.ledger.getLedger();
-console.log(`Balance: ${ethers.formatEther(account.balance)} OG`);
+console.log(`Total Balance: ${ethers.formatEther(account.totalBalance)} OG`);
 ```
 
 ### Discover Available Services
