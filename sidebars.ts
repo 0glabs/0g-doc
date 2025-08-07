@@ -23,6 +23,9 @@ const sidebars: SidebarsConfig = {
         'concepts/compute',
         'concepts/storage',
         'concepts/da',
+        'concepts/ai-alignment',
+        'concepts/inft',
+        'concepts/depin',
       ],
     },
     
@@ -177,10 +180,10 @@ const sidebars: SidebarsConfig = {
       ],
     },
     
-    // SECTION 6: Node Sale (kept separate as it's temporary)
+    // SECTION 6: AI Alignment node (kept separate as it's temporary)
     {
       type: 'category',
-      label: 'Node Sale',
+      label: 'AI Alignment node',
       className: 'sidebar-category node-sale',
       link: {
         type: 'doc',
@@ -197,9 +200,10 @@ const sidebars: SidebarsConfig = {
             'node-sale/intro/eligibility',
           ],
         },
+        'node-sale/details/kyc-verification',
         {
           type: 'category',
-          label: 'Node Sale Details',
+          label: 'AI Alignment node Details',
           items: [
             'node-sale/details/purchasing-nodes',
             'node-sale/details/incentives-and-rewards',

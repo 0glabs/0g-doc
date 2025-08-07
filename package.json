@@ -1,6 +1,6 @@
 {
   "name": "docs-0-g",
-  "version": ">=18.0.0",
+  "version": ">=20.11.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -15,8 +15,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.5.2",
-    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
     "@lottielab/lottie-player": "^1.1.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
@@ -30,10 +30,10 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.5.2",
-    "@docusaurus/tsconfig": "3.5.2",
-    "@docusaurus/types": "3.5.2",
-    "@easyops-cn/docusaurus-search-local": "^0.45.0",
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/tsconfig": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "@easyops-cn/docusaurus-search-local": "^0.52.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "typescript": "~5.5.2"
@@ -51,6 +51,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.11.0"
   }
 }
