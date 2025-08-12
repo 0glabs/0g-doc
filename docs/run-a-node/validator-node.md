@@ -21,6 +21,27 @@ Running a Validator node for the **0G-Galileo-Testnet** means providing validato
 | Disk       | 1 TB NVME SSD | 4 TB NVME SSD |
 | Bandwidth  | 100 MBps for Download / Upload | 100 MBps for Download / Upload |
 
+## Restaking RPC Configuration
+
+- **Validator Nodes**: When running your consensus client, add the following flags to enable restaking and configure the Symbiotic RPC:
+
+```bash
+--chaincfg.restaking.enabled \
+--chaincfg.restaking.symbiotic-rpc-dial-url ${ETH_RPC_URL} \
+--chaincfg.restaking.symbiotic-get-logs-block-range ${BLOCK_NUM}
+```
+
+- **ETH_RPC_URL**: The RPC endpoint for the Symbiotic network. On testnet, use an Ethereum HoleSky RPC endpoint.
+- **BLOCK_NUM**: The maximum block number range per call when syncing restaking events. Default is 1. Adjust based on your RPC provider limits.
+
+- **Non-Validator Nodes**: No restaking-related configuration is required; you can keep your current startup parameters unchanged.
+
+This enables staking in Symbiotic contracts on Ethereum (testnet: HoleSky) to participate in 0G Chain consensus. Validators must be able to read the Ethereum contract state to generate and verify new blocks post-hardfork. You can run your own HoleSky node (see Ethereum docs) or use a third-party RPC provider such as QuickNode or Infura for `${ETH_RPC_URL}`.
+
+:::tip Non-Validator Nodes
+Restaking configuration is NOT required for non-validator nodes. Do not add the `--chaincfg.restaking.*` flags when running non-validator nodes.
+:::
+
 ## Setup Guide
 
 ### 1. Download Package
@@ -80,11 +101,16 @@ cp /{your data path}/tmp/config/priv_validator_key.json /{your data path}/0g-hom
 
 ### 7. Start 0gchaind
 
+Note: The command below includes restaking flags and is intended for validator nodes only. Non-validator nodes can omit the `--chaincfg.restaking.*` flags.
+
 ```bash
 cd ~/galileo-v2.0.1
 nohup ./bin/0gchaind start \
     --rpc.laddr tcp://0.0.0.0:26657 \
     --chaincfg.chain-spec devnet \
+    --chaincfg.restaking.enabled \
+    --chaincfg.restaking.symbiotic-rpc-dial-url ${ETH_RPC_URL} \
+    --chaincfg.restaking.symbiotic-get-logs-block-range ${BLOCK_NUM} \
     --chaincfg.kzg.trusted-setup-path=kzg-trusted-setup.json \
     --chaincfg.engine.jwt-secret-path=jwt-secret.hex \
     --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
@@ -207,6 +233,8 @@ cp -r {your_0gchaind_home} $BACKUP_DIR/0gchaind-backup
 
 If you get error while starting node due to missing `priv_validator_state.json`, create an empty `priv_validator_state.json` file in that directory with `{}`.
 
+Note: The command below includes restaking flags and is intended for validator nodes only. Non-validator nodes can omit the `--chaincfg.restaking.*` flags.
+
 ```bash
 # Make sure you're in new release directory
 
@@ -214,6 +242,9 @@ If you get error while starting node due to missing `priv_validator_state.json`,
 nohup ./bin/0gchaind start \
     --rpc.laddr tcp://0.0.0.0:26657 \
     --chaincfg.chain-spec devnet \
+    --chaincfg.restaking.enabled \
+    --chaincfg.restaking.symbiotic-rpc-dial-url ${ETH_RPC_URL} \
+    --chaincfg.restaking.symbiotic-get-logs-block-range ${BLOCK_NUM} \
     --chaincfg.kzg.trusted-setup-path=kzg-trusted-setup.json \
     --chaincfg.engine.jwt-secret-path=jwt-secret.hex \
     --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
