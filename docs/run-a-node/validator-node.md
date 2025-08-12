@@ -28,7 +28,7 @@ Running a Validator node for the **0G-Galileo-Testnet** means providing validato
 Download the latest package for node binaries:
 
 ```bash
-wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v1.2.0/galileo-v1.2.0.tar.gz
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.1/galileo-v2.0.1.tar.gz
 ```
 
 ### 2. Extract Package
@@ -44,7 +44,7 @@ tar -xzvf galileo.tar.gz -C ~
 Copy the configuration files and set proper permissions:
 
 ```bash
-cd galileo
+cd galileo-v2.0.1
 cp -r 0g-home {your data path}
 sudo chmod 777 ./bin/geth
 sudo chmod 777 ./bin/0gchaind
@@ -81,7 +81,7 @@ cp /{your data path}/tmp/config/priv_validator_key.json /{your data path}/0g-hom
 ### 7. Start 0gchaind
 
 ```bash
-cd ~/galileo
+cd ~/galileo-v2.0.1
 nohup ./bin/0gchaind start \
     --rpc.laddr tcp://0.0.0.0:26657 \
     --chaincfg.chain-spec devnet \
@@ -101,7 +101,7 @@ nohup ./bin/0gchaind start \
 ### 8. Start Geth
 
 ```bash
-cd ~/galileo
+cd ~/galileo-v2.0.1
 nohup ./bin/geth --config geth-config.toml \
      --nat extip:{your node ip} \
      --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
@@ -161,6 +161,88 @@ To restore your validator from backup:
 - Test recovery process in a non-production environment first
 - Default configuration users only need the two key files mentioned above
 :::
+
+</details>
+
+<details>
+<summary>Upgrade Validator</summary>
+
+### Step 1: Extract New Release
+
+```bash
+# Download & Extract the new release package
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.1/galileo-v2.0.1.tar.gz
+
+tar -xzvf galileo.tar.gz -C ~
+
+# Verify extraction
+ls -la galileo-v2.0.1/
+```
+
+### Step 2: Stop Services
+
+```bash
+# Stop consensus layer (0gchaind)
+pkill 0gchaind
+
+# Stop execution layer (geth)
+pkill geth
+```
+
+### Step 3: Backup Your Data
+
+```bash
+# Create backup directory with timestamp
+BACKUP_DIR="backup-$(date +%Y%m%d-%H%M%S)"
+mkdir -p $BACKUP_DIR
+
+# Backup execution layer data(geth-home)
+cp -r {your_geth_datadir} $BACKUP_DIR/geth-backup
+
+# Backup consensus layer data (0gchaind-home)
+cp -r {your_0gchaind_home} $BACKUP_DIR/0gchaind-backup
+```
+
+### Step 4: Start Node 
+
+If you get error while starting node due to missing `priv_validator_state.json`, create an empty `priv_validator_state.json` file in that directory with `{}`.
+
+```bash
+# Make sure you're in new release directory
+
+# Start 0gchaind first
+nohup ./bin/0gchaind start \
+    --rpc.laddr tcp://0.0.0.0:26657 \
+    --chaincfg.chain-spec devnet \
+    --chaincfg.kzg.trusted-setup-path=kzg-trusted-setup.json \
+    --chaincfg.engine.jwt-secret-path=jwt-secret.hex \
+    --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
+    --chaincfg.block-store-service.enabled \
+    --chaincfg.node-api.enabled \
+    --chaincfg.node-api.logging \
+    --chaincfg.node-api.address 0.0.0.0:3500 \
+    --pruning=nothing \
+    --home {your_cl_home} \
+    --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
+    --p2p.external_address {your_node_ip}:26656 > {your_log_path}/0gchaind.log 2>&1 &
+
+# Start geth
+nohup ./bin/geth --config geth-config.toml \
+     --nat extip:{your_node_ip} \
+     --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
+     --datadir {your_geth_datadir} \
+     --networkid 16601 > {your_log_path}/geth.log 2>&1 &
+```
+
+### Step 5: Verify Upgrade Success
+
+```bash
+# Monitor consensus layer logs
+tail -f {your_log_path}/0gchaind.log
+
+# Monitor execution layer logs
+tail -f {your_log_path}/geth.log
+```
 
 </details>
 
