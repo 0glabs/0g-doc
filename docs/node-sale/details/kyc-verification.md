@@ -57,6 +57,39 @@ Before starting your KYC verification, ensure you have:
 
 ## Getting Started
 
+<details>
+<summary><b>Video Guide</b></summary>
+
+Step by step video guide to complete the KYC process.
+
+### Step 1: Start the KYC Process
+
+Go to the [KYC page](https://claim.0gfoundation.ai/kyc). Connect your wallet and click on "Start KYC" button.
+
+<div style={{textAlign: 'center'}}>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5LohD5xwl8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+### Step 2: Submit Documents
+
+Upload the required documents, complete the selfie verification. This submission can also be done on mobile for easier document upload.Make sure to close the mobile browser tab after submitting the documents before opening new session on desktop.
+
+<div style={{textAlign: 'center'}}>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/97dwcNCs6Lg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+### Step 3: Complete Wallet Verification
+
+This step is critical and must be completed on desktop. Even if you submitted documents on mobile, you must complete this step on desktop so trigger the magic link again from portal (like the step 1), open the link in desktop browser and continue from there.
+
+<div style={{textAlign: 'center'}}>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FzySS1S2HpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+
+
+</details>
+
 ### Step 1: Connect Your Wallet
 
 Before beginning the KYC process, you'll need to connect your wallet to the 0G platform:
