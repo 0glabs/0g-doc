@@ -49,7 +49,7 @@ Restaking configuration is NOT required for non-validator nodes. Do not add the 
 Download the latest package for node binaries:
 
 ```bash
-wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.1/galileo-v2.0.1.tar.gz
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.2/galileo-v2.0.2.tar.gz
 ```
 
 ### 2. Extract Package
@@ -65,7 +65,7 @@ tar -xzvf galileo.tar.gz -C ~
 Copy the configuration files and set proper permissions:
 
 ```bash
-cd galileo-v2.0.1
+cd galileo-v2.0.2
 cp -r 0g-home {your data path}
 sudo chmod 777 ./bin/geth
 sudo chmod 777 ./bin/0gchaind
@@ -104,7 +104,7 @@ cp /{your data path}/tmp/config/priv_validator_key.json /{your data path}/0g-hom
 Note: The command below includes restaking flags and is intended for validator nodes only. Non-validator nodes can omit the `--chaincfg.restaking.*` flags.
 
 ```bash
-cd ~/galileo-v2.0.1
+cd ~/galileo-v2.0.2
 nohup ./bin/0gchaind start \
     --rpc.laddr tcp://0.0.0.0:26657 \
     --chaincfg.chain-spec devnet \
@@ -127,7 +127,7 @@ nohup ./bin/0gchaind start \
 ### 8. Start Geth
 
 ```bash
-cd ~/galileo-v2.0.1
+cd ~/galileo-v2.0.2
 nohup ./bin/geth --config geth-config.toml \
      --nat extip:{your node ip} \
      --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
@@ -197,12 +197,12 @@ To restore your validator from backup:
 
 ```bash
 # Download & Extract the new release package
-wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.1/galileo-v2.0.1.tar.gz
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.2/galileo-v2.0.2.tar.gz
 
 tar -xzvf galileo.tar.gz -C ~
 
 # Verify extraction
-ls -la galileo-v2.0.1/
+ls -la galileo-v2.0.2/
 ```
 
 ### Step 2: Stop Services
