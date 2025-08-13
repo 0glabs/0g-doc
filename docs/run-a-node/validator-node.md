@@ -21,6 +21,27 @@ Running a Validator node for the **0G-Galileo-Testnet** means providing validato
 | Disk       | 1 TB NVME SSD | 4 TB NVME SSD |
 | Bandwidth  | 100 MBps for Download / Upload | 100 MBps for Download / Upload |
 
+## Restaking RPC Configuration
+
+- **Validator Nodes**: When running your consensus client, add the following flags to enable restaking and configure the Symbiotic RPC:
+
+```bash
+--chaincfg.restaking.enabled \
+--chaincfg.restaking.symbiotic-rpc-dial-url ${ETH_RPC_URL} \
+--chaincfg.restaking.symbiotic-get-logs-block-range ${BLOCK_NUM}
+```
+
+- **ETH_RPC_URL**: The RPC endpoint for the Symbiotic network. On testnet, use an Ethereum HoleSky RPC endpoint.
+- **BLOCK_NUM**: The maximum block number range per call when syncing restaking events. Default is 1. Adjust based on your RPC provider limits.
+
+- **Non-Validator Nodes**: No restaking-related configuration is required; you can keep your current startup parameters unchanged.
+
+This enables staking in Symbiotic contracts on Ethereum (testnet: HoleSky) to participate in 0G Chain consensus. Validators must be able to read the Ethereum contract state to generate and verify new blocks post-hardfork. You can run your own HoleSky node (see Ethereum docs) or use a third-party RPC provider such as QuickNode or Infura for `${ETH_RPC_URL}`.
+
+:::tip Non-Validator Nodes
+Restaking configuration is NOT required for non-validator nodes. Do not add the `--chaincfg.restaking.*` flags when running non-validator nodes.
+:::
+
 ## Setup Guide
 
 ### 1. Download Package
@@ -28,7 +49,7 @@ Running a Validator node for the **0G-Galileo-Testnet** means providing validato
 Download the latest package for node binaries:
 
 ```bash
-wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v1.2.0/galileo-v1.2.0.tar.gz
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.2/galileo-v2.0.2.tar.gz
 ```
 
 ### 2. Extract Package
@@ -44,7 +65,7 @@ tar -xzvf galileo.tar.gz -C ~
 Copy the configuration files and set proper permissions:
 
 ```bash
-cd galileo
+cd galileo-v2.0.2
 cp -r 0g-home {your data path}
 sudo chmod 777 ./bin/geth
 sudo chmod 777 ./bin/0gchaind
@@ -80,11 +101,16 @@ cp /{your data path}/tmp/config/priv_validator_key.json /{your data path}/0g-hom
 
 ### 7. Start 0gchaind
 
+Note: The command below includes restaking flags and is intended for validator nodes only. Non-validator nodes can omit the `--chaincfg.restaking.*` flags.
+
 ```bash
-cd ~/galileo
+cd ~/galileo-v2.0.2
 nohup ./bin/0gchaind start \
     --rpc.laddr tcp://0.0.0.0:26657 \
     --chaincfg.chain-spec devnet \
+    --chaincfg.restaking.enabled \
+    --chaincfg.restaking.symbiotic-rpc-dial-url ${ETH_RPC_URL} \
+    --chaincfg.restaking.symbiotic-get-logs-block-range ${BLOCK_NUM} \
     --chaincfg.kzg.trusted-setup-path=kzg-trusted-setup.json \
     --chaincfg.engine.jwt-secret-path=jwt-secret.hex \
     --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
@@ -101,7 +127,7 @@ nohup ./bin/0gchaind start \
 ### 8. Start Geth
 
 ```bash
-cd ~/galileo
+cd ~/galileo-v2.0.2
 nohup ./bin/geth --config geth-config.toml \
      --nat extip:{your node ip} \
      --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
@@ -161,6 +187,93 @@ To restore your validator from backup:
 - Test recovery process in a non-production environment first
 - Default configuration users only need the two key files mentioned above
 :::
+
+</details>
+
+<details>
+<summary>Upgrade Validator</summary>
+
+### Step 1: Extract New Release
+
+```bash
+# Download & Extract the new release package
+wget -O galileo.tar.gz https://github.com/0glabs/0gchain-NG/releases/download/v2.0.2/galileo-v2.0.2.tar.gz
+
+tar -xzvf galileo.tar.gz -C ~
+
+# Verify extraction
+ls -la galileo-v2.0.2/
+```
+
+### Step 2: Stop Services
+
+```bash
+# Stop consensus layer (0gchaind)
+pkill 0gchaind
+
+# Stop execution layer (geth)
+pkill geth
+```
+
+### Step 3: Backup Your Data
+
+```bash
+# Create backup directory with timestamp
+BACKUP_DIR="backup-$(date +%Y%m%d-%H%M%S)"
+mkdir -p $BACKUP_DIR
+
+# Backup execution layer data(geth-home)
+cp -r {your_geth_datadir} $BACKUP_DIR/geth-backup
+
+# Backup consensus layer data (0gchaind-home)
+cp -r {your_0gchaind_home} $BACKUP_DIR/0gchaind-backup
+```
+
+### Step 4: Start Node 
+
+If you get error while starting node due to missing `priv_validator_state.json`, create an empty `priv_validator_state.json` file in that directory with `{}`.
+
+Note: The command below includes restaking flags and is intended for validator nodes only. Non-validator nodes can omit the `--chaincfg.restaking.*` flags.
+
+```bash
+# Make sure you're in new release directory
+
+# Start 0gchaind first
+nohup ./bin/0gchaind start \
+    --rpc.laddr tcp://0.0.0.0:26657 \
+    --chaincfg.chain-spec devnet \
+    --chaincfg.restaking.enabled \
+    --chaincfg.restaking.symbiotic-rpc-dial-url ${ETH_RPC_URL} \
+    --chaincfg.restaking.symbiotic-get-logs-block-range ${BLOCK_NUM} \
+    --chaincfg.kzg.trusted-setup-path=kzg-trusted-setup.json \
+    --chaincfg.engine.jwt-secret-path=jwt-secret.hex \
+    --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
+    --chaincfg.block-store-service.enabled \
+    --chaincfg.node-api.enabled \
+    --chaincfg.node-api.logging \
+    --chaincfg.node-api.address 0.0.0.0:3500 \
+    --pruning=nothing \
+    --home {your_cl_home} \
+    --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
+    --p2p.external_address {your_node_ip}:26656 > {your_log_path}/0gchaind.log 2>&1 &
+
+# Start geth
+nohup ./bin/geth --config geth-config.toml \
+     --nat extip:{your_node_ip} \
+     --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
+     --datadir {your_geth_datadir} \
+     --networkid 16601 > {your_log_path}/geth.log 2>&1 &
+```
+
+### Step 5: Verify Upgrade Success
+
+```bash
+# Monitor consensus layer logs
+tail -f {your_log_path}/0gchaind.log
+
+# Monitor execution layer logs
+tail -f {your_log_path}/geth.log
+```
 
 </details>
 
