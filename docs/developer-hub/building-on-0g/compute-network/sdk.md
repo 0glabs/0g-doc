@@ -79,11 +79,11 @@ const broker = await createZGComputeNetworkBroker(signer);
 
 ```typescript
 // Add 0.1 OG tokens (~10,000 requests)
-await broker.ledger.addLedger(ethers.parseEther("0.1"));
+await broker.ledger.addLedger("0.1");
 
 // Check balance
 const account = await broker.ledger.getLedger();
-console.log(`Balance: ${ethers.formatEther(account.balance)} OG`);
+console.log(`Balance: ${ethers.formatEther(account.totalbalance)} OG`);
 ```
 
 ### Discover Available Services
@@ -214,14 +214,13 @@ console.log(`
 ### Add Funds
 ```typescript
 // Add more funds
-await broker.ledger.depositFund(ethers.parseEther("0.5"));
+await broker.ledger.depositFund("0.5");
 ```
 
 ### Request Refund
 ```typescript
 // Withdraw unused funds
-const amount = ethers.parseEther("0.1");
-await broker.ledger.retrieveFund("inference", amount);
+await broker.ledger.retrieveFund("inference", "0.1");
 ```
 
 ## Troubleshooting
