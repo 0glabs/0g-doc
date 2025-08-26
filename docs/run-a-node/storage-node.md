@@ -46,7 +46,7 @@ Start by installing all the essential tools and libraries required to build the 
 
         ```bash
         sudo apt-get update
-        sudo apt-get install clang cmake build-essential pkg-config libssl-dev
+        sudo apt-get install clang cmake build-essential pkg-config libssl-dev protobuf-compiler
         ```
 </TabItem>
   <TabItem value="mac">
@@ -169,7 +169,7 @@ Follow the same steps to install dependencies and Rust as in the storage node se
 
         ```bash
         sudo apt-get update
-        sudo apt-get install clang cmake build-essential pkg-config libssl-dev
+        sudo apt-get install clang cmake build-essential pkg-config libssl-dev protobuf-compiler
         ```
 </TabItem>
   <TabItem value="mac">
